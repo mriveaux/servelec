@@ -1,0 +1,882 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Responsive Posts Carousel Pro\n"
+"POT-Creation-Date: 2018-11-28 14:55+0500\n"
+"PO-Revision-Date: 2018-11-28 15:07+0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: index.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: nl_NL\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: carousel.class.php:57 inc/settings-fields.php:78
+msgid "Content"
+msgstr "Inhoud"
+
+#: carousel.class.php:62
+msgid "Slider"
+msgstr "Slider"
+
+#: carousel.class.php:67
+msgid "Colors"
+msgstr "Kleuren"
+
+#: carousel.class.php:72
+msgid "Typography"
+msgstr "Typografie"
+
+#: carousel.class.php:77 inc/settings-fields.php:159
+msgid "Arrows"
+msgstr "Pijlen"
+
+#: carousel.class.php:82
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#: carousel.class.php:163
+msgid "Default"
+msgstr "Standaard"
+
+#: carousel.class.php:192 carousel.class.php:354
+#, fuzzy
+msgid "Sorry! this Taxonomy has no Terms."
+msgstr "Sorry! Deze taxonomie heeft geen VoorWaarden."
+
+#: carousel.class.php:206
+#, fuzzy
+msgid "Please select any taxonomy first"
+msgstr "Selecteer eerst een taxonomie"
+
+#: carousel.class.php:255
+msgid "Enable"
+msgstr "Inschakelen"
+
+#: carousel.class.php:269
+#, fuzzy
+msgid "Paste above shortcode in the page where you want to display slider."
+msgstr ""
+"Plak bovenstaande shortcode in de pagina waar u de schuifregelaar wilt "
+"weergeven."
+
+#: carousel.class.php:281
+#, fuzzy
+msgid "You can contact us"
+msgstr "U contact met ons opnemen"
+
+#: carousel.class.php:282
+msgid "here"
+msgstr "hier"
+
+#: carousel.class.php:283
+#, fuzzy
+msgid "for help"
+msgstr "Helptekst"
+
+#: carousel.class.php:284
+#, fuzzy
+msgid "Purchase Premium version and unlock"
+msgstr "Aankoop Premium versie en Unlock"
+
+#: carousel.class.php:287
+#, fuzzy
+msgid "20+ Premium Templates"
+msgstr "20 + Premium templates"
+
+#: carousel.class.php:288
+#, fuzzy
+msgid "15+ Networks for Social Sharing"
+msgstr "15 + netwerken voor sociale delen"
+
+#: carousel.class.php:289
+#, fuzzy
+msgid "Access to Premium Support Forum"
+msgstr "Toegang tot Premium Support Forum"
+
+#: carousel.class.php:290
+#, fuzzy
+msgid "Lifetime Free Updates"
+msgstr "LevensLange gratis updates"
+
+#: carousel.class.php:294
+#, fuzzy
+msgid "Purchase Pro Version"
+msgstr "Pro versie aanschaffen"
+
+#: carousel.class.php:322
+#, fuzzy
+msgid "Please provide carousel id in shortcode"
+msgstr "Geef carrousel id in shortcode"
+
+#: carousel.class.php:343
+msgid "All"
+msgstr "Alle"
+
+#: carousel.class.php:531
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: carousel.class.php:596
+#, fuzzy
+msgid "Template not Found"
+msgstr "Sjabloon niet gevonden"
+
+#: inc/register-carousel.php:3
+#, fuzzy
+msgctxt "Carousel"
+msgid "Carousels"
+msgstr "Carrousels"
+
+#: inc/register-carousel.php:4
+msgctxt "Carousel"
+msgid "Carousel"
+msgstr "Carousel"
+
+#: inc/register-carousel.php:5
+#, fuzzy
+msgctxt "admin menu"
+msgid "Carousels"
+msgstr "Carrousels"
+
+#: inc/register-carousel.php:6
+msgctxt "Carousels"
+msgid "Carousel"
+msgstr "Carousel"
+
+#: inc/register-carousel.php:7
+#, fuzzy
+msgctxt "Carousel"
+msgid "Add New"
+msgstr "Nieuw trefwoord toevoegen"
+
+#: inc/register-carousel.php:8
+#, fuzzy
+msgid "Add New Carousel"
+msgstr "Voeg nieuwe carrousel"
+
+#: inc/register-carousel.php:9
+#, fuzzy
+msgid "New Carousel"
+msgstr "Nieuwe carrousel"
+
+#: inc/register-carousel.php:10
+#, fuzzy
+msgid "Edit Carousel"
+msgstr "Carrousel bewerken"
+
+#: inc/register-carousel.php:11
+#, fuzzy
+msgid "View Carousel"
+msgstr "Bekijk carrousel"
+
+#: inc/register-carousel.php:12
+#, fuzzy
+msgid "All Carousels"
+msgstr "Alle carrousels"
+
+#: inc/register-carousel.php:13
+#, fuzzy
+msgid "Search Carousels"
+msgstr "Zoek carrousels"
+
+#: inc/register-carousel.php:14
+#, fuzzy
+msgid "Parent Carousels:"
+msgstr "Ouder carrousels:"
+
+#: inc/register-carousel.php:15
+#, fuzzy
+msgid "No Carousel found."
+msgstr "Geen carrousel gevonden."
+
+#: inc/register-carousel.php:16
+#, fuzzy
+msgid "No Carousel found in Trash."
+msgstr "Geen carrousel gevonden in de Prullenbak."
+
+#: inc/register-carousel.php:21
+#, fuzzy
+msgid "Create Posts Carousels."
+msgstr "Maak berichten carrousels."
+
+#: inc/settings-fields.php:8
+#, fuzzy
+msgid "Display By"
+msgstr "WeerGeven door"
+
+#: inc/settings-fields.php:9
+#, fuzzy
+msgid "How you want to display carousel"
+msgstr "Hoe u carrousel wilt weergeven"
+
+#: inc/settings-fields.php:11
+#, fuzzy
+msgid "By Post Type"
+msgstr "Per post type"
+
+#: inc/settings-fields.php:12
+#, fuzzy
+msgid "By Taxonomy"
+msgstr "Door taxonomie"
+
+#: inc/settings-fields.php:20 inc/settings-fields.php:21
+msgid "Select Taxonomy"
+msgstr "Selecteer Taxonomie"
+
+#: inc/settings-fields.php:28
+msgid "Select Term"
+msgstr "Selecteer voorwaarden"
+
+#: inc/settings-fields.php:29
+msgid "Select Terms"
+msgstr "Selecteer termen"
+
+#: inc/settings-fields.php:36 inc/settings-fields.php:37
+#, fuzzy
+msgid "Select Post Type"
+msgstr "Selecteer bericht type"
+
+#: inc/settings-fields.php:44
+msgid "Select Posts"
+msgstr "Selecteer berichten"
+
+#: inc/settings-fields.php:45
+#, fuzzy
+msgid "Choose posts to display in carousel"
+msgstr "Kies berichten om weer te geven in carrousel"
+
+#: inc/settings-fields.php:52
+msgid "Exclude Posts"
+msgstr "Uitgezonden Berichten"
+
+#: inc/settings-fields.php:53
+#, fuzzy
+msgid "Comma separated ids of posts that you do not want to display"
+msgstr "Door Komma's gescheiden id's van berichten die u niet wilt weergeven"
+
+#: inc/settings-fields.php:60
+msgid "Post Style"
+msgstr "Bericht Style"
+
+#: inc/settings-fields.php:61
+#, fuzzy
+msgid "Choose post style to display in slider"
+msgstr "Kies bericht stijl om weer te geven in Slider"
+
+#: inc/settings-fields.php:68
+msgid "Title"
+msgstr "Titel"
+
+#: inc/settings-fields.php:69
+#, fuzzy
+msgid "Provide post meta key to display as heading."
+msgstr "VerStrek post meta sleutel om als rubriek te tonen."
+
+#: inc/settings-fields.php:70 inc/settings-fields.php:80
+#: inc/settings-fields.php:90 inc/settings-fields.php:217
+#: inc/settings-fields.php:228
+msgid "Example"
+msgstr "Voorbeeld"
+
+#: inc/settings-fields.php:79
+#, fuzzy
+msgid "Provide post meta key to display as description."
+msgstr "VerStrek post meta sleutel om als beschrijving te tonen."
+
+#: inc/settings-fields.php:88
+#, fuzzy
+msgid "Description Words Length"
+msgstr "Beschrijving woorden lengte"
+
+#: inc/settings-fields.php:89
+#, fuzzy
+msgid "Maximum words to display for description."
+msgstr "Maximale woorden die u wilt weergeven voor beschrijving."
+
+#: inc/settings-fields.php:97
+msgid "Read More Button Text"
+msgstr "Lees verder knop tekst"
+
+#: inc/settings-fields.php:98
+#, fuzzy
+msgid "Provide text for read more button, leave blank to disable"
+msgstr "Geef tekst voor Lees meer knop, laat leeg uit te schakelen"
+
+#: inc/settings-fields.php:105
+#, fuzzy
+msgid "Read More Button CSS Classes"
+msgstr "Lees meer knop CSS classes"
+
+#: inc/settings-fields.php:106
+#, fuzzy
+msgid "Provide css classes for styling of button"
+msgstr "Bieden CSS klassen voor styling van de knop"
+
+#: inc/settings-fields.php:113
+msgid "Link Target"
+msgstr "Linkdoel"
+
+#: inc/settings-fields.php:114
+#, fuzzy
+msgid "How you want to open links"
+msgstr "Hoe u links wilt openen"
+
+#: inc/settings-fields.php:116
+msgid "Same Tab"
+msgstr "Zelfde tab"
+
+#: inc/settings-fields.php:117
+msgid "New Tab"
+msgstr "Nieuw tab"
+
+#: inc/settings-fields.php:125
+#, fuzzy
+msgid "Disable Post Meta (author, date etc)"
+msgstr "Uitschakelen post meta (auteur, datum etc)"
+
+#: inc/settings-fields.php:126
+#, fuzzy
+msgid "Check this button to hide post meta"
+msgstr "Check deze knop te verbergen post meta"
+
+#: inc/settings-fields.php:135
+msgid "Accessibility"
+msgstr "Toegankelijkheid"
+
+#: inc/settings-fields.php:136
+#, fuzzy
+msgid "Enables tabbing and arrow key navigation"
+msgstr "Hiermee u tabbladen en pijltoetsen navigatie"
+
+#: inc/settings-fields.php:143
+msgid "Auto Play"
+msgstr "Automatisch afspelen"
+
+#: inc/settings-fields.php:144
+#, fuzzy
+msgid "Enables auto play of slides"
+msgstr "Schakelt automatisch afspelen van dia's"
+
+#: inc/settings-fields.php:151
+#, fuzzy
+msgid "Bottom Dots"
+msgstr "Onderste stippen"
+
+#: inc/settings-fields.php:152
+#, fuzzy
+msgid "Check to enable current slide indicator dots"
+msgstr "Controleren om de huidige dia-indicator punten in te schakelen"
+
+#: inc/settings-fields.php:160
+#, fuzzy
+msgid "Check to enable Next/Prev arrows"
+msgstr "Controleren om volgende/vorige pijlen in te schakelen"
+
+#: inc/settings-fields.php:167
+#, fuzzy
+msgid "Auto Play Speed"
+msgstr "Automatisch afspelen snelheid"
+
+#: inc/settings-fields.php:168
+#, fuzzy
+msgid "Auto play change interval in milliseconds"
+msgstr "Interval voor automatisch afspelen wijzigen in milliseconden"
+
+#: inc/settings-fields.php:175
+#, fuzzy
+msgid "Number of Columns (Desktop)"
+msgstr "Aantal kolommen (BureauBlad)"
+
+#: inc/settings-fields.php:176
+#, fuzzy
+msgid "Number of posts to show at a time in a row for desktop view"
+msgstr ""
+"Aantal berichten dat op een rij moet worden weergegeven voor de "
+"bureaubladweergave"
+
+#: inc/settings-fields.php:183
+#, fuzzy
+msgid "Number of Columns (Tablet)"
+msgstr "Aantal kolommen (Tablet)"
+
+#: inc/settings-fields.php:184
+#, fuzzy
+msgid "Number of posts to show at a time in a row for tablet view"
+msgstr "Aantal berichten in een rij weergeven voor Tablet weergave"
+
+#: inc/settings-fields.php:191
+#, fuzzy
+msgid "Number of Columns (Mobile)"
+msgstr "Aantal kolommen (mobiel)"
+
+#: inc/settings-fields.php:192
+#, fuzzy
+msgid "Number of posts to show at a time in a row for mobile view"
+msgstr ""
+"Aantal berichten dat op een rij wordt weergegeven voor mobiele weergave"
+
+#: inc/settings-fields.php:199
+#, fuzzy
+msgid "Number of Posts To Slide"
+msgstr "Aantal berichten naar dia"
+
+#: inc/settings-fields.php:200
+#, fuzzy
+msgid "Number of posts to slide at a time"
+msgstr "Aantal berichten dat u tegelijk wilt schuiven"
+
+#: inc/settings-fields.php:207
+msgid "Slide Speed"
+msgstr "Snelheid van diavoorstelling"
+
+#: inc/settings-fields.php:208
+#, fuzzy
+msgid "Transition speed in milliseconds"
+msgstr "Overgangssnelheid in milliseconden"
+
+#: inc/settings-fields.php:215
+#, fuzzy
+msgid "Space Between Posts"
+msgstr "Ruimte tussen berichten"
+
+#: inc/settings-fields.php:216
+#, fuzzy
+msgid "Margin will apply to both sides. Provide with unit."
+msgstr "De marge is van toepassing op beide zijden. Voorzien van eenheid."
+
+#: inc/settings-fields.php:226
+msgid "Border Width"
+msgstr "Border Breedte"
+
+#: inc/settings-fields.php:227
+#, fuzzy
+msgid "Provide width for border with unit. Leave blank to disable border."
+msgstr ""
+"VerStrek breedte voor grens met eenheid. Laat leeg om de rand uit te "
+"schakelen."
+
+#: inc/settings-fields.php:235
+msgid "Border Color"
+msgstr "Randkleur"
+
+#: inc/settings-fields.php:236
+#, fuzzy
+msgid "Choose color for border"
+msgstr "Kleur kiezen voorrand"
+
+#: inc/settings-fields.php:244
+msgid "Solid"
+msgstr "Solid"
+
+#: inc/settings-fields.php:245
+msgid "Dotted"
+msgstr "Gestippeld"
+
+#: inc/settings-fields.php:246
+msgid "Dashed"
+msgstr "Gestreept"
+
+#: inc/settings-fields.php:247
+msgid "Double"
+msgstr "Dubbel"
+
+#: inc/settings-fields.php:248
+msgid "Groove"
+msgstr "Groef"
+
+#: inc/settings-fields.php:249
+#, fuzzy
+msgid "Ridge"
+msgstr "Ridge"
+
+#: inc/settings-fields.php:250
+msgid "Inset"
+msgstr "Naar binnen"
+
+#: inc/settings-fields.php:251
+msgid "Outset"
+msgstr "Naar buiten"
+
+#: inc/settings-fields.php:253
+msgid "Border Type"
+msgstr "Rand Type"
+
+#: inc/settings-fields.php:254
+#, fuzzy
+msgid "Choose type for border"
+msgstr "Kies type voorrand"
+
+#: inc/settings-fields.php:261
+msgid "Title Background Color"
+msgstr "Titel achtergrondkleur"
+
+#: inc/settings-fields.php:262
+#, fuzzy
+msgid "Choose Title Background Color."
+msgstr "Kies Titel achtergrondkleur."
+
+#: inc/settings-fields.php:263 inc/settings-fields.php:272
+#: inc/settings-fields.php:281 inc/settings-fields.php:290
+#: inc/settings-fields.php:299 inc/settings-fields.php:308
+#: inc/settings-fields.php:317
+#, fuzzy
+msgid "Leave blank for default settings."
+msgstr "Laat de standaardinstellingen leeg."
+
+#: inc/settings-fields.php:270
+msgid "Title Color"
+msgstr "Titelkleur"
+
+#: inc/settings-fields.php:271
+#, fuzzy
+msgid "Choose Title text color."
+msgstr "Kies Titeltekst kleur."
+
+#: inc/settings-fields.php:279
+msgid "Description Color"
+msgstr "Omschrijving Kleur"
+
+#: inc/settings-fields.php:280
+#, fuzzy
+msgid "Choose description text color."
+msgstr "Kies beschrijving tekstkleur."
+
+#: inc/settings-fields.php:288
+#, fuzzy
+msgid "Description Background Color"
+msgstr "Beschrijving achtergrondkleur"
+
+#: inc/settings-fields.php:289
+#, fuzzy
+msgid "Choose description background color."
+msgstr "Kies beschrijving achtergrondkleur."
+
+#: inc/settings-fields.php:297
+#, fuzzy
+msgid "Date Background Color"
+msgstr "Datum achtergrondkleur"
+
+#: inc/settings-fields.php:298
+#, fuzzy
+msgid "Choose date background color."
+msgstr "Kies datum achtergrondkleur."
+
+#: inc/settings-fields.php:306
+#, fuzzy
+msgid "Date Text Color"
+msgstr "Datum TekstKleur"
+
+#: inc/settings-fields.php:307
+#, fuzzy
+msgid "Choose date text color."
+msgstr "Kies datum tekstkleur."
+
+#: inc/settings-fields.php:315
+msgid "Overlay Background Color"
+msgstr "Achtergrondkleur voor Overlay"
+
+#: inc/settings-fields.php:316
+#, fuzzy
+msgid "Choose color for overlay."
+msgstr "Kies kleur voor overlay."
+
+#: inc/settings-fields.php:324
+msgid "Shadow"
+msgstr "Schaduw"
+
+#: inc/settings-fields.php:325
+#, fuzzy
+msgid "Provide shadow values as"
+msgstr "Schaduwwaarden opgeven als"
+
+#: inc/settings-fields.php:327
+#, fuzzy
+msgid "Generate Shadow"
+msgstr "Schaduw genereren"
+
+#: inc/settings-fields.php:335
+#, fuzzy
+msgid "Custom CSS"
+msgstr "Aangepaste CSS code"
+
+#: inc/settings-fields.php:336
+#, fuzzy
+msgid "Paste custom css code here"
+msgstr "Plak aangepaste CSS-code hier"
+
+#: inc/settings-fields.php:345
+msgid "Title Font Family"
+msgstr "Titel Lettertype Familie"
+
+#: inc/settings-fields.php:346
+#, fuzzy
+msgid "Provide font name for title"
+msgstr "Geef lettertypenaam op voor titel"
+
+#: inc/settings-fields.php:353
+msgid "Title Font Size"
+msgstr "Titel Font Size"
+
+#: inc/settings-fields.php:354
+#, fuzzy
+msgid "Provide font size for title with unit"
+msgstr "Geef lettergrootte voor titel met eenheid"
+
+#: inc/settings-fields.php:361
+#, fuzzy
+msgid "Description Font Family"
+msgstr "Beschrijving font family"
+
+#: inc/settings-fields.php:362
+#, fuzzy
+msgid "Provide font name for description"
+msgstr "Geef fontnaam voor de beschrijving"
+
+#: inc/settings-fields.php:369
+msgid "Description Font Size"
+msgstr "Omschrijving lettertype grootte"
+
+#: inc/settings-fields.php:370
+#, fuzzy
+msgid "Provide font size for description with unit"
+msgstr "Tekengrootte voor beschrijving met eenheid opgeven"
+
+#: inc/settings-fields.php:379
+#, fuzzy
+msgid "Arrows Type"
+msgstr "Pijlen type"
+
+#: inc/settings-fields.php:380
+#, fuzzy
+msgid "Choose navigation arrows type here"
+msgstr "Kies navigatiepijlen type hier"
+
+#: inc/settings-fields.php:382 inc/settings-fields.php:404
+msgid "Circle"
+msgstr "Cirkel"
+
+#: inc/settings-fields.php:383
+#, fuzzy
+msgid "Circle Inverted"
+msgstr "Omgekeerde cirkel"
+
+#: inc/settings-fields.php:384
+msgid "Simple"
+msgstr "Eenvoudig"
+
+#: inc/settings-fields.php:385
+msgid "Long"
+msgstr "Lang"
+
+#: inc/settings-fields.php:386
+msgid "Angle"
+msgstr "Hoek"
+
+#: inc/settings-fields.php:387
+#, fuzzy
+msgid "Double Angle"
+msgstr "Dubbele hoek"
+
+#: inc/settings-fields.php:388
+#, fuzzy
+msgid "Caret"
+msgstr "Caret"
+
+#: inc/settings-fields.php:389
+#, fuzzy
+msgid "Caret Square"
+msgstr "Caret-VierKant"
+
+#: inc/settings-fields.php:390
+#, fuzzy
+msgid "Hand"
+msgstr "Hand"
+
+#: inc/settings-fields.php:391
+#, fuzzy
+msgid "Chevron"
+msgstr "Chevron"
+
+#: inc/settings-fields.php:399
+#, fuzzy
+msgid "Arrows Style"
+msgstr "Pijlen stijl"
+
+#: inc/settings-fields.php:400
+#, fuzzy
+msgid "Choose arrow appearance here"
+msgstr "Kies pijl uiterlijk hier"
+
+#: inc/settings-fields.php:402
+msgid "Transparent"
+msgstr "Transparant"
+
+#: inc/settings-fields.php:403
+msgid "Square"
+msgstr "Vierkant"
+
+#: inc/settings-fields.php:412
+#, fuzzy
+msgid "Arrows Color"
+msgstr "Pijlen kleur"
+
+#: inc/settings-fields.php:413
+#, fuzzy
+msgid "Choose arrow color"
+msgstr "Kies pijl kleur"
+
+#: inc/settings-fields.php:420
+#, fuzzy
+msgid "Arrows Background Color"
+msgstr "Pijlen achtergrondkleur"
+
+#: inc/settings-fields.php:421
+#, fuzzy
+msgid "Choose arrow background color"
+msgstr "Kies de achtergrondkleur van de pijl"
+
+#: inc/settings-fields.php:430
+msgid "Images Size"
+msgstr "Afbeeldingen formaat"
+
+#: inc/settings-fields.php:431
+#, fuzzy
+msgid "Choose images size for thumbnails"
+msgstr "Kies afbeeldingen grootte voor miniaturen"
+
+#: inc/settings-fields.php:438
+msgid "Rows"
+msgstr "Rijen"
+
+#: inc/settings-fields.php:439
+#, fuzzy
+msgid ""
+"Setting this to more than 1 initializes grid mode. Use slidesPerRow to set "
+"how many slides should be in each row."
+msgstr ""
+"Als u dit instelt op meer dan 1, wordt de rastermodus geïnitialiseerd. "
+"Gebruik slidesPerRow om in te stellen hoeveel dia's moeten worden in elke "
+"rij."
+
+#: inc/settings-fields.php:446
+#, fuzzy
+msgid "Skip Posts"
+msgstr "Berichten OversLaan"
+
+#: inc/settings-fields.php:447
+#, fuzzy
+msgid "Number of posts to skip from initial posts regarding current settings."
+msgstr ""
+"Aantal berichten over te slaan van de eerste berichten met betrekking tot de "
+"huidige instellingen."
+
+#: inc/settings-fields.php:454
+#, fuzzy
+msgid "Total Posts"
+msgstr "Totaal aantal berichten"
+
+#: inc/settings-fields.php:455
+#, fuzzy
+msgid ""
+"Number of posts to display from current settings. Leave blank to display all."
+msgstr ""
+"Aantal berichten dat moet worden weergegeven vanuit de huidige instellingen. "
+"Laat leeg om alles weer te geven."
+
+#: inc/settings-fields.php:462
+#, fuzzy
+msgid "Slides Per Row"
+msgstr "Dia's per rij"
+
+#: inc/settings-fields.php:463
+#, fuzzy
+msgid ""
+"With grid mode initialized via the rows option, this sets how many slides "
+"are in each grid row."
+msgstr ""
+"Met de grid-modus geïnitialiseerd via de rijen optie, dit bepaalt hoeveel "
+"dia's zijn in elke grid rij."
+
+#: inc/settings-fields.php:470
+#, fuzzy
+msgid "Placeholder Image Url"
+msgstr "Afbeeldings-URL voor tijdelijke aanduiding"
+
+#: inc/settings-fields.php:471
+#, fuzzy
+msgid ""
+"Provide placeholder image url for that posts which do not have featured "
+"images."
+msgstr ""
+"Geef plaatsaanduiding afbeelding URL voor die berichten die geen featured "
+"beelden."
+
+#: inc/settings-fields.php:478
+#, fuzzy
+msgid "Disable Current Post"
+msgstr "Schakel huidige bericht"
+
+#: inc/settings-fields.php:479
+#, fuzzy
+msgid ""
+"Check to exclude the current post from slider if you are using it under a "
+"post."
+msgstr ""
+"Controleer of de huidige post uit te sluiten van de schuifregelaar als u "
+"deze gebruikt onder een post."
+
+#: inc/settings-fields.php:486
+#, fuzzy
+msgid "Equal Height Mode"
+msgstr "Gelijke hoogte modus"
+
+#: inc/settings-fields.php:487
+#, fuzzy
+msgid "Checking this make all images same in height."
+msgstr "Het controleren van deze maken alle beelden hetzelfde in de hoogte."
+
+#: inc/settings-fields.php:494
+msgid "Images Height"
+msgstr "Afbeeldingshoogte"
+
+#: inc/settings-fields.php:495
+#, fuzzy
+msgid "Fixed Height for images in px. Eg: 450px"
+msgstr "Vaste hoogte voor afbeeldingen in px. Bijvoorbeeld: 450 PX"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "Responsive Posts Carousel"
+msgstr "Responsieve berichten carrousel"
+
+#. Plugin URI of the plugin/theme
+#, fuzzy
+msgid "http://webcodingplace.com/responsive-posts-carousel-wordpress-plugin"
+msgstr "http://webcodingplace.com/responsive-Posts-Carousel-WordPress-plugin"
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid "The best Posts Slider Plugin for WordPress you will ever need."
+msgstr ""
+"De beste berichten Slider plugin voor WordPress die u ooit nodig zult hebben."
+
+#. Author of the plugin/theme
+#, fuzzy
+msgid "WebCodingPlace"
+msgstr "WebCodingPlace"
+
+#. Author URI of the plugin/theme
+#, fuzzy
+msgid "http://webcodingplace.com/"
+msgstr "http://webcodingplace.com/"

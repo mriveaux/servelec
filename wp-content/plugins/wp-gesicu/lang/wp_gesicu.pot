@@ -1,0 +1,1544 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DESOFT - Plugin & Widgets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-14 17:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.0; wp-5.1"
+
+#: include/aaa.php:103
+msgid "Footer 2"
+msgstr ""
+
+#: include/aaa.php:106
+msgid "Se muestra abajo del primer pie de página."
+msgstr ""
+
+#: include/aaa.php:131 include/aaa.php:1236
+msgid "Pesca Caribe"
+msgstr ""
+
+#: include/aaa.php:140 include/aaa.php:1246
+msgid "Resumen estadístico"
+msgstr ""
+
+#: include/aaa.php:195
+msgid "Nombre de la oficina comercial"
+msgstr ""
+
+#: include/aaa.php:196 include/OficinaComercial.php:343
+msgid "Dirección"
+msgstr ""
+
+#: include/aaa.php:197 include/aaa.php:272 include/Directorio.php:331
+#: include/OficinaComercial.php:345
+msgid "Correo"
+msgstr ""
+
+#: include/aaa.php:198 include/aaa.php:273 include/Directorio.php:332
+#: include/OficinaComercial.php:344
+msgid "Teléfono"
+msgstr ""
+
+#: include/aaa.php:269
+msgid "Empresa"
+msgstr ""
+
+#: include/aaa.php:270 include/Directorio.php:329
+msgid "Nombres y apellidos"
+msgstr ""
+
+#: include/aaa.php:271 include/Directorio.php:330
+msgid "Cargo"
+msgstr ""
+
+#: include/aaa.php:274 include/Directorio.php:333
+msgid "Celular"
+msgstr ""
+
+#: include/aaa.php:275 include/Directorio.php:334
+msgid "Fax"
+msgstr ""
+
+#: include/aaa.php:363 include/Segmento.php:188
+msgid "Título"
+msgstr ""
+
+#: include/aaa.php:364 include/SeaFood.php:415
+msgid "Categor&iacute;a"
+msgstr ""
+
+#: include/aaa.php:485
+msgid "Nombre de la categoría del producto"
+msgstr ""
+
+#: include/aaa.php:486 include/CategorySeaFood.php:273
+msgid "Prioridad"
+msgstr ""
+
+#: include/aaa.php:549 include/Receta.php:297
+msgid "Nombre de la receta"
+msgstr ""
+
+#: include/aaa.php:550 include/Receta.php:298
+msgid "Ingredientes"
+msgstr ""
+
+#: include/aaa.php:551 include/Receta.php:299
+msgid "Preparación"
+msgstr ""
+
+#: include/aaa.php:610 include/aaa.php:711 include/ResumenVentaTon.php:381
+#: include/ResumenVentaVal.php:384 include/SeaFood.php:27
+#: include/SeaFood.php:51
+msgid "Producto"
+msgstr ""
+
+#: include/aaa.php:611 include/aaa.php:712 include/aaa.php:805
+#: include/aaa.php:897 include/ResumenVentaSegTon.php:383
+#: include/ResumenVentaSegVal.php:384 include/ResumenVentaTon.php:382
+#: include/ResumenVentaVal.php:385
+msgid "Fecha"
+msgstr ""
+
+#: include/aaa.php:612 include/aaa.php:806 include/aaa.php:898
+#: include/ResumenVentaSegTon.php:384 include/ResumenVentaTon.php:383
+msgid "Plan (Ton)"
+msgstr ""
+
+#: include/aaa.php:613 include/aaa.php:807 include/aaa.php:899
+#: include/ResumenVentaSegTon.php:385 include/ResumenVentaTon.php:384
+msgid "Real (Ton)"
+msgstr ""
+
+#: include/aaa.php:614 include/aaa.php:808 include/aaa.php:900
+#: include/ResumenVentaSegTon.php:386 include/ResumenVentaTon.php:385
+msgid "Plan acumulado (Ton)"
+msgstr ""
+
+#: include/aaa.php:615 include/aaa.php:809 include/aaa.php:901
+#: include/ResumenVentaSegTon.php:387 include/ResumenVentaTon.php:386
+msgid "Real acumulado (Ton)"
+msgstr ""
+
+#: include/aaa.php:616 include/aaa.php:717 include/aaa.php:1083
+#: include/ResumenVentaVal.php:390
+msgid "Última modificación"
+msgstr ""
+
+#: include/aaa.php:713 include/ResumenVentaVal.php:386
+msgid "Plan (CUC)"
+msgstr ""
+
+#: include/aaa.php:714 include/ResumenVentaVal.php:387
+msgid "Real (CUC)"
+msgstr ""
+
+#: include/aaa.php:715 include/ResumenVentaVal.php:388
+msgid "Plan acumulado (CUC)"
+msgstr ""
+
+#: include/aaa.php:716 include/ResumenVentaVal.php:389
+msgid "Real acumulado (CUC)"
+msgstr ""
+
+#: include/aaa.php:804 include/aaa.php:896 include/ResumenVentaSegTon.php:382
+#: include/ResumenVentaSegVal.php:383 include/Segmento.php:26
+#: include/Segmento.php:27 include/Segmento.php:39
+msgid "Segmento"
+msgstr ""
+
+#: include/aaa.php:902 include/ResumenVentaSegVal.php:385
+msgid "Plan (Valor)"
+msgstr ""
+
+#: include/aaa.php:903 include/ResumenVentaSegVal.php:386
+msgid "Real (Valor)"
+msgstr ""
+
+#: include/aaa.php:904 include/ResumenVentaSegVal.php:387
+msgid "Plan acumulado (Valor)"
+msgstr ""
+
+#: include/aaa.php:905 include/ResumenVentaSegVal.php:388
+msgid "Real acumulado (Valor)"
+msgstr ""
+
+#: include/aaa.php:997 include/aaa.php:1079 include/Comportamiento.php:343
+#: include/Directorio.php:328 include/Inventario.php:362
+#: include/OficinaComercial.php:29 include/OficinaComercial.php:53
+msgid "Oficina comercial"
+msgstr ""
+
+#: include/aaa.php:998 include/aaa.php:1080 include/CategorySeaFood.php:30
+#: include/CategorySeaFood.php:31 include/CategorySeaFood.php:54
+#: include/Comportamiento.php:344 include/Inventario.php:363
+msgid "Categoría de producto"
+msgstr ""
+
+#: include/aaa.php:999 include/aaa.php:1001 include/Comportamiento.php:345
+#: include/Comportamiento.php:347
+msgid "Plan mensual"
+msgstr ""
+
+#: include/aaa.php:1000 include/aaa.php:1002 include/Comportamiento.php:346
+#: include/Comportamiento.php:348
+msgid "Real mensual"
+msgstr ""
+
+#: include/aaa.php:1081 include/Inventario.php:364
+msgid "Tonelada"
+msgstr ""
+
+#: include/aaa.php:1082 include/Inventario.php:365
+msgid "Valor"
+msgstr ""
+
+#: include/CarouselHome.php:31
+#, php-format
+msgid "La diapositiva se ha eliminado satisfactoriamente."
+msgid_plural "%s producto se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/CarouselHome.php:44 include/CarouselHome.php:47
+#: include/CarouselHome.php:50 include/CarouselHome.php:51
+#: include/CarouselHome.php:52 include/CarouselHome.php:53
+#: include/CarouselHome.php:54 include/CategorySeaFood.php:238
+#: include/CategorySeaFood.php:241 include/CategorySeaFood.php:244
+#: include/CategorySeaFood.php:245 include/CategorySeaFood.php:246
+#: include/CategorySeaFood.php:247 include/CategorySeaFood.php:248
+#: include/CategorySeaFood.php:394 include/Comportamiento.php:324
+#: include/Comportamiento.php:327 include/Comportamiento.php:330
+#: include/Comportamiento.php:331 include/Comportamiento.php:332
+#: include/Comportamiento.php:333 include/Comportamiento.php:334
+#: include/Comportamiento.php:463 include/Directorio.php:302
+#: include/Directorio.php:305 include/Directorio.php:308
+#: include/Directorio.php:309 include/Directorio.php:310
+#: include/Directorio.php:311 include/Directorio.php:312
+#: include/Directorio.php:452 include/Evento.php:132 include/Evento.php:135
+#: include/Evento.php:137 include/Evento.php:138 include/Evento.php:139
+#: include/Evento.php:140 include/Evento.php:141 include/Evento.php:565
+#: include/Inventario.php:343 include/Inventario.php:346
+#: include/Inventario.php:349 include/Inventario.php:350
+#: include/Inventario.php:351 include/Inventario.php:352
+#: include/Inventario.php:353 include/Inventario.php:473
+#: include/Noticia.php:129 include/Noticia.php:132 include/Noticia.php:134
+#: include/Noticia.php:135 include/Noticia.php:136 include/Noticia.php:137
+#: include/Noticia.php:138 include/OficinaComercial.php:307
+#: include/OficinaComercial.php:310 include/OficinaComercial.php:313
+#: include/OficinaComercial.php:314 include/OficinaComercial.php:315
+#: include/OficinaComercial.php:316 include/OficinaComercial.php:317
+#: include/OficinaComercial.php:498 include/Receta.php:238
+#: include/Receta.php:241 include/Receta.php:244 include/Receta.php:245
+#: include/Receta.php:246 include/Receta.php:247 include/Receta.php:248
+#: include/Receta.php:269 include/ResumenVentaSegTon.php:356
+#: include/ResumenVentaSegTon.php:359 include/ResumenVentaSegTon.php:362
+#: include/ResumenVentaSegTon.php:363 include/ResumenVentaSegTon.php:364
+#: include/ResumenVentaSegTon.php:365 include/ResumenVentaSegTon.php:366
+#: include/ResumenVentaSegTon.php:502 include/ResumenVentaSegVal.php:357
+#: include/ResumenVentaSegVal.php:360 include/ResumenVentaSegVal.php:363
+#: include/ResumenVentaSegVal.php:364 include/ResumenVentaSegVal.php:365
+#: include/ResumenVentaSegVal.php:366 include/ResumenVentaSegVal.php:367
+#: include/ResumenVentaSegVal.php:503 include/ResumenVentaTon.php:357
+#: include/ResumenVentaTon.php:360 include/ResumenVentaTon.php:363
+#: include/ResumenVentaTon.php:364 include/ResumenVentaTon.php:365
+#: include/ResumenVentaTon.php:366 include/ResumenVentaTon.php:367
+#: include/ResumenVentaTon.php:501 include/ResumenVentaVal.php:358
+#: include/ResumenVentaVal.php:361 include/ResumenVentaVal.php:364
+#: include/ResumenVentaVal.php:365 include/ResumenVentaVal.php:366
+#: include/ResumenVentaVal.php:367 include/ResumenVentaVal.php:368
+#: include/ResumenVentaVal.php:503 include/SeaFood.php:387
+#: include/SeaFood.php:390 include/SeaFood.php:393 include/SeaFood.php:394
+#: include/SeaFood.php:395 include/SeaFood.php:396 include/SeaFood.php:397
+#: include/SeaFood.php:539 include/Segmento.php:160 include/Segmento.php:163
+#: include/Segmento.php:166 include/Segmento.php:167 include/Segmento.php:168
+#: include/Segmento.php:169 include/Segmento.php:170 include/Segmento.php:282
+msgid "La operación se ha realizado satisfactoriamente."
+msgstr ""
+
+#: include/CarouselHome.php:45 include/CategorySeaFood.php:239
+#: include/Comportamiento.php:325 include/Directorio.php:303
+#: include/Evento.php:133 include/Inventario.php:344 include/Noticia.php:130
+#: include/OficinaComercial.php:308 include/Receta.php:239
+#: include/ResumenVentaSegTon.php:357 include/ResumenVentaSegVal.php:358
+#: include/ResumenVentaTon.php:358 include/ResumenVentaVal.php:359
+#: include/SeaFood.php:388 include/Segmento.php:161
+msgid "Campo personalizado actualizado."
+msgstr ""
+
+#: include/CarouselHome.php:46 include/CategorySeaFood.php:240
+#: include/Comportamiento.php:326 include/Directorio.php:304
+#: include/Evento.php:134 include/Inventario.php:345 include/Noticia.php:131
+#: include/OficinaComercial.php:309 include/Receta.php:240
+#: include/ResumenVentaSegTon.php:358 include/ResumenVentaSegVal.php:359
+#: include/ResumenVentaTon.php:359 include/ResumenVentaVal.php:360
+#: include/SeaFood.php:389 include/Segmento.php:162
+msgid "Campo personalizado borrado."
+msgstr ""
+
+#: include/CarouselHome.php:65
+msgid "Publicar"
+msgstr ""
+
+#: include/CarouselHome.php:85
+msgid "carousels"
+msgstr ""
+
+#: include/CarouselHome.php:87 include/CarouselHome.php:95
+#: include/CarouselHome.php:100 include/CarouselHome.php:101
+msgid "Carrusel de Portada"
+msgstr ""
+
+#: include/CarouselHome.php:88
+msgid "Nueva diapositiva al Carrusel de Portada"
+msgstr ""
+
+#: include/CarouselHome.php:89 include/CarouselHome.php:90
+#: include/CategorySeaFood.php:33 include/CategorySeaFood.php:34
+#: include/CategorySeaFood.php:36 include/Comportamiento.php:29
+#: include/Comportamiento.php:30 include/Comportamiento.php:32
+#: include/Directorio.php:29 include/Directorio.php:30
+#: include/Directorio.php:32 include/Evento.php:29 include/Evento.php:30
+#: include/Evento.php:32 include/Inventario.php:31 include/Inventario.php:32
+#: include/Inventario.php:34 include/Noticia.php:29 include/Noticia.php:30
+#: include/Noticia.php:32 include/OficinaComercial.php:32
+#: include/OficinaComercial.php:33 include/OficinaComercial.php:35
+#: include/Receta.php:32 include/Receta.php:33 include/Receta.php:35
+#: include/ResumenVentaSegTon.php:29 include/ResumenVentaSegTon.php:30
+#: include/ResumenVentaSegTon.php:32 include/ResumenVentaSegVal.php:29
+#: include/ResumenVentaSegVal.php:30 include/ResumenVentaSegVal.php:32
+#: include/ResumenVentaTon.php:29 include/ResumenVentaTon.php:30
+#: include/ResumenVentaTon.php:32 include/ResumenVentaVal.php:29
+#: include/ResumenVentaVal.php:30 include/ResumenVentaVal.php:32
+#: include/SeaFood.php:30 include/SeaFood.php:31 include/SeaFood.php:33
+#: include/Segmento.php:29 include/Segmento.php:30 include/Segmento.php:32
+msgid "Añadir"
+msgstr ""
+
+#: include/CarouselHome.php:91
+msgid "Nueva"
+msgstr ""
+
+#: include/CarouselHome.php:92 include/CategorySeaFood.php:35
+#: include/Comportamiento.php:31 include/Encuesta.php:789
+#: include/Encuesta.php:789 include/Evento.php:31 include/Inventario.php:33
+#: include/Noticia.php:31 include/OficinaComercial.php:34
+#: include/ResumenVentaSegTon.php:31 include/ResumenVentaSegVal.php:31
+#: include/ResumenVentaTon.php:31 include/ResumenVentaVal.php:31
+#: include/SeaFood.php:32 include/Segmento.php:31
+msgid "Editar"
+msgstr ""
+
+#: include/CarouselHome.php:93 include/CategorySeaFood.php:37
+#: include/CategorySeaFood.php:38 include/Comportamiento.php:33
+#: include/Comportamiento.php:34 include/Encuesta.php:791
+#: include/Encuesta.php:791 include/Evento.php:33 include/Evento.php:34
+#: include/Inventario.php:35 include/Inventario.php:36 include/Noticia.php:33
+#: include/Noticia.php:34 include/OficinaComercial.php:36
+#: include/OficinaComercial.php:37 include/ResumenVentaSegTon.php:33
+#: include/ResumenVentaSegTon.php:34 include/ResumenVentaSegVal.php:33
+#: include/ResumenVentaSegVal.php:34 include/ResumenVentaTon.php:33
+#: include/ResumenVentaTon.php:34 include/ResumenVentaVal.php:33
+#: include/ResumenVentaVal.php:34 include/SeaFood.php:34 include/SeaFood.php:35
+#: include/Segmento.php:33 include/Segmento.php:34
+msgid "Ver"
+msgstr ""
+
+#: include/CarouselHome.php:94 include/Encuesta.php:65
+msgid "Actualizar"
+msgstr ""
+
+#: include/CarouselHome.php:96 include/CategorySeaFood.php:39
+#: include/Comportamiento.php:35 include/Evento.php:35
+#: include/Inventario.php:37 include/Noticia.php:35
+#: include/OficinaComercial.php:38 include/ResumenVentaSegTon.php:35
+#: include/ResumenVentaSegVal.php:35 include/ResumenVentaTon.php:35
+#: include/ResumenVentaVal.php:35 include/SeaFood.php:36
+#: include/Segmento.php:35
+msgid "Buscar"
+msgstr ""
+
+#: include/CarouselHome.php:97
+msgid "Carrusel de Portada padre"
+msgstr ""
+
+#: include/CarouselHome.php:98 include/CarouselHome.php:99
+#: include/Comportamiento.php:36 include/Directorio.php:36
+#: include/Encuesta.php:69 include/Encuesta.php:70 include/Evento.php:36
+#: include/Inventario.php:38 include/Noticia.php:36
+#: include/OficinaComercial.php:39 include/Receta.php:39
+#: include/ResumenVentaSegTon.php:36 include/ResumenVentaSegVal.php:36
+#: include/ResumenVentaTon.php:36 include/ResumenVentaVal.php:36
+#: include/SeaFood.php:37 include/Segmento.php:36
+msgid "Sin datos que mostrar"
+msgstr ""
+
+#: include/CarouselHome.php:142 include/CarouselHome.php:147
+msgid "La URL no es válida, su formato https://servidor o http://servidor."
+msgstr ""
+
+#: include/CarouselHome.php:180 include/Encuesta.php:406
+#, php-format
+msgid "There already exists an %s with that %s."
+msgstr ""
+
+#: include/CarouselHome.php:180
+msgid "diapositiva"
+msgstr ""
+
+#: include/CarouselHome.php:232 include/Evento.php:159
+msgid "Acciones"
+msgstr ""
+
+#: include/CarouselHome.php:259 include/Evento.php:698
+msgid "Cancelar"
+msgstr ""
+
+#: include/CarouselHome.php:274
+msgid "Image"
+msgstr ""
+
+#: include/CarouselHome.php:339 include/Encuesta.php:619
+#: include/Encuesta.php:790 include/Evento.php:707
+#: include/interested_links.php:423 include/interested_links.php:543
+msgid "Delete"
+msgstr ""
+
+#: include/CarouselHome.php:361
+msgid "¿Estás seguro que deseas eliminar las diapositivas seleccionadas?"
+msgstr ""
+
+#: include/CarouselHome.php:395
+#, php-format
+msgid "The carousel has been removed"
+msgid_plural "%s carousels have been removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/CarouselHome.php:404
+msgid ""
+"La diapositiva no puede ser eliminada. El sitio debe tener registrado al "
+"menos una diapositiva para mostrar en el carrusel de imágenes."
+msgstr ""
+
+#: include/CarouselHome.php:410 include/Encuesta.php:692
+#: include/interested_links.php:486
+msgid "La operación se ha realizado satisfactoriamente"
+msgstr ""
+
+#: include/CarouselHome.php:446 include/Evento.php:359
+#: include/OficinaComercial.php:342
+msgid "Imagen"
+msgstr ""
+
+#: include/CarouselHome.php:447 include/interested_links.php:268
+#: include/interested_links.php:524
+msgid "URL"
+msgstr ""
+
+#: include/CategorySeaFood.php:29 include/CategorySeaFood.php:32
+#: include/CategorySeaFood.php:58
+msgid "Categorías de productos"
+msgstr ""
+
+#: include/CategorySeaFood.php:40 include/CategorySeaFood.php:41
+msgid "No hay datos que mostrar"
+msgstr ""
+
+#: include/CategorySeaFood.php:42 include/CategorySeaFood.php:55
+msgid "Categoría de producto padre"
+msgstr ""
+
+#: include/CategorySeaFood.php:43 include/Directorio.php:39
+#: include/Evento.php:39 include/Noticia.php:39 include/OficinaComercial.php:42
+#: include/Receta.php:42 include/SeaFood.php:40
+msgid "Imagen destacada"
+msgstr ""
+
+#: include/CategorySeaFood.php:44 include/Directorio.php:40
+#: include/Evento.php:40 include/Noticia.php:40 include/OficinaComercial.php:43
+#: include/Receta.php:43 include/SeaFood.php:41
+msgid "Establecer imagen destacada"
+msgstr ""
+
+#: include/CategorySeaFood.php:45 include/Directorio.php:41
+#: include/OficinaComercial.php:44
+msgid "Remover imagen destacada"
+msgstr ""
+
+#: include/CategorySeaFood.php:46 include/Directorio.php:42
+#: include/Evento.php:42 include/Noticia.php:42 include/OficinaComercial.php:45
+#: include/Receta.php:45 include/SeaFood.php:43
+msgid "Usar imagen destacada"
+msgstr ""
+
+#: include/CategorySeaFood.php:47 include/Receta.php:46
+msgid "Archivos"
+msgstr ""
+
+#: include/CategorySeaFood.php:48 include/Directorio.php:44
+#: include/OficinaComercial.php:47 include/Receta.php:47
+msgid "Insertar"
+msgstr ""
+
+#: include/CategorySeaFood.php:49 include/Directorio.php:45
+#: include/OficinaComercial.php:48 include/Receta.php:48
+msgid "Subir"
+msgstr ""
+
+#: include/CategorySeaFood.php:50 include/Directorio.php:46
+#: include/Evento.php:46 include/Noticia.php:46 include/OficinaComercial.php:49
+#: include/SeaFood.php:47
+msgid "Filtrar"
+msgstr ""
+
+#: include/CategorySeaFood.php:51 include/Directorio.php:47
+#: include/Evento.php:47 include/Noticia.php:47 include/OficinaComercial.php:50
+#: include/Receta.php:50 include/SeaFood.php:48
+msgid "Lista de navegación"
+msgstr ""
+
+#: include/CategorySeaFood.php:52 include/Directorio.php:48
+#: include/Evento.php:48 include/Noticia.php:48 include/OficinaComercial.php:51
+#: include/SeaFood.php:49
+msgid "Listado"
+msgstr ""
+
+#: include/CategorySeaFood.php:53 include/Evento.php:49 include/Noticia.php:49
+#: include/SeaFood.php:50
+msgid "Atributos"
+msgstr ""
+
+#: include/CategorySeaFood.php:227
+#, php-format
+msgid "La categoría del producto se ha eliminado satisfactoriamente."
+msgid_plural "%s producto se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/CategorySeaFood.php:272 include/Evento.php:341
+#: include/Evento.php:574 include/OficinaComercial.php:341
+#: include/SeaFood.php:414
+msgid "Nombre"
+msgstr ""
+
+#: include/CategorySeaFood.php:305 include/CategorySeaFood.php:314
+#, php-format
+msgid "Are you sure you want delete %s (%s)?"
+msgstr ""
+
+#: include/CategorySeaFood.php:305 include/CategorySeaFood.php:314
+msgid "the category"
+msgstr ""
+
+#: include/CategorySeaFood.php:384
+#, php-format
+msgid "La categoría de producto ha sido eliminado satisfactoriamente."
+msgid_plural "Se han eliminado %s categorías de productos satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/CategorySeaFood.php:429 include/Noticia.php:513
+#: include/Receta.php:427
+#, php-format
+msgid "Ya existe una %s con ese campo: %s."
+msgstr ""
+
+#: include/CategorySeaFood.php:429
+msgid "categoría de producto"
+msgstr ""
+
+#: include/CategorySeaFood.php:446 include/Directorio.php:544
+#: include/Evento.php:245 include/Noticia.php:451
+#: include/OficinaComercial.php:570 include/Receta.php:444
+#: include/SeaFood.php:591 include/Segmento.php:334
+msgid "Las palabras deben contener menos de 100 caracteres."
+msgstr ""
+
+#: include/CategorySeaFood.php:466 include/Directorio.php:564
+#: include/Evento.php:265 include/OficinaComercial.php:589
+#: include/Receta.php:464 include/SeaFood.php:611
+msgid "Las palabras deben contener menos de 1000 caracteres."
+msgstr ""
+
+#: include/CategorySeaFood.php:483 include/Directorio.php:593
+#: include/Evento.php:283 include/Noticia.php:469
+#: include/OficinaComercial.php:682 include/Receta.php:481
+#: include/SeaFood.php:628
+#, php-format
+msgid "El campo %s debe contener al menos una letra."
+msgstr ""
+
+#: include/CategorySeaFood.php:494 include/Directorio.php:604
+#: include/Evento.php:294 include/Noticia.php:480
+#: include/OficinaComercial.php:693 include/Receta.php:492
+#: include/SeaFood.php:639 include/Segmento.php:349
+#, php-format
+msgid "El campo %s no puede contener solo espacios."
+msgstr ""
+
+#: include/CategorySeaFood.php:500 include/CategorySeaFood.php:506
+#, php-format
+msgid "El campo %s solo permite números enteros positivos."
+msgstr ""
+
+#: include/Comportamiento.php:25 include/Comportamiento.php:26
+#: include/Comportamiento.php:27 include/Comportamiento.php:28
+#: include/Comportamiento.php:38 include/Comportamiento.php:41
+msgid "Comportamiento de las entregas"
+msgstr ""
+
+#: include/Comportamiento.php:37 include/Directorio.php:37
+#: include/Evento.php:37 include/Inventario.php:39 include/Noticia.php:37
+#: include/OficinaComercial.php:40 include/Receta.php:40
+#: include/ResumenVentaSegTon.php:37 include/ResumenVentaSegVal.php:37
+#: include/ResumenVentaTon.php:37 include/ResumenVentaVal.php:37
+#: include/SeaFood.php:38 include/Segmento.php:37
+msgid "Sin datos que mostrar en la papelera"
+msgstr ""
+
+#: include/Comportamiento.php:286 include/Inventario.php:305
+#: include/ResumenVentaSegTon.php:318 include/ResumenVentaSegVal.php:319
+#: include/ResumenVentaTon.php:319 include/ResumenVentaVal.php:320
+msgid "Los valores deben contener menos de 12 caracteres."
+msgstr ""
+
+#: include/Comportamiento.php:303 include/Inventario.php:322
+#: include/ResumenVentaSegTon.php:335 include/ResumenVentaSegVal.php:336
+#: include/ResumenVentaTon.php:336 include/ResumenVentaVal.php:337
+#, php-format
+msgid "El campo %s debe contener números."
+msgstr ""
+
+#: include/Comportamiento.php:313
+#, php-format
+msgid "El comportamiento se ha eliminado satisfactoriamente."
+msgid_plural "%s comportamiento se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Comportamiento.php:388
+#, php-format
+msgid "Are you sure you want delete %s?"
+msgstr ""
+
+#: include/Comportamiento.php:388
+msgid "the sale information"
+msgstr ""
+
+#: include/Comportamiento.php:388 include/OficinaComercial.php:387
+#: include/ResumenVentaSegTon.php:428 include/ResumenVentaSegVal.php:429
+#: include/ResumenVentaVal.php:430
+#, php-format
+msgid "¿Estás seguro que deseas eliminar %s %s?"
+msgstr ""
+
+#: include/Comportamiento.php:388 include/OficinaComercial.php:387
+#: include/ResumenVentaSegTon.php:428 include/ResumenVentaSegVal.php:429
+#: include/ResumenVentaVal.php:430
+msgid "la oficina comercial"
+msgstr ""
+
+#: include/Comportamiento.php:453
+#, php-format
+msgid "El comportamiento ha sido eliminado satisfactoriamente."
+msgid_plural "Se han eliminado %s comportamientos satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/contact.php:21 include/contact.php:22 include/contact.php:89
+#: widgets/class-widget-contact.php:30 widgets/class-widget-contact.php:43
+msgid "Contact"
+msgstr ""
+
+#: include/contact.php:25 include/Encuesta.php:415
+#: include/interested_links.php:77
+msgid "Save"
+msgstr ""
+
+#: include/contact.php:26
+msgid "Contact Updated"
+msgstr ""
+
+#: include/contact.php:52
+msgid "Invalid Email"
+msgstr ""
+
+#: include/contact.php:74 include/Encuesta.php:321
+#: include/interested_links.php:347
+msgid "The words can be smaller than 25 characters"
+msgstr ""
+
+#: include/contact.php:177 include/contact.php:204
+msgid "Max Size is 100 characters."
+msgstr ""
+
+#: include/contact.php:372
+msgid "Incorrect Format. Should start with +53 followed by 8 digits."
+msgstr ""
+
+#: include/contact.php:382
+msgid ""
+"Incorrect Format in field Phone. Should start with +53 followed by 8 digits."
+msgstr ""
+
+#: include/Directorio.php:25 include/Directorio.php:26
+#: include/Directorio.php:27 include/Directorio.php:28
+#: include/Directorio.php:54
+msgid "Directorio de contactos"
+msgstr ""
+
+#: include/Directorio.php:31
+msgid "Editar contacto"
+msgstr ""
+
+#: include/Directorio.php:33
+msgid "Ver contacto"
+msgstr ""
+
+#: include/Directorio.php:34
+msgid "Ver contactos"
+msgstr ""
+
+#: include/Directorio.php:35
+msgid "Buscar contacto"
+msgstr ""
+
+#: include/Directorio.php:38 include/Directorio.php:51
+msgid "Contacto padre:"
+msgstr ""
+
+#: include/Directorio.php:43 include/Evento.php:43 include/Evento.php:483
+#: include/Noticia.php:43 include/OficinaComercial.php:46
+#: include/SeaFood.php:44
+msgid "Archivo"
+msgstr ""
+
+#: include/Directorio.php:49
+msgid "Atributos del contacto"
+msgstr ""
+
+#: include/Directorio.php:50
+msgid "Nuevo contacto al directorio"
+msgstr ""
+
+#: include/Directorio.php:291
+#, php-format
+msgid "El directorio se ha eliminado satisfactoriamente."
+msgid_plural "%s directorio se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Directorio.php:442
+#, php-format
+msgid "El directorio ha sido eliminado satisfactoriamente."
+msgid_plural "Se han eliminado %s directorios satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Directorio.php:487 include/Evento.php:327 include/SeaFood.php:574
+#: include/Segmento.php:317
+#, php-format
+msgid "Ya existe un %s con ese campo: %s."
+msgstr ""
+
+#: include/Directorio.php:487
+msgid "directorio"
+msgstr ""
+
+#: include/Directorio.php:504
+msgid "Las palabras deben contener menos de 30 caracteres."
+msgstr ""
+
+#: include/Directorio.php:524
+msgid "Las palabras deben contener menos de 50 caracteres."
+msgstr ""
+
+#: include/Directorio.php:579 include/Segmento.php:359
+#, php-format
+msgid "El campo %s debe contener solo letras."
+msgstr ""
+
+#: include/Directorio.php:612
+msgid ""
+"La dirección de correo registrada no es válida, el formato es "
+"nombre_de_usuario@servidor.dominio."
+msgstr ""
+
+#: include/Directorio.php:621
+msgid ""
+"El número telefónico registrado no es válido,  debe contener entre 8 y 12 "
+"dígitos."
+msgstr ""
+
+#: include/Directorio.php:632
+msgid ""
+"El teléfono registrado no es válido,  debe contener entre 8 y 12 dígitos."
+msgstr ""
+
+#: include/Encuesta.php:30
+#, php-format
+msgid "The questionary has been removed"
+msgid_plural "%s questionarys have been removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Encuesta.php:56 include/Encuesta.php:58 include/Encuesta.php:72
+#: include/Encuesta.php:406
+msgid "Encuesta"
+msgstr ""
+
+#: include/Encuesta.php:59
+msgid "Nueva encuesta"
+msgstr ""
+
+#: include/Encuesta.php:60 include/Encuesta.php:62
+msgid "Añadir encuesta"
+msgstr ""
+
+#: include/Encuesta.php:61
+msgid "Añadir nueva encuesta"
+msgstr ""
+
+#: include/Encuesta.php:63
+msgid "Editar encuesta"
+msgstr ""
+
+#: include/Encuesta.php:64
+msgid "Ver encuesta"
+msgstr ""
+
+#: include/Encuesta.php:66 include/Encuesta.php:71
+msgid "Encuestas"
+msgstr ""
+
+#: include/Encuesta.php:67
+msgid "Buscar encuesta"
+msgstr ""
+
+#: include/Encuesta.php:68
+msgid "Encuesta padre"
+msgstr ""
+
+#: include/Encuesta.php:157 include/Encuesta.php:746
+#: include/interested_links.php:205 include/interested_links.php:525
+msgid "Actions"
+msgstr ""
+
+#: include/Encuesta.php:194
+msgid "Resultado"
+msgstr ""
+
+#: include/Encuesta.php:219
+msgid "Historial"
+msgstr ""
+
+#: include/Encuesta.php:295
+msgid "Las respuestas no deben repetirse"
+msgstr ""
+
+#: include/Encuesta.php:338 include/interested_links.php:364
+#, php-format
+msgid "The field %s can contain at least a letter"
+msgstr ""
+
+#: include/Encuesta.php:349 include/interested_links.php:375
+#, php-format
+msgid "The field %s can not contain only spaces"
+msgstr ""
+
+#: include/Encuesta.php:435 include/interested_links.php:233
+msgid "Cancel"
+msgstr ""
+
+#: include/Encuesta.php:455
+msgid "The length of field has been minor than 100 characteres"
+msgstr ""
+
+#: include/Encuesta.php:638
+msgid "Are you sure you want delete the questionary selected?"
+msgstr ""
+
+#: include/Encuesta.php:642
+msgid "Are you sure you want delete the questionaries selecteds?"
+msgstr ""
+
+#: include/Encuesta.php:678
+#, php-format
+msgid "La encuesta se ha eliminado satisfactoriamente"
+msgid_plural "%s encuestas se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Encuesta.php:687
+msgid "La encuesta activada no puede ser eliminada"
+msgstr ""
+
+#: include/Encuesta.php:702
+msgid "Encuesta activa"
+msgstr ""
+
+#: include/Encuesta.php:741
+msgid "Pregunta"
+msgstr ""
+
+#: include/Encuesta.php:742
+msgid "Fecha creación"
+msgstr ""
+
+#: include/Encuesta.php:743
+msgid "Fecha desactivación"
+msgstr ""
+
+#: include/Encuesta.php:744
+msgid "Respuesta"
+msgstr ""
+
+#: include/Encuesta.php:745 include/Evento.php:418 include/Evento.php:577
+msgid "Estado"
+msgstr ""
+
+#: include/Encuesta.php:788
+msgid "Activate Encuesta"
+msgstr ""
+
+#: include/Encuesta.php:788
+msgid "Activar"
+msgstr ""
+
+#: include/Encuesta.php:790 include/interested_links.php:543
+#, php-format
+msgid "Are you sure you want delete %s %s?"
+msgstr ""
+
+#: include/Encuesta.php:790
+msgid "the questionarie"
+msgstr ""
+
+#: include/Encuesta.php:790
+msgid "Eliminar"
+msgstr ""
+
+#: include/Encuesta.php:806
+msgid " ha sido activada"
+msgstr ""
+
+#: include/Evento.php:25 include/Evento.php:27 include/Evento.php:28
+msgid "Eventos"
+msgstr ""
+
+#: include/Evento.php:26 include/Evento.php:50 include/Evento.php:53
+#: include/Evento.php:327
+msgid "Evento"
+msgstr ""
+
+#: include/Evento.php:38
+msgid "Evento padre"
+msgstr ""
+
+#: include/Evento.php:41 include/Noticia.php:41 include/Receta.php:44
+#: include/SeaFood.php:42
+msgid "Eliminar imagen destacada"
+msgstr ""
+
+#: include/Evento.php:44 include/Noticia.php:44 include/SeaFood.php:45
+msgid "Añadir a la página"
+msgstr ""
+
+#: include/Evento.php:45 include/Noticia.php:45 include/SeaFood.php:46
+msgid "Subir a esta página"
+msgstr ""
+
+#: include/Evento.php:121
+#, php-format
+msgid "El evento se ha eliminado satisfactoriamente."
+msgid_plural "%s evento se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Evento.php:193
+msgid "La fecha de publicación debe ser menor que la fecha fin."
+msgstr ""
+
+#: include/Evento.php:384 include/Evento.php:575
+msgid "Fecha de publicación"
+msgstr ""
+
+#: include/Evento.php:401 include/Evento.php:576
+msgid "Fecha fin"
+msgstr ""
+
+#: include/Evento.php:445
+msgid "Descripción"
+msgstr ""
+
+#: include/Evento.php:464
+msgid "Adjuntos"
+msgstr ""
+
+#: include/Evento.php:547
+#, php-format
+msgid "Se ha eliminado el evento satisfactoriamente."
+msgid_plural "Se han eliminado %s eventos satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Evento.php:556
+#, php-format
+msgid "El evento activado no puede ser eliminado."
+msgid_plural "%s eventos activos no pudieron ser eliminados."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Evento.php:721
+msgid "Are you sure you want delete the event selected?"
+msgstr ""
+
+#: include/Evento.php:724
+msgid "Are you sure you want delete the events selecteds?"
+msgstr ""
+
+#: include/interested_links.php:37
+#, php-format
+msgid "The links has been removed"
+msgid_plural "%s links have been removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/interested_links.php:55
+msgid "The links has been edited."
+msgstr ""
+
+#: include/interested_links.php:56
+msgid "Custom field updated."
+msgstr ""
+
+#: include/interested_links.php:57
+msgid "Custom field deleted."
+msgstr ""
+
+#: include/interested_links.php:58
+msgid "The links has been updated."
+msgstr ""
+
+#: include/interested_links.php:61 include/interested_links.php:62
+#: include/interested_links.php:63 include/interested_links.php:64
+#: include/interested_links.php:65
+msgid "Links saved."
+msgstr ""
+
+#: include/interested_links.php:80
+#, php-format
+msgid "%s has been create."
+msgstr ""
+
+#: include/interested_links.php:80 include/interested_links.php:83
+msgid "The Interest Link"
+msgstr ""
+
+#: include/interested_links.php:83
+#, php-format
+msgid "%s has been edited."
+msgstr ""
+
+#: include/interested_links.php:109 include/interested_links.php:111
+#: include/interested_links.php:124
+msgid "Links"
+msgstr ""
+
+#: include/interested_links.php:112 include/interested_links.php:125
+msgid "Link"
+msgstr ""
+
+#: include/interested_links.php:113
+msgid "Add new"
+msgstr ""
+
+#: include/interested_links.php:114
+msgid "Add new Link"
+msgstr ""
+
+#: include/interested_links.php:115
+msgid "New Link"
+msgstr ""
+
+#: include/interested_links.php:116
+msgid "Edit Link"
+msgstr ""
+
+#: include/interested_links.php:117
+msgid "View Link"
+msgstr ""
+
+#: include/interested_links.php:118
+msgid "Update Link"
+msgstr ""
+
+#: include/interested_links.php:119
+msgid "All Links"
+msgstr ""
+
+#: include/interested_links.php:120
+msgid "Search Links"
+msgstr ""
+
+#: include/interested_links.php:121
+msgid "Parent Link"
+msgstr ""
+
+#: include/interested_links.php:122
+msgid "No Links found"
+msgstr ""
+
+#: include/interested_links.php:123
+msgid "No Links found in Trash"
+msgstr ""
+
+#: include/interested_links.php:245 include/interested_links.php:407
+msgid "Interest Link"
+msgstr ""
+
+#: include/interested_links.php:249 include/interested_links.php:523
+msgid "Title"
+msgstr ""
+
+#: include/interested_links.php:252
+msgid "Max Size 50 characters."
+msgstr ""
+
+#: include/interested_links.php:271
+msgid "Format: https://servidor o http://servidor"
+msgstr ""
+
+#: include/interested_links.php:326
+msgid "Invalid URL"
+msgstr ""
+
+#: include/interested_links.php:407
+#, php-format
+msgid "There already exists a %s with that %s."
+msgstr ""
+
+#: include/interested_links.php:442
+msgid "Are you sure you want delete the link selected?"
+msgstr ""
+
+#: include/interested_links.php:446
+msgid "Are you sure you want delete the links selecteds?"
+msgstr ""
+
+#: include/interested_links.php:478
+#, php-format
+msgid "The link has been removed"
+msgid_plural "%s links have been removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/interested_links.php:542
+msgid "Edit"
+msgstr ""
+
+#: include/interested_links.php:543
+msgid "the interest link"
+msgstr ""
+
+#: include/Inventario.php:27 include/Inventario.php:28
+#: include/Inventario.php:29 include/Inventario.php:30
+#: include/Inventario.php:40 include/Inventario.php:43
+msgid "Inventario"
+msgstr ""
+
+#: include/Inventario.php:287
+#, php-format
+msgid "Ya existe un %s con el campo: %s."
+msgstr ""
+
+#: include/Inventario.php:287
+msgid "inventario"
+msgstr ""
+
+#: include/Inventario.php:332
+#, php-format
+msgid "El inventario se ha eliminado satisfactoriamente."
+msgid_plural "%s inventario se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Inventario.php:463
+#, php-format
+msgid "El inventario ha sido eliminado satisfactoriamente."
+msgid_plural "Se han eliminado %s inventarios satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Noticia.php:25 include/Noticia.php:27 include/Noticia.php:28
+msgid "Noticias"
+msgstr ""
+
+#: include/Noticia.php:26 include/Noticia.php:50 include/Noticia.php:513
+msgid "Noticia"
+msgstr ""
+
+#: include/Noticia.php:38
+msgid "Noticia padre"
+msgstr ""
+
+#: include/Noticia.php:118
+#, php-format
+msgid "La noticia se ha eliminado satisfactoriamente."
+msgid_plural "%s producto se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Noticia.php:431
+msgid "Las palabras deben contener menos de 80 caracteres."
+msgstr ""
+
+#: include/OficinaComercial.php:28 include/OficinaComercial.php:30
+#: include/OficinaComercial.php:31 include/OficinaComercial.php:56
+msgid "Oficinas comerciales"
+msgstr ""
+
+#: include/OficinaComercial.php:41
+msgid "Oficina comercial padre:"
+msgstr ""
+
+#: include/OficinaComercial.php:52
+msgid "Atributos de la empresa"
+msgstr ""
+
+#: include/OficinaComercial.php:296
+#, php-format
+msgid "La oficina comercial se ha eliminado satisfactoriamente."
+msgid_plural "%s oficina comercial se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/OficinaComercial.php:488
+#, php-format
+msgid "La oficina comercial ha sido eliminada satisfactoriamente."
+msgid_plural "Se han eliminado %s oficinas comerciales satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/OficinaComercial.php:533
+#, php-format
+msgid "Ya existe una %s con el campo: %s."
+msgstr ""
+
+#: include/OficinaComercial.php:533
+msgid "oficina comercial"
+msgstr ""
+
+#: include/OficinaComercial.php:550
+msgid "Las palabras deben contener menos de 40 caracteres."
+msgstr ""
+
+#: include/OficinaComercial.php:617
+msgid "Este tipo de archivo no está permitido."
+msgstr ""
+
+#: include/OficinaComercial.php:634
+msgid ""
+"Solo se admite n&uacute;meros telef&oacute;nicos separados por coma. <strong>"
+"e.g: (+53)78352266, 22637945</strong>"
+msgstr ""
+
+#: include/OficinaComercial.php:647
+msgid ""
+"Este campo solo admite n&uacute;meros telef&oacute;nicos, separados por coma."
+" <strong>e.g: (+53)78352266, 22637945</strong>"
+msgstr ""
+
+#: include/OficinaComercial.php:667
+msgid ""
+"Solo se admite direcciones de correo separadas por coma. <strong>e.g: "
+"usuario@dominio.com, nombre.apellido@dominio.com</strong>"
+msgstr ""
+
+#: include/Receta.php:28 include/Receta.php:30 include/Receta.php:31
+#: include/Receta.php:57
+msgid "Recetas"
+msgstr ""
+
+#: include/Receta.php:29 include/Receta.php:53
+msgid "Receta"
+msgstr ""
+
+#: include/Receta.php:34
+msgid "Editar receta"
+msgstr ""
+
+#: include/Receta.php:36
+msgid "Ver receta"
+msgstr ""
+
+#: include/Receta.php:37
+msgid "Ver recetas"
+msgstr ""
+
+#: include/Receta.php:38
+msgid "Buscar receta"
+msgstr ""
+
+#: include/Receta.php:41 include/Receta.php:54
+msgid "Receta padre:"
+msgstr ""
+
+#: include/Receta.php:49
+msgid "Filtrar recetas"
+msgstr ""
+
+#: include/Receta.php:51
+msgid "Lista de recetas"
+msgstr ""
+
+#: include/Receta.php:52
+msgid "Atributos de la receta"
+msgstr ""
+
+#: include/Receta.php:227
+#, php-format
+msgid "La receta se ha eliminado satisfactoriamente."
+msgid_plural "%s producto se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Receta.php:259
+#, php-format
+msgid "La receta ha sido eliminada satisfactoriamente."
+msgid_plural "Se han eliminado %s recetas satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Receta.php:427
+msgid "receta"
+msgstr ""
+
+#: include/ResumenVentaSegTon.php:25 include/ResumenVentaSegTon.php:26
+#: include/ResumenVentaSegTon.php:27 include/ResumenVentaSegTon.php:28
+#: include/ResumenVentaSegTon.php:38 include/ResumenVentaSegTon.php:41
+msgid "Resumen de ventas segmentadas (Ton)"
+msgstr ""
+
+#: include/ResumenVentaSegTon.php:301 include/ResumenVentaSegVal.php:302
+#, php-format
+msgid "Ya existe un %s con este nombre."
+msgstr ""
+
+#: include/ResumenVentaSegTon.php:345
+#, php-format
+msgid ""
+"El resumen de ventas segmentadas (Ton) se ha eliminado satisfactoriamente."
+msgid_plural ""
+"%s resumen de ventas segmentadas (Ton) se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/ResumenVentaSegTon.php:492
+#, php-format
+msgid ""
+"El resumen de ventas segmentadas (Ton) ha sido eliminado satisfactoriamente."
+msgid_plural ""
+"Se han eliminado %s resumen de ventas segmentadas (Ton) satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/ResumenVentaSegVal.php:25 include/ResumenVentaSegVal.php:26
+#: include/ResumenVentaSegVal.php:27 include/ResumenVentaSegVal.php:28
+#: include/ResumenVentaSegVal.php:38 include/ResumenVentaSegVal.php:41
+msgid "Resumen de ventas segmentadas (Valor)"
+msgstr ""
+
+#: include/ResumenVentaSegVal.php:346
+#, php-format
+msgid ""
+"El resumen de ventas segmentadas (Valor) se ha eliminado satisfactoriamente."
+msgid_plural ""
+"%s resumen de ventas segmentadas (Valor) se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/ResumenVentaSegVal.php:493
+#, php-format
+msgid ""
+"El resumen de ventas segmentadas (Valor) ha sido eliminado "
+"satisfactoriamente."
+msgid_plural ""
+"Se han eliminado %s resumen de ventas segmentadas (Valor) satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/ResumenVentaTon.php:25 include/ResumenVentaTon.php:26
+#: include/ResumenVentaTon.php:27 include/ResumenVentaTon.php:28
+#: include/ResumenVentaTon.php:40
+msgid "Resumen de ventas (Ton)"
+msgstr ""
+
+#: include/ResumenVentaTon.php:302 include/ResumenVentaVal.php:303
+msgid "Ya existe un resumen de ventas con este producto."
+msgstr ""
+
+#: include/ResumenVentaTon.php:346
+#, php-format
+msgid "El resumen de ventas (Ton) se ha eliminado satisfactoriamente."
+msgid_plural ""
+"%s resumenes de ventas (Ton) se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/ResumenVentaTon.php:491
+#, php-format
+msgid "El resumen de ventas (Ton) ha sido eliminado satisfactoriamente."
+msgid_plural "Se han eliminado %s resumen de ventas (Ton) satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/ResumenVentaVal.php:25 include/ResumenVentaVal.php:26
+#: include/ResumenVentaVal.php:27 include/ResumenVentaVal.php:28
+#: include/ResumenVentaVal.php:38 include/ResumenVentaVal.php:41
+msgid "Resumen de ventas (Valor)"
+msgstr ""
+
+#: include/ResumenVentaVal.php:347
+#, php-format
+msgid "El resumen de ventas (Valor) se ha eliminado satisfactoriamente."
+msgid_plural ""
+"%s resumen de ventas (Valor) se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/ResumenVentaVal.php:493
+#, php-format
+msgid "El resumen de ventas (Valor) ha sido eliminado satisfactoriamente."
+msgid_plural ""
+"Se han eliminado %s resumen de ventas (Valor) satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/SeaFood.php:26 include/SeaFood.php:28 include/SeaFood.php:29
+#: include/SeaFood.php:55
+msgid "Productos"
+msgstr ""
+
+#: include/SeaFood.php:39 include/SeaFood.php:52
+msgid "Producto padre"
+msgstr ""
+
+#: include/SeaFood.php:376
+#, php-format
+msgid "El producto se ha eliminado satisfactoriamente."
+msgid_plural "%s producto se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/SeaFood.php:529
+#, php-format
+msgid "El producto ha sido eliminado satisfactoriamente."
+msgid_plural "Se han eliminado %s productos satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/SeaFood.php:574
+msgid "producto"
+msgstr ""
+
+#: include/Segmento.php:25 include/Segmento.php:28 include/Segmento.php:42
+msgid "Segmentos"
+msgstr ""
+
+#: include/Segmento.php:38
+msgid "Segemento padre"
+msgstr ""
+
+#: include/Segmento.php:149
+#, php-format
+msgid "El segmento se ha eliminado satisfactoriamente."
+msgid_plural "%s segmentos se han eliminado satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Segmento.php:272
+#, php-format
+msgid "El segmento ha sido eliminado satisfactoriamente."
+msgid_plural "Se han eliminado %s segmentos satisfactoriamente."
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/Segmento.php:317
+msgid "segmento"
+msgstr ""
+
+#: widgets/class-widget-contact.php:27
+msgid "The contact widget."
+msgstr ""
+
+#: widgets/class-widget-develop-lines.php:27
+msgid "The develop lines of your site."
+msgstr ""
+
+#: widgets/class-widget-develop-lines.php:30
+#: widgets/class-widget-develop-lines.php:43
+msgid "Develop Lines"
+msgstr ""
+
+#: widgets/class-widget-develop-lines.php:91
+msgid "Read More"
+msgstr ""
+
+#: widgets/class-widget-interest-links.php:27
+msgid "The interest links of your site."
+msgstr ""
+
+#: widgets/class-widget-interest-links.php:30
+#: widgets/class-widget-interest-links.php:43
+msgid "Interest Links"
+msgstr ""
+
+#: widgets/class-widget-questionarie.php:27
+msgid "The questionarie widget."
+msgstr ""
+
+#: widgets/class-widget-questionarie.php:30
+#: widgets/class-widget-questionarie.php:43
+msgid "Questionarie"
+msgstr ""
+
+#: widgets/class-widget-questionarie.php:86
+msgid "Vote"
+msgstr ""
+
+#: widgets/class-widget-questionarie.php:124
+msgid "No existe Encuesta activa para mostrar."
+msgstr ""
+
+#: widgets/class-widget-questionarie.php:129
+msgid "No existe Encuesta para mostrar."
+msgstr ""
+
+#. Name of the plugin
+msgid "DESOFT Plugin - Functions & Widgets"
+msgstr ""
+
+#. Description of the plugin
+msgid "Tools for the website developed by DESOFT & powered by Wordpress."
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.desoft.cu"
+msgstr ""
+
+#. Author of the plugin
+msgid "DESOFT"
+msgstr ""

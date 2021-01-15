@@ -1,0 +1,863 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Responsive Posts Carousel Pro\n"
+"POT-Creation-Date: 2018-11-28 14:55+0500\n"
+"PO-Revision-Date: 2018-11-28 14:56+0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: index.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: carousel.class.php:57 inc/settings-fields.php:78
+#, fuzzy
+msgid "Content"
+msgstr "Stellen Sie Inhalte für bereits eingeloggte Benutzer bereit"
+
+#: carousel.class.php:62
+msgid "Slider"
+msgstr "Slider"
+
+#: carousel.class.php:67
+msgid "Colors"
+msgstr "Farben"
+
+#: carousel.class.php:72
+msgid "Typography"
+msgstr "Typografie"
+
+#: carousel.class.php:77 inc/settings-fields.php:159
+msgid "Arrows"
+msgstr "Pfeile"
+
+#: carousel.class.php:82
+msgid "Advanced"
+msgstr "Erweitert"
+
+#: carousel.class.php:163
+msgid "Default"
+msgstr "Standard"
+
+#: carousel.class.php:192 carousel.class.php:354
+#, fuzzy
+msgid "Sorry! this Taxonomy has no Terms."
+msgstr "Tut mir Leid! Diese Taxonomie hat keine Bedingungen."
+
+#: carousel.class.php:206
+#, fuzzy
+msgid "Please select any taxonomy first"
+msgstr "Bitte wählen Sie zuerst eine Taxonomie aus"
+
+#: carousel.class.php:255
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: carousel.class.php:269
+#, fuzzy
+msgid "Paste above shortcode in the page where you want to display slider."
+msgstr ""
+"Fügen Sie über den Kurzcode in die Seite ein, auf der Sie Schieberegler "
+"anzeigen möchten."
+
+#: carousel.class.php:281
+#, fuzzy
+msgid "You can contact us"
+msgstr "Sie können uns kontaktieren"
+
+#: carousel.class.php:282
+msgid "here"
+msgstr "Hier"
+
+#: carousel.class.php:283
+#, fuzzy
+msgid "for help"
+msgstr "Hilfe Text"
+
+#: carousel.class.php:284
+#, fuzzy
+msgid "Purchase Premium version and unlock"
+msgstr "Premium-Version kaufen und entsperren"
+
+#: carousel.class.php:287
+#, fuzzy
+msgid "20+ Premium Templates"
+msgstr "20 + Premium-Vorlagen"
+
+#: carousel.class.php:288
+#, fuzzy
+msgid "15+ Networks for Social Sharing"
+msgstr "15 + Netzwerke für Social Sharing"
+
+#: carousel.class.php:289
+#, fuzzy
+msgid "Access to Premium Support Forum"
+msgstr "Zugang zum Premium-Support-Forum"
+
+#: carousel.class.php:290
+#, fuzzy
+msgid "Lifetime Free Updates"
+msgstr "Lebenslange kostenlose Updates"
+
+#: carousel.class.php:294
+msgid "Purchase Pro Version"
+msgstr "Kaufen Sie Pro Version"
+
+#: carousel.class.php:322
+#, fuzzy
+msgid "Please provide carousel id in shortcode"
+msgstr "Bitte geben Sie Karussell-ID in Shortcode an"
+
+#: carousel.class.php:343
+msgid "All"
+msgstr "Alle"
+
+#: carousel.class.php:531
+msgid "Shortcode"
+msgstr "Shortcode "
+
+#: carousel.class.php:596
+msgid "Template not Found"
+msgstr "template wurde nicht gefunden"
+
+#: inc/register-carousel.php:3
+msgctxt "Carousel"
+msgid "Carousels"
+msgstr "Carousels"
+
+#: inc/register-carousel.php:4
+#, fuzzy
+msgctxt "Carousel"
+msgid "Carousel"
+msgstr "Neues Carousel hinzufügen"
+
+#: inc/register-carousel.php:5
+msgctxt "admin menu"
+msgid "Carousels"
+msgstr "Carousels"
+
+#: inc/register-carousel.php:6
+#, fuzzy
+msgctxt "Carousels"
+msgid "Carousel"
+msgstr "Neues Carousel hinzufügen"
+
+#: inc/register-carousel.php:7
+msgctxt "Carousel"
+msgid "Add New"
+msgstr "Neue hinzufügen"
+
+#: inc/register-carousel.php:8
+msgid "Add New Carousel"
+msgstr "Neues Carousel hinzufügen"
+
+#: inc/register-carousel.php:9
+#, fuzzy
+msgid "New Carousel"
+msgstr "Neues Carousel hinzufügen"
+
+#: inc/register-carousel.php:10
+msgid "Edit Carousel"
+msgstr "Carousel bearbeiten"
+
+#: inc/register-carousel.php:11
+#, fuzzy
+msgid "View Carousel"
+msgstr "Karussell ansehen"
+
+#: inc/register-carousel.php:12
+msgid "All Carousels"
+msgstr "Alle Carousels"
+
+#: inc/register-carousel.php:13
+msgid "Search Carousels"
+msgstr "Suche Carousel"
+
+#: inc/register-carousel.php:14
+#, fuzzy
+msgid "Parent Carousels:"
+msgstr "Eltern Carousels:"
+
+#: inc/register-carousel.php:15
+#, fuzzy
+msgid "No Carousel found."
+msgstr "Kein Karussell gefunden"
+
+#: inc/register-carousel.php:16
+#, fuzzy
+msgid "No Carousel found in Trash."
+msgstr "Kein Karussell in Müll gefunden"
+
+#: inc/register-carousel.php:21
+#, fuzzy
+msgid "Create Posts Carousels."
+msgstr "Erstellen Sie Beiträge Carousels."
+
+#: inc/settings-fields.php:8
+#, fuzzy
+msgid "Display By"
+msgstr "Zeigen Sie eine einzelne Eigenschaft an"
+
+#: inc/settings-fields.php:9
+#, fuzzy
+msgid "How you want to display carousel"
+msgstr "Wie Sie Karussell anzeigen wollen"
+
+#: inc/settings-fields.php:11
+#, fuzzy
+msgid "By Post Type"
+msgstr "Bitte wählen Sie einen Einitragstyp"
+
+#: inc/settings-fields.php:12
+#, fuzzy
+msgid "By Taxonomy"
+msgstr "Taxonomy wählen"
+
+#: inc/settings-fields.php:20 inc/settings-fields.php:21
+msgid "Select Taxonomy"
+msgstr "Taxonomy wählen"
+
+#: inc/settings-fields.php:28
+msgid "Select Term"
+msgstr "Begriff auswählen"
+
+#: inc/settings-fields.php:29
+msgid "Select Terms"
+msgstr "Werte auswählen"
+
+#: inc/settings-fields.php:36 inc/settings-fields.php:37
+msgid "Select Post Type"
+msgstr "Bitte wählen Sie einen Einitragstyp"
+
+#: inc/settings-fields.php:44
+msgid "Select Posts"
+msgstr "Beiträge auswählen"
+
+#: inc/settings-fields.php:45
+#, fuzzy
+msgid "Choose posts to display in carousel"
+msgstr "Wählen Sie Beiträge, um im Karussell anzuzeigen"
+
+#: inc/settings-fields.php:52
+msgid "Exclude Posts"
+msgstr "Beiträge ausschließen"
+
+#: inc/settings-fields.php:53
+#, fuzzy
+msgid "Comma separated ids of posts that you do not want to display"
+msgstr "Komma getrennte IDs von Beiträgen, die Sie nicht anzeigen wollen"
+
+#: inc/settings-fields.php:60
+msgid "Post Style"
+msgstr "Post Stil"
+
+#: inc/settings-fields.php:61
+#, fuzzy
+msgid "Choose post style to display in slider"
+msgstr "Wählen Sie den Post-Stil, um im Schieberegler angezeigt zu werden"
+
+#: inc/settings-fields.php:68
+msgid "Title"
+msgstr "Titel"
+
+#: inc/settings-fields.php:69
+#, fuzzy
+msgid "Provide post meta key to display as heading."
+msgstr ""
+"Geben Sie die Post-Meta-Taste an, die als Überschrift angezeigt werden soll."
+
+#: inc/settings-fields.php:70 inc/settings-fields.php:80
+#: inc/settings-fields.php:90 inc/settings-fields.php:217
+#: inc/settings-fields.php:228
+msgid "Example"
+msgstr "Beispiel"
+
+#: inc/settings-fields.php:79
+#, fuzzy
+msgid "Provide post meta key to display as description."
+msgstr "Geben Sie die Post-Meta-Taste an, um sie als Beschreibung anzuzeigen."
+
+#: inc/settings-fields.php:88
+#, fuzzy
+msgid "Description Words Length"
+msgstr "Beschreibung Wörter Länge"
+
+#: inc/settings-fields.php:89
+#, fuzzy
+msgid "Maximum words to display for description."
+msgstr "Maximale Wörter, die zur Beschreibung angezeigt werden."
+
+#: inc/settings-fields.php:97
+msgid "Read More Button Text"
+msgstr "Mehr dazu Button Text"
+
+#: inc/settings-fields.php:98
+#, fuzzy
+msgid "Provide text for read more button, leave blank to disable"
+msgstr "Text für das Lesen von mehr Knopf, lassen Sie leer, um zu deaktivieren"
+
+#: inc/settings-fields.php:105
+#, fuzzy
+msgid "Read More Button CSS Classes"
+msgstr "Lesen Sie mehr Button CSS-Klassen"
+
+#: inc/settings-fields.php:106
+#, fuzzy
+msgid "Provide css classes for styling of button"
+msgstr "Stellen Sie css-Kurse für das Styling der Taste"
+
+#: inc/settings-fields.php:113
+msgid "Link Target"
+msgstr "Link Ziel"
+
+#: inc/settings-fields.php:114
+#, fuzzy
+msgid "How you want to open links"
+msgstr "Wie Sie Links öffnen wollen"
+
+#: inc/settings-fields.php:116
+msgid "Same Tab"
+msgstr "Selber Tab"
+
+#: inc/settings-fields.php:117
+msgid "New Tab"
+msgstr "Neuen Tab hinzufügen"
+
+#: inc/settings-fields.php:125
+#, fuzzy
+msgid "Disable Post Meta (author, date etc)"
+msgstr "Deaktivieren Sie Post Meta (Autor, Datum etc.)"
+
+#: inc/settings-fields.php:126
+#, fuzzy
+msgid "Check this button to hide post meta"
+msgstr "Klicken Sie auf diesen Knopf, um Postmeta zu verstecken"
+
+#: inc/settings-fields.php:135
+msgid "Accessibility"
+msgstr "Barrierefrei"
+
+#: inc/settings-fields.php:136
+#, fuzzy
+msgid "Enables tabbing and arrow key navigation"
+msgstr "Ermöglicht Tabbing und Pfeilschlüssel-Navigation"
+
+#: inc/settings-fields.php:143
+msgid "Auto Play"
+msgstr "Automatische Wiedergabe"
+
+#: inc/settings-fields.php:144
+#, fuzzy
+msgid "Enables auto play of slides"
+msgstr "Ermöglicht das automatische Spiel der Dias"
+
+#: inc/settings-fields.php:151
+#, fuzzy
+msgid "Bottom Dots"
+msgstr "Aktivieren, um untere Punkte für die Navigation anzuzeigen"
+
+#: inc/settings-fields.php:152
+#, fuzzy
+msgid "Check to enable current slide indicator dots"
+msgstr "Überprüfen, um die aktuellen Dia-Indikator-Punkte zu aktivieren"
+
+#: inc/settings-fields.php:160
+#, fuzzy
+msgid "Check to enable Next/Prev arrows"
+msgstr "Überprüfen Sie, ob Next/Prev Pfeile aktivieren können"
+
+#: inc/settings-fields.php:167
+msgid "Auto Play Speed"
+msgstr "Automatische Wiedergabegeschwindigkeit"
+
+#: inc/settings-fields.php:168
+#, fuzzy
+msgid "Auto play change interval in milliseconds"
+msgstr "Auto Spiel-Wechselintervall in Millisekunden"
+
+#: inc/settings-fields.php:175
+#, fuzzy
+msgid "Number of Columns (Desktop)"
+msgstr "Anzahl der Säulen (Desktop)"
+
+#: inc/settings-fields.php:176
+#, fuzzy
+msgid "Number of posts to show at a time in a row for desktop view"
+msgstr ""
+"Anzahl der Beiträge, die zu einer Zeit in einer Reihe für die Desktop-"
+"Ansicht angezeigt werden"
+
+#: inc/settings-fields.php:183
+#, fuzzy
+msgid "Number of Columns (Tablet)"
+msgstr "Anzahl der Spalten (Tablet)"
+
+#: inc/settings-fields.php:184
+#, fuzzy
+msgid "Number of posts to show at a time in a row for tablet view"
+msgstr ""
+"Anzahl der Beiträge, die zu einer Zeit in Folge für Tablet-Ansicht angezeigt "
+"werden"
+
+#: inc/settings-fields.php:191
+msgid "Number of Columns (Mobile)"
+msgstr "Anzahl der Spalten (Mobil)"
+
+#: inc/settings-fields.php:192
+#, fuzzy
+msgid "Number of posts to show at a time in a row for mobile view"
+msgstr ""
+"Anzahl der Beiträge, die zu einer Zeit in Folge für mobile Ansicht angezeigt "
+"werden"
+
+#: inc/settings-fields.php:199
+#, fuzzy
+msgid "Number of Posts To Slide"
+msgstr "Anzahl der Stellen zum Rutschen"
+
+#: inc/settings-fields.php:200
+#, fuzzy
+msgid "Number of posts to slide at a time"
+msgstr "Anzahl der Beiträge, die gleichzeitig rutschen"
+
+#: inc/settings-fields.php:207
+msgid "Slide Speed"
+msgstr "Geschwindigkeit der Slide"
+
+#: inc/settings-fields.php:208
+#, fuzzy
+msgid "Transition speed in milliseconds"
+msgstr "Übergangsgeschwindigkeit in Millisekunden"
+
+#: inc/settings-fields.php:215
+#, fuzzy
+msgid "Space Between Posts"
+msgstr "Raum zwischen Posts"
+
+#: inc/settings-fields.php:216
+#, fuzzy
+msgid "Margin will apply to both sides. Provide with unit."
+msgstr "Die Marge wird für beide Seiten gelten. Mit Einheit versorgen."
+
+#: inc/settings-fields.php:226
+msgid "Border Width"
+msgstr "Rahmenbreite"
+
+#: inc/settings-fields.php:227
+#, fuzzy
+msgid "Provide width for border with unit. Leave blank to disable border."
+msgstr ""
+"Geben Sie die Breite für die Grenze mit der Einheit. Lassen Sie die Grenze "
+"leer."
+
+#: inc/settings-fields.php:235
+msgid "Border Color"
+msgstr "Randfarbe"
+
+#: inc/settings-fields.php:236
+#, fuzzy
+msgid "Choose color for border"
+msgstr "Wählen Sie Farbe für Rand"
+
+#: inc/settings-fields.php:244
+msgid "Solid"
+msgstr "Solide"
+
+#: inc/settings-fields.php:245
+msgid "Dotted"
+msgstr "Dotted"
+
+#: inc/settings-fields.php:246
+msgid "Dashed"
+msgstr "Gestrichelt"
+
+#: inc/settings-fields.php:247
+msgid "Double"
+msgstr "Doppelt"
+
+#: inc/settings-fields.php:248
+msgid "Groove"
+msgstr "Rille"
+
+#: inc/settings-fields.php:249
+msgid "Ridge"
+msgstr "Grat"
+
+#: inc/settings-fields.php:250
+msgid "Inset"
+msgstr "Einsatz"
+
+#: inc/settings-fields.php:251
+msgid "Outset"
+msgstr "Anfang"
+
+#: inc/settings-fields.php:253
+msgid "Border Type"
+msgstr "Border-Typ"
+
+#: inc/settings-fields.php:254
+#, fuzzy
+msgid "Choose type for border"
+msgstr "Wählen Sie Typ für die Grenze"
+
+#: inc/settings-fields.php:261
+msgid "Title Background Color"
+msgstr "Titel Hintergrund Farbe"
+
+#: inc/settings-fields.php:262
+#, fuzzy
+msgid "Choose Title Background Color."
+msgstr "Wählen Sie die Titel-Background-Farbe."
+
+#: inc/settings-fields.php:263 inc/settings-fields.php:272
+#: inc/settings-fields.php:281 inc/settings-fields.php:290
+#: inc/settings-fields.php:299 inc/settings-fields.php:308
+#: inc/settings-fields.php:317
+#, fuzzy
+msgid "Leave blank for default settings."
+msgstr "Lassen Sie leer, um die Standardeinstellungen zu verwenden."
+
+#: inc/settings-fields.php:270
+msgid "Title Color"
+msgstr "Titelfarbe"
+
+#: inc/settings-fields.php:271
+#, fuzzy
+msgid "Choose Title text color."
+msgstr "Wählen Sie die Textfarbe Titel."
+
+#: inc/settings-fields.php:279
+msgid "Description Color"
+msgstr "Beschreibungs- Farbe"
+
+#: inc/settings-fields.php:280
+#, fuzzy
+msgid "Choose description text color."
+msgstr "Wählen Sie die Farbe der Beschreibung aus."
+
+#: inc/settings-fields.php:288
+msgid "Description Background Color"
+msgstr "Hintergrundfarbe für den Accordioninhalt"
+
+#: inc/settings-fields.php:289
+#, fuzzy
+msgid "Choose description background color."
+msgstr "Wählen Sie die Hintergrundfarbe der Beschreibung."
+
+#: inc/settings-fields.php:297
+#, fuzzy
+msgid "Date Background Color"
+msgstr "Datumsgrund Farbe"
+
+#: inc/settings-fields.php:298
+#, fuzzy
+msgid "Choose date background color."
+msgstr "Wählen Sie Datum Hintergrundfarbe."
+
+#: inc/settings-fields.php:306
+#, fuzzy
+msgid "Date Text Color"
+msgstr "Datum Textfarbe"
+
+#: inc/settings-fields.php:307
+#, fuzzy
+msgid "Choose date text color."
+msgstr "Wählen Sie Datumstext-Farbe."
+
+#: inc/settings-fields.php:315
+msgid "Overlay Background Color"
+msgstr "Hintergrundfarbe Überlagerung"
+
+#: inc/settings-fields.php:316
+#, fuzzy
+msgid "Choose color for overlay."
+msgstr "Wählen Sie die Farbe für Overlay."
+
+#: inc/settings-fields.php:324
+msgid "Shadow"
+msgstr "Schatten"
+
+#: inc/settings-fields.php:325
+#, fuzzy
+msgid "Provide shadow values as"
+msgstr "Schattenwerte als"
+
+#: inc/settings-fields.php:327
+#, fuzzy
+msgid "Generate Shadow"
+msgstr "Schatten erzeugen"
+
+#: inc/settings-fields.php:335
+msgid "Custom CSS"
+msgstr "Benutzerdefinierte CSS"
+
+#: inc/settings-fields.php:336
+msgid "Paste custom css code here"
+msgstr "Fügen Sie hier Ihren eigenen CSS Code ein."
+
+#: inc/settings-fields.php:345
+msgid "Title Font Family"
+msgstr "Schriftfamilie für Title"
+
+#: inc/settings-fields.php:346
+#, fuzzy
+msgid "Provide font name for title"
+msgstr "Geben Sie den Schriftnamen für den Titel an"
+
+#: inc/settings-fields.php:353
+msgid "Title Font Size"
+msgstr "Titel Schriftgröße"
+
+#: inc/settings-fields.php:354
+#, fuzzy
+msgid "Provide font size for title with unit"
+msgstr "Schriftgröße für Titel mit Einheit versehen"
+
+#: inc/settings-fields.php:361
+msgid "Description Font Family"
+msgstr "Beschreibung Schriftart"
+
+#: inc/settings-fields.php:362
+#, fuzzy
+msgid "Provide font name for description"
+msgstr "Schriftname zur Beschreibung angeben"
+
+#: inc/settings-fields.php:369
+msgid "Description Font Size"
+msgstr "Schriftgröße für Akkordioninhalt"
+
+#: inc/settings-fields.php:370
+#, fuzzy
+msgid "Provide font size for description with unit"
+msgstr "Geben Sie Schriftgröße für Beschreibung mit Gerät"
+
+#: inc/settings-fields.php:379
+#, fuzzy
+msgid "Arrows Type"
+msgstr "Pfeile-Typ"
+
+#: inc/settings-fields.php:380
+#, fuzzy
+msgid "Choose navigation arrows type here"
+msgstr "Hier wählen Sie den Navigationspfeilentyp"
+
+#: inc/settings-fields.php:382 inc/settings-fields.php:404
+msgid "Circle"
+msgstr "Kreis"
+
+#: inc/settings-fields.php:383
+#, fuzzy
+msgid "Circle Inverted"
+msgstr "Kreis umgedreht"
+
+#: inc/settings-fields.php:384
+msgid "Simple"
+msgstr "简单"
+
+#: inc/settings-fields.php:385
+msgid "Long"
+msgstr "lange"
+
+#: inc/settings-fields.php:386
+msgid "Angle"
+msgstr "Winkel"
+
+#: inc/settings-fields.php:387
+#, fuzzy
+msgid "Double Angle"
+msgstr "Doppelwinkel"
+
+#: inc/settings-fields.php:388
+msgid "Caret"
+msgstr "Zirkumflex"
+
+#: inc/settings-fields.php:389
+#, fuzzy
+msgid "Caret Square"
+msgstr "Caret Square"
+
+#: inc/settings-fields.php:390
+msgid "Hand"
+msgstr "Hand"
+
+#: inc/settings-fields.php:391
+msgid "Chevron"
+msgstr "Chevron"
+
+#: inc/settings-fields.php:399
+msgid "Arrows Style"
+msgstr "Pfeil-Stil"
+
+#: inc/settings-fields.php:400
+#, fuzzy
+msgid "Choose arrow appearance here"
+msgstr "Wählen Sie Pfeilbild hier"
+
+#: inc/settings-fields.php:402
+msgid "Transparent"
+msgstr "Transparent"
+
+#: inc/settings-fields.php:403
+msgid "Square"
+msgstr "OXID"
+
+#: inc/settings-fields.php:412
+msgid "Arrows Color"
+msgstr "Pfeilfarbe"
+
+#: inc/settings-fields.php:413
+#, fuzzy
+msgid "Choose arrow color"
+msgstr "Wählen Sie Pfeilfarbe"
+
+#: inc/settings-fields.php:420
+#, fuzzy
+msgid "Arrows Background Color"
+msgstr "Pfeile-Hintergrundfarbe"
+
+#: inc/settings-fields.php:421
+#, fuzzy
+msgid "Choose arrow background color"
+msgstr "Wählen Sie Pfeilhintergründen"
+
+#: inc/settings-fields.php:430
+msgid "Images Size"
+msgstr "Größe Bilder"
+
+#: inc/settings-fields.php:431
+#, fuzzy
+msgid "Choose images size for thumbnails"
+msgstr "Wählen Sie die Größe der Bilder für die Vorschaubilder"
+
+#: inc/settings-fields.php:438
+msgid "Rows"
+msgstr "Zeilen"
+
+#: inc/settings-fields.php:439
+#, fuzzy
+msgid ""
+"Setting this to more than 1 initializes grid mode. Use slidesPerRow to set "
+"how many slides should be in each row."
+msgstr ""
+"Wenn man diese Einstellung auf mehr als 1 setzt, wird der Gittermodus in die "
+"richtige Form gebracht. Verwenden Sie slidesPerRow, um festzulegen, wie "
+"viele Dias in jeder Zeile sein sollen."
+
+#: inc/settings-fields.php:446
+#, fuzzy
+msgid "Skip Posts"
+msgstr "Schichtposten"
+
+#: inc/settings-fields.php:447
+#, fuzzy
+msgid "Number of posts to skip from initial posts regarding current settings."
+msgstr ""
+"Anzahl der Beiträge, die von den ersten Beiträgen über die aktuellen "
+"Einstellungen überspringen."
+
+#: inc/settings-fields.php:454
+msgid "Total Posts"
+msgstr "Summe Beiträge"
+
+#: inc/settings-fields.php:455
+#, fuzzy
+msgid ""
+"Number of posts to display from current settings. Leave blank to display all."
+msgstr ""
+"Anzahl der Beiträge, die aus den aktuellen Einstellungen angezeigt werden "
+"sollen. Lassen Sie leer, um alle anzuzeigen."
+
+#: inc/settings-fields.php:462
+msgid "Slides Per Row"
+msgstr "Folien pro Reihe"
+
+#: inc/settings-fields.php:463
+#, fuzzy
+msgid ""
+"With grid mode initialized via the rows option, this sets how many slides "
+"are in each grid row."
+msgstr ""
+"Wenn der Gittermodus über die Zeilenoption initialisiert wird, legt diese "
+"fest, wie viele Dias in jeder Gitterreihe sind."
+
+#: inc/settings-fields.php:470
+#, fuzzy
+msgid "Placeholder Image Url"
+msgstr "Ortsvorsteher Bild Url"
+
+#: inc/settings-fields.php:471
+#, fuzzy
+msgid ""
+"Provide placeholder image url for that posts which do not have featured "
+"images."
+msgstr ""
+"Geben Sie Platzhalter-Bild-URL für die Beiträge, die keine Bilder enthalten."
+
+#: inc/settings-fields.php:478
+#, fuzzy
+msgid "Disable Current Post"
+msgstr "Stromposten abschalten"
+
+#: inc/settings-fields.php:479
+#, fuzzy
+msgid ""
+"Check to exclude the current post from slider if you are using it under a "
+"post."
+msgstr ""
+"Überprüfen Sie, ob Sie den aktuellen Beitrag vom Schieberegler ausschließen, "
+"wenn Sie ihn unter einem Beitrag verwenden."
+
+#: inc/settings-fields.php:486
+#, fuzzy
+msgid "Equal Height Mode"
+msgstr "Gleiche-Höhe-Modus"
+
+#: inc/settings-fields.php:487
+#, fuzzy
+msgid "Checking this make all images same in height."
+msgstr "Wenn man dies überprüft, machen alle Bilder gleich in der Höhe."
+
+#: inc/settings-fields.php:494
+msgid "Images Height"
+msgstr "Bilder-Höhe"
+
+#: inc/settings-fields.php:495
+#, fuzzy
+msgid "Fixed Height for images in px. Eg: 450px"
+msgstr "Die Höhe für Bilder in px wurde korrigiert. Z. B: 450px"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "Responsive Posts Carousel"
+msgstr "Responsive Posts Carousel"
+
+#. Plugin URI of the plugin/theme
+#, fuzzy
+msgid "http://webcodingplace.com/responsive-posts-carousel-wordpress-plugin"
+msgstr "http://webcodingplace.com/responsive-posts-carousel-wordpress-plugin"
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid "The best Posts Slider Plugin for WordPress you will ever need."
+msgstr ""
+"Die besten Beiträge Slider Plugin für WordPress werden Sie jemals brauchen."
+
+#. Author of the plugin/theme
+msgid "WebCodingPlace"
+msgstr "WebCodingPlace"
+
+#. Author URI of the plugin/theme
+#, fuzzy
+msgid "http://webcodingplace.com/"
+msgstr "http://webcodingplace.com/"

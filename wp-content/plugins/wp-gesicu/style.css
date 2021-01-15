@@ -1,0 +1,19 @@
+label.error {
+    display: block;
+    background: #ffd2d2;
+    padding: 0 10px;
+}
+#tooltip {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+p.comment-form-cookies-consent { display: none; }
+
+@import "~tailwindcss/base.css";
+
+@import "~tailwindcss/components.css";
+
+@import "~tailwindcss/utilities.css";

@@ -1,0 +1,117 @@
+.he-news-modules{
+    background-repeat: no-repeat;
+    width: 60px !important;
+    height: 50px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../img/magazine-elements.png) !important;
+}
+
+.he-news-module-one {
+    background-position: -20px -15px;
+}
+
+.he-news-module-two {
+    background-position: -120px -15px;
+}
+
+.he-news-module-three {
+    background-position: -20px -95px;
+}
+
+.he-news-module-four {
+    background-position: -120px -95px;
+}
+
+.he-news-module-five {
+    background-position: -20px -175px;
+}
+
+.he-news-module-six {
+    background-position: -120px -175px;
+}
+
+.he-news-module-seven {
+    background-position: -20px -255px;
+}
+
+.he-news-module-eight {
+    background-position: -120px -255px;
+}
+
+.he-news-module-nine {
+    background-position: -20px -335px;
+}
+
+.he-news-module-ten {
+    background-position: -120px -335px;
+}
+
+.he-news-module-eleven {
+    background-position: -20px -415px;
+}
+
+.he-news-module-twelve {
+    background-position: -120px -415px;
+}
+
+.he-news-module-thirteen {
+    background-position: -20px -495px;
+}
+
+.he-news-module-fourteen {
+    background-position: -120px -495px;
+}
+
+.he-news-module-fifteen {
+    background-position: -20px -575px;
+}
+
+.he-carousel-module-one {
+    background-position: -120px -575px;
+}
+
+.he-tile-module-one {
+    background-position: -20px -655px;
+}
+
+.he-tile-module-two {
+    background-position: -120px -655px;
+}
+
+.he-tile-module-three {
+    background-position: -20px -735px;
+}
+
+.he-ticker-module {
+    background-position: -120px -735px;
+}
+
+.he-advertisement-banner{
+    background-position: -20px -815px;
+}
+
+.he-contact-information{
+    background-position: -120px -815px;
+}
+
+.he-personal-information{
+    background-position: -20px -895px;
+}
+
+.he-timeline-module{
+    background-position: -120px -895px;
+}
+
+.he-elementor-pro-no #elementor-panel-category-pro-elements,
+.he-elementor-pro-no #elementor-panel-category-theme-elements,
+.he-elementor-pro-no #elementor-panel-category-woocommerce-elements,
+.he-elementor-pro-no #elementor-panel-get-pro-elements,
+.he-elementor-pro-no .elementor-control-dynamic-switcher,
+.he-elementor-pro-no .elementor-control-section_custom_css_pro,
+.he-elementor-pro-no .elementor-control-section_custom_attributes_pro,
+.he-elementor-pro-no [data-tab="global"],
+.he-elementor-pro-no .elementor-context-menu-list__group.elementor-context-menu-list__group-save{
+    display: none !important;
+}

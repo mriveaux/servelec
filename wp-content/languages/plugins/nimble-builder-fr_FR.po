@@ -1,0 +1,5065 @@
+# Translation of Plugins - Nimble Page Builder - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - Nimble Page Builder - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-11-22 23:06:37+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Nimble Page Builder - Stable (latest release)\n"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2529
+msgid "Text alignment"
+msgstr "Alignement du texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2509
+msgid "Width : auto or custom"
+msgstr "Largeur : automatique ou personnalisée"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3112
+msgid "3 columns, call to actions"
+msgstr "3 colonnes, appel à l’action"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2209
+msgid "z-index"
+msgstr "z-index"
+
+#: inc/sektions/ccat-czr-sektions.php:524
+msgid "Height, vertical alignment, z-index for the"
+msgstr "Hauteur, alignement vertical, z-index pour le"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1905
+#: inc/sektions/ccat-sektions-ui-modules.php:3827
+#: inc/sektions/ccat-sektions-ui-modules.php:3919
+#: inc/sektions/ccat-sektions-front-modules.php:48
+#: inc/sektions/ccat-sektions-front-modules.php:1860
+#: inc/sektions/ccat-sektions-front-modules.php:2034
+#: inc/sektions/ccat-sektions-front-modules.php:3171
+#: inc/sektions/ccat-sektions-front-modules.php:3314
+#: inc/sektions/ccat-sektions-front-modules.php:3457
+#: inc/sektions/ccat-sektions-front-modules.php:4239
+#: inc/sektions/ccat-sektions-front-modules.php:4335
+#: inc/sektions/ccat-sektions-front-modules.php:4431
+#: inc/sektions/ccat-sektions-front-modules.php:4527
+#: inc/sektions/ccat-sektions-front-modules.php:5228
+#: inc/sektions/ccat-sektions-front-modules.php:5527
+#: inc/sektions/ccat-sektions-front-modules.php:6248
+#: inc/sektions/ccat-sektions-front-modules.php:6353
+msgid "Find inspiration"
+msgstr "Trouver l’inspiration"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3329
+msgid "add animations to anything"
+msgstr "ajouter des animations à quoi que ce soit"
+
+#: inc/sektions/ccat-czr-sektions.php:531
+msgid "Animation settings for the"
+msgstr "Réglages d’animation pour le"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2635
+msgid "Horizontal alignment can only be applied with a custom module width < to the parent column's width"
+msgstr "L’alignement horizontal ne peut être appliqué uniquement avec une largeur de module personnalisée <à la largeur de la colonne parente"
+
+#: inc/sektions/ccat-czr-sektions.php:1758
+msgid "View in live demo"
+msgstr "Voir en démo direct"
+
+#: inc/sektions/ccat-czr-sektions.php:526
+msgid "Width and horizontal alignment for the"
+msgstr "Largeur et alignement horizontal pour le"
+
+#. Description of the plugin
+msgid "Simple and smart companion that allows you to insert sections into any existing page, create landing pages or entire websites including header and footer."
+msgstr "Compagnon simple et intelligent qui vous autorise d’insérer des sections dans n’importe quelle page existante, de créer des pages de destination ou des sites Web entiers, y compris l’en-tête et le pied de page."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5676
+msgid "Images fill space and are centered without being stretched"
+msgstr "Les images remplissent l’espace et sont centrées sans être étirées"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3196
+msgid "3 columns, call to action"
+msgstr "3 colonnes, appel à l'action"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3189
+msgid "3 columns"
+msgstr "3 colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3183
+msgid "4 column"
+msgstr "4 colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3120
+msgid "2 columns, call to actions, image carousel"
+msgstr "2 colonnes, appel à l’action, carrousel d’images"
+
+#: inc/sektions/ccat-sektions-front-modules.php:418
+msgid "Custom image height"
+msgstr "Hauteur d’image personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3298
+msgid "custom CSS on a per section basis."
+msgstr "CSS personnalisé sur une base par section."
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3179
+msgid "Sections for teams"
+msgstr "Sections pour les équipes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5120
+msgid "search icon next to the menu, sticky header, hamburger color, ..."
+msgstr "icône de recherche à côté du menu, en-tête épinglée, couleur du hamburger, &hellip;"
+
+#: inc/sektions/ccat-sektions-front-modules.php:305
+msgid "set a specific header logo on mobiles, shrink header logo when scrolling down the page, ..."
+msgstr "définir un logo d’en-tête spécifique sur les mobiles, réduire le logo d’en-tête lors du défilement de la page, &hellip;"
+
+#: inc/admin/nb-options.php:305
+msgid "Unauthorized users will not see any reference to Nimble Builder when editing a page, in the customizer and in the WordPress admin screens."
+msgstr "Les utilisateurs non autorisés ne verront aucune référence à Nimble Builder lors de la modification d’une page, dans l’outil de personnalisation et dans les écrans d’administration de WordPress."
+
+#: inc/admin/nb-options.php:304
+msgid "Nimble Builder can be used by default by all users with an administrator role. With Nimble Builder Pro you can decide which administrators are allowed to use the plugin."
+msgstr "Nimble Builder peut être utilisé par défaut par tous les utilisateurs avec un rôle d’administrateur. Avec Nimble Builder Pro, vous pouvez décider quels administrateurs sont autorisés à utiliser l’extension."
+
+#: inc/admin/nb-options.php:287 inc/admin/nb-options.php:291
+#: inc/admin/nb-options.php:297
+msgid "Restrict users"
+msgstr "Restreindre les utilisateurs"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:885
+msgid "Nimble Image"
+msgstr "Image Nimble"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2881
+msgid "Privacy policy consent is required"
+msgstr "Le consentement de la politique de confidentialité est obligatoire"
+
+#: inc/sektions/ccat-sektions-base.php:5846
+#: inc/sektions/ccat-sektions-front-modules.php:2874
+msgid "I have read and agree to the privacy policy."
+msgstr "J’ai lu et j’accepte la politique de confidentialité."
+
+#: inc/sektions/ccat-sektions-front-modules.php:2873
+msgid "Consent message"
+msgstr "Message de consentement"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2866
+msgid "Display a checkbox for privacy policy consent"
+msgstr "Afficher une case à cocher pour le consentement à la politique de confidentialité"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3686
+#: inc/sektions/ccat-sektions-ui-modules.php:4410
+msgid "sticky header, header over content, sticky footer, search icon, hamburger color, ..."
+msgstr "en-tête épinglée, en-tête sur le contenu, pied de page collant, icône de recherche, couleur de hamburger, &hellip;"
+
+#: inc/sektions/ccat-czr-sektions.php:1680
+msgid "Pro feature"
+msgstr "Fonctionnalité Pro"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:2836
+#: inc/admin/nb-options.php:306
+msgid "Go Pro"
+msgstr "Passer à Pro"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:2832
+msgid "Unlock more features with Nimble Builder Pro"
+msgstr "Débloquer plus de fonctionnalités avec Nimble Builder Pro"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:214
+msgid "Color value"
+msgstr "Valeur de couleur"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:213
+msgid "Select Color"
+msgstr "Sélectionner une couleur"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:212
+msgid "Select default color"
+msgstr "Sélectionner la couleur par défaut"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:210
+msgid "Clear color"
+msgstr "Effacer la couleur"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:209
+msgid "Clear"
+msgstr "Effacer"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:2762
+msgid "Custom javascript code is not executed when customizing."
+msgstr "Le code javascript personnalisé n’est pas exécuté lors de la personnalisation."
+
+#: inc/sektions/ccat-czr-sektions.php:879
+msgid "Removing a section cannot be undone. Are you sure you want to continue?"
+msgstr "La suppression d’une section ne peut pas être annulée. Etes-vous sûr de vouloir continuer ?"
+
+#: inc/sektions/ccat-czr-sektions.php:867
+#: inc/sektions/ccat-czr-sektions.php:868
+msgid "Update section"
+msgstr "Section de mise à jour"
+
+#: inc/sektions/ccat-czr-sektions.php:853
+msgid "Select a section"
+msgstr "Sélectionner une section"
+
+#: inc/sektions/ccat-czr-sektions.php:847
+#: inc/sektions/ccat-czr-sektions.php:848
+msgid "Remove section(s)"
+msgstr "Retirer la (les) section(s)"
+
+#: inc/sektions/ccat-czr-sektions.php:844
+#: inc/sektions/ccat-czr-sektions.php:845
+msgid "Update a section"
+msgstr "Section de mise à jour"
+
+#: inc/sektions/ccat-czr-sektions.php:841
+#: inc/sektions/ccat-czr-sektions.php:842
+msgid "Save as new section"
+msgstr "Enregistrer comme une nouvelle section"
+
+#: inc/admin/nb-options.php:235
+msgid "In debug mode, during customization Nimble Builder deactivates all modules content and prints only the structure of your sections. This lets you troubleshoot, remove or edit your modules safely."
+msgstr "En mode débogage, lors de la personnalisation, Nimble Builder désactive le contenu de tous les modules et imprime uniquement la structure de vos sections. Cela vous permet de dépanner, de retirer ou de modifier vos modules en toute sécurité."
+
+#: inc/admin/nb-options.php:234
+msgid "Activate the debug mode when customizing"
+msgstr "Activer le mode de débogage lors de la personnalisation"
+
+#: inc/admin/nb-options.php:227 inc/admin/nb-options.php:229
+msgid "Debug Mode"
+msgstr "Mode débogage"
+
+#: inc/admin/nb-options.php:222
+msgid "Shortcodes are disabled by default when customizing to prevent any conflicts with Nimble Builder interface."
+msgstr "Les codes courts sont désactivés par défaut lors de la personnalisation pour éviter tout conflit avec l’interface Nimble Builder."
+
+#: inc/admin/nb-options.php:221
+msgid "Parse shortcodes when building your pages in the customizer"
+msgstr "Analyser les codes courts lors de la création de vos pages dans l’outil de personnalisation"
+
+#: inc/admin/nb-options.php:214 inc/admin/nb-options.php:216
+msgid "Shortcodes"
+msgstr "Codes courts"
+
+#: inc/admin/nb-options.php:205
+msgid "Nimble Builder Options"
+msgstr "Les options de Nimble Builder"
+
+#: inc/admin/nb-options.php:204
+msgid "Options"
+msgstr "Options"
+
+#: inc/sektions/ccat-sektions-base.php:5120
+msgid "Shortcodes are not parsed by default when customizing. You can change this setting in your WP admin > Settings > Nimble Builder options."
+msgstr "Les codes courts ne sont pas analysés par défaut lors de la personnalisation. Vous pouvez modifier ce paramètre dans votre administrateur WP admin > Réglages > Options de Nimble Builder."
+
+#: inc/sektions/ccat-czr-sektions.php:818
+msgid "Debug mode active ( WP admin > Settings > Nimble Builder options )"
+msgstr "Mode débogage actif (WP admin > Réglages > Options de Nimble Builder)"
+
+#: inc/admin/nb-options.php:363
+msgid "Explore Nimble Builder knowledge base"
+msgstr "Explorer la base de connaissances de Nimble Builder"
+
+#: inc/admin/nb-options.php:338
+msgid "Nimble Builder knowledge base"
+msgstr "Base de connaissances de Nimble Builder"
+
+#: inc/admin/nb-options.php:337
+msgid "Documentation"
+msgstr "Documentation"
+
+#: inc/admin/nb-options.php:192
+msgid "Watch the video below for a brief overview of Nimble Builder features"
+msgstr "Regarder la vidéo ci-dessous pour un bref aperçu des fonctionnalités de Nimble Builder"
+
+#: inc/admin/nb-options.php:180
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: inc/admin/nb-options.php:100
+msgid "Docs"
+msgstr "Docs"
+
+#: inc/sektions/ccat-czr-sektions.php:961
+msgid "Filter templates"
+msgstr "Modèles de filtre"
+
+#: inc/sektions/ccat-czr-sektions.php:653
+msgid "Error when processing templates"
+msgstr "Erreur lors du traitement des modèles"
+
+#: inc/sektions/ccat-czr-sektions.php:652
+msgid "Template removed"
+msgstr "Modèle supprimé"
+
+#: inc/sektions/ccat-czr-sektions.php:651
+msgid "Template saved"
+msgstr "Modèle enregistré"
+
+#: inc/sektions/ccat-czr-sektions.php:650
+msgid "A title is required"
+msgstr "Le titre est obligatoire"
+
+#: inc/sektions/ccat-czr-sektions.php:649
+msgid "Remove this template"
+msgstr "Retirer ce modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:648
+msgid "Use this template"
+msgstr "Utiliser ce modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:647
+#: inc/sektions/ccat-czr-sektions.php:654
+msgid "Last modified"
+msgstr "Dernière modification"
+
+#: inc/sektions/ccat-sektions-base.php:5561
+msgid "You need to login to view this content."
+msgstr "Vous devez être connecté pour voir ce contenu."
+
+#: inc/sektions/ccat-sektions-front-modules.php:6557
+msgid "Enable image lazy-loading"
+msgstr "Activer le chargement lent des images"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:860
+msgid "Rich Text Editor"
+msgstr "Afficher l’éditeur de texte avancé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3798
+#: inc/sektions/ccat-sektions-ui-modules.php:4565
+msgid "When this option is unchecked, Nimble Builder will not import images and use instead the url of the original images."
+msgstr "Lorsque cette option n'est pas cochée, Nimble Builder n'importera pas d'images et utilisera à la place l'url des images originales."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3791
+#: inc/sektions/ccat-sektions-ui-modules.php:4558
+msgid "Import images in your media library."
+msgstr "Importer des images dans votre bibliothèque multimédia."
+
+#: inc/sektions/ccat-czr-sektions.php:630
+msgid "Import exceeds server response time, try to uncheck \"import images\" option."
+msgstr "L'importation dépasse le temps de réponse du serveur, essayez de décocher l'option \"Importer des images\"."
+
+#: inc/sektions/ccat-czr-sektions.php:1633
+msgid "Pick a template"
+msgstr "Choisir un modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:932
+#: inc/sektions/ccat-czr-sektions.php:933
+#: inc/sektions/ccat-czr-sektions.php:943
+#: inc/sektions/ccat-czr-sektions.php:944
+msgid "Remove template"
+msgstr "Retirer ce modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:929
+#: inc/sektions/ccat-czr-sektions.php:930
+msgid "Update template"
+msgstr "Mettre à jour le modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:926
+#: inc/sektions/ccat-czr-sektions.php:927
+msgid "Save template"
+msgstr "Enregistrer le modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:941
+msgid "Removing a template cannot be undone. Are you sure you want to continue?"
+msgstr "La suppression d’un modèle ne peut pas être annulée. Etes-vous sûr de vouloir continuer ?"
+
+#: inc/sektions/ccat-czr-sektions.php:921
+msgid "Template description"
+msgstr "Description du modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:917
+msgid "Template title"
+msgstr "Titre du modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:909
+#: inc/sektions/ccat-czr-sektions.php:910
+msgid "Remove template(s)"
+msgstr "Retirer ce(s) modèle(s)"
+
+#: inc/sektions/ccat-czr-sektions.php:906
+#: inc/sektions/ccat-czr-sektions.php:907
+msgid "Update a template"
+msgstr "Mettre à jour le modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:903
+#: inc/sektions/ccat-czr-sektions.php:904
+msgid "Save as new template"
+msgstr "Enregistrer le nouveau modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:811
+#: inc/sektions/ccat-czr-sektions.php:812
+msgid "Save as a template"
+msgstr "Enregistrer en tant que modèle"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4393
+msgid "Inject non priority assets dynamically in the page only when needed."
+msgstr "Injecter dynamiquement des actifs non prioritaires dans la page uniquement lorsque cela est nécessaire."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4397
+msgid "SCRIPTS"
+msgstr "SCRIPTS"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4379
+msgid "Preload Google fonts"
+msgstr "Précharger les polices Google"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4371
+msgid "Print generated stylesheets inline"
+msgstr "Imprimer les feuilles de style générées en ligne"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4375
+msgid "STYLESHEETS"
+msgstr "FEUILLES DE STYLE"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4344
+msgid "Defer loading video backgrounds"
+msgstr "Différer le chargement des arrière-plans vidéo"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4340
+msgid "LAZY LOADING"
+msgstr "CHARGEMENT LENT"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4333
+msgid "Defer loading off screen images"
+msgstr "Différer le chargement des images d’écran"
+
+#. Plugin URI of the plugin
+msgid "https://nimblebuilder.com"
+msgstr "https://nimblebuilder.com"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6571
+msgid "Flex-box is a CSS standard used to specify the layout of HTML pages. Using flex-box can make it easier to center the content of shortcodes."
+msgstr "Flex-box est une norme CSS utilisée pour spécifier la mise en page des pages HTML. L’utilisation de flex-box peut faciliter le centrage du contenu des shortcodes."
+
+#: inc/sektions/ccat-sektions-front-modules.php:6567
+msgid "Use a flex-box wrapper"
+msgstr "Utiliser une boîte flex-box"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5724
+msgid "Lazy loading images improves page load performances."
+msgstr "Le chargement d'images différé améliore les performances de chargement des pages."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5720
+msgid "Lazy load images"
+msgstr "Images au chargement différé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4065
+msgid "Use a global custom breakpoint for responsive columns"
+msgstr "Utiliser un point d'arrêt personnalisé global pour les colonnes responsive"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3212
+#: inc/sektions/ccat-sektions-ui-modules.php:4091
+msgid "%s When enabled, this custom breakpoint is applied not only to responsive columns but also to all by-device customizations, like alignment for example."
+msgstr "%s Lorsqu'il est activé, ce point d'arrêt personnalisé est appliqué non seulement aux colonnes responsive mais également à toutes les personnalisations par périphérique, comme l'alignement par exemple."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3207
+#: inc/sektions/ccat-sektions-ui-modules.php:4086
+msgid "Apply this breakpoint to all by-device customizations"
+msgstr "Appliquer ce point d'arrêt à toutes les personnalisations par appareil"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3184
+msgid "Use a custom breakpoint for responsive columns"
+msgstr "Utiliser un point d'arrêt personnalisé pour les colonnes responsive"
+
+#: inc/sektions/ccat-sektions-front-modules.php:28
+msgid "Horizontal text alignment"
+msgstr "Alignement horizontal du texte"
+
+#: inc/sektions/ccat-czr-sektions.php:1952
+msgid "Refresh preview"
+msgstr "Actualiser l'aperçu"
+
+#: inc/sektions/ccat-czr-sektions.php:535
+msgid "The section cannot be moved lower."
+msgstr "La section ne peut pas être déplacée plus bas."
+
+#: inc/sektions/ccat-czr-sektions.php:534
+msgid "The section cannot be moved higher."
+msgstr "La section ne peut pas être déplacée plus haut."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1666
+msgid "Overlay color"
+msgstr "Couleur de superposition"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1658
+msgid "Set an optional start and end time in seconds"
+msgstr "Définissez une heure de début et de fin facultative en secondes"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1655
+msgid "End time"
+msgstr "Temps de fin"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1649
+msgid "Start time"
+msgstr "Temps de début"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1644
+msgid "Not recommended if you don't use a self-hosted video file"
+msgstr "Déconseillé si vous n'utilisez pas de fichier vidéo auto-hébergé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1640
+msgid "Play on mobile devices"
+msgstr "Visible sur les Smartphones"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1636
+msgid "Set an optional delay in seconds before playing the video"
+msgstr "Définissez un délai facultatif en secondes avant de lire la vidéo"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1633
+msgid "Play after a delay"
+msgstr "Lancez après un délai"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1624
+msgid "Loop infinitely"
+msgstr "Boucle infinie"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1620
+msgid "Video link from YouTube, Vimeo, or a self-hosted file ( mp4 format is recommended )"
+msgstr "Lien vidéo depuis YouTube, Vimeo ou un fichier auto-hébergé ( le format mp4 est recommandé )"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1617
+msgid "Video link"
+msgstr "Lien vidéo"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1613
+msgid "Video background"
+msgstr "Arrière-plan vidéo"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1607
+msgid "Use a video background"
+msgstr "Utiliser une vidéo en arrière-plan"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1542
+msgid "Image background"
+msgstr "Image d'arrière-plan"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3849
+msgid "Posts per page"
+msgstr "Articles par page"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3859
+msgid "Display pagination links"
+msgstr "Afficher les liens de pagination"
+
+#: tmpl/modules/post_grid_module_tmpl.php:59
+msgid "Posts navigation"
+msgstr "Navigation des articles"
+
+#: tmpl/modules/post_grid_module_tmpl.php:37
+msgid "Newer"
+msgstr "Récent"
+
+#: tmpl/modules/post_grid_module_tmpl.php:36
+msgid "Older"
+msgstr "Ancien"
+
+#: inc/sektions/ccat-sektions-base.php:6839
+msgid "%1$s sent a message from %2$s"
+msgstr "%1$s a envoyé un message à %2$s"
+
+#: inc/sektions/ccat-sektions-front-modules.php:36
+#: inc/sektions/ccat-sektions-front-modules.php:6583
+msgid "ALIGNMENT"
+msgstr "ALIGNEMENT"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5377
+msgid "2) once selected an area, you can add and edit the WordPress widgets in it in the %1$s."
+msgstr "2) une fois que vous avez sélectionné une zone, vous pouvez ajouter et modifier les widgets WordPress qu’elle contient dans le %1$s."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5377
+msgid "1) Select a widget area in the dropdown list,"
+msgstr "1) Sélectionnez une zone de widget dans la liste déroulante,"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5377
+msgid "This module allows you to embed any WordPress widgets in your Nimble sections."
+msgstr "Ce module vous permet d’incorporer n’importe quel widget WordPress dans vos sections Nimble."
+
+#: inc/sektions/ccat-sektions-base.php:6818
+msgid "Someone"
+msgstr "Quelqu’un"
+
+#: inc/sektions/ccat-sektions-front-modules.php:46
+msgid "TEXT OPTIONS"
+msgstr "OPTIONS DE TEXTE"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1893
+msgid "Text styling is always inherited in this order : section > column > module settings > module content"
+msgstr "Le style du texte est toujours hérité dans cet ordre : section > colonne > paramètres de module > contenu du module"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1892
+msgid "Note : some modules have text settings in their module content tab. Those settings are applied first, before those below."
+msgstr "Remarque : certains modules ont des paramètres de texte dans leur onglet Contenu. Ces paramètres sont appliqués en premier, avant ceux ci-dessous."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4551
+msgid "These options allows you to export and import global sections like a global header-footer."
+msgstr "Ces options vous autorisent d'exporter et d'importer des sections globales comme un pied de page d'en-tête global."
+
+#: inc/sektions/ccat-czr-sektions.php:1990
+msgid "Some of the imported sections need a location that is not active on this page. For example, if you are importing a global header footer, you need to activate the Nimble site wide header and footer, in \"Site wide header and footer\" options."
+msgstr "Certaines des sections importées nécessitent une localisation qui n'est pas actif sur cette page. Par exemple, si vous importez un pied de page d'en-tête global, vous devez activer l'en-tête et le pied de page du site Nimble, dans les options \"En-tête et pied de page du site\"."
+
+#: inc/sektions/ccat-czr-sektions.php:626
+msgid "Export / Import global sections"
+msgstr "Sections globales Export / Import"
+
+#: inc/admin/nimble-admin.php:336
+msgid "Edit with Nimble Builder"
+msgstr "Modifier avec Nimble Builder"
+
+#: inc/admin/nimble-admin.php:287
+msgid "Continue building with Nimble"
+msgstr "Continuer à construire avec Nimble"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5155
+msgid "Hamburger button alignment"
+msgstr "Alignement des boutons hamburger"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5144
+msgid "Menu items alignment"
+msgstr "Alignement des éléments de menu"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6546
+msgid "A shortcode is a WordPress-specific code that lets you display predefined items. For example a trivial shortcode for a gallery looks like this [gallery]."
+msgstr "Un code court est un code spécifique à WordPress qui vous permet d'afficher des éléments prédéfinis. Par exemple, un code court trivial pour une galerie ressemblante à cette [galerie]."
+
+#: inc/sektions/ccat-sektions-front-modules.php:6541
+msgid "Write the shortcode(s) in the text editor"
+msgstr "Saisissez les codes courts dans l’éditeur de texte"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:929
+#: inc/sektions/ccat-sektions-front-modules.php:6529
+msgid "Shortcode"
+msgstr "Code court"
+
+#: tmpl/modules/shortcode_module_tmpl.php:34
+msgid "Click to edit the shortcode module."
+msgstr "Cliquez pour modifier le module de code court."
+
+#: inc/sektions/ccat-sektions-front-modules.php:6317
+msgid "Content style"
+msgstr "Style du contenu"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6294
+msgid "Border bottom color"
+msgstr "Couleur inférieure de bordure"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6290
+msgid "BORDER BOTTOM"
+msgstr "Bordure inférieure"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6280
+msgid "Border bottom weight"
+msgstr "Graisse de bordure inférieure"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6228
+msgid "Text color when active"
+msgstr "Couleur du texte lorsque actif"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6212
+#: inc/sektions/ccat-sektions-front-modules.php:6329
+msgid "COLOR AND BACKGROUND"
+msgstr "Couleur et arrière-plan"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6204
+#: inc/sektions/ccat-sektions-front-modules.php:6321
+msgid "Backround color"
+msgstr "Couleur d’arrière-plan"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6200
+msgid "Title style"
+msgstr "Style de titre"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6185
+msgid "BORDER"
+msgstr "Bordure"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6169
+msgid "Display one item expanded at a time"
+msgstr "Afficher un élément déplié à la fois"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6162
+msgid "Display first item expanded"
+msgstr "Afficher le premier élément déplié"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6140
+msgid "Accordion options : font style, borders, background, ..."
+msgstr "Options d’accordéon : style de police, bordures, arrière-plan, &hellip;"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6108
+#: inc/sektions/ccat-sektions-front-modules.php:6547
+msgid "You may use some html tags in the \"text\" tab of the editor."
+msgstr "Vous devriez utiliser quelques balises HTML dans l’onglet « Texte » de l’éditeur."
+
+#: inc/sektions/ccat-sektions-front-modules.php:6090
+msgid "Title on mouse over"
+msgstr "Tire au survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6051
+msgid "Item collection"
+msgstr "Collection d’élément"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:905
+#: inc/sektions/ccat-sektions-front-modules.php:6019
+msgid "Accordion"
+msgstr "Accordéon"
+
+#: tmpl/modules/accordion_tmpl.php:78
+msgid "Click to start adding items."
+msgstr "Cliquez pour commencer à ajouter des éléments."
+
+#: tmpl/modules/accordion_tmpl.php:33 inc/sektions/ccat-czr-sektions.php:644
+msgid "Accordion title"
+msgstr "Titre de l’accordéon"
+
+#: inc/sektions/ccat-czr-sektions.php:1614
+msgid "Module Content"
+msgstr "Contenu du module"
+
+#: inc/sektions/ccat-czr-sektions.php:1613
+msgid "Option type"
+msgstr "Type d’option"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5490
+msgid "Note : you can adjust the text color and / or use a color overlay to improve accessibility of your text content."
+msgstr "Remarque : vous pouvez ajuster la couleur du texte et/ou utiliser une superposition de couleur pour améliorer l’accessibilité de votre contenu texte."
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:899
+#: inc/sektions/ccat-sektions-front-modules.php:5405
+msgid "Image & Text Carousel"
+msgstr "Image & texte de carrousel"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5809
+msgid "Color of the active pagination bullet"
+msgstr "Couleur de la vignette de pagination active"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5788
+msgid "Color of the navigation arrows"
+msgstr "Couleur des flèches de navigation"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5771
+msgid "Hide arrows and bullets on mobiles"
+msgstr "Masquer les flèches et les balles sur les mobiles"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5767
+msgid "NAVIGATION"
+msgstr "Navigation"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5765
+msgid "None"
+msgstr "Aucune"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5764
+msgid "Bullets only"
+msgstr "Vignettes uniquement"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5763
+msgid "Arrows only"
+msgstr "Uniquement les flèches"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5762
+msgid "Arrows and bullets"
+msgstr "Flèches et vignettes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5754
+msgid "Navigation"
+msgstr "Navigation"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5738
+msgid "SLIDER HEIGHT"
+msgstr "HAUTEUR DU DIAPORAMA"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5705
+msgid "Pause autoplay on mouse over"
+msgstr "Pause de lecture automatique au survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5712
+msgid "Infinite loop"
+msgstr "Boucle infinie"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5694
+msgid "Delay between each slide in milliseconds (ms)"
+msgstr "Délai entre chaque diapositive en millisecondes (ms)"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5690
+msgid "Note that the autoplay is disabled during customization."
+msgstr "Notez que la lecture automatique est désactivée lors de la personnalisation."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5686
+msgid "Autoplay"
+msgstr "Lecture auto"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5682
+msgid "Nimble wizard ensures that the images fill all available space of the carousel in any devices, without blank spaces on the edges, and without stretching the images."
+msgstr "L'assistant Nimble s'assure que les images occupent tout l'espace disponible du carrousel dans tous les périphériques, sans espaces vides sur les bords et sans allongement des images."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5678
+msgid "Adapt images to carousel's height"
+msgstr "Adapter les images à la hauteur du carrousel"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5677
+msgid "Adapt images to carousel's width"
+msgstr "Adapter les images à la largeur du carrousel"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5675
+msgid "Nimble wizard"
+msgstr "L'assistant Nimble"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5672
+msgid "Image layout"
+msgstr "Mise en page d’image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5650
+msgid "Slider options : height, autoplay, navigation..."
+msgstr "Options de diaporama : hauteur, lecture auto, navigation&hellip;"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5610
+msgid "COLOR OVERLAY"
+msgstr "Superposition de couleur"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5606
+msgid "Apply a color overlay"
+msgstr "Appliquer une superposition de couleur"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5605
+msgid "A color overlay is usually recommended when displaying text content on top of the image. You can customize the color and transparency in the global design settings of the carousel."
+msgstr "Une superposition de couleurs est généralement recommandée lors de l'affichage de contenu textuel par-dessus l'image. Vous pouvez personnaliser la couleur et la transparence dans les réglages de conception généraux du carrousel."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5601
+msgid "Color overlay"
+msgstr "Superposition de couleur"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5596
+#: inc/sektions/ccat-sektions-front-modules.php:6312
+#: inc/sektions/ccat-sektions-front-modules.php:6393
+msgid "SPACING"
+msgstr "Espacement"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5582
+msgid "Spacing of the text content"
+msgstr "Espacement du contenu texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5568
+msgid "ALIGNMENTS"
+msgstr "Alignements"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5525
+#: inc/sektions/ccat-sektions-front-modules.php:6246
+#: inc/sektions/ccat-sektions-front-modules.php:6351
+msgid "FONT OPTIONS"
+msgstr "Options de police"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5502
+msgid "You may use some html tags in the \"text\" tab of the editor. You can also use the following template tags referring to the image attributes : %1$s"
+msgstr "Vous pouvez utiliser des balises HTML dans l'onglet \"texte\" de l'éditeur. Vous pouvez également utiliser les marqueurs de modèle suivantes en référence aux attributs d'image: %1$s"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5498
+#: inc/sektions/ccat-sektions-front-modules.php:6104
+msgid "Text content"
+msgstr "Contenu texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5486
+msgid "Add text content"
+msgstr "Ajouter du contenu texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5482
+msgid "Text"
+msgstr "Texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5477
+msgid "This is the text displayed on mouse over. You can use the following template tags referring to the image attributes : %1$s"
+msgstr "Ceci est le texte affiché au survol de la souris. Vous pouvez utiliser les marqueurs de modèle suivantes en référence aux attributs d'image : %1$s"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5438
+msgid "Slide collection"
+msgstr "Collection de diapositives"
+
+#: tmpl/modules/img_slider_tmpl.php:280
+msgid "Click to start adding images."
+msgstr "Cliquez pour commencer à ajouter des images."
+
+#: tmpl/modules/img_slider_tmpl.php:255
+msgid "next"
+msgstr "suivant"
+
+#: tmpl/modules/img_slider_tmpl.php:254
+msgid "previous"
+msgstr "précédent"
+
+#: inc/admin/nimble-admin.php:289
+msgid "Build sections in live preview with Nimble Builder"
+msgstr "Construire des sections en aperçu en direct avec Nimble Builder"
+
+#: inc/admin/nimble-admin.php:288
+msgid "Build"
+msgstr "Construire"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3354
+#: inc/admin/nimble-admin.php:287
+msgid "Build with Nimble Builder"
+msgstr "Construire avec Nimble Builder"
+
+#: tmpl/modules/social_icons_tmpl.php:67
+msgid "Click to start adding social icons."
+msgstr "Cliquez pour commencer à ajouter des icônes de réseaux sociaux."
+
+#: inc/sektions/ccat-sektions-front-modules.php:976
+msgid "Spacing of the icons wrapper"
+msgstr "Espacement du wrapper d'icônes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:964
+msgid "Space between icons"
+msgstr "Espace entre les icônes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:925
+msgid "Icons size"
+msgstr "Taille des icônes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:907
+msgid "Design options : size, spacing, alignment,..."
+msgstr "Options de conception : taille, espacement, alignement, ..."
+
+#: inc/sektions/ccat-sektions-front-modules.php:861
+msgid "Open link in a new browser tab"
+msgstr "Ouvrir le lien dans un nouvel onglet du navigateur"
+
+#: inc/sektions/ccat-sektions-front-modules.php:857
+#: inc/sektions/ccat-sektions-front-modules.php:6091
+msgid "This is the text displayed on mouse over."
+msgstr "Ceci est le texte affiché au survol de la souris."
+
+#: inc/sektions/ccat-sektions-front-modules.php:838
+#: inc/sektions/ccat-sektions-front-modules.php:851
+msgid "http://...,mailto:...,..."
+msgstr "http://...,mailto:...,..."
+
+#: inc/sektions/ccat-sektions-front-modules.php:837
+#: inc/sektions/ccat-sektions-front-modules.php:850
+msgid "Enter the full url of your social profile (must be valid url)."
+msgstr "Saisissez l'URL complète de votre profil social (doit être une URL valide)."
+
+#: inc/sektions/ccat-sektions-front-modules.php:836
+#: inc/sektions/ccat-sektions-front-modules.php:849
+msgid "Social link url"
+msgstr "URL du lien social"
+
+#: inc/sektions/ccat-sektions-front-modules.php:821
+msgid "Icon collection"
+msgstr "Collection d'icônes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:787
+msgid "Social Icons"
+msgstr "Icônes sociaux"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:961
+msgid "Social Profiles"
+msgstr "Profils sociaux"
+
+#: inc/sektions/ccat-czr-sektions.php:586
+msgid "Already used fonts"
+msgstr "Polices déjà utilisées"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3917
+msgid "GLOBAL STYLE OPTIONS FOR HEADINGS"
+msgstr "OPTIONS DE STYLE GLOBAL POUR LES BALISES"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3899
+msgid "Link underlining on mouse hover"
+msgstr "Soulignement du lien au survol de la souris"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3894
+#: inc/sektions/ccat-sektions-ui-modules.php:3906
+msgid "Not underlined"
+msgstr "Non souligné"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3893
+#: inc/sektions/ccat-sektions-ui-modules.php:3905
+msgid "Underlined"
+msgstr "Souligné"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3887
+msgid "Link underlining"
+msgstr "Soulignement du lien"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3877
+msgid "Links color on mouse hover"
+msgstr "Couleur des liens lors du survol de la souris"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3873
+msgid "GLOBAL STYLE OPTIONS FOR LINKS"
+msgstr "OPTIONS DE STYLE GLOBAL POUR LES LIENS"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3867
+msgid "Links color"
+msgstr "Couleur des liens"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3862
+#: inc/sektions/ccat-sektions-ui-modules.php:3872
+#: inc/sektions/ccat-sektions-ui-modules.php:3882
+msgid "Inherits your active theme's option when not set."
+msgstr "Hérite l’option de votre thème actif lorsqu’elle n’est pas définie."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3825
+msgid "GLOBAL TEXT STYLE"
+msgstr "STYLE DE TEXTE GLOBAL"
+
+#: inc/sektions/ccat-czr-sektions.php:548
+msgid "Global text options for Nimble sections"
+msgstr "Options de texte globales pour les sections Nimble"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3152
+msgid "A simple about us section with 2 columns"
+msgstr "Une section à propos de nous avec deux colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3148
+msgid "About us sections"
+msgstr "Sections à propos de nous"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2738
+msgid "Column width in percent"
+msgstr "Largeur de colonne en pourcentage"
+
+#: inc/sektions/ccat-czr-sektions.php:641
+msgid "This is a single-column section with a width of 100%. You can act on the internal width of the parent section, or adjust padding and margin."
+msgstr "Il s’agit d’une section à une colonne d’une largeur de 100%. Vous pouvez agir sur la largeur interne de la section parent ou ajuster le remplissage et la marge."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4633
+msgid "There are currently no available beta features to test."
+msgstr "Il n’y a actuellement aucune fonctionnalité bêta disponible à tester."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4632
+msgid "Check this option to try the upcoming features of Nimble Builder."
+msgstr "Cocher cette option pour essayer les fonctionnalités à venir de Nimble Builder."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3706
+#: inc/sektions/ccat-sektions-ui-modules.php:4429
+msgid "Nimble site wide header and footer"
+msgstr "En-tête et pied de page larges pour le site"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3231
+msgid "simple header with a logo on the left and a menu on the right"
+msgstr "en-tête simple avec un logo à gauche et un menu à droite"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3996
+msgid "Apply a shadow effect when hovering with the cursor"
+msgstr "Appliquer un effet d’ombre lors du survol avec le curseur"
+
+#: inc/admin/nimble-admin.php:112
+msgid "Start building"
+msgstr "Commencer à construire"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4003
+msgid "Content blocks padding"
+msgstr "Marge interne des blocs de contenu"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3983
+msgid "Text blocks alignment"
+msgstr "Alignement des blocs de texte"
+
+#: inc/admin/nimble-admin.php:161
+msgid "(opens in a new window)"
+msgstr "(s’ouvre dans une nouvelle fenêtre)"
+
+#: inc/admin/nimble-admin.php:136
+msgid "Help"
+msgstr "Aide"
+
+#: inc/admin/nimble-admin.php:132
+msgid "Blog"
+msgstr "Blog"
+
+#: inc/admin/nimble-admin.php:117
+msgid "News & release notes"
+msgstr "Nouveautés et informations de mise à jour"
+
+#: inc/admin/nimble-admin.php:77
+msgid "Nimble Builder & %s Overview"
+msgstr "Constructeur de page Nimble & %s Aperçu"
+
+#: inc/admin/nimble-admin.php:74
+msgid "Nimble Builder Overview"
+msgstr "Vue d’ensemble du constructeur Nimble Builder"
+
+#: inc/sektions/ccat-czr-sektions.php:4054
+msgid "posts"
+msgstr "articles"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4515
+msgid "Metas"
+msgstr "Métadonnées"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4419
+msgid "Categories"
+msgstr "Catégories"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4323
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4227
+msgid "Post titles"
+msgstr "Titres des articles"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4218
+msgid "Grid text settings : fonts, colors, ..."
+msgstr "Réglages du texte de la grille : polices, couleurs,…"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4189
+msgid "Display comment number"
+msgstr "Afficher le nombre de commentaires"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4182
+msgid "Display date"
+msgstr "Affichage de la date"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4175
+msgid "Display author"
+msgstr "Afficher l’auteur"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4168
+msgid "Display categories"
+msgstr "Afficher les catégories"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4150
+msgid "Post metas : author, date, category, tags,..."
+msgstr "Métadonnées de publication : auteur, date, catégorie, étiquettes,…"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4131
+msgid "Use a placeholder image when no post thumbnail is set"
+msgstr "Utilisez une image par défaut quand aucune miniature de publication n’est définie"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4114
+msgid "Tip : the height is in percent of the image container's width. Applying a height of 100% makes the image square."
+msgstr "Astuce : la hauteur correspond à un pourcentage de la largeur du conteneur d’images. L’application d’une hauteur de 100% rend l’image carrée."
+
+#: inc/sektions/ccat-sektions-front-modules.php:4105
+msgid "Thumbnail height"
+msgstr "Hauteur de la miniature"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4096
+msgid "Apply a custom height to the thumbnail"
+msgstr "Appliquer une hauteur personnalisée à la miniature"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4092
+msgid "Note that Nimble Builder will let browsers choose the most appropriate size for better performances."
+msgstr "Noter que Nimble Constructeur permettra aux navigateurs de choisir la taille la plus appropriée pour de meilleures performances."
+
+#: inc/sektions/ccat-sektions-front-modules.php:4091
+msgid "This allows you to select a preferred image size among those generated by WordPress."
+msgstr "Autorise la sélection une taille d’image préférée parmi celles générées par WordPress."
+
+#: inc/sektions/ccat-sektions-front-modules.php:4087
+msgid "Select the source image size of the thumbnail"
+msgstr "Sélectionner l’image source de la miniature"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4083
+msgid "The post thumbnail can be set as \"Featured image\" when creating a post."
+msgstr "La miniature de publication peut être définie comme « Image mise en avant » lors de la création d’une publication."
+
+#: inc/sektions/ccat-sektions-front-modules.php:4078
+msgid "Display post thumbnail"
+msgstr "Afficher la miniature de publication"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4059
+msgid "Post thumbnail settings : size, design..."
+msgstr "Réglages de miniature de publication : taille, design…"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4037
+msgid "Space between rows"
+msgstr "Espace entre les lignes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4025
+msgid "Space between columns"
+msgstr "Espace entre les colonnes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:4016
+msgid "Define custom spaces between columns and rows"
+msgstr "Définir des espaces personnalisés entre les colonnes et les lignes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3970
+msgid "Space between text blocks"
+msgstr "Espace entre les blocs de texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3960
+msgid "Excerpt length in words"
+msgstr "Longueur de l’extrait en mots"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3953
+msgid "Display the post excerpt"
+msgstr "Afficher l’extrait de l’article"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3945
+msgid "Display the post title"
+msgstr "Afficher le titre de l'article"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3936
+msgid "Reorganize image and content vertically on smartphones devices"
+msgstr "Réorganiser l’image et le contenu verticalement sur les smartphones"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3927
+msgid "Reorganize image and content vertically on tablet devices"
+msgstr "Réorganiser l’image et le contenu verticalement sur les tablettes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3915
+msgid "Width of the image's column (in percent)"
+msgstr "Largeur de la colonne de l’image (en pourcentage)"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3904
+msgid "Number of columns"
+msgstr "Nombre de colonnes"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3895
+msgid "Posts layout : list or grid"
+msgstr "Mise en page des articles : liste ou grille"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3890
+msgid "Z &rarr; A"
+msgstr "Z &rarr; A"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3889
+msgid "A &rarr; Z"
+msgstr "A &#224; Z"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3888
+msgid "Oldest to newest"
+msgstr "Du plus ancien au plus récent"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3887
+msgid "Newest to oldest"
+msgstr "Du plus récent au plus ancien"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3884
+msgid "Order posts by"
+msgstr "Ordonner les articles par"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3876
+msgid "Display posts that have \"all\" of these categories"
+msgstr "Afficher les articles qui ont « toutes » ces catégories"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3872
+msgid "Display posts that have these categories. Multiple categories allowed."
+msgstr "Afficher les articles qui ont ces catégories. Plusieurs catégories autorisées."
+
+#: inc/sektions/ccat-sektions-front-modules.php:3867
+msgid "Filter posts by category"
+msgstr "Filtrer les articles par catégorie"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3840
+msgid "Number of posts"
+msgstr "Nombre d’articles"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3822
+msgid "Main grid settings : layout, number of posts, columns,..."
+msgstr "Réglages de la grille principale : mise en page, nombre d’articles, colonnes…"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:917
+#: inc/sektions/ccat-sektions-front-modules.php:3802
+msgid "Post Grid"
+msgstr "Grille d’articles"
+
+#: inc/sektions/ccat-czr-sektions.php:1909
+msgid "Grid layout"
+msgstr "Mise en page de la grille"
+
+#: inc/sektions/ccat-czr-sektions.php:1908
+msgid "List layout"
+msgstr "Mise en page"
+
+#: tmpl/modules/post_grid_module_tmpl.php:185
+msgid "% comments"
+msgstr "% commentaires"
+
+#: tmpl/modules/post_grid_module_tmpl.php:185
+msgid "1 comment"
+msgstr "1 commentaire"
+
+#: tmpl/modules/post_grid_module_tmpl.php:185
+msgid "0 comments"
+msgstr "0 commentaire"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4308
+msgid "This will remove the sections displayed on global scope locations. Local scope sections will not be impacted."
+msgstr "Cela supprimera les sections affichées sur les emplacements de portée globale. Les sections de portée locales ne seront pas touchées."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4306
+msgid "Remove the sections displayed globally"
+msgstr "Supprimer les sections affichées globalement"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3786
+msgid "Check this option if you want to keep the existing sections of this page, and combine them with the imported ones."
+msgstr "Cocher cette option si vous souhaitez conserver les sections existantes de cette page et les combiner avec celles importées."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3779
+msgid "Combine the imported sections with the current ones."
+msgstr "Combiner les sections importées avec les sections actuelles."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3769
+#: inc/sektions/ccat-sektions-ui-modules.php:4546
+msgid "EXPORT"
+msgstr "EXPORTER"
+
+#: inc/sektions/ccat-czr-sektions.php:1991
+#: inc/sektions/ccat-czr-sektions.php:1998
+msgid "Import"
+msgstr "Importer"
+
+#: inc/sektions/ccat-czr-sektions.php:1995
+msgid "Uploading..."
+msgstr "Téléversement…"
+
+#: inc/sektions/ccat-czr-sektions.php:1985
+#: inc/sektions/ccat-czr-sektions.php:1992
+msgid "Cancel import"
+msgstr "Annuler l’importation"
+
+#: inc/sektions/ccat-czr-sektions.php:1984
+msgid "Import in existing locations"
+msgstr "Importation dans les emplacements existants"
+
+#: inc/sektions/ccat-czr-sektions.php:1983
+msgid "Import without modification"
+msgstr "Importation sans modification"
+
+#: inc/sektions/ccat-czr-sektions.php:1982
+msgid "Some of the imported sections need a location that is not active on this page. Sections in missing locations will not be rendered. You can continue importing or assign those sections to a contextually active location."
+msgstr "Certaines des sections importées nécessitent un emplacement qui n’est pas actif sur cette page. Les sections situées dans des emplacements manquants ne seront pas rendues. Vous pouvez continuer à importer ou affecter ces sections à un emplacement actif du point de vue contextuel."
+
+#: inc/sektions/ccat-czr-sektions.php:1979
+msgid "Be sure to import a file generated with Nimble Builder export system."
+msgstr "Assurez-vous d’importer un fichier généré avec le système d’exportation de Nimble Builder."
+
+#: inc/sektions/ccat-czr-sektions.php:1978
+msgid "Select the file to import and click on Import button."
+msgstr "Sélectionnez le fichier à importer et cliquez sur le bouton Importer."
+
+#: inc/sektions/ccat-czr-sektions.php:1977
+msgid "IMPORT"
+msgstr "IMPORTER"
+
+#: inc/sektions/ccat-czr-sektions.php:1974
+msgid "Export"
+msgstr "Exporter"
+
+#: inc/sektions/ccat-czr-sektions.php:637
+msgid "Some image(s) could not be imported"
+msgstr "Certaine(s) image(s) ne peuvent pas être importées"
+
+#: inc/sektions/ccat-czr-sektions.php:636
+msgid "Import failed, file problem"
+msgstr "Échec de l’importation, problème de fichier"
+
+#: inc/sektions/ccat-czr-sektions.php:635
+msgid "Import failed, invalid file content"
+msgstr "Échec de l’importation, contenu du fichier non valide"
+
+#: inc/sektions/ccat-czr-sektions.php:633
+msgid "File successfully imported"
+msgstr "Fichier bien importé"
+
+#: inc/sektions/ccat-czr-sektions.php:632
+msgid "Missing file"
+msgstr "Fichier manquant"
+
+#: inc/sektions/ccat-czr-sektions.php:631
+msgid "The current page has no available locations to import Nimble Builder sections."
+msgstr "La page en cours n'a pas d'emplacement disponible pour importer des sections Nimble Builder."
+
+#: inc/sektions/ccat-czr-sektions.php:629
+msgid "Import failed"
+msgstr "Échec de l’importation"
+
+#: inc/sektions/ccat-czr-sektions.php:628
+msgid "Nimble Builder : you have nothing to export. Start adding sections to this page!"
+msgstr "Nimble Builder : vous n'avez rien à exporter. Commencez à ajouter des sections à cette page !"
+
+#: inc/sektions/ccat-czr-sektions.php:627
+msgid "Export failed"
+msgstr "Échec de l’exportation"
+
+#: inc/sektions/ccat-czr-sektions.php:625
+msgid "Export / Import"
+msgstr "Export/Import"
+
+#: inc/sektions/ccat-czr-sektions.php:624
+msgid "Nimble Builder : you need to publish before exporting."
+msgstr "Nimble Builder : vous devez publier avant d'exporter."
+
+#: inc/sektions/ccat-czr-sektions.php:545
+msgid "Reset the sections displayed in global locations"
+msgstr "Réinitialiser les sections affichées dans les emplacements globaux"
+
+#: inc/sektions/ccat-czr-sektions.php:501
+msgid "Reset failed"
+msgstr "La réinitialisation a échoué"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2340
+msgid "Tooltip text on mouse hover"
+msgstr "Texte d’infobulle lors du survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1844
+msgid "Main quote content"
+msgstr "Contenu principal du devis"
+
+#: inc/sektions/ccat-czr-sektions.php:3919
+msgid "Add Link"
+msgstr "Ajouter un lien"
+
+#: inc/sektions/ccat-czr-sektions.php:3905
+msgid "Search or use up and down arrow keys to select an item."
+msgstr "Rechercher ou utiliser les flèches haute et basse pour sélectionner un élément."
+
+#: inc/sektions/ccat-czr-sektions.php:3904
+msgid "No search term specified. Showing recent items."
+msgstr "Aucun terme de recherche spécifié. Affichage des éléments récents."
+
+#: inc/sektions/ccat-czr-sektions.php:3891
+msgid "Search"
+msgstr "Chercher"
+
+#: inc/sektions/ccat-czr-sektions.php:3887
+msgid "Or link to existing content"
+msgstr "Ou un lien vers du contenu existant"
+
+#: inc/sektions/ccat-czr-sektions.php:3884
+msgid "Open link in a new tab"
+msgstr "Ouvrir le lien dans un nouvel onglet"
+
+#: inc/sektions/ccat-czr-sektions.php:3879
+msgid "Link Text"
+msgstr "Lien texte"
+
+#: inc/sektions/ccat-czr-sektions.php:3873
+msgid "Enter the destination URL"
+msgstr "Saisissez l’URL de destination"
+
+#: inc/sektions/ccat-czr-sektions.php:3810
+msgid "Y/m/d"
+msgstr "A/m/j"
+
+#: inc/sektions/ccat-czr-sektions.php:3458
+msgid "The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo."
+msgstr "Le groupe suivant de raccourcis de mise en forme est appliqué lorsque vous tapez ou lorsque vous les insérez autour d'un texte brut dans le même paragraphe. Appuyez sur Echap ou sur le bouton Annuler pour annuler."
+
+#: inc/sektions/ccat-czr-sektions.php:3456
+msgid "The following formatting shortcuts are replaced when pressing Enter. Press Escape or the Undo button to undo."
+msgstr "Les raccourcis de formatage suivants sont remplacés lorsque vous appuyez sur Entrée. Appuyez sur Echap ou sur le bouton Annuler pour annuler."
+
+#: inc/sektions/ccat-czr-sektions.php:3454
+msgid "When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo."
+msgstr "Lorsque vous commencez un nouveau paragraphe avec l’un de ces raccourcis de mise en forme suivi d’un espace, la mise en forme sera appliquée automatiquement. Appuyez sur Retour arrière ou Echap. pour annuler."
+
+#: inc/sektions/ccat-czr-sektions.php:3452
+msgid "To move focus to other buttons use Tab or the arrow keys. To return focus to the editor press Escape or use one of the buttons."
+msgstr "Pour déplacer le focus sur d’autres boutons, utiliser la touche Tab ou les flèches. Pour revenir au focus dans l’éditeur, appuyer sur Echap ou utiliser l’un des boutons."
+
+#: inc/sektions/ccat-czr-sektions.php:3450
+msgid "Warning: the link has been inserted but may have errors. Please test it."
+msgstr "Avertissement : le lien a été inséré mais peut comporter des erreurs. Veuillez le tester."
+
+#: inc/sektions/ccat-czr-sektions.php:3449
+msgid "Action"
+msgstr "Action"
+
+#: inc/sektions/ccat-czr-sektions.php:3448
+msgid "Letter"
+msgstr "Lettre"
+
+#: inc/sektions/ccat-czr-sektions.php:3447
+msgid "Ctrl + letter:"
+msgstr "Ctrl + lettre :"
+
+#: inc/sektions/ccat-czr-sektions.php:3446
+msgid "Cmd + letter:"
+msgstr "Ctrl + lettre :"
+
+#: inc/sektions/ccat-czr-sektions.php:3445
+msgid "Shift + Alt + letter:"
+msgstr "Shift + Alt + lettre :"
+
+#: inc/sektions/ccat-czr-sektions.php:3444
+msgid "Ctrl + Alt + letter:"
+msgstr "Ctrl + Alt + lettre :"
+
+#: inc/sektions/ccat-czr-sektions.php:3443
+msgid "Elements path"
+msgstr "Chemin des éléments"
+
+#: inc/sektions/ccat-czr-sektions.php:3442
+msgid "Editor toolbar"
+msgstr "Barre d’outils de l’éditeur"
+
+#: inc/sektions/ccat-czr-sektions.php:3441
+msgid "Editor menu (when enabled)"
+msgstr "Menu de l’éditeur (lorsqu’il est activé)"
+
+#: inc/sektions/ccat-czr-sektions.php:3440
+msgid "Inline toolbar (when an image, link or preview is selected)"
+msgstr "Barre d’outils intégrée (lorsqu’une image, un lien ou un aperçu est sélectionné)"
+
+#: inc/sektions/ccat-czr-sektions.php:3439
+msgid "Focus shortcuts:"
+msgstr "Raccourcis de sélections :"
+
+#: inc/sektions/ccat-czr-sektions.php:3438
+msgid "Additional shortcuts,"
+msgstr "Des raccourcis supplémentaires,"
+
+#: inc/sektions/ccat-czr-sektions.php:3437
+msgid "Default shortcuts,"
+msgstr "Raccourcis par défaut,"
+
+#: inc/sektions/ccat-czr-sektions.php:3436
+msgid "Classic Block Keyboard Shortcuts"
+msgstr "Raccourcis clavier du bloc classique"
+
+#: inc/sektions/ccat-czr-sektions.php:3435
+msgid "Keyboard Shortcuts"
+msgstr "Raccourcis clavier"
+
+#: inc/sektions/ccat-czr-sektions.php:3432
+msgid "Add Media"
+msgstr "Ajouter des médias"
+
+#: inc/sektions/ccat-czr-sektions.php:3429
+msgid "Link options"
+msgstr "Options de lien"
+
+#: inc/sektions/ccat-czr-sektions.php:3428
+msgid "Apply"
+msgstr "Appliquer"
+
+#: inc/sektions/ccat-czr-sektions.php:3427
+msgid "Paste URL or type to search"
+msgstr "Coller l’URL ou le type à rechercher"
+
+#: inc/sektions/ccat-czr-sektions.php:3424
+msgid "No alignment"
+msgstr "Aucun alignement"
+
+#: inc/sektions/ccat-czr-sektions.php:3423
+msgid "Distraction-free writing mode"
+msgstr "Mode d’écriture sans distraction"
+
+#: inc/sektions/ccat-czr-sektions.php:3422
+msgid "Read more..."
+msgstr "Lire la suite…"
+
+#: inc/sektions/ccat-czr-sektions.php:3421
+msgid "Insert Page Break tag"
+msgstr "Insérer une balise de saut de page"
+
+#: inc/sektions/ccat-czr-sektions.php:3420
+msgid "Insert Read More tag"
+msgstr "Insérer une balise Lire plus"
+
+#: inc/sektions/ccat-czr-sektions.php:3419
+msgid "Toolbar Toggle"
+msgstr "Ouvrir/Fermer la barre d’outils"
+
+#: inc/sektions/ccat-czr-sektions.php:3416
+msgctxt "TinyMCE menu"
+msgid "Format"
+msgstr "Format"
+
+#: inc/sektions/ccat-czr-sektions.php:3415
+msgctxt "TinyMCE menu"
+msgid "Table"
+msgstr "Table"
+
+#: inc/sektions/ccat-czr-sektions.php:3414
+msgctxt "TinyMCE menu"
+msgid "View"
+msgstr "Vue"
+
+#: inc/sektions/ccat-czr-sektions.php:3413
+msgctxt "TinyMCE menu"
+msgid "Tools"
+msgstr "Outils"
+
+#: inc/sektions/ccat-czr-sektions.php:3412
+msgctxt "TinyMCE menu"
+msgid "Edit"
+msgstr "Modifier"
+
+#: inc/sektions/ccat-czr-sektions.php:3411
+msgctxt "TinyMCE menu"
+msgid "File"
+msgstr "Fichier"
+
+#: inc/sektions/ccat-czr-sektions.php:3410
+msgctxt "TinyMCE menu"
+msgid "Insert"
+msgstr "Insérer"
+
+#: inc/sektions/ccat-czr-sektions.php:3407
+msgid "Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser&#8217;s edit menu instead."
+msgstr "Votre navigateur ne supporte pas l’accès direct au presse-papier. Veuillez utiliser les raccourcis clavier ou modifier le menu d’édition de votre navigateur."
+
+#: inc/sektions/ccat-czr-sektions.php:3405
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr "Les modifications que vous avez apportées seront perdues si vous quittez cette page."
+
+#: inc/sektions/ccat-czr-sektions.php:3403
+msgid "Rich Text Area. Press Control-Option-H for help."
+msgstr "Zone de texte enrichi. Appuyez sur Alt-Shift-H pour obtenir de l’aide."
+
+#: inc/sektions/ccat-czr-sektions.php:3402
+msgid "Rich Text Area. Press Alt-Shift-H for help."
+msgstr "Zone de texte enrichi. Appuyer sur Alt-Maj-H pour obtenir de l'aide."
+
+#: inc/sektions/ccat-czr-sektions.php:3400
+msgid "If you&#8217;re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically."
+msgstr "Si vous souhaitez coller du contenu enrichi à partir de Microsoft Word, désactivez cette option. L'éditeur nettoie automatiquement le texte collé à partir de Word."
+
+#: inc/sektions/ccat-czr-sektions.php:3399
+msgid "Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off."
+msgstr "Coller est maintenant en mode texte brut. Le contenu sera maintenant collé sous forme de texte brut jusqu’à ce que vous désactiviez cette option."
+
+#. translators: word count
+#: inc/sektions/ccat-czr-sektions.php:3397
+msgid "Words: %s"
+msgstr "Mots : %s"
+
+#: inc/sektions/ccat-czr-sektions.php:3394
+msgid "Show invisible characters"
+msgstr "Afficher les caractères invisibles"
+
+#: inc/sektions/ccat-czr-sektions.php:3393
+msgctxt "editor button"
+msgid "Show blocks"
+msgstr "Afficher les blocs"
+
+#: inc/sektions/ccat-czr-sektions.php:3389
+msgctxt "TinyMCE"
+msgid "Templates"
+msgstr "Modèles"
+
+#: inc/sektions/ccat-czr-sektions.php:3388
+msgctxt "TinyMCE"
+msgid "Insert template"
+msgstr "Insérer un modèle"
+
+#: inc/sektions/ccat-czr-sektions.php:3386
+msgctxt "table cell scope attribute"
+msgid "Scope"
+msgstr "Portée"
+
+#: inc/sektions/ccat-czr-sektions.php:3385
+msgid "Cell spacing"
+msgstr "Espacement des cellules"
+
+#: inc/sektions/ccat-czr-sektions.php:3384
+msgid "Cell padding"
+msgstr "Remplissage de cellule"
+
+#: inc/sektions/ccat-czr-sektions.php:3383
+msgid "Cell type"
+msgstr "Type de cellule"
+
+#: inc/sektions/ccat-czr-sektions.php:3382
+msgid "Row type"
+msgstr "Type de ligne"
+
+#: inc/sektions/ccat-czr-sektions.php:3381
+msgid "Column group"
+msgstr "Groupe de colonnes"
+
+#: inc/sektions/ccat-czr-sektions.php:3380
+msgid "Row group"
+msgstr "Groupe de lignes"
+
+#: inc/sektions/ccat-czr-sektions.php:3377
+msgid "Middle"
+msgstr "Milieu"
+
+#: inc/sektions/ccat-czr-sektions.php:3375
+msgctxt "vertical table cell alignment"
+msgid "V Align"
+msgstr "Alignement V"
+
+#: inc/sektions/ccat-czr-sektions.php:3374
+msgctxt "table cell alignment attribute"
+msgid "None"
+msgstr "Aucun"
+
+#: inc/sektions/ccat-czr-sektions.php:3372
+msgid "Center"
+msgstr "Centre"
+
+#: inc/sektions/ccat-czr-sektions.php:3370
+msgctxt "horizontal table cell alignment"
+msgid "H Align"
+msgstr "Alignement H"
+
+#: inc/sektions/ccat-czr-sektions.php:3368
+msgid "Caption"
+msgstr "Légende"
+
+#: inc/sektions/ccat-czr-sektions.php:3364
+msgid "Split table cell"
+msgstr "Cellule de table divisée"
+
+#: inc/sektions/ccat-czr-sektions.php:3363
+msgid "Merge table cells"
+msgstr "Fusionner les cellules d’un tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3362
+msgid "Copy table row"
+msgstr "Copier la ligne du tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3361
+msgid "Cut table row"
+msgstr "Couper la ligne du tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3360
+msgid "Delete column"
+msgstr "Supprimer la colonne"
+
+#: inc/sektions/ccat-czr-sektions.php:3359
+msgid "Delete row"
+msgstr "Supprimer la ligne"
+
+#: inc/sektions/ccat-czr-sektions.php:3358
+msgid "Paste table row after"
+msgstr "Coller la ligne après"
+
+#: inc/sektions/ccat-czr-sektions.php:3357
+msgid "Paste table row before"
+msgstr "Coller la ligne de la table avant"
+
+#: inc/sektions/ccat-czr-sektions.php:3356
+msgid "Insert column after"
+msgstr "Insérer une colonne après"
+
+#: inc/sektions/ccat-czr-sektions.php:3355
+msgid "Insert column before"
+msgstr "Insérer une colonne avant"
+
+#: inc/sektions/ccat-czr-sektions.php:3354
+msgid "Insert row after"
+msgstr "Insérer une ligne après"
+
+#: inc/sektions/ccat-czr-sektions.php:3353
+msgid "Insert row before"
+msgstr "Insérer une ligne avant"
+
+#: inc/sektions/ccat-czr-sektions.php:3351
+msgctxt "table footer"
+msgid "Footer"
+msgstr "Pied de page"
+
+#: inc/sektions/ccat-czr-sektions.php:3350
+msgctxt "table body"
+msgid "Body"
+msgstr "Corps"
+
+#: inc/sektions/ccat-czr-sektions.php:3349
+msgctxt "table header"
+msgid "Header"
+msgstr "En-tête"
+
+#: inc/sektions/ccat-czr-sektions.php:3348
+msgid "Header cell"
+msgstr "Cellule d’en-tête"
+
+#: inc/sektions/ccat-czr-sektions.php:3347
+msgctxt "table cell"
+msgid "Cell"
+msgstr "Cellule"
+
+#: inc/sektions/ccat-czr-sektions.php:3346
+msgctxt "table columns"
+msgid "Cols"
+msgstr "Colonnes"
+
+#: inc/sektions/ccat-czr-sektions.php:3345
+msgctxt "table column"
+msgid "Column"
+msgstr "Colonne"
+
+#: inc/sektions/ccat-czr-sektions.php:3344
+msgid "Rows"
+msgstr "Lignes"
+
+#: inc/sektions/ccat-czr-sektions.php:3343
+msgid "Row"
+msgstr "Ligne"
+
+#: inc/sektions/ccat-czr-sektions.php:3341
+#: inc/sektions/ccat-sektions-front-modules.php:6189
+msgid "Border color"
+msgstr "Couleur de la bordure"
+
+#: inc/sektions/ccat-czr-sektions.php:3340
+msgid "Table cell properties"
+msgstr "Propriétés de la cellule du tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3339
+msgid "Table row properties"
+msgstr "Propriétés de la ligne du tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3338
+msgid "Table properties"
+msgstr "Propriétés du tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3337
+msgid "Delete table"
+msgstr "Supprimer le tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3336
+msgid "Insert table"
+msgstr "Insérer un tableau"
+
+#: inc/sektions/ccat-czr-sektions.php:3333
+msgid "Add to Dictionary"
+msgstr "Ajouter au dictionnaire"
+
+#: inc/sektions/ccat-czr-sektions.php:3332
+msgctxt "spellcheck"
+msgid "Ignore"
+msgstr "Ignorer"
+
+#: inc/sektions/ccat-czr-sektions.php:3331
+msgctxt "spellcheck"
+msgid "Ignore all"
+msgstr "Ignorer tout"
+
+#: inc/sektions/ccat-czr-sektions.php:3330
+msgctxt "spellcheck"
+msgid "Finish"
+msgstr "Terminer"
+
+#: inc/sektions/ccat-czr-sektions.php:3329
+msgid "Check Spelling"
+msgstr "Vérifier l'orthographe"
+
+#: inc/sektions/ccat-czr-sektions.php:3328
+msgid "Match case"
+msgstr "Cas de correspondance"
+
+#: inc/sektions/ccat-czr-sektions.php:3327
+msgctxt "find/replace"
+msgid "Replace all"
+msgstr "Remplacer tout"
+
+#: inc/sektions/ccat-czr-sektions.php:3326
+msgctxt "find/replace"
+msgid "Find"
+msgstr "Trouver"
+
+#: inc/sektions/ccat-czr-sektions.php:3325
+msgctxt "find/replace"
+msgid "Replace with"
+msgstr "Remplacer par"
+
+#: inc/sektions/ccat-czr-sektions.php:3324
+msgid "Find and replace"
+msgstr "Rechercher et remplacer"
+
+#: inc/sektions/ccat-czr-sektions.php:3323
+msgctxt "find/replace"
+msgid "Whole words"
+msgstr "Mots entiers"
+
+#. translators: previous
+#: inc/sektions/ccat-czr-sektions.php:3322
+msgctxt "find/replace"
+msgid "Prev"
+msgstr "Précédent"
+
+#: inc/sektions/ccat-czr-sektions.php:3320
+msgctxt "find/replace"
+msgid "Next"
+msgstr "Suivant"
+
+#: inc/sektions/ccat-czr-sektions.php:3319
+msgctxt "find/replace"
+msgid "Replace"
+msgstr "Remplacer"
+
+#: inc/sektions/ccat-czr-sektions.php:3318
+msgid "Could not find the specified string."
+msgstr "Impossible de trouver la chaîne spécifiée."
+
+#: inc/sektions/ccat-czr-sektions.php:3315
+msgctxt "Short for blue in RGB"
+msgid "B"
+msgstr "B"
+
+#: inc/sektions/ccat-czr-sektions.php:3314
+msgctxt "Short for green in RGB"
+msgid "G"
+msgstr "V"
+
+#: inc/sektions/ccat-czr-sektions.php:3313
+msgctxt "Short for red in RGB"
+msgid "R"
+msgstr "R"
+
+#: inc/sektions/ccat-czr-sektions.php:3312
+msgid "No color"
+msgstr "Sans couleur"
+
+#: inc/sektions/ccat-czr-sektions.php:3311
+msgctxt "label for custom color"
+msgid "Custom..."
+msgstr "Personnaliser…"
+
+#: inc/sektions/ccat-czr-sektions.php:3310
+msgid "Custom color"
+msgstr "Couleur personnalisée"
+
+#: inc/sektions/ccat-czr-sektions.php:3307
+msgid "The URL you entered seems to be an external link. Do you want to add the required http:// prefix?"
+msgstr "L’URL que vous avez saisie semble être un lien externe. Souhaitez-vous saisir le préfixe obligatoire « http:// » ?"
+
+#: inc/sektions/ccat-czr-sektions.php:3305
+msgid "The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?"
+msgstr "L’URL que vous avez saisie semble être une adresse de messagerie, souhaitez-vous saisir le préfixe obligatoire mailto: ? "
+
+#: inc/sektions/ccat-czr-sektions.php:3303
+#: inc/sektions/ccat-czr-sektions.php:3875
+msgid "URL"
+msgstr "URL"
+
+#: inc/sektions/ccat-czr-sektions.php:3302
+msgid "Text to display"
+msgstr "Texte à afficher"
+
+#: inc/sektions/ccat-czr-sektions.php:3301
+msgid "New window"
+msgstr "Nouvelle fenêtre"
+
+#: inc/sektions/ccat-czr-sektions.php:3300
+msgid "Target"
+msgstr "Cible"
+
+#: inc/sektions/ccat-czr-sektions.php:3298
+msgid "Insert link"
+msgstr "Insérer un lien"
+
+#: inc/sektions/ccat-czr-sektions.php:3297
+msgid "Link"
+msgstr "Lien"
+
+#: inc/sektions/ccat-czr-sektions.php:3294
+msgid "Remove link"
+msgstr "Supprimer le lien"
+
+#: inc/sektions/ccat-czr-sektions.php:3293
+#: inc/sektions/ccat-czr-sektions.php:3299
+#: inc/sektions/ccat-czr-sektions.php:3869
+msgid "Insert/edit link"
+msgstr "Insérer/modifier le lien"
+
+#: inc/sektions/ccat-czr-sektions.php:3292
+msgid "Restore last draft"
+msgstr "Restaurer le dernier brouillon"
+
+#: inc/sektions/ccat-czr-sektions.php:3291
+msgid "Horizontal space"
+msgstr "Espace horizontal"
+
+#: inc/sektions/ccat-czr-sektions.php:3290
+msgid "Horizontal line"
+msgstr "Ligne horizontale"
+
+#: inc/sektions/ccat-czr-sektions.php:3289
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: inc/sektions/ccat-czr-sektions.php:3287
+msgid "Print"
+msgstr "Imprimer"
+
+#: inc/sektions/ccat-czr-sektions.php:3286
+msgid "Preview"
+msgstr "Aperçu"
+
+#: inc/sektions/ccat-czr-sektions.php:3285
+msgid "Paste as text"
+msgstr "Coller comme texte"
+
+#: inc/sektions/ccat-czr-sektions.php:3284
+msgid "Page break"
+msgstr "Saut de page"
+
+#: inc/sektions/ccat-czr-sektions.php:3283
+msgid "Nonbreaking space"
+msgstr "Espace insécable"
+
+#: inc/sektions/ccat-czr-sektions.php:3282
+msgid "Emoticons"
+msgstr "Émoticônes"
+
+#: inc/sektions/ccat-czr-sektions.php:3281
+msgctxt "editor button"
+msgid "Left to right"
+msgstr "De gauche à droite"
+
+#: inc/sektions/ccat-czr-sektions.php:3280
+msgctxt "editor button"
+msgid "Right to left"
+msgstr "De droite à gauche"
+
+#: inc/sektions/ccat-czr-sektions.php:3279
+msgid "Special character"
+msgstr "Caractère spécial"
+
+#: inc/sektions/ccat-czr-sektions.php:3276
+msgid "Embed"
+msgstr "Contenu embarqué"
+
+#: inc/sektions/ccat-czr-sektions.php:3275
+msgid "Insert video"
+msgstr "Insérer une vidéo"
+
+#: inc/sektions/ccat-czr-sektions.php:3274
+msgid "Paste your embed code below:"
+msgstr "Coller votre code d’intégration ci-dessous :"
+
+#: inc/sektions/ccat-czr-sektions.php:3273
+msgid "Alternative source"
+msgstr "Source alternative"
+
+#: inc/sektions/ccat-czr-sektions.php:3272
+msgid "Poster"
+msgstr "Affiche"
+
+#: inc/sektions/ccat-czr-sektions.php:3271
+msgid "Insert/edit media"
+msgstr "Insérer/modifier un média"
+
+#: inc/sektions/ccat-czr-sektions.php:3270
+msgid "Media"
+msgstr "Média"
+
+#: inc/sektions/ccat-czr-sektions.php:3269
+msgid "Language"
+msgstr "Langue"
+
+#: inc/sektions/ccat-czr-sektions.php:3268
+msgid "Insert/edit code sample"
+msgstr "Insérer/modifier un exemple de code"
+
+#: inc/sektions/ccat-czr-sektions.php:3267
+msgid "Table of Contents"
+msgstr "Table des matières"
+
+#: inc/sektions/ccat-czr-sektions.php:3266
+msgid "Insert date/time"
+msgstr "Insérer la date/heure"
+
+#: inc/sektions/ccat-czr-sektions.php:3265
+msgid "Date/time"
+msgstr "Date/heure"
+
+#: inc/sektions/ccat-czr-sektions.php:3264
+msgid "Insert image"
+msgstr "Insérer une image"
+
+#: inc/sektions/ccat-czr-sektions.php:3263
+msgid "Dimensions"
+msgstr "Dimensions"
+
+#: inc/sektions/ccat-czr-sektions.php:3261
+msgid "Image description"
+msgstr "Description de l’image"
+
+#: inc/sektions/ccat-czr-sektions.php:3260
+msgid "Vertical space"
+msgstr "Espace vertical"
+
+#: inc/sektions/ccat-czr-sektions.php:3259
+msgid "Constrain proportions"
+msgstr "Limiter les proportions"
+
+#: inc/sektions/ccat-czr-sektions.php:3257
+msgid "Source"
+msgstr "Source"
+
+#: inc/sektions/ccat-czr-sektions.php:3256
+msgid "Advanced"
+msgstr "Avancé(e)"
+
+#: inc/sektions/ccat-czr-sektions.php:3255
+#: inc/sektions/ccat-sektions-front-modules.php:5668
+#: inc/sektions/ccat-sektions-front-modules.php:6158
+msgid "General"
+msgstr "Général"
+
+#: inc/sektions/ccat-czr-sektions.php:3254
+msgid "Insert/edit image"
+msgstr "Insérer/modifier une image"
+
+#: inc/sektions/ccat-czr-sektions.php:3250
+msgid "Author"
+msgstr "Auteur"
+
+#: inc/sektions/ccat-czr-sektions.php:3249
+msgid "Description"
+msgstr "Description"
+
+#: inc/sektions/ccat-czr-sektions.php:3248
+msgid "Encoding"
+msgstr "Encodage"
+
+#: inc/sektions/ccat-czr-sektions.php:3247
+msgid "Keywords"
+msgstr "Mots clés"
+
+#: inc/sektions/ccat-czr-sektions.php:3246
+#: inc/sektions/ccat-sektions-front-modules.php:856
+#: inc/sektions/ccat-sektions-front-modules.php:5476
+#: inc/sektions/ccat-sektions-front-modules.php:6072
+msgid "Title"
+msgstr "Titre"
+
+#: inc/sektions/ccat-czr-sektions.php:3245
+msgid "Robots"
+msgstr "Robots"
+
+#: inc/sektions/ccat-czr-sektions.php:3244
+msgid "Document properties"
+msgstr "Propriétés du document"
+
+#: inc/sektions/ccat-czr-sektions.php:3241
+msgctxt "Id for link anchor (TinyMCE)"
+msgid "Id"
+msgstr "Id"
+
+#: inc/sektions/ccat-czr-sektions.php:3240
+msgid "Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores."
+msgstr "Id devrait commencer par une lettre, suivie uniquement de lettres, de chiffres, de tirets, de points, de deux points ou de caractères de soulignement."
+
+#: inc/sektions/ccat-czr-sektions.php:3238
+msgctxt "Link anchors (TinyMCE)"
+msgid "Anchors"
+msgstr "Ancres"
+
+#: inc/sektions/ccat-czr-sektions.php:3237
+msgctxt "Link anchor (TinyMCE)"
+msgid "Anchor"
+msgstr "Ancre"
+
+#: inc/sektions/ccat-czr-sektions.php:3236
+msgctxt "Name of link anchor (TinyMCE)"
+msgid "Name"
+msgstr "Nom"
+
+#: inc/sektions/ccat-czr-sektions.php:3233
+msgctxt "list style"
+msgid "Lower Roman"
+msgstr "Chiffres romains minuscules "
+
+#: inc/sektions/ccat-czr-sektions.php:3232
+msgctxt "list style"
+msgid "Upper Roman"
+msgstr "Chiffres romains majuscules"
+
+#: inc/sektions/ccat-czr-sektions.php:3231
+msgctxt "list style"
+msgid "Upper Alpha"
+msgstr "Majuscules alphanumériques"
+
+#: inc/sektions/ccat-czr-sektions.php:3230
+msgctxt "list style"
+msgid "Lower Alpha"
+msgstr "Alpha inférieur"
+
+#: inc/sektions/ccat-czr-sektions.php:3229
+msgctxt "list style"
+msgid "Lower Greek"
+msgstr "Minuscules grecques"
+
+#: inc/sektions/ccat-czr-sektions.php:3228
+msgctxt "list style"
+msgid "Disc"
+msgstr "Disque"
+
+#: inc/sektions/ccat-czr-sektions.php:3227
+msgctxt "list style"
+msgid "Circle"
+msgstr "Cercle"
+
+#: inc/sektions/ccat-czr-sektions.php:3226
+msgctxt "list style"
+msgid "Default"
+msgstr "Défaut"
+
+#: inc/sektions/ccat-czr-sektions.php:3225
+msgctxt "list style"
+msgid "Square"
+msgstr "Carré"
+
+#: inc/sektions/ccat-czr-sektions.php:3224
+msgid "Numbered list"
+msgstr "Liste numérotée"
+
+#: inc/sektions/ccat-czr-sektions.php:3223
+msgid "Bulleted list"
+msgstr "Liste à puces"
+
+#: inc/sektions/ccat-czr-sektions.php:3221
+msgid "Visual aids"
+msgstr "Aides visuelles"
+
+#: inc/sektions/ccat-czr-sektions.php:3218
+msgid "OK"
+msgstr "OK"
+
+#: inc/sektions/ccat-czr-sektions.php:3214
+msgid "Select all"
+msgstr "Tout sélectionner"
+
+#: inc/sektions/ccat-czr-sektions.php:3213
+msgid "Paste"
+msgstr "Coller"
+
+#: inc/sektions/ccat-czr-sektions.php:3212
+msgid "Copy"
+msgstr "Copier"
+
+#: inc/sektions/ccat-czr-sektions.php:3211
+msgid "Cut"
+msgstr "Couper"
+
+#: inc/sektions/ccat-czr-sektions.php:3209
+msgid "Decrease indent"
+msgstr "Diminuer le retrait"
+
+#: inc/sektions/ccat-czr-sektions.php:3208
+msgid "Increase indent"
+msgstr "Augmenter le retrait"
+
+#: inc/sektions/ccat-czr-sektions.php:3207
+msgid "Justify"
+msgstr "Justifier"
+
+#: inc/sektions/ccat-czr-sektions.php:3202
+msgid "Font Sizes"
+msgstr "Tailles de police"
+
+#: inc/sektions/ccat-czr-sektions.php:3201
+msgid "Font Family"
+msgstr "Famille de polices"
+
+#: inc/sektions/ccat-czr-sektions.php:3200
+msgid "Source code"
+msgstr "Code source"
+
+#: inc/sektions/ccat-czr-sektions.php:3199
+msgid "Code"
+msgstr "Code"
+
+#: inc/sektions/ccat-czr-sektions.php:3198
+msgid "Italic"
+msgstr "Italique"
+
+#: inc/sektions/ccat-czr-sektions.php:3197
+msgid "Bold"
+msgstr "Gras"
+
+#: inc/sektions/ccat-czr-sektions.php:3196
+msgid "Clear formatting"
+msgstr "Supprimer le formatage"
+
+#: inc/sektions/ccat-czr-sektions.php:3195
+msgid "Superscript"
+msgstr "En exposant"
+
+#: inc/sektions/ccat-czr-sektions.php:3194
+msgid "Subscript"
+msgstr "Indice"
+
+#: inc/sektions/ccat-czr-sektions.php:3193
+msgid "Strikethrough"
+msgstr "Barré"
+
+#: inc/sektions/ccat-czr-sektions.php:3192
+msgid "Underline"
+msgstr "Souligner"
+
+#: inc/sektions/ccat-czr-sektions.php:3191
+msgctxt "HTML elements"
+msgid "Inline"
+msgstr "En ligne"
+
+#: inc/sektions/ccat-czr-sektions.php:3189
+msgctxt "HTML tag"
+msgid "Address"
+msgstr "Adresse"
+
+#: inc/sektions/ccat-czr-sektions.php:3188
+msgctxt "HTML tag"
+msgid "Preformatted"
+msgstr "Pré-formaté"
+
+#: inc/sektions/ccat-czr-sektions.php:3187
+msgctxt "HTML tag"
+msgid "Pre"
+msgstr "Pre"
+
+#: inc/sektions/ccat-czr-sektions.php:3186
+msgctxt "HTML tag"
+msgid "Div"
+msgstr "Div"
+
+#: inc/sektions/ccat-czr-sektions.php:3185
+msgid "Blockquote"
+msgstr "Bloc de citation"
+
+#: inc/sektions/ccat-czr-sektions.php:3184
+msgid "Paragraph"
+msgstr "Paragraphe"
+
+#. translators: block tags
+#: inc/sektions/ccat-czr-sektions.php:3183
+msgctxt "TinyMCE"
+msgid "Blocks"
+msgstr "Blocs"
+
+#: inc/sektions/ccat-czr-sektions.php:3180
+msgid "Heading 6"
+msgstr "Titre 6"
+
+#: inc/sektions/ccat-czr-sektions.php:3179
+msgid "Heading 5"
+msgstr "Titre 5"
+
+#: inc/sektions/ccat-czr-sektions.php:3178
+msgid "Heading 4"
+msgstr "Titre 4"
+
+#: inc/sektions/ccat-czr-sektions.php:3177
+msgid "Heading 3"
+msgstr "Titre 3"
+
+#: inc/sektions/ccat-czr-sektions.php:3176
+msgid "Heading 2"
+msgstr "Titre 2"
+
+#: inc/sektions/ccat-czr-sektions.php:3175
+msgid "Heading 1"
+msgstr "Titre 1"
+
+#: inc/sektions/ccat-czr-sektions.php:3174
+msgctxt "TinyMCE"
+msgid "Headings"
+msgstr "Titres"
+
+#: inc/sektions/ccat-czr-sektions.php:3172
+msgctxt "TinyMCE"
+msgid "Formats"
+msgstr "Formats"
+
+#: inc/sektions/ccat-czr-sektions.php:3171
+msgid "New document"
+msgstr "Nouveau document"
+
+#: inc/sektions/ccat-czr-sektions.php:2341
+#: inc/sektions/ccat-czr-sektions.php:3431
+msgctxt "Name for the Text editor tab (formerly HTML)"
+msgid "Text"
+msgstr "Texte"
+
+#: inc/sektions/ccat-czr-sektions.php:2339
+#: inc/sektions/ccat-czr-sektions.php:3430
+msgctxt "Name for the Visual editor tab"
+msgid "Visual"
+msgstr "Visuel"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4603
+msgid "This is the revision history of the global sections displayed site wide."
+msgstr "Ceci est l’historique des révisions des sections globales affichées à l’échelle du site."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3746
+#: inc/sektions/ccat-sektions-ui-modules.php:4604
+msgid "Select a revision from the drop-down list to preview it. You can then restore it by clicking the Publish button at the top of the page."
+msgstr "Sélectionner une révision dans la liste déroulante pour la prévisualiser. Vous pouvez ensuite le restaurer en cliquant sur le bouton Publier en haut de la page."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3745
+msgid "This is the revision history of the sections of the currently customized page."
+msgstr "C’est l'historique de révision des sections de la page actuellement personnalisée."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3740
+#: inc/sektions/ccat-sektions-ui-modules.php:4598
+msgid "Browse your revision history"
+msgstr "Parcourir votre historique de révision"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3036
+msgid "Note : you can add several custom CSS classes separated by a white space."
+msgstr "Remarque : vous pouvez ajouter plusieurs classes CSS personnalisées séparées par un espace."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3034
+msgid "Custom CSS classes"
+msgstr "Styles CSS personnalisés"
+
+#: inc/sektions/ccat-czr-sektions.php:621
+msgid "(currently published version)"
+msgstr "(version actuellement publiée)"
+
+#: inc/sektions/ccat-czr-sektions.php:620
+msgid "This is the current version."
+msgstr "Ceci est la version actuelle."
+
+#: inc/sektions/ccat-czr-sektions.php:619
+msgid "No revision history available for the moment."
+msgstr "Aucun historique de révision disponible pour le moment."
+
+#: inc/sektions/ccat-czr-sektions.php:618
+msgid "Select"
+msgstr "Sélectionner"
+
+#: inc/sektions/ccat-czr-sektions.php:617
+msgid "The revision has been successfully restored."
+msgstr "La révision a bien été restaurée."
+
+#: inc/sektions/ccat-czr-sektions.php:616
+msgid "The revision could not be restored."
+msgstr "La révision n’a pas pu être restaurée."
+
+#: inc/sektions/ccat-czr-sektions.php:615
+msgid "Revision history of global sections"
+msgstr "Historique des révisions des sections globales"
+
+#: inc/sektions/ccat-czr-sektions.php:614
+msgid "Revision history of local sections"
+msgstr "Historique des révisions des sections locales"
+
+#: inc/sektions/ccat-czr-sektions.php:610
+msgid "It is recommended to disable your cache plugin when customizing your website."
+msgstr "Il est recommandé de désactiver votre extension de cache lors de la personnalisation de votre site Web."
+
+#: inc/sektions/ccat-czr-sektions.php:609
+msgid "You seem to be using a cache plugin."
+msgstr "Vous semblez utiliser une extension de cache."
+
+#: inc/sektions/ccat-czr-sektions.php:527
+msgid "Custom anchor ( CSS ID ) and CSS classes for the"
+msgstr "Ancre personnalisée (ID CSS) et classes CSS pour le"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5185
+msgid "On mobile devices, expand the menu in full width below the menu hamburger icon."
+msgstr "Sur les appareils mobiles, développez le menu en pleine largeur sous l’icône hamburger du menu."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5178
+msgid "Settings for mobile devices"
+msgstr "Réglages pour les appareils mobiles"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2427
+msgid "You can also customize the text color on mouseover in the group of text settings below."
+msgstr "Vous pouvez également personnaliser la couleur du texte au survol de la souris dans le groupe de réglages de texte ci-dessous."
+
+#: inc/sektions/ccat-czr-sektions.php:605
+msgid "Remove this element"
+msgstr "Supprimer cet élément"
+
+#: inc/sektions/ccat-czr-sektions.php:782
+#: inc/sektions/ccat-czr-sektions.php:783
+msgid "Section navigation"
+msgstr "Section de navigation"
+
+#: inc/sektions/ccat-czr-sektions.php:604
+msgid "No sections to navigate"
+msgstr "Aucune section à parcourir"
+
+#: inc/sektions/ccat-sektions-base.php:6937
+msgid "reCAPTCHA problem (only visible by a logged in administrator )"
+msgstr "problème de reCAPTCHA (visible uniquement par un administrateur connecté)"
+
+#: inc/sektions/ccat-sektions-base.php:6924
+msgid "%1$s : <strong>%2$s</strong>."
+msgstr "%1$s : <strong>%2$s</strong>."
+
+#: inc/sektions/ccat-sektions-base.php:6780
+msgid "Google reCAPTCHA returned a score of %s, which is lower than your threshold of %s."
+msgstr "ReCAPTCHA Google a renvoyé un score de %s inférieur à votre seuil de %s."
+
+#: inc/sektions/ccat-sektions-base.php:6758
+msgid "There was a problem when performing the reCAPTCHA http request."
+msgstr "Un problème est survenu lors de l’exécution de la demande http reCAPTCHA."
+
+#: inc/sektions/ccat-sektions-front-modules.php:3641
+msgid "Tip : replace the default messages with a blank space to not show anything."
+msgstr "Astuce : remplacez les messages par défaut par un espace afin de ne rien afficher."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4512
+msgid "Google ReCAPTCHA validation failed. This form only accepts messages from humans."
+msgstr "La validation de Google ReCAPTCHA a échoué. Ce formulaire accepte uniquement les messages provenant d’êtres humains."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4510
+msgid "Failure message"
+msgstr "Message d’erreur"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4502
+msgid "Show a failure message"
+msgstr "Afficher un message d’erreur"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4496
+msgid "reCAPTCHA returns a score from 0 to 1 on each submission. 1 is very likely a good interaction, 0 is very likely a bot. A form submission that scores lower than your threshold will be considered as done by a robot, and aborted."
+msgstr "reCAPTCHA renvoie un score de 0 à 1 pour chaque soumission. 1 est très probablement une bonne interaction, 0 est très probablement un robot. Une soumission de formulaire dont le score est inférieur à votre seuil sera considérée comme effectuée par un robot et annulée."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4488
+msgid "Score threshold"
+msgstr "Seuil de score"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4481
+msgid "Secret key"
+msgstr "Clé secrète"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4474
+msgid "Site key"
+msgstr "Clé du site"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4467
+msgid "Nimble Builder can activate the %1$s service to protect your forms against spambots. You need to %2$s."
+msgstr "Le constructeur de page Nimble peut activer le service %1$s pour protéger vos formulaires contre les robots spammeurs. Vous devez %2$s."
+
+#: inc/sektions/ccat-sektions-front-modules.php:3691
+msgid "activate it in the global settings"
+msgstr "activer le dans les réglages globaux"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3683
+msgid "Disable"
+msgstr "Désactiver"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3682
+msgid "Inherit the global option"
+msgstr "Hériter de l’option globale"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3676
+msgid "Spam protection with Google reCAPTCHA"
+msgstr "Protection anti-spam avec Google reCAPTCHA"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4522
+msgid "The badge is not previewable when customizing."
+msgstr "Le badge ne peut pas être visualisé lors de la personnalisation."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4518
+msgid "Show the reCAPTCHA badge at the bottom of your page"
+msgstr "Affichez le badge reCAPTCHA au bas de votre page"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4469
+msgid "get your domain API keys from Google"
+msgstr "obtenir vos clés API de domaine auprès de Google"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4468
+#: inc/sektions/ccat-sektions-front-modules.php:3688
+msgid "Google reCAPTCHA"
+msgstr "ReCAPTCHA Google"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3687
+msgid "Nimble Builder can activate the %1$s service to protect your forms against spam. You need to %2$s."
+msgstr "Le constructeur de page Nimble peut activer le service %1$s pour protéger vos formulaires contre les courriers indésirables. Vous devez %2$s."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4463
+msgid "Activate Google reCAPTCHA on your forms"
+msgstr "Activer le Google reCAPTCHA sur vos formulaires"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2195
+msgid "Hide the content when it is too big to fit in its parent container."
+msgstr "Masquer le contenu quand il est trop grand pour tenir dans son conteneur parent."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2189
+msgid "Overflow hidden"
+msgstr "Débordement masqué"
+
+#: inc/sektions/ccat-czr-sektions.php:555
+msgid "Protect your contact forms with Google reCAPTCHA"
+msgstr "Protégez vos formulaires de contact avec Google reCAPTCHA"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1765
+msgid "With the lazy load option enabled, Nimble loads the map when it becomes visible while scrolling. This improves your page load performances."
+msgstr "Lorsque l’option de chargement différé est activée, Nimble charge la carte lorsqu’elle devient visible lors du défilement. Cela améliore les performances de chargement de votre page."
+
+#: inc/sektions/ccat-sektions-front-modules.php:1760
+msgid "Lazy load"
+msgstr "Chargement différé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3672
+#: inc/sektions/ccat-sektions-ui-modules.php:4338
+#: inc/sektions/ccat-sektions-front-modules.php:1766
+msgid "If you use a cache plugin, make sure that this option does not conflict with your caching options."
+msgstr "Si vous utilisez une extension de cache, assurez-vous que cette option ne soit pas en conflit avec vos options de mise en cache."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4137
+#: inc/sektions/ccat-sektions-ui-modules.php:4435
+msgid "current page options"
+msgstr "options de la page en cours"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1601
+msgid "Round"
+msgstr "Rond"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1600
+msgid "Repeat y"
+msgstr "Répéter y"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1599
+msgid "Repeat x"
+msgstr "Répéter x"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1597
+msgid "No repeat"
+msgstr "Ne pas répéter"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1593
+#: inc/sektions/ccat-sektions-ui-modules.php:1598
+msgid "Repeat"
+msgstr "Répéter"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1582
+msgid "Customize the magnitude of the visual effect when scrolling."
+msgstr "Personnaliser l’ampleur de l’effet visuel lors du défilement."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1574
+msgid "Parallax force (in percents)"
+msgstr "Force de parallaxe (en pourcentages)"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1538
+#: inc/sektions/ccat-sektions-ui-modules.php:3411
+#: inc/sektions/ccat-sektions-ui-modules.php:3715
+msgid "site wide options"
+msgstr "options d’échelle du site"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1535
+msgid "To ensure better performances, use optimized images for your backgrounds. You can also enable the lazy loading option in the %1$s."
+msgstr "Pour optimiser les performances, utiliser des images optimisées pour vos arrière-plans. Vous pouvez également activer l’option de chargement différé dans %1$s."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1377
+msgid "Fit"
+msgstr "Ajustement"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1375
+msgid "Automatic"
+msgstr "Automatique"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1178
+#: inc/sektions/ccat-sektions-ui-modules.php:1215
+msgid "Drag-and-drop or double-click a section to insert it into a drop zone of the preview page."
+msgstr "Glissez-déposez ou double-cliquez sur une section pour l’insérer dans une zone de dépôt de la page de prévisualisation."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1454
+msgid "Drag-and-drop or double-click a module to insert it into a drop zone of the preview page."
+msgstr "Glissez-déposez ou double-cliquez sur un module pour l’insérer dans une zone de dépôt de la page de prévisualisation."
+
+#: inc/sektions/ccat-sektions-front-modules.php:351
+msgid "Note that some click actions are disabled during customization."
+msgstr "Noter que certaines actions de clic sont désactivées lors de la personnalisation."
+
+#: inc/sektions/ccat-sektions-front-modules.php:347
+msgid "Link to image page"
+msgstr "Lien vers la page de l’image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:346
+msgid "Link to image file"
+msgstr "Lien vers le fichier image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:345
+msgid "Link to site content or custom url"
+msgstr "Lien vers le contenu du site ou une URL personnalisée"
+
+#: inc/sektions/ccat-sektions-front-modules.php:344
+msgid "Lightbox : enlarge the image, and dim out the rest of the content"
+msgstr "Lightbox : agrandir l’image et réduire le reste du contenu"
+
+#: inc/sektions/ccat-sektions-front-modules.php:343
+msgid "No click action"
+msgstr "Aucune action de clic"
+
+#: inc/sektions/ccat-sektions-front-modules.php:340
+msgid "Schedule an action on click or tap"
+msgstr "Planifier une action en cliquant ou en tapant"
+
+#: inc/sektions/ccat-sektions-front-modules.php:336
+#: inc/sektions/ccat-sektions-front-modules.php:5471
+msgid "Select a size for this image among those generated by WordPress."
+msgstr "Sélectionner une taille pour cette image parmi celles générées par WordPress."
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3353
+#: inc/admin/nimble-admin.php:93
+msgid "Add sections in live preview with Nimble Builder"
+msgstr "Ajoutez des sections dans la prévisualisation avec le constructeur de page Nimble"
+
+#: inc/sektions/ccat-sektions-base.php:4560
+msgid "Drag and drop or double-click the content that you want to insert here."
+msgstr "Glissez-déposez ou double-cliquez sur le contenu que vous souhaitez insérer ici."
+
+#: inc/sektions/ccat-sektions-base.php:3698
+msgid "@location"
+msgstr "@emplacement"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2344
+msgid "Not previewable when customizing."
+msgstr "Non pré-visualisable lors de la personnalisation."
+
+#: inc/sektions/ccat-sektions-front-modules.php:1182
+msgid "Turn into a link"
+msgstr "Transformer en un lien"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1178
+msgid "Not previewable during customization"
+msgstr "Non pré-visualisable durant la personnalisation"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1174
+msgid "Display a tooltip text when the mouse is held over"
+msgstr "Afficher un texte d’infobulle au survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:391
+msgid "Custom text displayed on mouse hover"
+msgstr "Texte personnalisé affiché au survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:387
+msgid "If not specified, Nimble will use by order of priority the caption, the description, and the image title. Those properties can be edited for each image in the media library."
+msgstr "S'il n'est pas spécifié, Nimble utilisera par ordre de priorité la légende, la description et le titre de l’image. Ces propriétés peuvent être modifées pour chaque image de la médiathèque."
+
+#: inc/sektions/ccat-sektions-front-modules.php:383
+msgid "Set the text displayed when the mouse is held over"
+msgstr "Définir le texte affiché lorsque la souris est maintenue"
+
+#: inc/sektions/ccat-czr-sektions.php:1675
+msgid "Drag and drop or double-click to insert in your chosen target element."
+msgstr "Glissez-déposez ou double-cliquez pour insérer dans l’élément cible choisi."
+
+#: inc/sektions/ccat-czr-sektions.php:574
+msgid "You first need to click on a target ( with a + icon ) in the preview."
+msgstr "Vous devez d’abord cliquer sur une cible (avec un + icône) dans la prévisualisation."
+
+#: inc/sektions/ccat-czr-sektions.php:540
+msgid "This page uses a custom template."
+msgstr "Cette page utilise un modèle personnalisé."
+
+#. Author URI of the plugin
+msgid "https://nimblebuilder.com/?utm_source=wp-plugins&utm_medium=wp-dashboard&utm_campaign=author-uri"
+msgstr "https://nimblebuilder.com/?utm_source=wp-plugins&utm_medium=wp-dashboard&utm_campaign=author-uri"
+
+#: inc/sektions/ccat-czr-sektions.php:1682
+msgid "Available soon ! This module is currently in beta, you can activate it in Site Wide Options > Beta features"
+msgstr "Bientôt disponible ! Ce module est actuellement en version bêta, vous pouvez l’activer dans Options du site > Fonctionnalités bêta"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4635
+msgid "Be sure to refresh the customizer before you start using the beta features."
+msgstr "Veillez à actualiser l’outil de personnalisation avant de commencer à utiliser les fonctionnalités bêta."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4627
+msgid "Enable beta features"
+msgstr "Activer les fonctionnalités bêta"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:954
+msgid "WordPress widget area"
+msgstr "Zone de widget WordPress"
+
+#: inc/sektions/ccat-czr-sektions.php:554
+msgid "Beta features"
+msgstr "Fonctionnalités bêta"
+
+#: tmpl/modules/widget_area_module_tmpl.php:21
+msgid "Add widgets to"
+msgstr "Ajouter des widgets à"
+
+#: tmpl/modules/widget_area_module_tmpl.php:17
+msgid "Select a Nimble widget area and start adding widgets."
+msgstr "Sélectionner une zone de widget Nimble et commencez à ajouter des widgets."
+
+#: inc/admin/nimble-admin.php:672
+msgid "read the getting started guide"
+msgstr "lire le guide de démarrage"
+
+#: inc/admin/nimble-admin.php:663
+msgid "Or"
+msgstr "Ou"
+
+#: inc/admin/nimble-admin.php:659
+msgid "Start creating content in live preview"
+msgstr "Commencer à créer du contenu dans l’aperçu"
+
+#: inc/admin/nimble-admin.php:650
+msgid "The plugin automatically creates fluid and responsive sections for a pixel-perfect rendering on smartphones and tablets, without the need to add complex code."
+msgstr "L’extension crée automatiquement des sections fluides et responsive pour un rendu parfait sur les smartphones et les tablettes, sans qu’il soit nécessaire d’ajouter du code complexe."
+
+#: inc/admin/nimble-admin.php:649
+msgid "Nimble allows you to drag and drop content modules, or pre-built section templates, into <u>any context</u> of your site, including search results or 404 pages. You can edit your pages in <i>real time</i> from the live customizer, and then publish when you are happy of the result, or save for later."
+msgstr "Nimble vous autorise de faire glisser des modules de contenu, ou des modèles de section prédéfinis, dans <u>n’importe quel contexte</u> de votre site, y compris les résultats de recherche ou les pages 404. Vous pouvez modifier vos pages en <i>temps réel</i> à partir de l’outil de personnalisation, puis les publier lorsque vous êtes satisfait du résultat ou les enregistrer ultérieurement."
+
+#: inc/admin/nimble-admin.php:647
+msgid "Welcome to Nimble Builder for WordPress :D"
+msgstr "Bienvenue dans le constructeur de page Nimble pour WordPress :D"
+
+#: inc/admin/nimble-admin.php:513
+msgid "Read the detailled release notes"
+msgstr "Lire les notes de version détaillées"
+
+#: inc/sektions/ccat-sektions-base.php:4397
+msgid "Start designing the footer"
+msgstr "Commencer à concevoir le pied de page"
+
+#: inc/sektions/ccat-sektions-base.php:4397
+msgid "Start designing the header"
+msgstr "Commencez à concevoir l’en-tête"
+
+#: inc/sektions/ccat-sektions-base.php:2347
+msgid "Nimble widget area #%1$s"
+msgstr "Zone de widgets Nimble #%1$s"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5380
+msgid "widget panel"
+msgstr "panneau de widget"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5365
+msgid "Widget Zone"
+msgstr "Zone Widget"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1428
+msgid "header and footer"
+msgstr "en-tête et pied de page"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1422
+msgid "Note : you can %1$s to replace your default theme template. Or design your own %2$s."
+msgstr "Remarque : vous pouvez %1$s pour remplacer votre modèle de thème par défaut. Ou concevez votre propre %2$s."
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3250
+msgid "simple footer with 3 columns and large bottom zone"
+msgstr "pied de page simple avec 3 colonnes et grande zone inférieure"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3238
+msgid "simple header with a logo on the right and a menu on the left"
+msgstr "en-tête simple avec un logo à droite, menu à gauche"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3246
+msgid "Footer sections"
+msgstr "Sections de pied de page"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3227
+msgid "Header sections"
+msgstr "Sections d’en-tête"
+
+#: inc/sektions/ccat-czr-sektions.php:513
+msgid "You can't drop a footer section in the header location"
+msgstr "Vous ne pouvez pas supprimer une section de pied de page dans l’emplacement de l’entête"
+
+#: inc/sektions/ccat-czr-sektions.php:512
+msgid "You can't drop a header section in the footer location"
+msgstr "Vous ne pouvez pas supprimer une section d’entête à l’emplacement du pied de page"
+
+#: inc/sektions/ccat-czr-sektions.php:511
+msgid "Footer location only accepts modules and pre-built footer sections"
+msgstr "L’emplacement du pied de page accepte uniquement les modules et les sections de pied de page prédéfinies"
+
+#: inc/sektions/ccat-czr-sektions.php:510
+msgid "Header location only accepts modules and pre-built header sections"
+msgstr "L’emplacement d'en-tête accepte uniquement les modules et les sections d’en-tête prédéfinies"
+
+#: inc/sektions/ccat-czr-sektions.php:173
+#: inc/sektions/ccat-sektions-front-modules.php:5373
+msgid "Select a widget area"
+msgstr "Sélectionner une zone de widget"
+
+#. Plugin Name of the plugin
+msgid "Nimble Page Builder"
+msgstr "Nimble Page Builder"
+
+#: tmpl/modules/menu_module_tmpl.php:27
+msgid "Toggle navigation"
+msgstr "Menu déroulant"
+
+#: inc/sektions/ccat-sektions-base.php:4555
+msgid "Drag and drop a block of content here"
+msgstr "Glissez et déposez un bloc de contenu ici"
+
+#: inc/sektions/ccat-sektions-base.php:3704
+msgid "(global)"
+msgstr "(global)"
+
+#: inc/sektions/ccat-sektions-base.php:3703
+msgid "footer section"
+msgstr "section de pied de page"
+
+#: inc/sektions/ccat-sektions-base.php:3702
+msgid "header section"
+msgstr "Section en-tête"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5138
+msgid "menu panel"
+msgstr "panneau du menu"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5135
+msgid "You can create and edit menus in the %1$s. If you just created a new menu, publish and refresh the customizer to see in the dropdown list."
+msgstr "Vous pouvez créer et modifier des menus dans le %1$s. Si vous venez de créer un nouveau menu, publiez et actualisez l’outil de personnalisation pour qu’il apparaisse dans la liste déroulante."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5132
+msgid "Select a menu"
+msgstr "Sélectionner un menu"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5125
+msgid "Menu content"
+msgstr "Contenu du menu"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4432
+msgid "Nimble Builder allows you to build your own header and footer, or to use your theme's ones. This option can be overriden in the %1$s."
+msgstr "Le constructeur de page Nimble vous permet de créer votre propre entête et pied de page, ou d’utiliser ceux de votre thème. Cette option peut être annulée dans le %1$s."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4425
+msgid "Select a site wide header and footer"
+msgstr "Sélectionner une entête et un pied de page pour l’ensemble du site"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4134
+msgid "The inner and outer widths of your sections can be set globally here, but also overriden in the %1$s, and for each sections."
+msgstr "Les largeurs intérieure et extérieure de vos sections peuvent être définies globalement ici, mais également annulées dans %1$s et pour chaque section."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4069
+msgid "This is the viewport width from which columns are rearranged vertically. The default global breakpoint is 768px. A custom breakpoint can also be set for each section."
+msgstr "C’est le point de rupture sous lequel les colonnes sont réorganisées verticalement. Le point de rupture global par défaut est 768px. Un point de rupture personnalisé peut également être défini pour chaque section."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3712
+msgid "This option overrides the site wide header and footer options set in the %1$s for this page only."
+msgstr "Cette option remplace les options d’entête et de pied de page de l’ensemble du site définies dans le %1$s pour cette page seulement."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3707
+msgid "Nimble specific header and footer for this page"
+msgstr "En-tête et pied de page Nimble spécifiques pour cette page"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3705
+#: inc/sektions/ccat-sektions-ui-modules.php:4428
+msgid "Use the active theme's header and footer"
+msgstr "Utiliser l’entête et le pied de page du thème actif"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3701
+msgid "Select a header and a footer for this page"
+msgstr "Sélectionner une en-tête et un pied de page pour cette page"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3595
+msgid "The CSS code added below will only be applied to the currently previewed page, not site wide."
+msgstr "Le code CSS ajouté ci-dessous sera uniquement appliqué à la page actuellement prévisualisée, et non à l’ensemble du site."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3408
+msgid "The inner and outer widths of the sections displayed in this page can be set here. It will override in the %1$s. You can also set a custom inner and outer width for each single sections."
+msgstr "Les largeurs intérieures et extérieures des sections affichées dans cette page peuvent être définies ici. Il remplacera dans le %1$s. Vous pouvez également définir une largeur intérieure et extérieure personnalisée pour chaque section."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3377
+msgid "Use Nimble Builder's template to display content created only with Nimble Builder on this page. Your theme's default template will be overriden"
+msgstr "Utiliser le modèle Nimble Builder pour afficher le contenu créé uniquement avec Nimble Builder sur cette page. Le modèle par défaut de votre thème sera remplacé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3374
+msgid "Nimble Builder template"
+msgstr "Modèle de Nimble Builder"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:827
+msgid "Default page menu"
+msgstr "Menu de la page par défaut"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:745
+msgid "Pages"
+msgstr "Pages"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:693
+msgid "Home"
+msgstr "Accueil"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:974
+#: inc/sektions/ccat-sektions-front-modules.php:5090
+msgid "Menu"
+msgstr "Menu"
+
+#: inc/sektions/ccat-czr-sektions.php:549
+msgid "Site wide header and footer"
+msgstr "Entête et pied de page de l’ensemble du site"
+
+#: inc/sektions/ccat-czr-sektions.php:541
+msgid "Page header and footer"
+msgstr "En-tête et pied de page"
+
+#: inc/sektions/ccat-sektions-base.php:3804
+msgid "Drag section"
+msgstr "Glisser la section"
+
+#: inc/sektions/ccat-sektions-base.php:3798
+msgid "Move section down"
+msgstr "Déplacer la section vers le bas"
+
+#: inc/sektions/ccat-sektions-base.php:3797
+msgid "Move section up"
+msgstr "Déplacer la section vers le haut"
+
+#: inc/sektions/ccat-sektions-base.php:3709
+msgid "Link deactivated while previewing"
+msgstr "Lien désactivé lors de la prévisualisation"
+
+#: inc/sektions/ccat-sektions-base.php:4555
+msgid "Drag and drop a section or a module here"
+msgstr "Glisser et déposer une section ou un module ici"
+
+#: inc/sektions/ccat-sektions-base.php:3708
+msgid "External links are disabled when customizing"
+msgstr "Les liens externes sont désactivés lors de la personnalisation"
+
+#: inc/sektions/ccat-sektions-base.php:3707
+msgid "Shift-click to visit the link"
+msgstr "Maj-clic pour visiter le lien"
+
+#: tmpl/header/nimble_header_tmpl.php:30
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+#: inc/sektions/ccat-sektions-base.php:3699
+msgid "Insert a new global section"
+msgstr "Insérer une nouvelle section globale"
+
+#: inc/sektions/ccat-sektions-base.php:3692
+msgid "Moving elements between global and local sections is not allowed."
+msgstr "Le déplacement d’éléments entre les sections globales et locales n’est pas autorisé."
+
+#: inc/sektions/ccat-sektions-base.php:3812
+msgid "Save this section"
+msgstr "Sauvegarder cette section"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1210
+msgid "My sections"
+msgstr "Mes sections"
+
+#: inc/sektions/ccat-czr-sektions.php:3288
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: inc/sektions/ccat-czr-sektions.php:859
+msgid "Section description"
+msgstr "Description de la section"
+
+#: inc/sektions/ccat-czr-sektions.php:855
+msgid "Section title"
+msgstr "Titre de section"
+
+#: inc/sektions/ccat-sektions-base.php:6868
+msgid "Message body"
+msgstr "Corps du message"
+
+#: inc/sektions/ccat-sektions-base.php:6853
+msgid "From"
+msgstr "De"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1569
+msgid "When enabled, the background image moves slower than the page elements on scroll. This effect is not enabled on mobile devices."
+msgstr "Lorsqu’elle est activée, l’image d’arrière-plan se déplace plus lentement que les éléments de page lors du défilement. Cet effet n’est pas activé sur les appareils mobiles."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1565
+msgid "Parallax effect on scroll"
+msgstr "Effet de parallaxe sur le défilement"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3671
+msgid "When you select \"Load images on scroll\", images below the window are loaded dynamically when scrolling. This can improve performance by reducing the weight of long web pages including multiple images."
+msgstr "Lorsque vous sélectionnez \"Charger les images en défilement\", les images situées sous la fenêtre sont chargées dynamiquement lors du défilement. Cela peut améliorer les performances en réduisant le poids des longues pages Web comprenant plusieurs images."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3667
+msgid "Load all images on page load ( not optimized )"
+msgstr "Charger toutes les images lors du chargement de la page ( non optimisé )"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3666
+msgid "Load images on scroll ( optimized )"
+msgstr "Charger des images sur le défilement ( optimisé )"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3665
+#: inc/sektions/ccat-sektions-ui-modules.php:3704
+msgid "Inherit the site wide option"
+msgstr "Hériter de l’option à l’échelle du site"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3662
+msgid "Select how you want to load the images in the sections of this page."
+msgstr "Sélectionner le mode de chargement des images dans les sections de cette page."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3081
+msgid "Note that those options are not applied during the live customization of your site, but only when the changes are published."
+msgstr "Noter que ces options ne sont pas appliquées lors de la personnalisation en direct de votre site, mais uniquement lorsque les modifications seront publiées."
+
+#: inc/sektions/ccat-czr-sektions.php:553
+msgid "Site wide page speed optimizations"
+msgstr "Optimisations de la vitesse de la page à l’échelle du site"
+
+#: inc/sektions/ccat-czr-sektions.php:546
+msgid "Page speed optimizations"
+msgstr "Optimisations de la vitesse de la page"
+
+#: inc/admin/nimble-admin.php:518
+msgid "close"
+msgstr "fermer"
+
+#: inc/admin/nimble-admin.php:505
+msgid "to version"
+msgstr "vers la version"
+
+#: inc/admin/nimble-admin.php:503
+msgid "Thanks, you successfully upgraded"
+msgstr "Merci, vous avez mis à jour avec succès"
+
+#: inc/admin/nb-options.php:328
+msgid "To copy the system info, click below then press Ctrl + C (PC) or Cmd + C (Mac)."
+msgstr "Pour copier les informations système, cliquer ci-dessous, puis appuyez sur Ctrl + C (PC) ou Cmd + C (Mac)."
+
+#: inc/admin/nb-options.php:327
+msgid "Please include your system informations when posting support requests."
+msgstr "Veuillez inclure vos informations système lors de la publication de demandes de support."
+
+#: inc/admin/nb-options.php:326
+msgid "System Informations"
+msgstr "Informations système"
+
+#: inc/admin/nb-options.php:319 inc/admin/nb-options.php:320
+#: inc/admin/nimble-admin.php:20
+msgid "System info"
+msgstr "Information système"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3609
+msgid "Form submission options"
+msgstr "Options de soumission de formulaire"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3002
+msgid "Form button design"
+msgstr "Conception de bouton de formulaire"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2914
+msgid "Form fields design"
+msgstr "Conception de champs de formulaire"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2777
+msgid "Form fields and button labels"
+msgstr "Champs de formulaire et étiquettes de bouton"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3171
+msgid "A contact form with an image background"
+msgstr "Un formulaire de contact avec une image en arrière-plan"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3164
+msgid "A contact form and a Google map"
+msgstr "Un formulaire de contact et une carte Google"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3160
+msgid "Contact-us sections"
+msgstr "Sections Contactez-nous"
+
+#: inc/sektions/ccat-czr-sektions.php:1001
+#: inc/sektions/ccat-czr-sektions.php:1002
+msgid "Resize the editor"
+msgstr "Redimensionner l’éditeur"
+
+#: inc/sektions/ccat-sektions-base.php:6998
+msgid "This e-mail was sent from a contact form on %1$s (%2$s)"
+msgstr "Cet e-mail a été envoyé à partir d’un formulaire de contact à %1$s (%2$s)"
+
+#: inc/sektions/ccat-sektions-base.php:6993
+msgid "Message Body:"
+msgstr "Corps du message :"
+
+#. translators: %s: [your-subject]
+#: inc/sektions/ccat-sektions-base.php:6991
+msgid "Subject: %s"
+msgstr "Objet : %s"
+
+#. translators: %s: [your-name] <[your-email]>
+#: inc/sektions/ccat-sektions-base.php:6988
+msgid "From: %s"
+msgstr "De : %s"
+
+#: inc/sektions/ccat-sektions-base.php:6982
+msgid "%1$s: new contact request"
+msgstr "%1$s : nouvelle demande de contact"
+
+#: inc/sektions/ccat-sektions-base.php:6841
+msgid "Someone sent a message from %1$s"
+msgstr "Quelqu’un a envoyé un message de %1$s"
+
+#: inc/sektions/ccat-sektions-base.php:6705
+msgid "Please supply correct information."
+msgstr "Merci de fournir des informations correctes."
+
+#: inc/sektions/ccat-sektions-base.php:6643
+msgid "Contact"
+msgstr "Contact"
+
+#: inc/sektions/ccat-sektions-base.php:5856
+#: inc/sektions/ccat-sektions-front-modules.php:2892
+msgid "Submit"
+msgstr "Soumettre"
+
+#: inc/sektions/ccat-sektions-base.php:3834
+#: inc/sektions/ccat-sektions-base.php:3867
+#: inc/sektions/ccat-sektions-base.php:3899
+msgid "Hide this menu if you need to access behind"
+msgstr "Masquer ce menu si vous devez accéder à l’arrière"
+
+#: inc/sektions/ccat-czr-sektions.php:568
+#: inc/sektions/ccat-sektions-base.php:3705
+msgid "nested section"
+msgstr "section imbriquée"
+
+#: inc/sektions/ccat-sektions-front-modules.php:148
+#: inc/sektions/ccat-sektions-front-modules.php:5328
+msgid "Apply the style options in priority (uses !important)."
+msgstr "Appliquer les options de style en priorité (A utiliser ! Important)."
+
+#: inc/sektions/ccat-sektions-front-modules.php:5203
+msgid "Text settings : font, color, size, ..."
+msgstr "Réglages du texte : police, couleur, taille, …"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2877
+#: inc/sektions/ccat-sektions-front-modules.php:3664
+msgid "Html code is allowed"
+msgstr "Le code HTML est autorisé"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3663
+msgid "Email footer"
+msgstr "Pied de page de l’e-mail"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3657
+msgid "Your message was not sent. Try Again."
+msgstr "Votre message n’a pas été envoyé. Réessayer."
+
+#: inc/sektions/ccat-sektions-front-modules.php:3655
+msgid "Failure message on submission"
+msgstr "Message d’erreur lors de la soumission"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3648
+msgid "Invalid form submission : some fields have not been entered properly."
+msgstr "Envoi de formulaire non valide : certains champs n’ont pas été renseignés correctement."
+
+#: inc/sektions/ccat-sektions-front-modules.php:3646
+msgid "Error message on submission"
+msgstr "Message d’erreur lors de l’envoi"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3638
+msgid "Thanks! Your message has been sent."
+msgstr "Merci ! Votre message a bien été envoyé."
+
+#: inc/sektions/ccat-sektions-front-modules.php:3636
+msgid "Success message on submission"
+msgstr "Message de réussite lors de la soumission"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3628
+msgid "Email recipient"
+msgstr "Destinataire de l’e-mail"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3302
+msgid "Field Text"
+msgstr "Texte du champ"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3159
+msgid "Fields labels"
+msgstr "Étiquettes des champs"
+
+#: inc/sektions/ccat-sektions-front-modules.php:3150
+msgid "Form texts options : fonts, colors, ..."
+msgstr "Options de texte de formulaire : polices, couleurs, ..."
+
+#: inc/sektions/ccat-sektions-front-modules.php:2982
+msgid "Apply an outset shadow"
+msgstr "Appliquer une ombre de début"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2977
+msgid "Apply an inset shadow"
+msgstr "Appliquer une ombre incrustée"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2964
+msgid "Fields rounded corners"
+msgstr "Coins des champs arrondis"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2950
+msgid "Borders options"
+msgstr "Options des bordures"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2943
+msgid "Fields border shape"
+msgstr "Bordure des champs"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2932
+msgid "Fields background color"
+msgstr "Couleur de fond des champs"
+
+#: inc/sektions/ccat-sektions-base.php:5828
+#: inc/sektions/ccat-sektions-front-modules.php:2818
+msgid "Email"
+msgstr "E-mail"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2817
+msgid "Email field label"
+msgstr "Libellé du champ de l'e-mail"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2857
+msgid "Message field is required"
+msgstr "Le champ de message est obligatoire"
+
+#: inc/sektions/ccat-sektions-base.php:5839
+#: inc/sektions/ccat-sektions-front-modules.php:2853
+msgid "Message"
+msgstr "Message"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2852
+msgid "Message field label"
+msgstr "Libellé du champ du message"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2844
+msgid "Display message field"
+msgstr "Afficher le champ du message"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2835
+msgid "Subject field is required"
+msgstr "Objet obligatoire"
+
+#: inc/sektions/ccat-sektions-base.php:5834
+#: inc/sektions/ccat-sektions-base.php:6854
+#: inc/sektions/ccat-sektions-front-modules.php:2831
+msgid "Subject"
+msgstr "Objet"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2830
+msgid "Subject field label"
+msgstr "Libellé de l’objet"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2822
+msgid "Display subject field"
+msgstr "Afficher l’objet"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2808
+msgid "Name field is required"
+msgstr "Le champ Nom est obligatoire"
+
+#: inc/sektions/ccat-sektions-base.php:5822
+#: inc/sektions/ccat-sektions-front-modules.php:2804
+msgid "Name"
+msgstr "Nom"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2803
+msgid "Name field label"
+msgstr "Nom du libellé du champ"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2795
+msgid "Display name field"
+msgstr "Nom affiché"
+
+#: inc/sektions/ccat-sektions-base.php:6860
+#: inc/sektions/ccat-sektions-front-modules.php:2747
+#: inc/sektions/ccat-sektions-front-modules.php:3665
+msgid "This e-mail was sent from a contact form on %1$s (<a href=\"%2$s\" target=\"_blank\">%2$s</a>)"
+msgstr "Cet e-mail a été envoyé à partir d’un formulaire de contact à %1$s (<a href=\"%2$s\" target=\"_blank\">%2$s</a>)"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2724
+msgid "Simple Form"
+msgstr "Forme simple"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2502
+#: inc/sektions/ccat-sektions-front-modules.php:3118
+msgid "Push visual effect"
+msgstr "Effet visuel poussé"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2468
+#: inc/sektions/ccat-sektions-front-modules.php:3083
+msgid "Button alignment"
+msgstr "Alignement des boutons"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2422
+#: inc/sektions/ccat-sektions-front-modules.php:3039
+msgid "Background color on mouse hover"
+msgstr "Couleur d’arrière-plan lors du survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2413
+#: inc/sektions/ccat-sektions-front-modules.php:3030
+msgid "Set a custom background color on mouse hover"
+msgstr "Définir une couleur d’arrière-plan personnalisée au survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2396
+msgid "Button design"
+msgstr "Bouton design"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2376
+msgid "Icon's position"
+msgstr "Position de l’icône"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2371
+msgid "Icon next to the button text"
+msgstr "Icône à côté du texte du bouton"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2333
+#: inc/sektions/ccat-sektions-front-modules.php:2891
+msgid "Button text"
+msgstr "Texte du bouton"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2321
+msgid "Button content"
+msgstr "Contenu du bouton"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2292
+msgid "Click me"
+msgstr "Cliquer-ici"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2232
+msgid "Icon Color"
+msgstr "Couleur de l’icône"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2220
+msgid "Icon Size"
+msgstr "Taille de l’icône"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2198
+#: inc/sektions/ccat-sektions-front-modules.php:6176
+msgid "Border weight"
+msgstr "Largeur de la bordure"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2185
+#: inc/sektions/ccat-sektions-front-modules.php:2192
+msgid "Design"
+msgstr "Conception"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2019
+msgid "Cite text"
+msgstr "Citer le texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2006
+msgid "Cite content"
+msgstr "Citer le contenu"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1925
+#: inc/sektions/ccat-sektions-ui-modules.php:3846
+#: inc/sektions/ccat-sektions-front-modules.php:68
+#: inc/sektions/ccat-sektions-front-modules.php:940
+#: inc/sektions/ccat-sektions-front-modules.php:1879
+#: inc/sektions/ccat-sektions-front-modules.php:2053
+#: inc/sektions/ccat-sektions-front-modules.php:3190
+#: inc/sektions/ccat-sektions-front-modules.php:3333
+#: inc/sektions/ccat-sektions-front-modules.php:3476
+#: inc/sektions/ccat-sektions-front-modules.php:4258
+#: inc/sektions/ccat-sektions-front-modules.php:4354
+#: inc/sektions/ccat-sektions-front-modules.php:4450
+#: inc/sektions/ccat-sektions-front-modules.php:4546
+#: inc/sektions/ccat-sektions-front-modules.php:5248
+#: inc/sektions/ccat-sektions-front-modules.php:5546
+#: inc/sektions/ccat-sektions-front-modules.php:6267
+#: inc/sektions/ccat-sektions-front-modules.php:6372
+msgid "Line height"
+msgstr "Hauteur de la ligne"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1911
+#: inc/sektions/ccat-sektions-ui-modules.php:3833
+#: inc/sektions/ccat-sektions-front-modules.php:54
+#: inc/sektions/ccat-sektions-front-modules.php:1866
+#: inc/sektions/ccat-sektions-front-modules.php:2040
+#: inc/sektions/ccat-sektions-front-modules.php:3179
+#: inc/sektions/ccat-sektions-front-modules.php:3322
+#: inc/sektions/ccat-sektions-front-modules.php:3465
+#: inc/sektions/ccat-sektions-front-modules.php:4247
+#: inc/sektions/ccat-sektions-front-modules.php:4343
+#: inc/sektions/ccat-sektions-front-modules.php:4439
+#: inc/sektions/ccat-sektions-front-modules.php:4535
+#: inc/sektions/ccat-sektions-front-modules.php:5234
+#: inc/sektions/ccat-sektions-front-modules.php:5535
+#: inc/sektions/ccat-sektions-front-modules.php:6256
+#: inc/sektions/ccat-sektions-front-modules.php:6361
+msgid "Font size"
+msgstr "Taille de police"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1833
+msgid "Quote content"
+msgstr "Contenu de la citation"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1798
+msgid "The Dude in %1s"
+msgstr "Le type dans %1s"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1795
+msgid "Hey, careful, man, there's a beverage here!"
+msgstr "Attention l’ami, il y a une boisson ici !"
+
+#: inc/sektions/ccat-czr-sektions.php:3366
+#: inc/sektions/ccat-sektions-front-modules.php:424
+#: inc/sektions/ccat-sektions-front-modules.php:1747
+#: inc/sektions/ccat-sektions-front-modules.php:5729
+msgid "Height"
+msgstr "Taille"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1738
+msgid "Zoom"
+msgstr "Zoom"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1732
+msgid "Address"
+msgstr "Adresse"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1562
+msgid "Icon options for background, spacing, border, shadow"
+msgstr "Options d’icône pour l’arrière-plan, l’espacement, la bordure, l’ombre"
+
+#: inc/sektions/ccat-sektions-front-modules.php:886
+#: inc/sektions/ccat-sektions-front-modules.php:1535
+msgid "Hover color"
+msgstr "Survoler la couleur"
+
+#: inc/sektions/ccat-sektions-front-modules.php:877
+#: inc/sektions/ccat-sektions-front-modules.php:1526
+msgid "Set a custom icon color on mouse hover"
+msgstr "Définir une couleur d’icône personnalisée au survol de la souris"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1494
+msgid "Size"
+msgstr "Taille"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1466
+msgid "Select an Icon"
+msgstr "Sélectionner un icône"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1448
+msgid "Icon settings"
+msgstr "Réglages de l’icône"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1382
+msgid "Space before and after"
+msgstr "Espace avant et après"
+
+#: inc/sektions/ccat-czr-sektions.php:3309
+#: inc/sektions/ccat-sektions-front-modules.php:868
+#: inc/sektions/ccat-sektions-front-modules.php:1337
+#: inc/sektions/ccat-sektions-front-modules.php:1517
+msgid "Color"
+msgstr "Couleur"
+
+#: inc/sektions/ccat-czr-sektions.php:3262
+#: inc/sektions/ccat-sektions-front-modules.php:1328
+msgid "Style"
+msgstr "Style"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1316
+msgid "Weight"
+msgstr "Poids"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1602
+#: inc/sektions/ccat-sektions-front-modules.php:1286
+msgid "Space"
+msgstr "Espace"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1226
+msgid "Margin and padding"
+msgstr "Marge et remplissage"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1219
+#: inc/sektions/ccat-sektions-front-modules.php:1580
+#: inc/sektions/ccat-sektions-front-modules.php:2479
+#: inc/sektions/ccat-sektions-front-modules.php:3094
+#: inc/sektions/ccat-sektions-front-modules.php:6304
+#: inc/sektions/ccat-sektions-front-modules.php:6385
+msgid "Spacing"
+msgstr "Espacement"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1158
+msgid "Heading tag"
+msgstr "Étiquette de titre"
+
+#: inc/sektions/ccat-sektions-front-modules.php:6085
+msgid "You may use some html tags like a, br, span with attributes like style, id, class ..."
+msgstr "Vous pouvez utiliser des balises HTML comme a, br, span avec des attributs tels que style, id, class ..."
+
+#: inc/sektions/ccat-sektions-front-modules.php:1150
+#: inc/sektions/ccat-sektions-front-modules.php:6081
+msgid "Heading text"
+msgstr "Titre du texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:764
+msgid "Read More"
+msgstr "Lire la suite"
+
+#: inc/sektions/ccat-sektions-front-modules.php:763
+msgid "Custom button text"
+msgstr "Texte du bouton personnalisé"
+
+#: inc/sektions/ccat-sektions-front-modules.php:756
+msgid "Display a call to action button"
+msgstr "Afficher un bouton d'appel à l'action"
+
+#: inc/sektions/ccat-sektions-front-modules.php:751
+msgid "Custom text content"
+msgstr "Contenu du texte personnalisé"
+
+#: inc/sektions/ccat-sektions-front-modules.php:745
+msgid "Display a text"
+msgstr "Afficher un texte"
+
+#: inc/sektions/ccat-sektions-front-modules.php:723
+msgid "Pick a page"
+msgstr "Choisir une page"
+
+#: inc/sektions/ccat-sektions-front-modules.php:704
+#: inc/sektions/ccat-sektions-front-modules.php:728
+msgid "Display an image"
+msgstr "Afficher une image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:690
+msgid "Featured Pages"
+msgstr "Pages mis en avant"
+
+#: inc/sektions/ccat-sektions-front-modules.php:467
+msgid "Borders and corners"
+msgstr "Bordures et coins"
+
+#: inc/sektions/ccat-sektions-front-modules.php:443
+msgid "Mouse over effect"
+msgstr "Effet au survol de la souris"
+
+#: inc/sektions/ccat-czr-sektions.php:3367
+#: inc/sektions/ccat-sektions-front-modules.php:405
+#: inc/sektions/ccat-sektions-front-modules.php:1346
+msgid "Width"
+msgstr "Largeur"
+
+#: inc/sektions/ccat-sektions-front-modules.php:398
+msgid "Custom image width"
+msgstr "Largeur de l’image personnalisée"
+
+#: inc/sektions/ccat-sektions-front-modules.php:310
+msgid "Image main settings"
+msgstr "Réglages principaux de l’image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:258
+msgid "WordPress wraps the editor text inside \"p\" tags by default. You can disable this behaviour by unchecking this option."
+msgstr "L’éditeur de WordPress enveloppe le texte de l’éditeur à l’intérieur des balises \"p\" par défaut. Vous pouvez désactiver ce comportement en décochant cette option."
+
+#: inc/sektions/ccat-sektions-front-modules.php:254
+msgid "Automatically convert text into paragraph"
+msgstr "Convertir automatiquement le texte dans le paragraphe"
+
+#: inc/sektions/ccat-sektions-front-modules.php:22
+msgid "HTML Content"
+msgstr "Contenu HTML"
+
+#: inc/sektions/ccat-sektions-base.php:4777
+msgid "Html code goes here"
+msgstr "Le code HTML va ici"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4153
+msgid "Define a custom inner width for the sections site wide"
+msgstr "Définir une largeur interne personnalisée pour les sections du site"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4149
+#: inc/sektions/ccat-sektions-ui-modules.php:4168
+msgid "This option will be inherited by all Nimble sections of your site, unless for pages or sections with specific width options."
+msgstr "Cette option sera héritée par toutes les sections Nimble de votre site, sauf pour les pages ou les sections avec des options de largeur spécifiques."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:4127
+msgid "Define a custom outer width for the sections site wide"
+msgstr "Définir une largeur extérieure personnalisée pour les sections du site"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3638
+msgid "This will reset the sections created for the currently previewed page only. All other sections in other contexts will be preserved."
+msgstr "Cela réinitialisera les sections créées pour l'aperçu de la page actuellement prévisualisée uniquement. Toutes les autres sections dans d’autres contextes seront préservées."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3636
+msgid "Remove the Nimble sections in the current page"
+msgstr "Supprimer les sections Nimble dans la page en cours"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3593
+msgid "Add your own CSS code here"
+msgstr "Ajouter votre propre code CSS ici"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3592
+msgid "Custom css"
+msgstr "CSS personnalisé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3438
+#: inc/sektions/ccat-sektions-ui-modules.php:4162
+msgid "Inner sections width"
+msgstr "Largeur des sections intérieures"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3429
+msgid "Define a custom inner width for the sections of this page"
+msgstr "Définir une largeur intérieure personnalisée pour les sections de cette page"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3425
+#: inc/sektions/ccat-sektions-ui-modules.php:3446
+msgid "This option will be inherited by all Nimble sections of the currently previewed page, unless for sections with a specific width option."
+msgstr "Cette option sera héritée par toutes les sections Nimble de la page actuellement prévisualisée, sauf pour les sections avec une option de largeur spécifique."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3417
+#: inc/sektions/ccat-sektions-ui-modules.php:4143
+msgid "Outer sections width"
+msgstr "Largeur des sections extérieures"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3401
+msgid "Define a custom outer width for the sections of this page"
+msgstr "Définir une largeur extérieure personnalisée pour les sections de cette page"
+
+#: inc/sektions/ccat-czr-sektions.php:915
+#: inc/sektions/ccat-sektions-ui-modules.php:3369
+msgid "Select a template"
+msgstr "Sélectionner un thème"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3218
+msgid "Reverse the columns direction on devices smaller than the breakpoint."
+msgstr "Inverser la direction des colonnes sur les périphériques plus petits que le point d'arrêt."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3203
+msgid "This is the viewport width from which columns are rearranged vertically. The default breakpoint is 768px."
+msgstr "C'est le point d'arrêt sous lequel les colonnes sont réorganisées verticalement. Le point d'arrêt par défaut est 768px."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3193
+#: inc/sektions/ccat-sektions-ui-modules.php:4073
+msgid "Define a custom breakpoint in pixels"
+msgstr "Définir un point d’arrêt personnalisé en pixels"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3075
+msgid "Visible on mobile devices"
+msgstr "Visible sur les Smartphones"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3066
+msgid "Visible on tablet devices"
+msgstr "Visible sur les tablettes"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3057
+msgid "Visible on desktop devices"
+msgstr "Visible sur les ordinateurs"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3029
+msgid "Note : white spaces, numbers and special characters are not allowed when setting a CSS ID."
+msgstr "Remarque : les espaces, les chiffres et les caractères spéciaux ne sont pas autorisés lors de la définition d’un identifiant CSS."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3027
+msgid "Custom anchor"
+msgstr "Ancre personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2888
+msgid "Inner section width"
+msgstr "Largeur de section intérieure"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2879
+msgid "Define a custom inner width for this section"
+msgstr "Définir une largeur intérieure personnalisée pour cette section"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2870
+msgid "Outer section width"
+msgstr "Largeur de section extérieure"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2861
+msgid "Define a custom outer width for this section"
+msgstr "Définir une largeur extérieure personnalisée pour cette section"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2628
+#: inc/sektions/ccat-sektions-front-modules.php:953
+#: inc/sektions/ccat-sektions-front-modules.php:5560
+#: inc/sektions/ccat-sektions-front-modules.php:6112
+#: inc/sektions/ccat-sektions-front-modules.php:6575
+msgid "Horizontal alignment"
+msgstr "Alignement horizontal"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2619
+#: inc/sektions/ccat-sektions-front-modules.php:2518
+msgid "Custom width"
+msgstr "Largeur personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2613
+msgid "Width : 100% or custom"
+msgstr "Largeur : 100% ou personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2343
+msgid "Set padding and margin"
+msgstr "Définir le remplissage et la marge"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2199
+msgid "Inner vertical alignment"
+msgstr "Alignement vertical intérieur"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2172
+#: inc/sektions/ccat-sektions-front-modules.php:2540
+#: inc/sektions/ccat-sektions-front-modules.php:5733
+msgid "Height : auto or custom"
+msgstr "Hauteur : automatique ou personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2068
+#: inc/sektions/ccat-sektions-front-modules.php:507
+#: inc/sektions/ccat-sektions-front-modules.php:1358
+#: inc/sektions/ccat-sektions-front-modules.php:1623
+#: inc/sektions/ccat-sektions-front-modules.php:2455
+#: inc/sektions/ccat-sektions-front-modules.php:3071
+#: inc/sektions/ccat-sektions-front-modules.php:4118
+msgid "Rounded corners"
+msgstr "Coins arrondis"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2057
+#: inc/sektions/ccat-sektions-front-modules.php:493
+#: inc/sektions/ccat-sektions-front-modules.php:1609
+#: inc/sektions/ccat-sektions-front-modules.php:2441
+#: inc/sektions/ccat-sektions-front-modules.php:3057
+msgid "Borders"
+msgstr "Bordures"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1676
+#: inc/sektions/ccat-sektions-front-modules.php:5622
+msgid "Opacity (in percents)"
+msgstr "Opacité (en pourcentage)"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1424
+msgid "use the Nimble page template"
+msgstr "utiliser le thème de page Nimble"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:3373
+msgid "Default theme template"
+msgstr "Modèle de thème par défaut"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1362
+msgid "Adapt to content"
+msgstr "Adapter au contenu"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1349
+msgid "Quote Icon"
+msgstr "Icône de citation"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1348
+msgid "Side Border"
+msgstr "Bordure latérale"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1347
+msgid "Text only"
+msgstr "Texte seulement"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1286
+msgid "H6"
+msgstr "H6"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1285
+msgid "H5"
+msgstr "H5"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1284
+msgid "H4"
+msgstr "H4"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1283
+msgid "H3"
+msgstr "H3"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1282
+msgid "H2"
+msgstr "H2"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1281
+msgid "H1"
+msgstr "H1"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1246
+msgid "Reverse grayscale"
+msgstr "Niveaux de gris inversés"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1245
+msgid "Grayscale"
+msgstr "Niveaux de gris"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1244
+msgid "Blur"
+msgstr "Flou"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1243
+msgid "Move down"
+msgstr "Descendre"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1242
+msgid "Move up"
+msgstr "Déplacer vers le haut"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1241
+msgid "Zoom in"
+msgstr "Agrandir"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1240
+msgid "Zoom out"
+msgstr "Réduire"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1238
+msgid "No effect"
+msgstr "Aucun effet"
+
+#: inc/sektions/ccat-czr-sektions.php:1590
+msgid "Bottom left"
+msgstr "Inférieur gauche"
+
+#: inc/sektions/ccat-czr-sektions.php:1590
+msgid "Bottom right"
+msgstr "Inférieur droit"
+
+#: inc/sektions/ccat-czr-sektions.php:1590
+msgid "Top right"
+msgstr "Haut droit"
+
+#: inc/sektions/ccat-czr-sektions.php:1590
+msgid "Top left"
+msgstr "Haut gauche"
+
+#: inc/sektions/ccat-czr-sektions.php:1564
+#: inc/sektions/ccat-czr-sektions.php:3378
+msgid "Bottom"
+msgstr "Bas"
+
+#: inc/sektions/ccat-czr-sektions.php:1564
+#: inc/sektions/ccat-czr-sektions.php:3373
+#: inc/sektions/ccat-sektions-front-modules.php:2378
+msgid "Right"
+msgstr "Droit"
+
+#: inc/sektions/ccat-czr-sektions.php:1564
+#: inc/sektions/ccat-czr-sektions.php:3376
+msgid "Top"
+msgstr "Haut"
+
+#: inc/sektions/ccat-czr-sektions.php:1564
+#: inc/sektions/ccat-czr-sektions.php:3371
+#: inc/sektions/ccat-sektions-front-modules.php:2378
+msgid "Left"
+msgstr "Gauche"
+
+#: inc/sektions/ccat-czr-sektions.php:1247
+msgid "percents"
+msgstr "pourcentages"
+
+#: inc/sektions/ccat-czr-sektions.php:1247
+msgid "pixels"
+msgstr "pixels"
+
+#: inc/sektions/ccat-czr-sektions.php:1247
+#: inc/sektions/ccat-czr-sektions.php:1873
+msgid "unit"
+msgstr "unité"
+
+#: inc/sektions/ccat-czr-sektions.php:1505
+msgid "Margin bottom"
+msgstr "Fond de la marge"
+
+#: inc/sektions/ccat-czr-sektions.php:1497
+msgid "Margin right"
+msgstr "Marge à droite"
+
+#: inc/sektions/ccat-czr-sektions.php:1489
+msgid "Padding bottom"
+msgstr "Marge intérieure basse"
+
+#: inc/sektions/ccat-czr-sektions.php:1482
+msgid "Padding right"
+msgstr "Marge intérieure droit"
+
+#: inc/sektions/ccat-czr-sektions.php:1477
+msgid "Padding left"
+msgstr "Marge intérieure gauche"
+
+#: inc/sektions/ccat-czr-sektions.php:1470
+msgid "Padding top"
+msgstr "Marge intérieure haut"
+
+#: inc/sektions/ccat-czr-sektions.php:1462
+msgid "Margin left"
+msgstr "Marge à gauche"
+
+#: inc/sektions/ccat-czr-sektions.php:1455
+msgid "Margin top"
+msgstr "Marge haute"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3220
+msgid "four columns layout"
+msgstr "mise en page en 4 colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3215
+msgid "three columns layout"
+msgstr "mise en page à 3 colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3210
+msgid "two columns layout"
+msgstr "mise en page à 2 colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3140
+msgid "3 columns with icon"
+msgstr "3 colonnes avec icône"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3133
+msgid "3 columns with icon and call to action"
+msgstr "3 colonnes avec icône et incitation à l’action"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3106
+msgid "2 columns, call to action, full-width background"
+msgstr "2 colonnes, incitation à l’action, arrière-plan pleine largeur"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3100
+msgid "1 column, full-width background"
+msgstr "1 colonne, arrière-plan pleine largeur"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3094
+msgid "1 columns, call to action, full-width background"
+msgstr "1 colonne, appel à l’action, arrière-plan pleine largeur"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:967
+msgid "Simple Contact Form"
+msgstr "Formulaire de contact simple"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:941
+#: inc/sektions/ccat-sektions-front-modules.php:1310
+msgid "Divider"
+msgstr "Diviser"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:935
+#: inc/sektions/ccat-sektions-front-modules.php:1275
+msgid "Spacer"
+msgstr "Espacer"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:923
+#: inc/sektions/ccat-sektions-front-modules.php:1790
+msgid "Quote"
+msgstr "Citation"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:911
+#: inc/sektions/ccat-sektions-front-modules.php:16
+msgid "Html Content"
+msgstr "Contenu HTML"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:854
+msgid "Four Columns"
+msgstr "Quatre colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:848
+msgid "Three Columns"
+msgstr "Trois colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:842
+msgid "Two Columns"
+msgstr "Deux colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:947
+#: inc/sektions/ccat-sektions-front-modules.php:1719
+msgid "Map"
+msgstr "Carte"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:893
+#: inc/sektions/ccat-sektions-front-modules.php:2288
+#: inc/sektions/ccat-sektions-front-modules.php:3445
+msgid "Button"
+msgstr "Bouton"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:879
+#: inc/sektions/ccat-sektions-front-modules.php:1412
+msgid "Icon"
+msgstr "Icône"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:872
+#: inc/sektions/ccat-sektions-front-modules.php:1114
+msgid "Heading"
+msgstr "Titre"
+
+#: inc/sektions/ccat-czr-sektions.php:1630
+msgid "Pick a section"
+msgstr "Choisir une section"
+
+#: inc/sektions/ccat-czr-sektions.php:1629
+msgid "Content type"
+msgstr "Type de contenu"
+
+#: inc/sektions/ccat-czr-sektions.php:822
+#: inc/sektions/ccat-czr-sektions.php:823
+#: inc/sektions/ccat-czr-sektions.php:824
+#: inc/sektions/ccat-czr-sektions.php:825
+msgid "Nimble online documentation"
+msgstr "Documentation en ligne de Nimble"
+
+#: inc/sektions/ccat-czr-sektions.php:804
+#: inc/sektions/ccat-czr-sektions.php:805
+msgid "Global settings"
+msgstr "Réglages globaux"
+
+#: inc/sektions/ccat-czr-sektions.php:791
+#: inc/sektions/ccat-czr-sektions.php:792
+#: inc/sektions/ccat-czr-sektions.php:798
+#: inc/sektions/ccat-czr-sektions.php:799
+#: inc/sektions/ccat-czr-sektions.php:3216
+msgid "Redo"
+msgstr "Rétablir"
+
+#: inc/sektions/ccat-czr-sektions.php:788
+#: inc/sektions/ccat-czr-sektions.php:789
+#: inc/sektions/ccat-czr-sektions.php:795
+#: inc/sektions/ccat-czr-sektions.php:796
+#: inc/sektions/ccat-czr-sektions.php:3215
+msgid "Undo"
+msgstr "Annuler"
+
+#: inc/sektions/ccat-czr-sektions.php:777
+#: inc/sektions/ccat-czr-sektions.php:778
+msgid "Add content"
+msgstr "Ajouter au contenu"
+
+#: inc/sektions/ccat-czr-sektions.php:601
+msgid "Settings on mobiles"
+msgstr "Réglages sur les Smartphones"
+
+#: inc/sektions/ccat-czr-sektions.php:600
+msgid "Settings on tablets"
+msgstr "Réglages sur les tablettes"
+
+#: inc/sektions/ccat-czr-sektions.php:599
+msgid "Settings on desktops"
+msgstr "Réglages sur ordinateurs"
+
+#: inc/sektions/ccat-czr-sektions.php:596
+msgid "There are %d errors in your %s code which might break your site. Please fix them before saving."
+msgstr "Il y a %d d’erreurs dans votre code %s qui pourraient endommager votre site. Veuillez les corriger avant de sauvegarder."
+
+#: inc/sektions/ccat-czr-sektions.php:595
+msgid "There is %d error in your %s code which might break your site. Please fix it before saving."
+msgstr "Il y a une erreur %d dans votre code %s qui pourrait endommager votre site. Veuillez corriger avant de sauvegarder."
+
+#: inc/sektions/ccat-czr-sektions.php:592
+#: inc/sektions/ccat-sektions-front-modules.php:832
+#: inc/sektions/ccat-sektions-front-modules.php:844
+msgid "Select an icon"
+msgstr "Sélectionner un icône"
+
+#: inc/sektions/ccat-czr-sektions.php:562
+msgid "Site wide options"
+msgstr "Options globales"
+
+#: inc/sektions/ccat-czr-sektions.php:559
+msgid "General options applied for the sections site wide"
+msgstr "Options générales appliquées aux sections du site"
+
+#: inc/sektions/ccat-czr-sektions.php:558
+msgid "Options for the sections of the current page"
+msgstr "Options pour les sections de la page actuelle"
+
+#: inc/sektions/ccat-czr-sektions.php:551
+msgid "Site wide inner and outer sections widths"
+msgstr "Largeurs des sections intérieures et extérieures du site"
+
+#: inc/sektions/ccat-czr-sektions.php:550
+msgid "Site wide breakpoint for Nimble sections"
+msgstr "Point d’arrêt pour les sections de Nimble"
+
+#: inc/sektions/ccat-czr-sektions.php:544
+msgid "Reset the sections in this page"
+msgstr "Réinitialiser les sections de cette page"
+
+#: inc/sektions/ccat-czr-sektions.php:543
+msgid "Custom CSS"
+msgstr "CSS personnalisé"
+
+#: inc/sektions/ccat-czr-sektions.php:542
+msgid "Inner and outer widths"
+msgstr "Largeurs intérieure et extérieure"
+
+#: inc/sektions/ccat-czr-sektions.php:539
+msgid "Page template"
+msgstr "Modèle de page"
+
+#: inc/sektions/ccat-czr-sektions.php:538
+msgid "Current page options"
+msgstr "Options de la page actuelle"
+
+#: inc/sektions/ccat-czr-sektions.php:529
+msgid "Responsive settings : breakpoint, column direction"
+msgstr "Réglages Responsive : point d’arrêt, direction de la colonne"
+
+#: inc/sektions/ccat-czr-sektions.php:528
+msgid "Device visibility settings for the"
+msgstr "Réglages de visibilité de l’appareil pour le"
+
+#: inc/sektions/ccat-czr-sektions.php:525
+msgid "Width settings for the"
+msgstr "Réglages de largeur pour le"
+
+#: inc/sektions/ccat-czr-sektions.php:522
+msgid "Borders settings for the"
+msgstr "Paramètres des bordures pour le"
+
+#: inc/sektions/ccat-czr-sektions.php:520
+msgid "Background settings for the"
+msgstr "Réglages d’arrière-plan pour le"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3206
+msgid "Empty sections with columns layout"
+msgstr "Mise en page des sections vides avec disposition des colonnes"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3129
+msgid "Sections for services and features"
+msgstr "Sections pour services et fonctionnalités"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:3090
+msgid "Sections for an introduction"
+msgstr "Sections pour une introduction"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1411
+msgid "Select a content type"
+msgstr "Sélectionner un type de contenu"
+
+#: inc/sektions/ccat-czr-sektions.php:508
+msgid "Pick a pre-designed section"
+msgstr "Choisir une section préconçue"
+
+#: inc/sektions/ccat-czr-sektions.php:1631
+#: inc/sektions/ccat-sektions-ui-modules.php:1447
+msgid "Pick a module"
+msgstr "Choisir un module"
+
+#: inc/sektions/ccat-czr-sektions.php:507
+msgid "Content Picker"
+msgstr "Sélecteur de contenu"
+
+#: inc/sektions/ccat-czr-sektions.php:504
+msgid "Drag and drop content"
+msgstr "Glisser-déposer du contenu"
+
+#: inc/sektions/ccat-czr-sektions.php:1304
+msgid "Hide editor"
+msgstr "Masquer l'éditeur"
+
+#: inc/sektions/ccat-sektions-base.php:3913
+#: inc/sektions/ccat-sektions-base.php:3979
+msgid "WordPress content"
+msgstr "Contenu WordPress"
+
+#: inc/sektions/ccat-sektions-base.php:3908
+#: inc/sektions/ccat-sektions-base.php:3913
+msgid "Edit this WordPress content"
+msgstr "Modifier ce contenu WordPress"
+
+#: inc/sektions/ccat-sektions-base.php:3884
+#: inc/sektions/ccat-sektions-base.php:3892
+#: inc/sektions/ccat-sektions-base.php:3912
+#: inc/sektions/ccat-sektions-base.php:4603
+msgid "Edit module settings"
+msgstr "Modifier les réglages du module"
+
+#: inc/sektions/ccat-sektions-base.php:3883
+msgid "Edit module content"
+msgstr "Modifier le contenu du module"
+
+#: inc/sektions/ccat-sektions-base.php:3851
+#: inc/sektions/ccat-sektions-base.php:3866
+msgid "Edit column settings"
+msgstr "Modifier les réglages de colonne"
+
+#: inc/sektions/ccat-sektions-base.php:3807
+#: inc/sektions/ccat-sektions-base.php:3816
+msgid "Edit section settings"
+msgstr "Modifier les réglages de la section"
+
+#: inc/sektions/ccat-sektions-base.php:3695
+msgid "This content has been created with the WordPress editor."
+msgstr "Ce contenu a été créé avec l’éditeur WordPress."
+
+#. Author of the plugin
+msgid "Press Customizr"
+msgstr "Customizr Press"
+
+#: nimble-builder.php:67
+msgid "The <strong>%1$s</strong> plugin requires at least %2$s version %3$s."
+msgstr "L'extension <strong>%1$s</strong> requiert au moins %2$s version %3$s."
+
+#: nimble-builder.php:63
+msgid "WordPress"
+msgstr "WordPress"
+
+#: nimble-builder.php:60
+msgid "PHP"
+msgstr "PHP"
+
+#: inc/sektions/ccat-czr-sektions.php:1000
+msgid "Hide Editor"
+msgstr "Masquer l’éditeur"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:1992
+msgid "No results found."
+msgstr "Aucun résultat trouvé."
+
+#. translators: %d: ID of a post
+#: inc/czr-base-fmk/czr-base-fmk.php:1849
+#: inc/czr-base-fmk/czr-base-fmk.php:2058
+msgid "#%d (no title)"
+msgstr "#%d (pas de titre)"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:1728
+#: inc/czr-base-fmk/czr-base-fmk.php:1928
+msgid "ajax_load_available_items => Security check failed."
+msgstr "ajax_load_available_items => La vérification de la sécurité a échoué."
+
+#: tmpl/modules/quote_module_tmpl.php:28
+#: tmpl/modules/heading_module_tmpl.php:28
+#: tmpl/modules/tinymce_editor_module_tmpl.php:33
+#: inc/sektions/ccat-sektions-base.php:4769
+#: inc/sektions/ccat-sektions-base.php:4777
+#: inc/sektions/ccat-sektions-base.php:4781
+msgid "Click to edit"
+msgstr "Cliquer pour modifier"
+
+#: inc/sektions/ccat-sektions-base.php:3886
+msgid "Remove module"
+msgstr "Supprimer le module"
+
+#: inc/sektions/ccat-sektions-base.php:3885
+msgid "Duplicate module"
+msgstr "Dupliquer le module"
+
+#: inc/sektions/ccat-czr-sektions.php:1615
+msgid "Module Settings"
+msgstr "Réglages du module"
+
+#: inc/sektions/ccat-sektions-base.php:3882
+msgid "Move module"
+msgstr "Déplacer le module"
+
+#: inc/sektions/ccat-sektions-base.php:3861
+msgid "Remove column"
+msgstr "Supprimer la colonne"
+
+#: inc/sektions/ccat-sektions-base.php:3859
+msgid "Add a module"
+msgstr "Ajouter un module"
+
+#: inc/sektions/ccat-sektions-base.php:3856
+msgid "Duplicate column"
+msgstr "Dupliquer la colonne"
+
+#: inc/sektions/ccat-sektions-base.php:3853
+msgid "Add a nested section"
+msgstr "Ajouter une section imbriquée"
+
+#: inc/sektions/ccat-sektions-base.php:3850
+msgid "Move column"
+msgstr "Déplacer la colonne"
+
+#: inc/sektions/ccat-czr-sektions.php:870
+#: inc/sektions/ccat-czr-sektions.php:871
+#: inc/sektions/ccat-czr-sektions.php:881
+#: inc/sektions/ccat-czr-sektions.php:882
+#: inc/sektions/ccat-sektions-base.php:3813
+msgid "Remove section"
+msgstr "Supprimer la section"
+
+#: inc/sektions/ccat-sektions-base.php:3811
+msgid "Duplicate section"
+msgstr "Dupliquer la section"
+
+#: inc/sektions/ccat-sektions-base.php:3809
+msgid "Add a column"
+msgstr "Ajouter une colonne"
+
+#: inc/sektions/ccat-czr-sektions.php:864
+#: inc/sektions/ccat-czr-sektions.php:865
+msgid "Save section"
+msgstr "Enregistrer la section"
+
+#: inc/sektions/ccat-sektions-base.php:3697
+msgid "Insert a new section"
+msgstr "Insérer une nouvelle section"
+
+#: inc/sektions/ccat-sektions-front-modules.php:365
+#: inc/sektions/ccat-sektions-front-modules.php:1199
+#: inc/sektions/ccat-sektions-front-modules.php:1487
+#: inc/sektions/ccat-sektions-front-modules.php:2364
+msgid "Open link in a new page"
+msgstr "Ouvrir le lien dans une nouvelle page"
+
+#: inc/sektions/ccat-sektions-front-modules.php:360
+#: inc/sektions/ccat-sektions-front-modules.php:1194
+#: inc/sektions/ccat-sektions-front-modules.php:1482
+#: inc/sektions/ccat-sektions-front-modules.php:2359
+msgid "Custom link url"
+msgstr "Lien URL personnalisé"
+
+#: inc/sektions/ccat-sektions-front-modules.php:355
+#: inc/sektions/ccat-sektions-front-modules.php:1189
+#: inc/sektions/ccat-sektions-front-modules.php:1477
+#: inc/sektions/ccat-sektions-front-modules.php:2354
+msgid "Link url"
+msgstr "Lien URL"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1471
+#: inc/sektions/ccat-sektions-front-modules.php:2348
+msgid "Link to"
+msgstr "Lien vers"
+
+#: inc/sektions/ccat-sektions-front-modules.php:333
+#: inc/sektions/ccat-sektions-front-modules.php:739
+#: inc/sektions/ccat-sektions-front-modules.php:5468
+msgid "Select the image size"
+msgstr "Sélectionnez la taille de l’image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:328
+#: inc/sektions/ccat-sektions-front-modules.php:734
+#: inc/sektions/ccat-sektions-front-modules.php:5452
+#: inc/sektions/ccat-sektions-front-modules.php:5463
+#: inc/sektions/ccat-sektions-front-modules.php:6065
+msgid "Pick an image"
+msgstr "Choisir une image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:1966
+#: inc/sektions/ccat-sektions-front-modules.php:2140
+#: inc/sektions/ccat-sektions-front-modules.php:3277
+#: inc/sektions/ccat-sektions-front-modules.php:3420
+#: inc/sektions/ccat-sektions-front-modules.php:3563
+msgid "Make those style options win if other rules are applied."
+msgstr "Faire en sorte que ces options de style soit valables si d’autres règles sont appliquées."
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1946
+#: inc/sektions/ccat-sektions-front-modules.php:89
+#: inc/sektions/ccat-sektions-front-modules.php:1902
+#: inc/sektions/ccat-sektions-front-modules.php:2076
+#: inc/sektions/ccat-sektions-front-modules.php:3213
+#: inc/sektions/ccat-sektions-front-modules.php:3356
+#: inc/sektions/ccat-sektions-front-modules.php:3499
+#: inc/sektions/ccat-sektions-front-modules.php:4281
+#: inc/sektions/ccat-sektions-front-modules.php:4377
+#: inc/sektions/ccat-sektions-front-modules.php:4473
+#: inc/sektions/ccat-sektions-front-modules.php:4569
+#: inc/sektions/ccat-sektions-front-modules.php:5269
+msgid "Text color on mouse over"
+msgstr "Couleur du texte au survol de la souris"
+
+#: inc/sektions/ccat-czr-sektions.php:3392
+#: inc/sektions/ccat-sektions-ui-modules.php:1937
+#: inc/sektions/ccat-sektions-ui-modules.php:3857
+#: inc/sektions/ccat-sektions-front-modules.php:80
+#: inc/sektions/ccat-sektions-front-modules.php:1892
+#: inc/sektions/ccat-sektions-front-modules.php:2066
+#: inc/sektions/ccat-sektions-front-modules.php:3203
+#: inc/sektions/ccat-sektions-front-modules.php:3346
+#: inc/sektions/ccat-sektions-front-modules.php:3489
+#: inc/sektions/ccat-sektions-front-modules.php:4271
+#: inc/sektions/ccat-sektions-front-modules.php:4367
+#: inc/sektions/ccat-sektions-front-modules.php:4463
+#: inc/sektions/ccat-sektions-front-modules.php:4559
+#: inc/sektions/ccat-sektions-front-modules.php:5260
+#: inc/sektions/ccat-sektions-front-modules.php:5507
+#: inc/sektions/ccat-sektions-front-modules.php:6216
+#: inc/sektions/ccat-sektions-front-modules.php:6333
+msgid "Text color"
+msgstr "Couleur du texte"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1993
+#: inc/sektions/ccat-sektions-front-modules.php:136
+#: inc/sektions/ccat-sektions-front-modules.php:1953
+#: inc/sektions/ccat-sektions-front-modules.php:2127
+#: inc/sektions/ccat-sektions-front-modules.php:3264
+#: inc/sektions/ccat-sektions-front-modules.php:3407
+#: inc/sektions/ccat-sektions-front-modules.php:3550
+#: inc/sektions/ccat-sektions-front-modules.php:5316
+msgid "Letter spacing"
+msgstr "Espacement des lettres"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1983
+#: inc/sektions/ccat-sektions-front-modules.php:126
+#: inc/sektions/ccat-sektions-front-modules.php:1943
+#: inc/sektions/ccat-sektions-front-modules.php:2117
+#: inc/sektions/ccat-sektions-front-modules.php:3254
+#: inc/sektions/ccat-sektions-front-modules.php:3397
+#: inc/sektions/ccat-sektions-front-modules.php:3540
+#: inc/sektions/ccat-sektions-front-modules.php:4312
+#: inc/sektions/ccat-sektions-front-modules.php:4408
+#: inc/sektions/ccat-sektions-front-modules.php:4504
+#: inc/sektions/ccat-sektions-front-modules.php:4600
+#: inc/sektions/ccat-sektions-front-modules.php:5306
+msgid "Text transform"
+msgstr "Transformation du texte"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1974
+#: inc/sektions/ccat-sektions-front-modules.php:117
+#: inc/sektions/ccat-sektions-front-modules.php:1933
+#: inc/sektions/ccat-sektions-front-modules.php:2107
+#: inc/sektions/ccat-sektions-front-modules.php:3244
+#: inc/sektions/ccat-sektions-front-modules.php:3387
+#: inc/sektions/ccat-sektions-front-modules.php:3530
+#: inc/sektions/ccat-sektions-front-modules.php:5297
+msgid "Text decoration"
+msgstr "Décoration de texte"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1956
+#: inc/sektions/ccat-sektions-front-modules.php:99
+#: inc/sektions/ccat-sektions-front-modules.php:1913
+#: inc/sektions/ccat-sektions-front-modules.php:2087
+#: inc/sektions/ccat-sektions-front-modules.php:3224
+#: inc/sektions/ccat-sektions-front-modules.php:3367
+#: inc/sektions/ccat-sektions-front-modules.php:3510
+#: inc/sektions/ccat-sektions-front-modules.php:4292
+#: inc/sektions/ccat-sektions-front-modules.php:4388
+#: inc/sektions/ccat-sektions-front-modules.php:4484
+#: inc/sektions/ccat-sektions-front-modules.php:4580
+#: inc/sektions/ccat-sektions-front-modules.php:5279
+msgid "Font weight"
+msgstr "Taille de la police"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1898
+#: inc/sektions/ccat-sektions-ui-modules.php:3820
+#: inc/sektions/ccat-sektions-ui-modules.php:3912
+#: inc/sektions/ccat-sektions-front-modules.php:40
+#: inc/sektions/ccat-sektions-front-modules.php:1852
+#: inc/sektions/ccat-sektions-front-modules.php:2026
+#: inc/sektions/ccat-sektions-front-modules.php:3163
+#: inc/sektions/ccat-sektions-front-modules.php:3306
+#: inc/sektions/ccat-sektions-front-modules.php:3449
+#: inc/sektions/ccat-sektions-front-modules.php:4231
+#: inc/sektions/ccat-sektions-front-modules.php:4327
+#: inc/sektions/ccat-sektions-front-modules.php:4423
+#: inc/sektions/ccat-sektions-front-modules.php:4519
+#: inc/sektions/ccat-sektions-front-modules.php:5221
+#: inc/sektions/ccat-sektions-front-modules.php:5518
+#: inc/sektions/ccat-sektions-front-modules.php:6239
+#: inc/sektions/ccat-sektions-front-modules.php:6344
+msgid "Font family"
+msgstr "Famille de polices"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1965
+#: inc/sektions/ccat-sektions-front-modules.php:108
+#: inc/sektions/ccat-sektions-front-modules.php:1923
+#: inc/sektions/ccat-sektions-front-modules.php:2097
+#: inc/sektions/ccat-sektions-front-modules.php:3234
+#: inc/sektions/ccat-sektions-front-modules.php:3377
+#: inc/sektions/ccat-sektions-front-modules.php:3520
+#: inc/sektions/ccat-sektions-front-modules.php:4302
+#: inc/sektions/ccat-sektions-front-modules.php:4398
+#: inc/sektions/ccat-sektions-front-modules.php:4494
+#: inc/sektions/ccat-sektions-front-modules.php:4590
+#: inc/sektions/ccat-sektions-front-modules.php:5288
+msgid "Font style"
+msgstr "Style de police"
+
+#: inc/sektions/ccat-czr-sektions.php:3369
+#: inc/sektions/ccat-sektions-ui-modules.php:1884
+#: inc/sektions/ccat-sektions-front-modules.php:244
+#: inc/sektions/ccat-sektions-front-modules.php:372
+#: inc/sektions/ccat-sektions-front-modules.php:1164
+#: inc/sektions/ccat-sektions-front-modules.php:1371
+#: inc/sektions/ccat-sektions-front-modules.php:1506
+msgid "Alignment"
+msgstr "Alignement"
+
+#: inc/sektions/ccat-sektions-front-modules.php:231
+#: inc/sektions/ccat-sektions-front-modules.php:238
+#: inc/sektions/ccat-sektions-front-modules.php:1138
+#: inc/sektions/ccat-sektions-front-modules.php:6096
+msgid "Content"
+msgstr "Contenu"
+
+#: inc/sektions/ccat-sektions-front-modules.php:5572
+msgid "Vertical alignment"
+msgstr "Alignement vertical"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2178
+#: inc/sektions/ccat-sektions-front-modules.php:2549
+#: inc/sektions/ccat-sektions-front-modules.php:5742
+msgid "Custom height"
+msgstr "Hauteur personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2081
+#: inc/sektions/ccat-sektions-front-modules.php:437
+#: inc/sektions/ccat-sektions-front-modules.php:1636
+#: inc/sektions/ccat-sektions-front-modules.php:2495
+#: inc/sektions/ccat-sektions-front-modules.php:3111
+msgid "Apply a shadow"
+msgstr "Appliquer une ombre"
+
+#: inc/sektions/ccat-sektions-front-modules.php:2210
+msgid "Border Color"
+msgstr "Couleur de la bordure"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:2051
+msgid "Border shape"
+msgstr "Forme de la bordure"
+
+#: inc/sektions/ccat-czr-sektions.php:3258
+#: inc/sektions/ccat-sektions-front-modules.php:485
+#: inc/sektions/ccat-sektions-front-modules.php:1601
+#: inc/sektions/ccat-sektions-front-modules.php:2433
+#: inc/sektions/ccat-sektions-front-modules.php:3049
+msgid "Border"
+msgstr "Bordure"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1239
+msgid "Opacity"
+msgstr "Opacité"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1670
+#: inc/sektions/ccat-sektions-front-modules.php:5614
+msgid "Overlay Color"
+msgstr "Couleur de superposition"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1662
+msgid "Apply a background overlay"
+msgstr "Appliquer une superposition d’arrière-plan"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1587
+msgid "Scale"
+msgstr "Échelle"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1557
+msgid "Fixed background"
+msgstr "Arrière-plan fixe"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1547
+msgid "Image position"
+msgstr "Position de l’image"
+
+#: inc/sektions/ccat-czr-sektions.php:3391
+#: inc/sektions/ccat-sektions-ui-modules.php:1527
+#: inc/sektions/ccat-sektions-front-modules.php:1590
+#: inc/sektions/ccat-sektions-front-modules.php:2403
+#: inc/sektions/ccat-sektions-front-modules.php:3020
+msgid "Background color"
+msgstr "Couleur d’arrière-plan"
+
+#: inc/sektions/ccat-czr-sektions.php:1926
+msgid "Align bottom"
+msgstr "Alignement inférieur"
+
+#: inc/sektions/ccat-czr-sektions.php:1924
+msgid "Align top"
+msgstr "Alignement haut"
+
+#: inc/sektions/ccat-czr-sektions.php:1348
+msgid "Justified"
+msgstr "Justifié"
+
+#: inc/sektions/ccat-czr-sektions.php:1332
+#: inc/sektions/ccat-czr-sektions.php:1347
+#: inc/sektions/ccat-czr-sektions.php:3205
+msgid "Align right"
+msgstr "Alignement à droite"
+
+#: inc/sektions/ccat-czr-sektions.php:1331
+#: inc/sektions/ccat-czr-sektions.php:1346
+#: inc/sektions/ccat-czr-sektions.php:1925
+#: inc/sektions/ccat-czr-sektions.php:3204
+msgid "Align center"
+msgstr "Alignement centré"
+
+#: inc/sektions/ccat-czr-sektions.php:1330
+#: inc/sektions/ccat-czr-sektions.php:1345
+#: inc/sektions/ccat-czr-sektions.php:3206
+msgid "Align left"
+msgstr "Alignement à gauche"
+
+#: inc/sektions/ccat-czr-sektions.php:1517
+msgid "Reset all spacing"
+msgstr "Réinitialiser tout l’espacement"
+
+#: inc/sektions/ccat-czr-sektions.php:3253
+#: inc/sektions/ccat-sektions-ui-modules.php:1533
+#: inc/sektions/ccat-constants-and-helper-functions.php:866
+#: inc/sektions/ccat-sektions-front-modules.php:282
+#: inc/sektions/ccat-sektions-front-modules.php:5459
+msgid "Image"
+msgstr "Image"
+
+#: inc/sektions/ccat-sektions-front-modules.php:200
+msgid "Text Editor"
+msgstr "Éditeur de texte"
+
+#: inc/sektions/ccat-constants-and-helper-functions.php:430
+msgid "Original image dimensions"
+msgstr "Tailles de l’image d'origine"
+
+#: inc/sektions/ccat-czr-sektions.php:590
+#: inc/sektions/ccat-sektions-base.php:3693
+msgid "Something went wrong, please refresh this page."
+msgstr "Quelque chose s’est mal passé, veuillez actualiser cette page."
+
+#: inc/sektions/ccat-czr-sektions.php:588
+#: inc/czr-base-fmk/czr-base-fmk.php:1694
+msgid "Set a custom url"
+msgstr "Définir une URL personnalisée"
+
+#: inc/sektions/ccat-czr-sektions.php:585
+msgid "Google fonts"
+msgstr "Polices Google"
+
+#: inc/sektions/ccat-czr-sektions.php:584
+msgid "Web safe fonts"
+msgstr "Polices Web Safe"
+
+#: inc/sektions/ccat-czr-sektions.php:583
+msgid "Select a font family"
+msgstr "Sélectionnez une famille de polices"
+
+#: inc/sektions/ccat-czr-sektions.php:577
+msgid "Insert a new section here"
+msgstr "Insérer une nouvelle section ici"
+
+#: inc/sektions/ccat-czr-sektions.php:576
+msgid "Insert in a new section"
+msgstr "Insérer dans une nouvelle section"
+
+#: inc/sektions/ccat-czr-sektions.php:575
+#: inc/sektions/ccat-sektions-base.php:3694
+msgid "Insert here"
+msgstr "Insérer ici"
+
+#: inc/sektions/ccat-czr-sektions.php:573
+msgid "This browser does not support drag and drop. You might need to update your browser or use another one."
+msgstr "Ce navigateur ne supporte pas le glisser-déposer. Vous devrez peut-être mettre à jour votre navigateur ou en utiliser un autre."
+
+#: inc/sektions/ccat-czr-sektions.php:570
+#: inc/sektions/ccat-sektions-base.php:3890
+msgid "module"
+msgstr "module"
+
+#: inc/sektions/ccat-czr-sektions.php:569
+#: inc/sektions/ccat-sektions-base.php:3872
+msgid "column"
+msgstr "colonne"
+
+#: inc/sektions/ccat-czr-sektions.php:567
+#: inc/sektions/ccat-sektions-base.php:3701
+msgid "section"
+msgstr "section"
+
+#: inc/sektions/ccat-czr-sektions.php:566
+msgid "location"
+msgstr "emplacement"
+
+#: inc/sektions/ccat-czr-sektions.php:532
+msgid "Settings for the"
+msgstr "Réglages pour le"
+
+#: inc/sektions/ccat-czr-sektions.php:521
+msgid "Text settings for the"
+msgstr "Réglages de texte pour le"
+
+#: inc/sektions/ccat-czr-sektions.php:523
+msgid "Padding and margin settings for the"
+msgstr "Réglages de remplissage et de marge pour le"
+
+#: inc/sektions/ccat-czr-sektions.php:519
+msgid "Layout settings for the"
+msgstr "Paramètres de mise en page pour le"
+
+#: inc/sektions/ccat-czr-sektions.php:517
+msgid "Customize the options for module :"
+msgstr "Personnaliser les options du module :"
+
+#: inc/sektions/ccat-czr-sektions.php:516
+msgid "Content for"
+msgstr "Contenu pour"
+
+#: inc/sektions/ccat-czr-sektions.php:515
+msgid "Module"
+msgstr "Module"
+
+#: inc/sektions/ccat-czr-sektions.php:500
+msgid "Reset complete"
+msgstr "Réinitialisation terminée"
+
+#: inc/sektions/ccat-czr-sektions.php:499
+#: inc/sektions/ccat-czr-sektions.php:1576
+#: inc/sektions/ccat-czr-sektions.php:1591
+#: inc/sektions/ccat-czr-sektions.php:1940
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: inc/sektions/ccat-czr-sektions.php:498
+msgid "If this problem locks Nimble Builder, you can try resetting the sections of this page."
+msgstr "Si ce problème verrouille le constructeur de page Nimble, vous pouvez essayer de réinitialiser les sections de cette page."
+
+#: inc/sektions/ccat-czr-sektions.php:496
+msgid "A section must have at least one column."
+msgstr "Une section doit avoir au moins une colonne."
+
+#: inc/sektions/ccat-czr-sektions.php:495
+#: inc/sektions/ccat-sektions-base.php:3691
+msgid "You've reached the maximum number of columns allowed in this section."
+msgstr "Vous avez atteint le nombre maximal de colonnes autorisé dans cette section."
+
+#: inc/sektions/ccat-czr-sektions.php:494
+msgid "You've reached the maximum number of allowed nested sections."
+msgstr "Vous avez atteint le nombre maximal de sections imbriquées autorisé."
+
+#: inc/czr-base-fmk/czr-base-fmk.php:286
+msgid "Customizing"
+msgstr "Personnalisation"
+
+#: inc/sektions/ccat-czr-sektions.php:492
+#: inc/sektions/ccat-czr-sektions.php:822
+#: inc/sektions/ccat-constants-and-helper-functions.php:3352
+#: inc/admin/nb-options.php:19 inc/admin/nb-options.php:20
+#: inc/admin/nb-options.php:181 inc/admin/nimble-admin.php:95
+#: inc/admin/nimble-admin.php:323 inc/admin/nimble-admin.php:645
+#: nimble-builder.php:68
+msgid "Nimble Builder"
+msgstr "Nimble Builder"
+
+#: inc/sektions/ccat-czr-sektions.php:490
+msgid "Sections"
+msgstr "Sections"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1391
+msgid "dashed"
+msgstr "tirets"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1390
+msgid "dotted"
+msgstr "pointillés"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1389
+msgid "double"
+msgstr "double"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1388
+msgid "solid"
+msgstr "solide"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1376
+msgid "Scale to fill"
+msgstr "Redimensionner l’échelle"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1363
+#: inc/sektions/ccat-sektions-ui-modules.php:1369
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1382
+msgid "default"
+msgstr "par défaut"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1357
+msgid "Full Width"
+msgstr "Pleine largeur"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1356
+msgid "Boxed"
+msgstr "Encadré"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1340
+msgid "Percents"
+msgstr "Pourcentages"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1339
+msgid "Em"
+msgstr "Em"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1338
+msgid "Pixels"
+msgstr "Pixels"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1331
+msgid "lowercase"
+msgstr "minuscule"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1330
+msgid "uppercase"
+msgstr "majuscule"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1329
+msgid "capitalize"
+msgstr "mettre en majuscules"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1322
+msgid "underline"
+msgstr "souligner"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1321
+msgid "overline"
+msgstr "surligner"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1320
+msgid "line-through"
+msgstr "séparateur"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1318
+#: inc/sektions/ccat-sektions-ui-modules.php:1327
+#: inc/sektions/ccat-sektions-ui-modules.php:1387
+msgid "none"
+msgstr "aucune"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1313
+msgid "oblique"
+msgstr "oblique"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1311
+msgid "italic"
+msgstr "italique"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1310
+#: inc/sektions/ccat-sektions-ui-modules.php:1319
+#: inc/sektions/ccat-sektions-ui-modules.php:1328
+msgid "inherit"
+msgstr "hériter"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1296
+msgid "lighter"
+msgstr "léger"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1295
+msgid "bolder"
+msgstr "plus gras"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1294
+msgid "bold"
+msgstr "gras"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1293
+#: inc/sektions/ccat-sektions-ui-modules.php:1312
+msgid "normal"
+msgstr "normal"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1273
+msgid "Use a custom text"
+msgstr "Utiliser un texte personnalisé"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1272
+msgid "Use the page excerpt"
+msgstr "Utiliser l’extrait de page"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1271
+msgid "No text"
+msgstr "Sans texte"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1266
+msgid "Use a custom image"
+msgstr "Utiliser une image personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1265
+msgid "Use the page featured image"
+msgstr "Utiliser comme image mise en avant de la page"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1264
+msgid "No image"
+msgstr "Aucune image"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1257
+msgid "Site content or custom url"
+msgstr "Contenu du site ou URL personnalisée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1256
+msgid "No link"
+msgstr "Pas de lien"
+
+#: inc/czr-skope/index.php:448
+msgid "Sitewide options"
+msgstr "Options dans tout le site"
+
+#: inc/czr-skope/index.php:443
+msgid "users"
+msgstr "utilisateurs"
+
+#: inc/sektions/ccat-czr-sektions.php:1564
+#: inc/sektions/ccat-czr-sektions.php:1590 inc/czr-skope/index.php:430
+msgid "All"
+msgstr "Tous"
+
+#: inc/czr-skope/index.php:430
+msgid "Options for all"
+msgstr "Options pour tous"
+
+#: inc/czr-skope/index.php:426
+msgid "Undefined"
+msgstr "Indéfini"
+
+#: inc/czr-skope/index.php:421
+msgid "%1$s archive page"
+msgstr "%1$s page d’archive"
+
+#: inc/czr-skope/index.php:415
+msgid "user"
+msgstr "utilisateur"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:579
+msgid "No"
+msgstr "Non"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:579
+msgid "Yes"
+msgstr "Oui"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:578
+msgid "Are you sure you want to remove : <strong>{{ data.title }} ?</strong>"
+msgstr "Êtes-vous sûr de vouloir désinstaller : <strong>{{ data.title }} ?</strong>"
+
+#: inc/sektions/ccat-czr-sektions.php:1185
+#: inc/czr-base-fmk/czr-base-fmk.php:557
+msgid "Add it"
+msgstr "Ajouter le"
+
+#: inc/sektions/ccat-czr-sektions.php:884
+#: inc/sektions/ccat-czr-sektions.php:885
+#: inc/sektions/ccat-czr-sektions.php:946
+#: inc/sektions/ccat-czr-sektions.php:947
+#: inc/sektions/ccat-czr-sektions.php:1185
+#: inc/sektions/ccat-czr-sektions.php:3219
+#: inc/sektions/ccat-czr-sektions.php:3916
+#: inc/czr-base-fmk/czr-base-fmk.php:557
+msgid "Cancel"
+msgstr "Annuler"
+
+#: inc/sektions/ccat-czr-sektions.php:1180
+#: inc/czr-base-fmk/czr-base-fmk.php:552
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:480
+msgid "ac_set_ajax_czr_tmpl => Security check failed."
+msgstr "ac_set_ajax_czr_tmpl => Le contrôle de sécurité a échoué."
+
+#: inc/czr-base-fmk/czr-base-fmk.php:284
+msgid "Choose Image"
+msgstr "Choisir une image"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:282
+msgid "No image selected"
+msgstr "Aucune image sélectionnée"
+
+#: inc/sektions/ccat-sektions-ui-modules.php:1368
+#: inc/sektions/ccat-sektions-ui-modules.php:1374
+#: inc/sektions/ccat-sektions-ui-modules.php:1596
+#: inc/sektions/ccat-sektions-ui-modules.php:3892
+#: inc/sektions/ccat-sektions-ui-modules.php:3904
+#: inc/czr-base-fmk/czr-base-fmk.php:211 inc/czr-base-fmk/czr-base-fmk.php:281
+msgid "Default"
+msgstr "Défaut"
+
+#: inc/sektions/ccat-czr-sektions.php:1202
+#: inc/sektions/ccat-czr-sektions.php:3425
+#: inc/czr-base-fmk/czr-base-fmk.php:280 inc/czr-base-fmk/czr-base-fmk.php:570
+msgid "Remove"
+msgstr "Supprimer"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:279
+msgid "Change Image"
+msgstr "Changer l’image"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:278 inc/czr-base-fmk/czr-base-fmk.php:283
+msgid "Select Image"
+msgstr "Sélectionnez une image"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:275 inc/czr-skope/index.php:398
+msgid "Options for"
+msgstr "Options pour"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:274 inc/admin/nb-options.php:104
+msgid "Settings"
+msgstr "Réglages"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:273
+msgid "Learn more about this in the documentation"
+msgstr "En savoir plus à ce sujet dans la documentation"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:271
+msgid "Done !"
+msgstr "Terminé !"
+
+#: inc/czr-base-fmk/czr-base-fmk.php:270
+msgid "Not set"
+msgstr "Pas encore défini"
+
+#: inc/sektions/ccat-czr-sektions.php:873
+#: inc/sektions/ccat-czr-sektions.php:874
+#: inc/sektions/ccat-czr-sektions.php:935
+#: inc/sektions/ccat-czr-sektions.php:936
+#: inc/sektions/ccat-czr-sektions.php:963
+#: inc/sektions/ccat-czr-sektions.php:964
+#: inc/sektions/ccat-czr-sektions.php:991
+#: inc/sektions/ccat-czr-sektions.php:992
+#: inc/sektions/ccat-czr-sektions.php:3220
+#: inc/sektions/ccat-czr-sektions.php:3870
+#: inc/czr-base-fmk/czr-base-fmk.php:269
+msgid "Close"
+msgstr "Fermer"
+
+#: inc/sektions/ccat-czr-sektions.php:1202
+#: inc/sektions/ccat-czr-sektions.php:1303
+#: inc/sektions/ccat-czr-sektions.php:3426
+#: inc/czr-base-fmk/czr-base-fmk.php:268 inc/czr-base-fmk/czr-base-fmk.php:570
+msgid "Edit"
+msgstr "Modifier"

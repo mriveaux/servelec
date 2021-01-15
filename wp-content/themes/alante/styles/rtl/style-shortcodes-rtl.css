@@ -1,0 +1,237 @@
+/*
+Shortcodes RTL version
+
+TABLE OF CONTENTS - LAST UPDATED 07/11/2015
+01. SHORTCODES
+*/
+
+/* ---------------------------------------------------------------------------------------
+	01. SHORTCODES
+--------------------------------------------------------------------------------------- */
+
+/* Animation */
+.anim-start-btt,
+.anim-start-ttb,
+.anim-end-btt,
+.anim-end-ttb {
+	float: right;
+}
+
+/* Buttons */
+.button {
+	margin: 0 0 1.2em 0.5em;
+}
+.button i { 
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+/* Carousel */
+.sc-carousel li {
+	float: right;
+}
+.sc-carousel .comment {
+	float: left;
+}
+.sc-carousel .comment i {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+/* Image overlay effect (including grid shortcode) */
+.sc-carousel .entry-header .image-overlay,
+.sc-grid .entry-header .image-overlay {
+	left: auto;
+	right: 0;
+}
+.sc-carousel .entry-header .hover-zoom,
+.sc-grid .entry-header .hover-zoom {
+	margin-left: 5px;
+	margin-right: 0;
+	-webkit-transform: translateX(40px);
+	-moz-transform: translateX(40px);
+	-ms-transform: translateX(40px);
+	-o-transform: translateX(40px);
+	transform: translateX(40px);
+}
+.sc-carousel .entry-header .hover-link,
+.sc-grid .entry-header .hover-link {
+	margin-left: 0;
+	margin-right: 5px;
+	-webkit-transform: translateX(-40px);
+	-moz-transform: translateX(-40px);
+	-ms-transform: translateX(-40px);
+	-o-transform: translateX(-40px);
+	transform: translateX(-40px);
+}
+.sc-carousel .entry-header:hover .hover-zoom,
+.sc-carousel .entry-header:hover .hover-link,
+.sc-grid .entry-header:hover .hover-zoom,
+.sc-grid .entry-header:hover .hover-link {
+	-webkit-transform: translate(0);
+	-moz-transform: translate(0);
+	-ms-transform: translate(0);
+	-o-transform: translate(0);
+	transform: translate(0);
+}
+
+/* Genericons used on image overlays */
+.sc-carousel .entry-header .hover-zoom:before,
+.sc-carousel .entry-header .hover-link:before,
+.sc-grid .entry-header .hover-zoom:before,
+.sc-grid .entry-header .hover-link:before {
+	float: left;
+}
+.sc-carousel .entry-header .hover-zoom:before,
+.sc-grid .entry-header .hover-zoom:before {
+	left: 14px;
+	right: auto;
+}
+.sc-carousel .entry-header .hover-link:before,
+.sc-grid .entry-header .hover-link:before {
+	left: 14px;
+	right: auto;
+}
+
+/* Image overlay effect - May vary by theme */
+.sc-carousel .image-overlay {
+	left: auto;
+	right: 0;
+}
+.sc-carousel .hover-zoom {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+/* Left and right navigation - May vary by theme */
+.sc-carousel a.prev { 
+	left: auto;
+	right: 0;
+}
+.sc-carousel a.next { 
+	left: 0;
+	right: auto;
+}
+
+/* Columns */
+.last {
+	clear: left; 
+	margin-left: 0px !important; 
+}
+.one_half,
+.one_third,
+.two_third,
+.one_fourth,
+.three_fourth,
+.one_fifth,
+.two_fifth,
+.three_fifth,
+.four_fifth,
+.one_sixth,
+.five_sixth {
+	margin-left: 2.6%;
+	margin-right: 0;
+	float: right;
+}
+
+/* Dividers */
+.divider-top a 	{
+	left: 0;
+	right: auto;
+	text-align: left;
+}
+
+/* Icons (Colored) */
+.icontext .iconimage,
+.iconfull.style1 .iconimage { 
+	float: right;
+}
+.iconmain    { 
+	padding-left: 0;
+	padding-right: 10px;
+}
+.iconfull.style2 .iconimage h3 {
+	padding-left: 0;
+	padding-right: 10px;
+}
+.iconmain .iconurl a:after {
+	left: auto;
+	right: 5px;
+}
+
+/* Lightbox */
+.sc-lightbox .image-overlay {
+	left: auto;
+	right: 0;
+}
+
+/* Lists */
+ul.list li	{ 
+	padding: 0px 25px 6px 0px;
+}
+ul.iconfont i   { 
+	margin: 0 -22px 0 10px;
+}
+ul.iconfont i.fa-none   { 
+	margin-left: 0;
+	margin-right: -39px;
+}
+
+/* Notification Boxes */
+.notification .icon          { 
+	padding: 20px 60px 20px 20px;
+}
+
+/* Pricing Tables */
+.pricing-table .pricing-package {
+	float: right;
+}
+.pricing-table li.tick,
+.pricing-table li.cross {
+	text-align: right;
+	padding-left: 0;
+	padding-right: 50px;
+}
+
+/* Progress Bars */
+span.bar-title {
+	text-align: right;
+}
+span.bar-per {
+	text-align: left;
+}
+
+/* Tabs */
+.tabs li [class^="fa fa-"] { 
+	padding-left: 20px;
+	padding-right: 0;
+}
+.nav-tabs > li, 
+.nav-pills > li {
+	float: right;
+}
+.nav-tabs > li > a,
+.nav-pills > li > a {
+    margin-left: 2px;
+    margin-right: 0;
+}
+
+/* Tab Buttons - Position */
+.tab-buttons-right ul {
+	float: left;
+}
+
+/* Titles */
+.customtitle .title-div {
+	padding: 0 10px 0 0;
+}
+
+/* Toggles */
+.accordion-heading .accordion-toggle {
+	padding-left: 0;
+	padding-right: 40px;
+}
+.accordion-toggle:before {
+	left: auto;
+	right: 15px;
+}

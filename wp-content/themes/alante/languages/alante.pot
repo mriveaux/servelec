@@ -1,0 +1,1039 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Alante\n"
+"POT-Creation-Date: 2017-04-14 12:37+0100\n"
+"PO-Revision-Date: 2017-04-14 12:37+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:11
+msgid "404"
+msgstr ""
+
+#: 404.php:12
+msgid "Sorry, we could not find the page you are looking for."
+msgstr ""
+
+#: 404.php:12
+msgid "Please try using the search function."
+msgstr ""
+
+#: admin/main/options.php:24
+msgid "Alante Pro"
+msgstr ""
+
+#: admin/main/options.php:26 admin/main/options.php:2856
+msgid "Upgrade Now"
+msgstr ""
+
+#: admin/main/options.php:36
+msgid "Theme Options"
+msgstr ""
+
+#: admin/main/options.php:37
+msgid "Use the options below to customize your theme!"
+msgstr ""
+
+#: admin/main/options.php:46
+msgid "General Settings"
+msgstr ""
+
+#: admin/main/options.php:56
+msgid "Homepage"
+msgstr ""
+
+#: admin/main/options.php:66
+msgid "Homepage (Featured)"
+msgstr ""
+
+#: admin/main/options.php:76
+msgid "Header"
+msgstr ""
+
+#: admin/main/options.php:86
+msgid "Footer"
+msgstr ""
+
+#: admin/main/options.php:96
+msgid "Social Media"
+msgstr ""
+
+#: admin/main/options.php:106 admin/main/options/00.theme-setup.php:43
+#: admin/main/options/00.theme-setup.php:138
+msgid "Blog"
+msgstr ""
+
+#: admin/main/options.php:116
+#, php-format
+msgid "Upgrade (10% off)"
+msgstr ""
+
+#: admin/main/options.php:148
+msgid "Logo Settings"
+msgstr ""
+
+#: admin/main/options.php:173
+msgid ""
+"Since WordPress v4.5 you can now add a site logo using the native WordPress "
+"options. To add a site logo go the \"Site Identitiy\" settings on the main "
+"customizer screen."
+msgstr ""
+
+#: admin/main/options.php:198
+msgid "Page Structure"
+msgstr ""
+
+#: admin/main/options.php:225
+msgid "Page Layout"
+msgstr ""
+
+#: admin/main/options.php:226
+msgid "Select page layout. This will only be applied to published Pages."
+msgstr ""
+
+#: admin/main/options.php:255 admin/main/options.php:425
+#: admin/main/options.php:2682 admin/main/options.php:2791
+msgid "Select a Sidebar"
+msgstr ""
+
+#: admin/main/options.php:256
+msgid "Choose a sidebar to use with the page layout."
+msgstr ""
+
+#: admin/main/options.php:281
+msgid "Enable Fixed Layout"
+msgstr ""
+
+#: admin/main/options.php:282
+msgid "(i.e. Disable responsive layout)"
+msgstr ""
+
+#: admin/main/options.php:284 admin/main/options.php:314
+#: admin/main/options.php:876 admin/main/options.php:1352
+#: admin/main/options.php:1694 admin/main/options.php:1854
+#: admin/main/options.php:1932 admin/main/options.php:2031
+#: admin/main/options.php:2130 admin/main/options.php:2229
+#: admin/main/options.php:2328 admin/main/options.php:2427
+#: admin/main/options.php:2526 admin/main/options.php:2820
+msgid "On"
+msgstr ""
+
+#: admin/main/options.php:285 admin/main/options.php:315
+#: admin/main/options.php:877 admin/main/options.php:1353
+#: admin/main/options.php:1695 admin/main/options.php:1855
+#: admin/main/options.php:1933 admin/main/options.php:2032
+#: admin/main/options.php:2131 admin/main/options.php:2230
+#: admin/main/options.php:2329 admin/main/options.php:2428
+#: admin/main/options.php:2527 admin/main/options.php:2821
+msgid "Off"
+msgstr ""
+
+#: admin/main/options.php:311
+msgid "Enable Breadcrumbs"
+msgstr ""
+
+#: admin/main/options.php:312
+msgid "Switch on to enable breadcrumbs."
+msgstr ""
+
+#: admin/main/options.php:340
+msgid "Breadcrumb Delimiter"
+msgstr ""
+
+#: admin/main/options.php:341
+msgid "Specify a custom delimiter to use instead of the default &#40; / &#41;."
+msgstr ""
+
+#: admin/main/options.php:368
+msgid "Control Homepage Layout"
+msgstr ""
+
+#: admin/main/options.php:395
+msgid "Homepage Layout"
+msgstr ""
+
+#: admin/main/options.php:396
+msgid ""
+"Select page layout. This will only be applied to static homepages (front "
+"page) and not to homepage blogs."
+msgstr ""
+
+#: admin/main/options.php:426 admin/main/options.php:2792
+msgid "Choose a sidebar to use with the layout."
+msgstr ""
+
+#: admin/main/options.php:451
+msgid "Homepage Slider"
+msgstr ""
+
+#: admin/main/options.php:475
+msgid "Choose Homepage Slider"
+msgstr ""
+
+#: admin/main/options.php:476
+msgid "Switch on to enable home page slider."
+msgstr ""
+
+#: admin/main/options.php:502
+msgid "Slide 1"
+msgstr ""
+
+#: admin/main/options.php:530 admin/main/options.php:653
+#: admin/main/options.php:776
+msgid "Image"
+msgstr ""
+
+#: admin/main/options.php:555 admin/main/options.php:678
+#: admin/main/options.php:801
+msgid "Title"
+msgstr ""
+
+#: admin/main/options.php:579 admin/main/options.php:702
+#: admin/main/options.php:825
+msgid "Description"
+msgstr ""
+
+#: admin/main/options.php:603 admin/main/options.php:726
+#: admin/main/options.php:849
+msgid "URL"
+msgstr ""
+
+#: admin/main/options.php:625
+msgid "Slide 2"
+msgstr ""
+
+#: admin/main/options.php:748
+msgid "Slide 3"
+msgstr ""
+
+#: admin/main/options.php:873
+msgid "Enable Full-Width Slider"
+msgstr ""
+
+#: admin/main/options.php:874
+msgid "Switch on to enable full-width slider."
+msgstr ""
+
+#: admin/main/options.php:902
+msgid "Slider Height (Max)"
+msgstr ""
+
+#: admin/main/options.php:903
+msgid "Specify the maximum slider height (px)."
+msgstr ""
+
+#: admin/main/options.php:927
+msgid "Call To Action - Intro"
+msgstr ""
+
+#: admin/main/options.php:951 admin/main/options.php:1147
+msgid "Message"
+msgstr ""
+
+#: admin/main/options.php:952
+msgid "Check to enable intro on home page."
+msgstr ""
+
+#: admin/main/options.php:975 admin/main/options.php:1171
+msgid ""
+"Enter a <strong>title</strong> message.<br /><br />This will be one of the "
+"first messages your visitors see. Use this to get their attention."
+msgstr ""
+
+#: admin/main/options.php:998 admin/main/options.php:1194
+msgid ""
+"Enter a <strong>teaser</strong> message.<br /><br />Use this to provide more "
+"details about what you offer."
+msgstr ""
+
+#: admin/main/options.php:1021 admin/main/options.php:1217
+msgid "Button Text"
+msgstr ""
+
+#: admin/main/options.php:1022 admin/main/options.php:1218
+msgid "Input text to display on the action button."
+msgstr ""
+
+#: admin/main/options.php:1045 admin/main/options.php:1241
+msgid "Button - Link"
+msgstr ""
+
+#: admin/main/options.php:1046 admin/main/options.php:1242
+msgid ""
+"Specify whether the action button should link to a page on your site, out to "
+"external webpage or disable the link altogether."
+msgstr ""
+
+#: admin/main/options.php:1048 admin/main/options.php:1244
+msgid "Link to a Page"
+msgstr ""
+
+#: admin/main/options.php:1049 admin/main/options.php:1245
+msgid "Specify Custom link"
+msgstr ""
+
+#: admin/main/options.php:1050 admin/main/options.php:1246
+msgid "Disable Link"
+msgstr ""
+
+#: admin/main/options.php:1074 admin/main/options.php:1270
+msgid "Button - Link to a page"
+msgstr ""
+
+#: admin/main/options.php:1075 admin/main/options.php:1271
+msgid "Select a target page for action button link."
+msgstr ""
+
+#: admin/main/options.php:1098 admin/main/options.php:1294
+msgid "Button - Custom link"
+msgstr ""
+
+#: admin/main/options.php:1099 admin/main/options.php:1295
+msgid ""
+"Input a custom url for the action button link.<br>Add http:// if linking to "
+"an external webpage."
+msgstr ""
+
+#: admin/main/options.php:1123
+msgid "Call To Action - Outro"
+msgstr ""
+
+#: admin/main/options.php:1148
+msgid "Check to enable outro on home page."
+msgstr ""
+
+#: admin/main/options.php:1322
+msgid "Display Pre-Designed Homepage Layout"
+msgstr ""
+
+#: admin/main/options.php:1349
+msgid "Enable Pre-Made Homepage"
+msgstr ""
+
+#: admin/main/options.php:1350
+msgid "switch on to enable pre-designed homepage layout."
+msgstr ""
+
+#: admin/main/options.php:1379
+msgid "Content Area 1"
+msgstr ""
+
+#: admin/main/options.php:1380 admin/main/options.php:1474
+#: admin/main/options.php:1568
+msgid "Add an image for the section background."
+msgstr ""
+
+#: admin/main/options.php:1404 admin/main/options.php:1498
+#: admin/main/options.php:1592
+msgid "Add a title to the section."
+msgstr ""
+
+#: admin/main/options.php:1427
+msgid "Add some text to featured section 1."
+msgstr ""
+
+#: admin/main/options.php:1450 admin/main/options.php:1544
+#: admin/main/options.php:1638
+msgid "Link to a page"
+msgstr ""
+
+#: admin/main/options.php:1473
+msgid "Content Area 2"
+msgstr ""
+
+#: admin/main/options.php:1521
+msgid "Add some text to featured section 2."
+msgstr ""
+
+#: admin/main/options.php:1567
+msgid "Content Area 3"
+msgstr ""
+
+#: admin/main/options.php:1615
+msgid "Add some text to featured section 3."
+msgstr ""
+
+#: admin/main/options.php:1666
+msgid "Control Header Content"
+msgstr ""
+
+#: admin/main/options.php:1691
+msgid "Enable Search (Main Header)"
+msgstr ""
+
+#: admin/main/options.php:1692
+msgid "Switch on to enable header search."
+msgstr ""
+
+#: admin/main/options.php:1724
+msgid "Control Footer Content"
+msgstr ""
+
+#: admin/main/options.php:1751
+msgid "Footer Widgets Layout"
+msgstr ""
+
+#: admin/main/options.php:1752
+msgid ""
+"Select footer layout. Take complete control of the footer content by adding "
+"widgets."
+msgstr ""
+
+#: admin/main/options.php:1796
+msgid "Disable Footer Widgets"
+msgstr ""
+
+#: admin/main/options.php:1797
+msgid "Check to disable footer widgets."
+msgstr ""
+
+#: admin/main/options.php:1824
+msgid "Social Media Control"
+msgstr ""
+
+#: admin/main/options.php:1851
+msgid "Enable Social Media Links (Pre Header)"
+msgstr ""
+
+#: admin/main/options.php:1852
+msgid "Switch on to enable links to social media pages."
+msgstr ""
+
+#: admin/main/options.php:1881
+msgid "Social Media Content"
+msgstr ""
+
+#: admin/main/options.php:1905
+msgid ""
+"Add a message here. E.g. &#34;Follow Us&#34;.<br />(Only shown in header)"
+msgstr ""
+
+#: admin/main/options.php:1929 admin/main/options/03.header.php:414
+msgid "Facebook"
+msgstr ""
+
+#: admin/main/options.php:1930
+msgid "Enable link to Facebook profile."
+msgstr ""
+
+#: admin/main/options.php:1957
+msgid "Input the url to your Facebook page."
+msgstr ""
+
+#: admin/main/options.php:1979 admin/main/options.php:2078
+#: admin/main/options.php:2177 admin/main/options.php:2375
+#: admin/main/options.php:2474 admin/main/options.php:2573
+msgid "Custom Icon"
+msgstr ""
+
+#: admin/main/options.php:1980
+msgid "Check to use custom Facebook icon"
+msgstr ""
+
+#: admin/main/options.php:2003 admin/main/options.php:2102
+#: admin/main/options.php:2201 admin/main/options.php:2300
+#: admin/main/options.php:2399 admin/main/options.php:2498
+#: admin/main/options.php:2597
+msgid ""
+"Add a link to the image or upload one from your desktop. The image will be "
+"resized."
+msgstr ""
+
+#: admin/main/options.php:2028 admin/main/options/03.header.php:415
+msgid "Twitter"
+msgstr ""
+
+#: admin/main/options.php:2029
+msgid "Enable link to Twitter profile."
+msgstr ""
+
+#: admin/main/options.php:2056
+msgid "Input the url to your Twitter page."
+msgstr ""
+
+#: admin/main/options.php:2079
+msgid "Check to use custom Twitter icon"
+msgstr ""
+
+#: admin/main/options.php:2127 admin/main/options/03.header.php:416
+msgid "Google+"
+msgstr ""
+
+#: admin/main/options.php:2128
+msgid "Enable link to Google+ profile."
+msgstr ""
+
+#: admin/main/options.php:2155
+msgid "Input the url to your Google+ page."
+msgstr ""
+
+#: admin/main/options.php:2178
+msgid "Check to use custom Google+ icon"
+msgstr ""
+
+#: admin/main/options.php:2226 admin/main/options/03.header.php:417
+msgid "Instagram"
+msgstr ""
+
+#: admin/main/options.php:2227
+msgid "Enable link to Instagram profile."
+msgstr ""
+
+#: admin/main/options.php:2254
+msgid "Input the url to your Instagram page."
+msgstr ""
+
+#: admin/main/options.php:2276
+msgid "Use Custom Instagram Icon"
+msgstr ""
+
+#: admin/main/options.php:2277
+msgid "Check to use custom Instagram icon"
+msgstr ""
+
+#: admin/main/options.php:2325 admin/main/options/03.header.php:418
+msgid "LinkedIn"
+msgstr ""
+
+#: admin/main/options.php:2326
+msgid "Enable link to LinkedIn profile."
+msgstr ""
+
+#: admin/main/options.php:2353
+msgid "Input the url to your LinkedIn page."
+msgstr ""
+
+#: admin/main/options.php:2376
+msgid "Check to use custom LinkedIn icon"
+msgstr ""
+
+#: admin/main/options.php:2424 admin/main/options/03.header.php:419
+msgid "Flickr"
+msgstr ""
+
+#: admin/main/options.php:2425
+msgid "Enable link to Flickr profile."
+msgstr ""
+
+#: admin/main/options.php:2452
+msgid "Input the url to your Flickr page."
+msgstr ""
+
+#: admin/main/options.php:2475
+msgid "Check to use custom Flickr icon"
+msgstr ""
+
+#: admin/main/options.php:2523 admin/main/options/03.header.php:420
+msgid "YouTube"
+msgstr ""
+
+#: admin/main/options.php:2524
+msgid "Enable link to YouTube profile."
+msgstr ""
+
+#: admin/main/options.php:2551
+msgid "Input the url to your YouTube page."
+msgstr ""
+
+#: admin/main/options.php:2574
+msgid "Check to use custom YouTube icon"
+msgstr ""
+
+#: admin/main/options.php:2625
+msgid "Control Blog (Archive) Pages"
+msgstr ""
+
+#: admin/main/options.php:2652
+msgid "Blog Layout"
+msgstr ""
+
+#: admin/main/options.php:2653
+msgid ""
+"Select blog page layout. Only applied to the main blog page and not "
+"individual posts."
+msgstr ""
+
+#: admin/main/options.php:2683
+msgid ""
+"Note: Sidebars will not be applied to homepage Blog. Control sidebars on the "
+"homepage from the &#39;Home Settings&#39; option."
+msgstr ""
+
+#: admin/main/options.php:2707
+msgid "Post Content"
+msgstr ""
+
+#: admin/main/options.php:2708
+msgid ""
+"Control how much content you want to show from each post on the main blog "
+"page. Remember to control the full article content by using the Wordpress <a "
+"href=\"http://en.support.wordpress.com/splitting-content/more-tag/\">more</"
+"a> tag in your post."
+msgstr ""
+
+#: admin/main/options.php:2710
+msgid "Show excerpt"
+msgstr ""
+
+#: admin/main/options.php:2711
+msgid "Show full article"
+msgstr ""
+
+#: admin/main/options.php:2712
+msgid "Hide article"
+msgstr ""
+
+#: admin/main/options.php:2736
+msgid "Control Single Post Page"
+msgstr ""
+
+#: admin/main/options.php:2761
+msgid "Post Layout"
+msgstr ""
+
+#: admin/main/options.php:2762
+msgid ""
+"Select blog page layout. This will only be applied to individual posts and "
+"not the main blog page."
+msgstr ""
+
+#: admin/main/options.php:2817
+msgid "Show Author Bio"
+msgstr ""
+
+#: admin/main/options.php:2818
+msgid "Check to enable the author biography."
+msgstr ""
+
+#: admin/main/options.php:2853
+#, php-format
+msgid "Upgrade for $31 (10% off)"
+msgstr ""
+
+#: admin/main/options.php:2854
+msgid "Normally $35. Use coupon at checkout."
+msgstr ""
+
+#: admin/main/options.php:2855
+msgid "alante31"
+msgstr ""
+
+#: admin/main/options.php:2857
+msgid "So&hellip; Why upgrade?"
+msgstr ""
+
+#: admin/main/options.php:2858
+msgid ""
+"We&#39;re glad you asked! Here&#39;s just some of the amazing features "
+"you&#39;ll get when you upgrade&hellip;"
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:33
+msgid "Blog Post Image: "
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:37
+msgid "Search Results: "
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:39
+msgid "Page Not Found"
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:70
+msgid "Home"
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:121
+msgid "Search Results for: "
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:134
+msgid "Error 404 - Not Found."
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:225
+msgid "Half - 1:2"
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:228
+msgid "Third - 2:3"
+msgstr ""
+
+#: admin/main/options/00.theme-setup.php:285
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:116
+msgid "Slider Image"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:151
+#: admin/main/options/02.homepage.php:337
+#: admin/main/options/02.homepage.php:358
+#: admin/main/options/02.homepage.php:380 admin/main/options/05.blog.php:178
+msgid "Read More"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:182
+#: admin/main/options/02.homepage.php:183
+#: admin/main/options/02.homepage.php:184
+msgid "Demo Image"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:288
+msgid "Step 1 &#45; Theme Options"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:289
+msgid "Step 2 &#45; Setup Slider"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:290
+msgid "Step 3 &#45; Create Homepage"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:294
+msgid ""
+"To begin customizing your site go to Appearance &#45;&#62; Customizer and "
+"select Theme Options. Here&#39;s you&#39;ll find custom options to help "
+"build your site."
+msgstr ""
+
+#: admin/main/options/02.homepage.php:297
+msgid ""
+"To add a slider go to Theme Options &#45;&#62; Homepage and choose page "
+"slider. The slider will use the page title, excerpt and featured image for "
+"the slides."
+msgstr ""
+
+#: admin/main/options/02.homepage.php:300
+msgid ""
+"To add featured content go to Theme Options &#45;&#62; Homepage (Featured) "
+"and turn the switch on then add the content you want for each section."
+msgstr ""
+
+#: admin/main/options/02.homepage.php:325
+msgid "Placeholder Image 1"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:346
+msgid "Placeholder Image 2"
+msgstr ""
+
+#: admin/main/options/02.homepage.php:368
+msgid "Placeholder Image 3"
+msgstr ""
+
+#: admin/main/options/04.footer.php:16 admin/main/options/04.footer.php:29
+#: admin/main/options/04.footer.php:42 admin/main/options/04.footer.php:55
+#: admin/main/options/04.footer.php:68 admin/main/options/04.footer.php:81
+#: sidebar.php:16
+msgid "Please Add Widgets"
+msgstr ""
+
+#: admin/main/options/04.footer.php:18
+msgid "Remove this message by adding widgets to Footer Widget Area 1."
+msgstr ""
+
+#: admin/main/options/04.footer.php:19 admin/main/options/04.footer.php:32
+#: admin/main/options/04.footer.php:45 admin/main/options/04.footer.php:58
+#: admin/main/options/04.footer.php:71 admin/main/options/04.footer.php:84
+#: sidebar.php:19
+msgid "No Widgets Selected"
+msgstr ""
+
+#: admin/main/options/04.footer.php:19 admin/main/options/04.footer.php:32
+#: admin/main/options/04.footer.php:45 admin/main/options/04.footer.php:58
+#: admin/main/options/04.footer.php:71 admin/main/options/04.footer.php:84
+#: sidebar.php:19
+msgid "Click here to go to Widget area."
+msgstr ""
+
+#: admin/main/options/04.footer.php:31
+msgid "Remove this message by adding widgets to Footer Widget Area 2."
+msgstr ""
+
+#: admin/main/options/04.footer.php:44
+msgid "Remove this message by adding widgets to Footer Widget Area 3."
+msgstr ""
+
+#: admin/main/options/04.footer.php:57
+msgid "Remove this message by adding widgets to Footer Widget Area 4."
+msgstr ""
+
+#: admin/main/options/04.footer.php:70
+msgid "Remove this message by adding widgets to Footer Widget Area 5."
+msgstr ""
+
+#: admin/main/options/04.footer.php:83
+msgid "Remove this message by adding widgets to Footer Widget Area 6."
+msgstr ""
+
+#: admin/main/options/04.footer.php:224
+#, php-format
+msgid "Developed by %1$s. Powered by %2$s."
+msgstr ""
+
+#: admin/main/options/05.blog.php:16 content.php:14
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: admin/main/options/05.blog.php:67 admin/main/options/05.blog.php:71
+#: content-page.php:12 content-single.php:15 content.php:29 image.php:71
+msgid "Pages:"
+msgstr ""
+
+#: admin/main/options/05.blog.php:83
+msgid "Sticky"
+msgstr ""
+
+#: admin/main/options/05.blog.php:105
+msgid "0 comments"
+msgstr ""
+
+#: admin/main/options/05.blog.php:105
+msgid "1 comment"
+msgstr ""
+
+#: admin/main/options/05.blog.php:105
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: admin/main/options/05.blog.php:113 admin/main/options/05.blog.php:124
+#: admin/main/options/05.blog.php:136 admin/main/options/05.blog.php:147
+msgid ", "
+msgstr ""
+
+#: admin/main/options/05.blog.php:117
+#, php-format
+msgid "Category: %1$s"
+msgstr ""
+
+#: admin/main/options/05.blog.php:140
+#, php-format
+msgid "Tags: %1$s"
+msgstr ""
+
+#: admin/main/options/05.blog.php:158
+msgid "By"
+msgstr ""
+
+#: admin/main/options/05.blog.php:160
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: admin/main/options/05.blog.php:239
+msgid "About the Author"
+msgstr ""
+
+#: admin/main/options/05.blog.php:279
+msgid "Pingback:"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: admin/main/options/05.blog.php:279 admin/main/options/05.blog.php:311
+msgid "Edit"
+msgstr ""
+
+#: admin/main/options/05.blog.php:301
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:20
+#, php-format
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:27 comments.php:38
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:28 comments.php:39
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:51
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:61
+msgid "Submit Now"
+msgstr ""
+
+#: comments.php:62
+msgid "Leave Comment"
+msgstr ""
+
+#: comments.php:66
+msgid "Your Message&hellip;"
+msgstr ""
+
+#: comments.php:71
+msgid "Your Name (Required)&hellip;"
+msgstr ""
+
+#: comments.php:75
+msgid "Your Email (Required)&hellip;"
+msgstr ""
+
+#: comments.php:79
+msgid "Your Website&hellip;"
+msgstr ""
+
+#: functions.php:73
+msgid "Pre Header Menu"
+msgstr ""
+
+#: functions.php:74
+msgid "Primary Header Menu"
+msgstr ""
+
+#: functions.php:75
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:151
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:161
+msgid "Footer Widget Area 1"
+msgstr ""
+
+#: functions.php:170
+msgid "Footer Widget Area 2"
+msgstr ""
+
+#: functions.php:179
+msgid "Footer Widget Area 3"
+msgstr ""
+
+#: functions.php:188
+msgid "Footer Widget Area 4"
+msgstr ""
+
+#: functions.php:197
+msgid "Footer Widget Area 5"
+msgstr ""
+
+#: functions.php:206
+msgid "Footer Widget Area 6"
+msgstr ""
+
+#: image.php:18
+msgid "Published "
+msgstr ""
+
+#: image.php:18
+msgid "at"
+msgstr ""
+
+#: image.php:18
+msgid "Link to full-size image"
+msgstr ""
+
+#: image.php:18
+msgid "in"
+msgstr ""
+
+#: image.php:18
+msgid "Return to "
+msgstr ""
+
+#: lib/functions/template-tags.php:34 lib/functions/template-tags.php:66
+msgid "Previous"
+msgstr ""
+
+#: lib/functions/template-tags.php:35 lib/functions/template-tags.php:67
+msgid "Next"
+msgstr ""
+
+#: lib/functions/template-tags.php:40
+msgid "Older posts"
+msgstr ""
+
+#: lib/functions/template-tags.php:44
+msgid "Newer posts"
+msgstr ""
+
+#: no-results.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:17
+msgid "Ready to publish your first post? "
+msgstr ""
+
+#: no-results.php:17
+msgid "Get started here"
+msgstr ""
+
+#: no-results.php:21
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:26
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: searchform.php:9 searchform.php:10
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:18
+msgid ""
+"Remove this message by adding widgets to the Sidebar from the Widgets "
+"section of the Wordpress admin area."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Alante"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.thinkupthemes.com/free/alante-free/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Alante is the free version of the multi-purpose professional theme (Alante "
+"Pro) ideal for a business or blog website. The theme has a responsive "
+"layout, HD retina ready and comes with a powerful theme options panel with "
+"can be used to make awesome changes without touching any code. The theme "
+"also comes with a full width easy to use slider. Easily add a logo to your "
+"site and create a beautiful homepage using the built-in homepage layout."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThinkUpThemes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.ThinkUpThemes.com"
+msgstr ""

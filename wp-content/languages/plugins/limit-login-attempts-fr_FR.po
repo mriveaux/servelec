@@ -1,0 +1,259 @@
+# Translation of Plugins - Limit Login Attempts - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - Limit Login Attempts - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-09-23 10:21:35+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Limit Login Attempts - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "http://devel.kostdoktorn.se"
+msgstr "http://devel.kostdoktorn.se"
+
+#. Author of the plugin/theme
+msgid "Johan Eenfeldt"
+msgstr "Johan Eenfeldt"
+
+#. Description of the plugin/theme
+msgid "Limit rate of login attempts, including by way of cookies, for each IP."
+msgstr "Limite le nombre de tentatives de connexion, y compris par voie de cookies, pour chaque adresse IP."
+
+#. Plugin URI of the plugin/theme
+msgid "http://devel.kostdoktorn.se/limit-login-attempts"
+msgstr "http://devel.kostdoktorn.se/limit-login-attempts"
+
+#. Plugin Name of the plugin/theme
+msgid "Limit Login Attempts"
+msgstr "Limit Login Attempts"
+
+#: limit-login-attempts.php:1094
+msgid "Clear Log"
+msgstr "Effacer le journal"
+
+#: limit-login-attempts.php:1089
+msgid "Lockout log"
+msgstr "Journal de verrouillage"
+
+#: limit-login-attempts.php:1081
+msgid "Change Options"
+msgstr "Modifier les options"
+
+#: limit-login-attempts.php:1076
+msgid "lockouts"
+msgstr "verrouillages"
+
+#: limit-login-attempts.php:1076
+msgid "Email to admin after"
+msgstr "Envoyer un email à l’administrateur après"
+
+#: limit-login-attempts.php:1075
+msgid "Log IP"
+msgstr "Enregistrer l’adresse IP"
+
+#: limit-login-attempts.php:1073
+msgid "Notify on lockout"
+msgstr "Notifier lors d’un verrouillage"
+
+#: limit-login-attempts.php:1069
+msgid "No"
+msgstr "Non"
+
+#: limit-login-attempts.php:1069
+msgid "Yes"
+msgstr "Oui"
+
+#: limit-login-attempts.php:1067
+msgid "Handle cookie login"
+msgstr "Gérer les cookies de connexion"
+
+#: limit-login-attempts.php:1061
+msgid "From behind a reversy proxy"
+msgstr "Derrière un serveur proxy inversé"
+
+#: limit-login-attempts.php:1056
+msgid "Direct connection"
+msgstr "Connexion directe"
+
+#: limit-login-attempts.php:1050
+msgid "Site connection"
+msgstr "Connexion au site"
+
+#: limit-login-attempts.php:1046
+msgid "hours until retries are reset"
+msgstr "heures jusqu’à ce que les tentatives soient réinitialisées."
+
+#: limit-login-attempts.php:1045
+msgid "hours"
+msgstr "heures"
+
+#: limit-login-attempts.php:1045
+msgid "lockouts increase lockout time to"
+msgstr "verrouillages augmentent le temps de verrouillage à"
+
+#: limit-login-attempts.php:1044
+msgid "minutes lockout"
+msgstr "minutes de verrouillage"
+
+#: limit-login-attempts.php:1043
+msgid "allowed retries"
+msgstr "tentatives autorisées"
+
+#: limit-login-attempts.php:1041
+msgid "Lockout"
+msgstr "Verrouillage"
+
+#: limit-login-attempts.php:1036
+msgid "Options"
+msgstr "Options"
+
+#: limit-login-attempts.php:1030
+msgid "%d IP is currently blocked from trying to log in"
+msgstr "L’adresse IP %d est actuellement bloquée. Elle ne peut plus se connecter."
+
+#: limit-login-attempts.php:1029
+msgid "Restore Lockouts"
+msgstr "Restaurer les verrouillages"
+
+#: limit-login-attempts.php:1027
+msgid "Active lockouts"
+msgstr "Verrouillages actifs"
+
+#: limit-login-attempts.php:1022
+msgid "No lockouts yet"
+msgstr "Aucun verrouillage pour l’instant"
+
+#: limit-login-attempts.php:1021
+msgid "%d lockout since last reset"
+msgid_plural "%d lockouts since last reset"
+msgstr[0] "%d blocage depuis la dernière réinitialisation."
+msgstr[1] "%d blocages depuis la dernière réinitialisation."
+
+#: limit-login-attempts.php:1020
+msgid "Reset Counter"
+msgstr "Réinitialiser le compteur"
+
+#: limit-login-attempts.php:1017
+msgid "Total lockouts"
+msgstr "Verrouillage totaux"
+
+#: limit-login-attempts.php:1012
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: limit-login-attempts.php:1011
+msgid "Limit Login Attempts Settings"
+msgstr "Réglages de Limit Login Attempts"
+
+#: limit-login-attempts.php:1003
+msgid "<strong>Current setting appears to be invalid</strong>. Please make sure it is correct. Further information can be found <a href=\"%s\" title=\"FAQ\">here</a>"
+msgstr "<strong>Le réglage actuel semble être non valide</strong>. Merci de vous assurer qu’il est correct. Pour plus d’informations, <a href=\"%s\" title=\"FAQ\">cliquez ici</a>."
+
+#: limit-login-attempts.php:995
+msgid "It appears the site is reached through a proxy server (proxy IP: %s, your IP: %s)"
+msgstr "Il semblerait que le site soit accessible via un serveur proxy (IP du proxy : %s, votre IP : %s)."
+
+#: limit-login-attempts.php:993
+msgid "It appears the site is reached directly (from your IP: %s)"
+msgstr "Il semblerait que le site soit directement accessible (depuis votre IP : %s)."
+
+#: limit-login-attempts.php:975
+msgid "Options changed"
+msgstr "Options modifiées"
+
+#: limit-login-attempts.php:946
+msgid "Cleared current lockouts"
+msgstr "Effacer les verrouillages actuels"
+
+#: limit-login-attempts.php:938
+msgid "Reset lockout count"
+msgstr "Réinitialiser le nombre de verrouillage"
+
+#: limit-login-attempts.php:930
+msgid "Cleared IP log"
+msgstr "Journal d’IP effacé"
+
+#: limit-login-attempts.php:901
+msgid "%d lockout"
+msgid_plural "%d lockouts"
+msgstr[0] "%d verrouillage"
+msgstr[1] "%d verrouillages"
+
+#: limit-login-attempts.php:896
+msgid "Tried to log in as"
+msgstr "Tentez de vous connecter en tant que"
+
+#: limit-login-attempts.php:896
+msgctxt "Internet address"
+msgid "IP"
+msgstr "IP"
+
+#: limit-login-attempts.php:728
+msgid "<strong>ERROR</strong>: Incorrect username or password."
+msgstr "<strong>ERREUR</strong> : Nom d’utilisateur ou mot de passe incorrect."
+
+#: limit-login-attempts.php:657
+msgid "<strong>%d</strong> attempt remaining."
+msgid_plural "<strong>%d</strong> attempts remaining."
+msgstr[0] "<strong>%d</strong> tentative restante."
+msgstr[1] "<strong>%d</strong> tentatives restantes."
+
+#: limit-login-attempts.php:628
+msgid "Please try again in %d minute."
+msgid_plural "Please try again in %d minutes."
+msgstr[0] "Veuillez retenter de vous connecter dans %d minute."
+msgstr[1] "Veuillez retenter de vous connecter dans %d minutes."
+
+#: limit-login-attempts.php:626
+msgid "Please try again in %d hour."
+msgid_plural "Please try again in %d hours."
+msgstr[0] "Veuillez réessayer dans %d heure."
+msgstr[1] "Veuillez réessayer dans %d heures."
+
+#: limit-login-attempts.php:619
+msgid "Please try again later."
+msgstr "Veuillez réessayer plus tard."
+
+#: limit-login-attempts.php:615
+msgid "<strong>ERROR</strong>: Too many failed login attempts."
+msgstr "<strong>ERREUR</strong> : Trop de tentatives de connexions ont échouées."
+
+#: limit-login-attempts.php:553
+msgid "IP was blocked for %s"
+msgstr "L’adresse IP a été bloquée pour %s"
+
+#: limit-login-attempts.php:551
+msgid "IP was NOT blocked because of external whitelist."
+msgstr "IP NON bloquée à cause d'une liste blanche externe."
+
+#: limit-login-attempts.php:547
+msgid "Last user attempted: %s"
+msgstr "Dernière tentative de l’utilisateur : %s"
+
+#: limit-login-attempts.php:543
+msgid "%d failed login attempts (%d lockout(s)) from IP: %s"
+msgstr "%d tentatives d’accès ont échoué (%d bloquée(s)) depuis l’adresse IP : %s"
+
+#: limit-login-attempts.php:538
+msgid "[%s] Too many failed login attempts"
+msgstr "[%s] Trop de tentatives de connexions ont échoué"
+
+#: limit-login-attempts.php:534
+msgid "[%s] Failed login attempts from whitelisted IP"
+msgstr "[%s] tentatives de connexion échouées à partir d'IP de la liste blanche "
+
+#: limit-login-attempts.php:528
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minute"
+msgstr[1] "%d minutes"
+
+#: limit-login-attempts.php:522
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d heure"
+msgstr[1] "%d heures"
