@@ -1407,7 +1407,7 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
                               clickedOn = 'inactiveZone';
                         }
 
-                        if ( _.isEmpty( _location_id ) ) {
+                        if ( $hookLocation.length > 0 && _.isEmpty( _location_id ) ) {
                             self.errare( '::scheduleUiClickReactions => error location id can not be empty' );
                         }
 
@@ -1462,7 +1462,13 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
                                     if ( $el.parent('.sek-dyn-ui-icons').length > 0 )
                                       return;
 
-                                    self._send_( $el, { action : 'pick-content', content_type : 'module', level : _level , id : _id } );
+                                    self._send_( $el, {
+                                          action : 'edit-options',
+                                          location : _location_id,
+                                          level : _level,
+                                          id : _id
+                                    });
+                                    //self._send_( $el, { action : 'pick-content', content_type : 'module', level : _level , id : _id } );
                               break;
                               case 'columnOutsideModules' :
                               case 'sectionOutsideColumns' :
@@ -1671,7 +1677,7 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
 
                             'sek-maybe-print-loader' : function( params ) {
                                   try { self.mayBePrintLoader( params ); } catch( er ) {
-                                        api.errare( 'sek-clean-loader => error', er );
+                                        api.errare( 'sek-print-loader => error', er );
                                   }
                             },
                             'sek-clean-loader' : function( params ) {
@@ -2055,13 +2061,21 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
                             // Sent from the panel when duplicating a section level for example
                             // focus on a level
                             'sek-animate-to-level' : function( params ) {
-                                  var $elToFocusOn = $('[data-sek-id="' + params.id + '"]' );
-                                  if ( $elToFocusOn.length > 0 ) {
-                                        //$elToFocusOn[0].scrollIntoView();
-                                        $('html, body').animate({
-                                              scrollTop : $elToFocusOn.offset().top - 100
-                                        }, 200 );
-                                  }
+                                    var $elToFocusOn = $('[data-sek-id="' + params.id + '"]' );
+                                    if ( 0 < $elToFocusOn.length && !nb_.isInScreen( $elToFocusOn[0]) ) {
+                                          $elToFocusOn[0].scrollIntoView({
+                                                behavior: 'auto',
+                                                block: 'center',
+                                                inline: 'center'
+                                          });
+                                    }
+                                    // if ( $elToFocusOn.length > 0 ) {
+                                    //       console.log( 'EL IN WINDOW ?', nb_.elOrFirstVisibleParentIsInWindow( $elToFocusOn ), $elToFocusOn );
+                                    //       $elToFocusOn[0].scrollIntoView();
+                                    //       $('html, body').animate({
+                                    //             scrollTop : $elToFocusOn.offset().top - 100
+                                    //       }, 200 );
+                                    // }
                             },
 
 
@@ -2161,7 +2175,8 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
 
 
 
-                  var $_activeElement;// <= will be used to cache self.activeLevelEl()
+                  var $_activeElement; // <= will be used to cache self.activeLevelEl()
+
                   var _apiPreviewCallback = function( params, callbackFn, msgId ) {
                         params = _.extend( {
                             location_skope_id : '',
@@ -2213,25 +2228,25 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
                                     })
                                     .then( function() {
                                           api.preview.trigger( 'control-panel-requested-action-done', { action : msgId, args : params } );
+                                          // Focus on the edited level
+                                          self.mayBeAnimateToEditedLevel( params );
                                     });
                         } catch( _er_ ) {
                               self.errare( 'reactToPanelMsg => Error when firing the callback of ' + msgId , _er_  );
                               self.cachedElements.$body.removeClass( msgId );
                         }
 
-                        // MAY 2020 : focus on the edited element
-                        if ( params.apiParams.id ) {
+                        // set the activeElement if needed/possible
+                        if ( _.isObject( params ) && params.apiParams && params.apiParams.id ) {
                               $_activeElement = self.activeLevelEl();
-                              // set the activeElement if needed
+
                               if ( !$_activeElement || !_.isObject($_activeElement) || $_activeElement.length < 1 || self.activeLevelUI() !== params.apiParams.id ) {
                                     self.activeLevelEl( $('[data-sek-id="' + params.apiParams.id + '"]' ) );
                                     $_activeElement = self.activeLevelEl();
                               }
-                              // if user scrolled while editing an element, let's focus again
-                              if ( 0 < $_activeElement.length && !nb_.isInScreen( $_activeElement[0]) ) {
-                                    $_activeElement[0].scrollIntoView();
-                              }
                         }
+                        // Focus on the edited level
+                        self.mayBeAnimateToEditedLevel( params );
                   };//_apiPreviewCallback
 
 
@@ -2257,7 +2272,23 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
                         }
 
                   });
-            }//schedulePanelMsgReactions()
+            },//schedulePanelMsgReactions()
+
+            mayBeAnimateToEditedLevel : function( params ) {
+                  var self = this;
+                  // MAY 2020 : focus on the edited element
+                  if ( _.isObject( params ) && params.apiParams && params.apiParams.id ) {
+                        $elToFocusOn = $('[data-sek-id="' + params.apiParams.id + '"]' );
+                        // if user scrolled while editing an element, let's focus again
+                        if ( 0 < $elToFocusOn.length && !nb_.isInScreen( $elToFocusOn[0]) ) {
+                              $elToFocusOn[0].scrollIntoView({
+                                    behavior: 'auto',
+                                    block: 'center',
+                                    inline: 'center'
+                              });
+                        }
+                  }
+            }
       });//$.extend()
 })( wp.customize, jQuery, _ );
 //global sekPreviewLocalized
@@ -2679,7 +2710,7 @@ var SekPreviewPrototype = SekPreviewPrototype || {};
             //in particular the 'customized' dirty values, that NB absolutely needs to dynamically register settings that have not yet been instantiated by WP_Customize_Manager
             // see WP Core => class WP_Customize_Manager, add_action( 'customize_register', array( $this, 'register_dynamic_settings' ), 11 );
             // see NB => class SEK_CZR_Dyn_Register
-            // see NB => Nimble_Customizer_Setting::filter_previewed_sek_get_skoped_seks => this is how we can get the sektions collection while customizing, see sek_get_skoped_seks()
+            // see NB => Nimble_Collection_Setting::filter_previewed_sek_get_skoped_seks => this is how we can get the sektions collection while customizing, see sek_get_skoped_seks()
             doAjax : function( queryParams ) {
                   var self = this;
                   //do we have a queryParams ?

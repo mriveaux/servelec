@@ -34,7 +34,7 @@ add_action( 'plugins_loaded', '\Nimble\sek_versionning');
 function sek_versionning() {
     $current_version = get_option( 'nimble_version' );
     if ( $current_version != NIMBLE_VERSION ) {
-        update_option( 'nimble_version_upgraded_from', $current_version );
+        update_option( 'nimble_version_upgraded_from', $current_version, 'no' );
         update_option( 'nimble_version', NIMBLE_VERSION );
     }
     $started_with = get_option( 'nimble_started_with_version' );
@@ -169,7 +169,7 @@ function sek_nimble_dashboard_callback_fn() {
 }
 function sek_is_forbidden_post_type_for_nimble_edit_button( $post_type = '' ) {
     $post_type_obj = get_post_type_object( $post_type );
-    $authorized_post_types = apply_filters( 'nimble-authorized-post-types' , array( 'post', 'page', 'product', 'attachment' ) );
+    $authorized_post_types = apply_filters( 'nimble-authorized-post-types' , array( 'post', 'page', 'product' ) );
     if ( is_string($post_type) && !in_array($post_type, $authorized_post_types) )
       return true;
 
@@ -284,7 +284,7 @@ function sek_print_nb_btn_edit_with_nimble( $editor_type ) {
       <?php //_e( 'Edit with Nimble Builder', 'text_doma' ); ?>
       <?php printf( '<span class="sek-spinner"></span><span class="sek-nimble-icon" title="%3$s"><img src="%1$s" alt="%2$s"/><span class="sek-nimble-admin-bar-title">%2$s</span><span class="sek-nimble-mobile-admin-bar-title">%3$s</span></span>',
           NIMBLE_BASE_URL.'/assets/img/nimble/nimble_icon.svg?ver='.NIMBLE_VERSION,
-          apply_filters( 'nb_admin_nb_button_edit_title', sek_local_skope_has_nimble_sections( $manually_built_skope_id ) ? __('Continue building with Nimble','nimble-builder') : __('Build with Nimble Builder','nimble-builder'), $manually_built_skope_id ),
+          apply_filters( 'nb_admin_nb_button_edit_title', sek_local_skope_has_been_customized( $manually_built_skope_id ) ? __('Continue building with Nimble','nimble-builder') : __('Build with Nimble Builder','nimble-builder'), $manually_built_skope_id ),
           __('Build','nimble-builder'),
           __('Build sections in live preview with Nimble Builder', 'nimble-builder')
       ); ?>
@@ -316,10 +316,12 @@ function sek_current_user_can_edit( $post_id = 0 ) {
 }
 add_filter( 'display_post_states', '\Nimble\sek_add_nimble_post_state', 10, 2 );
 function sek_add_nimble_post_state( $post_states, $post ) {
+    if ( skp_is_customizing() )
+      return $post_states;
     if ( !sek_current_user_can_access_nb_ui() )
       return $post_states;
     $manually_built_skope_id = strtolower( NIMBLE_SKOPE_ID_PREFIX . 'post_' . $post->post_type . '_' . $post->ID );
-    if ( $post && current_user_can( 'edit_post', $post->ID ) && sek_local_skope_has_nimble_sections( $manually_built_skope_id ) ) {
+    if ( $post && current_user_can( 'edit_post', $post->ID ) && sek_local_skope_has_been_customized( $manually_built_skope_id ) ) {
         $post_states['nimble'] = __( 'Nimble Builder', 'nimble-builder' );
     }
     return $post_states;
@@ -330,7 +332,7 @@ function sek_filter_post_row_actions( $actions, $post ) {
     if ( !sek_current_user_can_access_nb_ui() )
       return $actions;
     $manually_built_skope_id = strtolower( NIMBLE_SKOPE_ID_PREFIX . 'post_' . $post->post_type . '_' . $post->ID );
-    if ( $post && current_user_can( 'edit_post', $post->ID ) && sek_local_skope_has_nimble_sections( $manually_built_skope_id ) ) {
+    if ( $post && current_user_can( 'edit_post', $post->ID ) && sek_local_skope_has_been_customized( $manually_built_skope_id ) ) {
         $actions['edit_with_nimble_builder'] = sprintf( '<a href="%1$s" title="%2$s">%2$s</a>',
             sek_get_customize_url_for_post_id( $post->ID ),
             __( 'Edit with Nimble Builder', 'nimble-builder' )
@@ -471,7 +473,7 @@ function sek_may_be_display_update_notice() {
 
     if ( !$last_update_notice_values || !is_array($last_update_notice_values) ) {
         $last_update_notice_values = array( "version" => NIMBLE_VERSION, "display_count" => 0 );
-        update_option( 'nimble_last_update_notice', $last_update_notice_values );
+        update_option( 'nimble_last_update_notice', $last_update_notice_values, 'no' );
         if ( sek_user_started_before_version( NIMBLE_VERSION ) ) {
             $show_new_notice = true;
         }
@@ -484,11 +486,11 @@ function sek_may_be_display_update_notice() {
             $show_new_notice = true;
             (int) $_db_displayed_count++;
             $last_update_notice_values["display_count"] = $_db_displayed_count;
-            update_option( 'nimble_last_update_notice', $last_update_notice_values );
+            update_option( 'nimble_last_update_notice', $last_update_notice_values, 'no' );
         }
         else {
             $new_val  = array( "version" => NIMBLE_VERSION, "display_count" => 0 );
-            update_option('nimble_last_update_notice', $new_val );
+            update_option('nimble_last_update_notice', $new_val, 'no' );
         }//end else
     }//end if
 
@@ -570,7 +572,7 @@ function sek_may_be_display_update_notice() {
 function sek_dismiss_update_notice_action() {
     check_ajax_referer( 'dismiss-update-notice-nonce', 'dismissUpdateNoticeNonce' );
     $new_val  = array( "version" => NIMBLE_VERSION, "display_count" => 0 );
-    update_option( 'nimble_last_update_notice', $new_val );
+    update_option( 'nimble_last_update_notice', $new_val, 'no' );
     wp_die( 1 );
 }
 function sek_welcome_notice_is_dismissed() {
@@ -623,13 +625,13 @@ function sek_render_welcome_notice() {
     $notice_id = NIMBLE_WELCOME_NOTICE_ID;
     ?>
     <div class="nimble-welcome-notice notice notice-info is-dismissible" id="<?php echo esc_attr( $notice_id ); ?>">
-      <div class="notice-dismiss"></div>
       <?php sek_get_welcome_block(); ?>
     </div>
 
     <script>
     jQuery( function( $ ) {
       $( <?php echo wp_json_encode( "#$notice_id" ); ?> ).on( 'click', '.notice-dismiss', function() {
+        $(this).closest('.is-dismissible').slideUp('fast');//<= this line is not mandatory since WP has its own way to remove the is-dismissible block
         $.post( ajaxurl, {
           pointer: <?php echo wp_json_encode( $notice_id ); ?>,
           action: 'dismiss-wp-pointer'
@@ -644,7 +646,8 @@ function sek_get_welcome_block() {
   <div class="nimble-welcome-icon-holder">
     <img class="nimble-welcome-icon" src="<?php echo NIMBLE_BASE_URL.'/assets/img/nimble/nimble_banner.svg?ver='.NIMBLE_VERSION; ?>" alt="<?php esc_html_e( 'Nimble Builder', 'nimble-builder' ); ?>" />
   </div>
-  <h1><?php echo apply_filters( 'nimble_parse_admin_text', __('Welcome to Nimble Builder for WordPress :D', 'nimble-builder' ) ); ?></h1>
+  <div class="nimble-welcome-content">
+    <h1><?php echo apply_filters( 'nimble_parse_admin_text', __('Welcome to Nimble Builder for WordPress :D', 'nimble-builder' ) ); ?></h1>
 
     <p><?php _e( 'Nimble allows you to drag and drop content modules, or pre-built section templates, into <u>any context</u> of your site, including search results or 404 pages. You can edit your pages in <i>real time</i> from the live customizer, and then publish when you are happy of the result, or save for later.', 'nimble-builder' ); ?></p>
     <p><?php _e( 'The plugin automatically creates fluid and responsive sections for a pixel-perfect rendering on smartphones and tablets, without the need to add complex code.', 'nimble-builder' ); ?></p>
@@ -672,28 +675,13 @@ function sek_get_welcome_block() {
           __( 'read the getting started guide', 'nimble-builder' )
       ); ?>
     </div>
+  </div>
 
   <?php
 }
-add_filter('hu_update_notice_after', '\Nimble\sek_write_update_notice_after_for_pc_themes', 10 );
-add_filter('czr_update_notice_after', '\Nimble\sek_write_update_notice_after_for_pc_themes', 10 );
-function sek_write_update_notice_after_for_pc_themes() {
-    $theme_slug = sek_get_parent_theme_slug();
-    $pc_theme_name = sek_maybe_get_presscustomizr_theme_name( $theme_slug );
-    if ( 'hueman' === $pc_theme_name && ( !defined('HU_IS_PRO') || !HU_IS_PRO ) ) {
-        return !HU_IS_PRO ? sprintf( '<p style="position: absolute;right: 7px;top: 4px;"><a class="button button-primary upgrade-to-pro" href="%1$s" title="%2$s" target="_blank">%2$s &raquo;</a></p>',
-          esc_url('presscustomizr.com/hueman-pro?ref=a&utm_source=usersite&utm_medium=link&utm_campaign=hueman-update-notice'),
-          'Upgrade to Hueman Pro'
-        ) : '';
-    }
-    if ( 'customizr' === $pc_theme_name && ( !defined('CZR_IS_PRO') || !CZR_IS_PRO ) ) {
-        return !CZR_IS_PRO ? sprintf( '<p style="position: absolute;right: 7px;top: 4px;"><a class="button button-primary upgrade-to-pro" href="%1$s" title="%2$s" target="_blank">%2$s &raquo;</a></p>',
-          esc_url('presscustomizr.com/customizr-pro?ref=a&utm_source=usersite&utm_medium=link&utm_campaign=customizr-update-notice'),
-          'Upgrade to Customizr Pro'
-        ) : '';
-    }
-    return '';
-}
+
+
+
 
 /* ------------------------------------------------------------------------- *
 *  Review link in plugin list table

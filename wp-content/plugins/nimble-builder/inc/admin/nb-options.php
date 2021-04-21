@@ -265,12 +265,12 @@ function nb_maybe_update_checkbox_option( $opt_name, $unchecked_value ) {
     $opt_value = get_option( $opt_name );
     $posted_value = array_key_exists( $opt_name, $_POST ) ? $_POST[$opt_name] : $unchecked_value;
     if ( $unchecked_value !== $posted_value ) {
-        update_option( $opt_name, esc_attr( $posted_value ) );
+        update_option( $opt_name, esc_attr( $posted_value ), 'no' );
     } else {
         // if the option was never set before, then leave it not set
         // otherwise update it to 'off'
         if ( false !== $opt_value ) {
-            update_option( $opt_name, $unchecked_value );
+            update_option( $opt_name, $unchecked_value, 'no' );
         }
     }
 }
@@ -345,6 +345,7 @@ function print_doc_page() {
             <li><a target="_blank" rel="noopener noreferrer" href="https://docs.presscustomizr.com/article/337-getting-started-with-the-nimble-builder-plugin"><span>Getting started with Nimble Page Builder for WordPress</span></a></li>
             <li><a target="_blank" rel="noopener noreferrer" href="https://docs.presscustomizr.com/article/386-how-to-access-the-live-customization-interface-of-the-nimble-builder"><span>How to access the live customization interface of Nimble Builder ?</span></a></li>
             <li><a target="_blank" rel="noopener noreferrer" href="https://docs.presscustomizr.com/article/371-how-to-start-building-from-a-blank-page-with-the-wordpress-nimble-builder"><span>How to start building from a blank ( full width ) page with WordPress Nimble Builder?</span></a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href=" https://docs.presscustomizr.com/article/427-how-to-insert-and-edit-a-module-with-nimble-builder"><span>How to insert and edit a module with Nimble Builder ?</span></a></li>
             <li><a target="_blank" rel="noopener noreferrer" href="https://docs.presscustomizr.com/article/358-building-your-header-and-footer-with-the-nimble-builder"><span>How to build your WordPress header and footer with Nimble Builder ?</span></a></li>
             <li><a target="_blank" rel="noopener noreferrer" href="https://docs.presscustomizr.com/article/350-how-to-use-shortcodes-from-other-plugins-with-the-nimble-builder-plugin"><span>How to embed WordPress shortcodes in your pages with Nimble Builder ?</span></a></li>
             <li><a target="_blank" rel="noopener noreferrer" href="https://docs.presscustomizr.com/article/366-how-to-add-an-anchor-to-a-section-and-integrate-it-into-the-menu-with-the-nimble-page-builder"><span>How to add an anchor to a section and integrate it into the menu with Nimble Page Builder ?</span></a></li>

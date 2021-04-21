@@ -29,19 +29,21 @@ if ( !defined( 'NIMBLE_DEPREC_TWO_CSS_FOLDER_NAME' ) ) { define( 'NIMBLE_DEPREC_
 if ( !defined( 'NIMBLE_CSS_FOLDER_NAME' ) ) { define( 'NIMBLE_CSS_FOLDER_NAME' , 'nimble_css' ); }
 if ( !defined( 'NIMBLE_OPT_FOR_MODULE_CSS_READING_STATUS' ) ) { define( 'NIMBLE_OPT_FOR_MODULE_CSS_READING_STATUS' , 'nimble_module_css_read_status' ); }
 
+if ( !defined( 'NIMBLE_OPT_SEKTION_POST_INDEX' ) ) { define( 'NIMBLE_OPT_SEKTION_POST_INDEX' , 'nimble_posts_index' ); }
 if ( !defined( 'NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION' ) ) { define( 'NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION' , 'nimble___' ); }
 if ( !defined( 'NIMBLE_GLOBAL_SKOPE_ID' ) ) { define( 'NIMBLE_GLOBAL_SKOPE_ID' , 'skp__global' ); }
 
-if ( !defined( 'NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS' ) ) { define( 'NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS' , '__nimble_options__' ); }
+if ( !defined( 'NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS' ) ) { define( 'NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS' , 'nimble_global_opts' ); }// <= name updated in march 2021 was __nimble_options__
+
 //if ( !defined( 'NIMBLE_OPT_NAME_FOR_SAVED_SEKTIONS' ) ) { define( 'NIMBLE_OPT_NAME_FOR_SAVED_SEKTIONS' , 'nimble_saved_sektions' ); } //<= June 2020 to be removed
 if ( !defined( 'NIMBLE_OPT_NAME_FOR_MOST_USED_FONTS' ) ) { define( 'NIMBLE_OPT_NAME_FOR_MOST_USED_FONTS' , 'nimble_most_used_fonts' ); }
 if ( !defined( 'NIMBLE_OPT_FOR_GLOBAL_CSS' ) ) { define( 'NIMBLE_OPT_FOR_GLOBAL_CSS' , 'nimble_global_css' ); }
 
-if ( !defined( 'NIMBLE_OPT_NAME_FOR_SECTION_JSON' ) ) { define( 'NIMBLE_OPT_NAME_FOR_SECTION_JSON' , 'nb_prebuild_section_json' ); }
+if ( !defined( 'NIMBLE_OPT_NAME_FOR_SECTION_JSON' ) ) { define( 'NIMBLE_OPT_NAME_FOR_SECTION_JSON' , 'nimble_prebuild_sections' ); }// <= name updated in march 2021, was nb_prebuild_section_json
 
 if ( !defined( 'NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES' ) ) { define( 'NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES' , 'nb_backward_fixes' ); }
 
-if ( !defined( 'NIMBLE_OPT_PREFIX_FOR_LEVEL_UI' ) ) { define( 'NIMBLE_OPT_PREFIX_FOR_LEVEL_UI' , '__nimble__' ); }
+if ( !defined( 'NIMBLE_PREFIX_FOR_SETTING_NOT_SAVED' ) ) { define( 'NIMBLE_PREFIX_FOR_SETTING_NOT_SAVED' , '__nimble__' ); }
 if ( !defined( 'NIMBLE_WIDGET_PREFIX' ) ) { define( 'NIMBLE_WIDGET_PREFIX' , 'nimble-widget-area-' ); }
 if ( !defined( 'NIMBLE_ASSETS_VERSION' ) ) { define( 'NIMBLE_ASSETS_VERSION', sek_is_dev_mode() ? time() : NIMBLE_VERSION ); }
 if ( !defined( 'NIMBLE_MODULE_ICON_PATH' ) ) { define( 'NIMBLE_MODULE_ICON_PATH' , NIMBLE_BASE_URL . '/assets/czr/sek/icons/modules/' ); }
@@ -57,6 +59,10 @@ if ( !defined( 'NIMBLE_GLOBAL_OPTIONS_STYLESHEET_ID' ) ) { define ( 'NIMBLE_GLOB
 if ( !defined( 'NIMBLE_JQUERY_ID' ) ) { define ( 'NIMBLE_JQUERY_ID', 'nb-jquery' ); }
 if ( !defined( 'NIMBLE_JQUERY_LATEST_CDN_URL' ) ) { define ( 'NIMBLE_JQUERY_LATEST_CDN_URL', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js' ); }
 if ( !defined( 'NIMBLE_JQUERY_MIGRATE_URL' ) ) { define ( 'NIMBLE_JQUERY_MIGRATE_URL', site_url() . '/wp-includes/js/jquery/jquery-migrate.min.js' ); }
+
+if ( !defined( "NIMBLE_DATA_API_URL_V2" ) ) { define( "NIMBLE_DATA_API_URL_V2",
+  ( defined('NIMBLE_FETCH_API_LOCALLY') && NIMBLE_FETCH_API_LOCALLY && defined('NIMBLE_LOCAL_API_URL') ) ? NIMBLE_LOCAL_API_URL : 'https://api.nimblebuilder.com/wp-json/nimble/v2/cravan'
+); }
 
 ?><?php
 /* ------------------------------------------------------------------------- *
@@ -170,7 +176,8 @@ function sek_get_default_location_model( $skope_id = null ) {
     if ( $is_global_skope ) {
         $defaut_sektions_value = [ 'collection' => [], 'fonts' => [] ];//global_options are saved in a specific option => NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS
     } else {
-        $defaut_sektions_value = [ 'collection' => [], 'local_options' => [], 'fonts' => [] ];
+        // March 2021 property '__inherits_group_skope_tmpl_when_exists__' added for site templates #478
+        $defaut_sektions_value = [ 'collection' => [], 'local_options' => [], 'fonts' => [], '__inherits_group_skope_tmpl_when_exists__' => true ];
     }
     foreach( sek_get_locations() as $location_id => $params ) {
         $is_global_location = sek_is_global_location( $location_id );
@@ -658,6 +665,64 @@ function sek_sideload_img_and_return_attachment_id( $img_url ) {
     return $id;
 }
 
+
+
+
+// IMPORT IMG HELPER
+// recursive
+//add_filter( 'nimble_pre_import', '\Nimble\sek_maybe_import_imgs' );
+function sek_maybe_import_imgs( $seks_data, $do_import_images = true ) {
+    $new_seks_data = array();
+    // Reset img_import_errors
+    Nimble_Manager()->img_import_errors = [];
+    foreach ( $seks_data as $key => $value ) {
+        if ( is_array($value) ) {
+            $new_seks_data[$key] = sek_maybe_import_imgs( $value, $do_import_images );
+        } else {
+            if ( is_string( $value ) && false !== strpos( $value, '__img_url__' ) && sek_is_img_url( $value ) ) {
+                $url = str_replace( '__img_url__', '', $value );
+                // april 2020 : new option to skip importing images
+                // introduced for https://github.com/presscustomizr/nimble-builder/issues/663
+                if ( !$do_import_images ) {
+                    $value = $url;
+                } else {
+                    //sek_error_log( __FUNCTION__ . ' URL?', $url );
+                    $id = sek_sideload_img_and_return_attachment_id( $url );
+                    if ( is_wp_error( $id ) ) {
+                        $value = null;
+                        $img_errors = Nimble_Manager()->img_import_errors;
+                        $img_errors[] = $url;
+                        Nimble_Manager()->img_import_errors = $img_errors;
+                    } else {
+                        $value = $id;
+                    }
+                }
+            } else if ( is_string( $value ) && false !== strpos( $value, '__default_img_medium__' ) ) {
+                $value = NIMBLE_BASE_URL . '/assets/img/default-img.png';
+            }
+            $new_seks_data[$key] = $value;
+        }
+    }
+    return $new_seks_data;
+}
+
+// @return bool
+function sek_is_img_url( $url = '' ) {
+    if ( is_string( $url ) ) {
+      if ( preg_match( '/\.(jpg|jpeg|png|gif)/i', $url ) ) {
+        return true;
+      }
+    }
+    return false;
+}
+
+
+
+
+
+
+
+
 /* ------------------------------------------------------------------------- *
 *  REMOVE IMAGE STYLE ATTRIBUTE
 *  Used in image module, slider module, special image module
@@ -987,6 +1052,23 @@ function sek_get_module_collection() {
 }
 
 
+
+
+// September 2020 : filter the collection of modules
+// Removes pro upsell modules if NIMBLE_PRO_UPSELL_ON is false
+// filter declared in inc/sektions/_front_dev_php/_constants_and_helper_functions/0_0_5_modules_helpers.php
+add_filter('sek_get_module_collection', function( $collection ) {
+    if ( defined('NIMBLE_PRO_UPSELL_ON') && NIMBLE_PRO_UPSELL_ON )
+      return $collection;
+
+    $filtered = [];
+    foreach ($collection as $mod => $mod_data) {
+        if ( array_key_exists('is_pro', $mod_data) && $mod_data['is_pro'] )
+          continue;
+        $filtered[] = $mod_data;
+    }
+    return $filtered;
+});
 
 
 // @return void()
@@ -1668,26 +1750,10 @@ function sek_get_closest_section_custom_breakpoint( $params ) {
                 $last_nested_section_breakpoint_found = 0;//reset last nested breakpoint
                 $last_regular_section_breakpoint_found = $section_maybe_custom_breakpoint;
             }
-
-           //sek_error_log('SECTION ID AND BREAKPOINT ' . $level_data['level'] . ' | ' . $level_data['id'] , $last_section_breakpoint_found );
-
-            // sek_error_log('ALORS ???', compact(
-            //     'searched_level_id_found',
-            //     'last_section_breakpoint_found',
-            //     'last_regular_section_breakpoint_found',
-            //     'last_nested_section_breakpoint_found'
-            // ) );
         }
 
         if ( array_key_exists( 'id', $level_data ) && $searched_level_id == $level_data['id'] ) {
             //match found, break this loop
-            // sek_error_log('MATCH FOUND!=> ' . $last_section_breakpoint_found );
-            // sek_error_log('MATCH FOUND => ALORS ???', compact(
-            //     'searched_level_id_found',
-            //     'last_section_breakpoint_found',
-            //     'last_regular_section_breakpoint_found',
-            //     'last_nested_section_breakpoint_found'
-            // ) );
             if ( $last_nested_section_breakpoint_found >= 1 ) {
                 $last_section_breakpoint_found = $last_nested_section_breakpoint_found;
             } else if ( $last_regular_section_breakpoint_found >= 1 ) {
@@ -1750,7 +1816,7 @@ function sek_get_local_option_value( $option_name = '', $skope_id = null ) {
     } else {
         // use the provided skope_id if in the signature
         $skope_id = ( !empty( $skope_id ) && is_string( $skope_id ))? $skope_id : skp_get_skope_id();
-        $localSkopeNimble = sek_get_skoped_seks( skp_get_skope_id() );
+        $localSkopeNimble = sek_get_skoped_seks( $skope_id );
         $local_options = ( is_array( $localSkopeNimble ) && !empty( $localSkopeNimble['local_options'] ) && is_array( $localSkopeNimble['local_options'] ) ) ? $localSkopeNimble['local_options'] : array();
         // Cache only after 'wp' && 'nimble_front_classes_ready'
         // never cache when doing ajax
@@ -1831,7 +1897,6 @@ function sek_get_global_option_value( $option_name = '' ) {
 }
 
 
-
 // @see _1_6_5_sektions_generate_UI_global_options.js
 // @return array() $normalized_values
 function sek_normalize_global_options_with_defaults( $option_name, $raw_module_values ) {
@@ -1865,6 +1930,47 @@ function sek_normalize_global_options_with_defaults( $option_name, $raw_module_v
     return $normalized_values;
 }
 
+
+
+
+
+
+
+
+// // @see _1_6_5_sektions_generate_UI_site_tmpl_options.js
+// // @return array() $normalized_values
+// function sek_normalize_site_tmpl_options_with_defaults( $option_name, $raw_module_values ) {
+//     if ( empty($option_name) ) {
+//         sek_error_log( __FUNCTION__ . ' => invalid option name' );
+//         return array();
+//     }
+//     $normalized_values = ( !empty($raw_module_values) && is_array( $raw_module_values ) ) ? $raw_module_values : array();
+//     // map the option key as saved in db ( @see _1_6_5_sektions_generate_UI_global_options.js ) and the module type
+//     $site_tmpl_options_map = SEK_Front_Construct::$site_tmpl_options_map;
+
+//     //sek_error_log('SEK_Front_Construct::$global_options_map', SEK_Front_Construct::$global_options_map );
+
+//     if ( !array_key_exists($option_name, $site_tmpl_options_map) ) {
+//         sek_error_log( __FUNCTION__ . ' => invalid option name', $option_name );
+//         return $raw_module_values;
+//     } else {
+//         $module_type = $site_tmpl_options_map[$option_name];
+//     }
+
+//     // normalize with the defaults
+//     // class_exists check introduced since https://github.com/presscustomizr/nimble-builder/issues/432
+//     // may not be mandatory
+//     if ( class_exists('\Nimble\CZR_Fmk_Base') ) {
+//         if( CZR_Fmk_Base()->czr_is_module_registered($module_type) ) {
+//             $normalized_values = _sek_normalize_single_module_values( $normalized_values, $module_type );
+//         }
+//     } else {
+//         sek_error_log( __FUNCTION__ . ' => error => CZR_Fmk_Base not loaded' );
+//     }
+//     return $normalized_values;
+// }
+
+
 ?><?php
 
 
@@ -1874,12 +1980,54 @@ function sek_normalize_global_options_with_defaults( $option_name, $raw_module_v
 function sek_find_pattern_match($matches) {
     $replace_values = apply_filters( 'sek_template_tags', array(
       'home_url' => 'home_url',
+      'year_now' => date("Y"),
+      'site_title' => 'get_bloginfo',
       'the_title' => 'sek_get_the_title',
-      'the_content' => 'sek_get_the_content'
+      'the_archive_title' => 'sek_get_the_archive_title',// works for authors, CPT, taxonomies
+      'the_archive_description' => 'sek_get_the_archive_description',// works for authors, CPT, taxonomies
+      'the_content' => 'sek_get_the_content',
+      'the_tags' => 'sek_get_the_tags',
+      'the_categories' => 'sek_get_the_categories',
+
+      'the_author_link' => 'sek_get_the_author_link',
+      'the_author_name' => 'sek_get_the_author_name',
+      'the_author_avatar' => 'sek_get_the_author_avatar',
+      'the_author_bio' => 'sek_get_the_author_bio',
+
+      'the_published_date' => 'sek_get_the_published_date',
+      'the_modified_date' => 'sek_get_the_modified_date',
+      'the_comments' => 'sek_get_the_comments',
+      'the_previous_post_link' => 'sek_get_previous_post_link',
+      'the_next_post_link' => 'sek_get_next_post_link',
+      'the_comment_number' => 'sek_get_the_comment_number',
+
+      'the_search_query' => 'sek_get_search_query',
+      'the_search_results_number' => 'sek_get_search_results_nb'
     ));
 
-    if ( array_key_exists( $matches[1], $replace_values ) ) {
-      $dyn_content = $replace_values[$matches[1]];
+    // Are we good after the filter ?
+    if ( !is_array($replace_values) )
+      return;
+
+    //sek_error_log('$matches ??', $matches );
+    if ( !is_array($matches) || empty($matches[1]) )
+      return;
+
+    //$data = html_entity_decode($matches[1], ENT_QUOTES, get_bloginfo( 'charset' ) );
+    $data = explode(' ', $matches[1] );
+
+    // Filter so that {{the_categories sep="/"}} becomes array('the_categories', 'sep="/"' ) with no empty entries
+    // => the first entry is the template tag name, the other entries are the callback arguments ( to implement April 2021 )
+    $new_data = array_filter($data, function($value) {
+        if ( !is_string($value) )
+          return false;
+      $value = ltrim($value);
+      return !is_null($value) && !empty($value) && preg_match("/[a-z]/i", $value) ;
+    });
+
+    if ( isset($new_data[0]) && array_key_exists( $new_data[0], $replace_values ) ) {
+      // @todo => authorize arguments passed as an array
+      $dyn_content = $replace_values[$new_data[0]];
       $fn_name = $dyn_content;// <= typically not namespaced if WP core function, or function added with a filter from a child theme for example
       $namespaced_fn_name = __NAMESPACE__ . '\\' . $dyn_content; // <= namespaced if Nimble Builder function, introduced in october 2019 for https://github.com/presscustomizr/nimble-builder/issues/401
       if ( function_exists( $namespaced_fn_name ) ) {
@@ -1898,35 +2046,336 @@ function sek_find_pattern_match($matches) {
 function sek_parse_template_tags( $val ) {
     //the pattern could also be '!\{\{(\w+)\}\}!', but adding \s? allows us to allow spaces around the term inside curly braces
     //see https://stackoverflow.com/questions/959017/php-regex-templating-find-all-occurrences-of-var#comment71815465_959026
-    return is_string( $val ) ? preg_replace_callback( '!\{\{\s?(\w+)\s?\}\}!', '\Nimble\sek_find_pattern_match', $val) : $val;
+    //return is_string( $val ) ? preg_replace_callback( '!\{\{\s?(\w+)\s?\}\}!', '\Nimble\sek_find_pattern_match', $val) : $val;
+    return is_string( $val ) ? preg_replace_callback( '!\{\{\s?(.*?)\s?\}\}!', '\Nimble\sek_find_pattern_match', $val) : $val;
 }
 add_filter( 'nimble_parse_template_tags', '\Nimble\sek_parse_template_tags' );
 
+
+
+
+// CALLBACKS WHEN IS_ARCHIVE()
+function sek_get_the_archive_title() {
+  $is_archive = is_archive();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_archive = sek_get_posted_query_param_when_customizing( 'is_archive' );
+  }
+  if ( !$is_archive ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_archive_title', $msg = __('It can be used in archive pages only.', 'nimble-builder') );
+  }
+
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $title = sek_get_posted_query_param_when_customizing( 'the_archive_title' );
+  } else {
+    add_filter('get_the_archive_title_prefix', '__return_false');
+    $title = get_the_archive_title();
+    remove_filter('get_the_archive_title_prefix', '__return_false');
+  }
+  return $title;
+}
+
+function sek_get_the_archive_description() {
+  $is_archive = is_archive();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_archive = sek_get_posted_query_param_when_customizing( 'is_archive' );
+  }
+  if ( !$is_archive ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_archive_description', $msg = __('It can be used in archive pages only.', 'nimble-builder') );
+  }
+
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $title = sek_get_posted_query_param_when_customizing( 'the_archive_description' );
+  } else {
+    $title = get_the_archive_description();
+  }
+  return $title;
+}
+
+
+// CALLBACKS WHEN IS_SINGULAR()
+function sek_get_next_post_link() {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_next_post_link', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $title = sek_get_posted_query_param_when_customizing( 'the_next_post_link' );
+  } else {
+    $title = get_next_post_link( $format = '%link' );
+  }
+  if ( empty( $title ) ) {
+    return '';
+  } else {
+    return sprintf( '<span class="sek-next-post-link">%1$s</span>', $title );
+  }
+}
+
+function sek_get_previous_post_link() {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_previous_post_link', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $title = sek_get_posted_query_param_when_customizing( 'the_previous_post_link' );
+  } else {
+    $title = get_previous_post_link( $format = '%link' );
+  }
+  if ( empty( $title ) ) {
+    return '';
+  } else {
+    return sprintf( '<span class="sek-previous-post-link">%1$s</span>', $title );
+  }
+}
+
+function sek_get_the_comments() {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_comments', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    return sprintf('<div class="nimble-notice-in-preview"><i class="fas fa-info-circle"></i>&nbsp;%1$s</div>',
+      __('Comment template can not be refreshed while customizing', 'nimble-builder')
+    );
+  }
+
+  ob_start();
+  //load_template( $tmpl_path, false );
+  if ( comments_open() || get_comments_number() ) {
+    add_filter('comments_template', '\Nimble\sek_set_nb_comments_template_path');
+    comments_template();
+    remove_filter('comments_template', '\Nimble\sek_set_nb_comments_template_path');
+  }
+  return ob_get_clean();
+}
+
+//@filter 'comments_template'
+function sek_set_nb_comments_template_path( $original_path ) {
+  //@to do => make this path overridable
+  $nb_path = sek_get_templates_dir() . "/wp/comments-template.php";
+  if ( file_exists( $nb_path ) ) {
+    return $nb_path;
+  }
+  return $original_path;
+}
+
+function sek_get_the_published_date() {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_published_date', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  $post_id = sek_get_post_id_on_front_and_when_customizing();
+  $published_date = get_the_date( get_option('date_format'), $post_id);
+  $machine_readable_published_date = esc_attr( get_the_date( 'c' , $post_id ) );
+  return sprintf( '<time class="sek-published-date" datetime="%1$s">%2$s</time>',
+    $machine_readable_published_date,
+    $published_date
+  );
+}
+
+function sek_get_the_modified_date() {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_modified_date', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  $post_id = sek_get_post_id_on_front_and_when_customizing();
+  $modified_date = get_the_modified_date( get_option('date_format'), $post_id );
+  $machine_readable_modified_date = esc_attr( get_the_modified_date( 'c' ), $post_id );
+  return sprintf( '<time class="sek-modified-date" datetime="%1$s">%2$s</time>',
+    $machine_readable_modified_date ,
+    $modified_date
+  );
+}
+
+function sek_get_the_tags( $separator = ' &middot; ') {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_tags', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  return sprintf( '<span class="sek-post-tags">%1$s</span>', get_the_tag_list( $before = '', $sep = $separator, $after = '', $post_id = sek_get_post_id_on_front_and_when_customizing() ) );
+}
+
+
+function sek_get_the_categories( $separator = ' / ') {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_categories', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  return sprintf( '<span class="sek-post-category">%1$s</span>', get_the_category_list( $separator, '', $post_id = sek_get_post_id_on_front_and_when_customizing() ) );
+}
+
+function sek_get_the_comment_number() {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_comment_number', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  return sprintf( '<span class="sek-post-comment-number">%1$s</span>', get_comments_number_text( $zero = false, $one = false, $more = false, $post_id = sek_get_post_id_on_front_and_when_customizing() ) );
+}
+
+
+// AUTHOR DATA
+// 2 CASES : singular or author archives
+function sek_get_the_author_link() {
+  $author_id = sek_get_author_id_on_front_and_when_customizing();
+  if ( $author_id ) {
+    $display_name = get_the_author_meta( 'display_name', $author_id );
+    return sprintf(
+      '<a href="%1$s" title="%2$s" class="sek-author-link" rel="author">%3$s</a>',
+      esc_url( get_author_posts_url( $author_id, get_the_author_meta( 'user_nicename', $author_id ) ) ),
+      /* translators: %s: Author's display name. */
+      esc_attr( sprintf( __( 'Posts by %s', 'nimble-builder' ), $display_name ) ),
+      $display_name
+    );
+  }
+  return null;
+}
+
+function sek_get_the_author_name() {
+  $author_id = sek_get_author_id_on_front_and_when_customizing();
+  if ( $author_id ) {
+    return sprintf( '<span class="sek-author-name">%1$s</span>', get_the_author_meta( 'display_name', $author_id ) );
+  }
+  return null;
+}
+
+function sek_get_the_author_avatar() {
+  $author_id = sek_get_author_id_on_front_and_when_customizing();
+  if ( $author_id ) {
+    return get_avatar( get_the_author_meta( 'ID', $author_id ), '85' );
+  }
+  return null;
+}
+
+function sek_get_the_author_bio() {
+  $author_id = sek_get_author_id_on_front_and_when_customizing();
+  if ( $author_id ) {
+    return sprintf( '<span class="sek-author-description">%1$s</span>', get_the_author_meta( 'description', $author_id ) );
+  }
+  return null;
+}
+
 // introduced in october 2019 for https://github.com/presscustomizr/nimble-builder/issues/401
 function sek_get_the_title() {
-  if ( skp_is_customizing() && defined( 'DOING_AJAX' ) && DOING_AJAX ) {
-      $post_id = sek_get_posted_query_param_when_customizing( 'post_id' );
-      return is_int($post_id) ? get_the_title($post_id) : null;
-  } else {
-      return get_the_title();
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
   }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_title', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  return get_the_title( sek_get_post_id_on_front_and_when_customizing() );
 }
 
 // introduced in october 2019 for https://github.com/presscustomizr/nimble-builder/issues/401
 function sek_get_the_content() {
-  if ( skp_is_customizing() && defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( !$is_singular ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_content', $msg = __('It can only be used in single pages or single posts.', 'nimble-builder') );
+  }
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
       $post_id = sek_get_posted_query_param_when_customizing( 'post_id' );
-      $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
-      if ( $is_singular && is_int($post_id) ) {
+      if ( is_int($post_id) ) {
           $post_object = get_post( $post_id );
           return !empty( $post_object ) ? apply_filters( 'the_content', $post_object->post_content ) : null;
       }
   } else {
-      if( is_singular() ) {
-        $post_object = get_post();
-        return !empty( $post_object ) ? apply_filters( 'the_content', $post_object->post_content ) : null;
-      }
+      $post_object = get_post();
+      return !empty( $post_object ) ? apply_filters( 'the_content', $post_object->post_content ) : null;
   }
+  return null;
+}
+
+// CALLBACKS WHEN IS_SEARCH()
+function sek_get_search_query() {
+  $is_search = is_search();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_search = sek_get_posted_query_param_when_customizing( 'is_search' );
+    $search_query = sek_get_posted_query_param_when_customizing( 'the_search_query' );
+  } else {
+    $search_query = get_search_query();
+  }
+  if ( !$is_search ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_search_query', $msg = __('It can only be used in search results page.', 'nimble-builder') );
+  }
+  return sprintf( '<span class="sek-search-query">%1$s</span>', esc_html( $search_query ) );
+}
+
+function sek_get_search_results_nb() {
+  $is_search = is_search();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_search = sek_get_posted_query_param_when_customizing( 'is_search' );
+    $search_res_nb = sek_get_posted_query_param_when_customizing( 'the_search_results_nb' );
+  } else {
+    global $wp_query;
+    $search_res_nb = (int)$wp_query->found_posts;
+  }
+  if ( !$is_search ) {
+    return sek_get_tmpl_tag_error( $tag = 'the_search_results_number', $msg = __('It can only be used in search results page.', 'nimble-builder') );
+  }
+  return sprintf( '<span class="sek-search-results-number">%1$s</span>', esc_html( $search_res_nb ) );
+}
+
+//////////////////////////////////////////////////
+///// HELPERS
+/////////////////////////////////////////////////
+function sek_get_author_id_on_front_and_when_customizing() {
+  $is_singular = is_singular();
+  if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+    $is_singular = sek_get_posted_query_param_when_customizing( 'is_singular' );
+  }
+  if ( $is_singular ) {
+    $post_id = sek_get_post_id_on_front_and_when_customizing();
+    $post_object = get_post( $post_id );
+    if ( empty( $post_object ) || !is_object( $post_object ) ) {
+      $author_id = null;
+    }
+    $author_id = $post_object->post_author;
+  } else {
+    if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+      $author_id = sek_get_posted_query_param_when_customizing( 'the_author_id' );
+    } else {
+      global $authordata;
+      $author_id = isset( $authordata->ID ) ? $authordata->ID : 0;
+    }
+  }
+  return $author_id;
+}
+
+// @return the post id in all cases
+// when performing ajax action, we need the posted query params made available from the ajax params
+function sek_get_post_id_on_front_and_when_customizing() {
+    if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+        $post_id = sek_get_posted_query_param_when_customizing( 'post_id' );
+    } else {
+        $post_id = get_the_ID();
+    }
+    return is_int($post_id) ? $post_id : null;
 }
 
 // introduced in october 2019 for https://github.com/presscustomizr/nimble-builder/issues/401
@@ -1945,6 +2394,15 @@ function sek_get_posted_query_param_when_customizing( $param ) {
       }
   }
   return null;
+}
+
+function sek_get_tmpl_tag_error( $tag, $msg ) {
+  if ( !skp_is_customizing() )
+    return;
+  return sprintf('<div class="nimble-notice-in-preview nimble-inline-notice-in-preview"><i class="fas fa-info-circle"></i> %1$s %2$s</div>',
+    '{{' . $tag . '}} ' . __('could not be printed.', 'nimble-builder'),
+    $msg
+  );
 }
 
 ?><?php
@@ -2169,7 +2627,7 @@ function sek_get_level_skope_id( $level_id = '' ) {
         return $level_skope_id;
     }
 
-    $local_skope_settings = sek_get_skoped_seks( skp_get_skope_id() );
+    $local_skope_settings = sek_get_skoped_seks( $level_skope_id );
     $local_collection = ( is_array( $local_skope_settings ) && !empty( $local_skope_settings['collection'] ) ) ? $local_skope_settings['collection'] : array();
     // if the level id has not been found in the local sections, we know it's a global level.
     // In dev mode, always make sure that the level id is found in the global locations.
@@ -2194,6 +2652,9 @@ function sek_get_level_skope_id( $level_id = '' ) {
 function sek_has_global_sections() {
     if ( skp_is_customizing() )
       return true;
+    if ( 'not_set' !== Nimble_Manager()->page_has_global_sections )
+        return Nimble_Manager()->page_has_global_sections;
+
     $maybe_global_sek_post = sek_get_seks_post( NIMBLE_GLOBAL_SKOPE_ID, 'global' );
     $nb_section_created = 0;
     if ( is_object($maybe_global_sek_post) ) {
@@ -2201,7 +2662,9 @@ function sek_has_global_sections() {
         $seks_data = is_array( $seks_data ) ? $seks_data : array();
         $nb_section_created = sek_count_not_empty_sections_in_page( $seks_data );
     }
-    return $nb_section_created > 0;
+    // cache now
+    Nimble_Manager()->page_has_global_sections = $nb_section_created > 0;
+    return Nimble_Manager()->page_has_global_sections;
 }
 
 
@@ -2210,19 +2673,30 @@ function sek_has_global_sections() {
 // initially used to determine if a post or a page has been customized with Nimble Builder => if so, we add an edit link in the post/page list
 // when used in admin, the skope_id must be provided
 // can be used to determine if we need to render Nimble Builder assets on front. See ::sek_enqueue_front_assets()
-function sek_local_skope_has_nimble_sections( $skope_id = '' ) {
-    if ( empty( $skope_id ) ) {
-        sek_error_log( __FUNCTION__ . ' => missing skope id' );
+// March 2021 => fixed : function sek_local_skope_has_nimble_sections() => when customzing => seks_data param should be provided after being filtered with customized values
+function sek_local_skope_has_nimble_sections( $skope_id = '', $seks_data = null ) {
+    $skope_id = empty( $skope_id ) ? skp_get_skope_id() : $skope_id;
+
+    if ( NIMBLE_GLOBAL_SKOPE_ID === $skope_id ) {
+        sek_error_log( __FUNCTION__ . ' => error => function should not be used with global skope id' );
         return false;
     }
-    $maybe_local_sek_post = sek_get_seks_post( $skope_id, 'local' );
+
+    if ( 'not_set' !== Nimble_Manager()->page_has_local_sections )
+        return Nimble_Manager()->page_has_local_sections;
+
     $nb_section_created = 0;
-    if ( is_object($maybe_local_sek_post) ) {
-        $seks_data = maybe_unserialize($maybe_local_sek_post->post_content);
-        $seks_data = is_array( $seks_data ) ? $seks_data : array();
+    
+    // When the collection is provided use it otherwise get it
+    if ( is_null($seks_data) || !is_array($seks_data) ) {
+        $seks_data = sek_get_skoped_seks( $skope_id );
+    }
+    if ( is_array( $seks_data ) ) {
         $nb_section_created = sek_count_not_empty_sections_in_page( $seks_data );
     }
-    return $nb_section_created > 0;
+    // cache now
+    Nimble_Manager()->page_has_local_sections = $nb_section_created > 0;
+    return Nimble_Manager()->page_has_local_sections;
 }
 
 
@@ -2264,7 +2738,7 @@ function sek_site_has_nimble_sections_created() {
     $sek_post_query_vars = array(
         'post_type'              => NIMBLE_CPT,
         'post_status'            => get_post_stati(),
-        //'name'                   => sanitize_title( NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id ),
+        //'name'                   => sanitize_title(),
         'posts_per_page'         => -1,
         'no_found_rows'          => true,
         'cache_results'          => true,
@@ -2330,7 +2804,7 @@ function sek_get_feedback_notif_status() {
     $sek_post_query_vars = array(
         'post_type'              => NIMBLE_CPT,
         'post_status'            => get_post_stati(),
-        //'name'                   => sanitize_title( NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id ),
+        //'name'                   => sanitize_title(),
         'posts_per_page'         => -1,
         'no_found_rows'          => true,
         'cache_results'          => true,
@@ -2686,15 +3160,39 @@ function sek_get_parent_theme_slug() {
 
 
 function sek_error_log( $title, $content = null ) {
+    // Know in which function sek_error_log() was called
+    // debug_backtrace()[1]['function'];
+    $backtrace = debug_backtrace();
+    //error_log( print_r( $backtrace, true ) );
+    $content = is_null( $content ) ? '' : $content;
     if ( !sek_is_dev_mode() )
       return;
+
+    $btrace = '';
+    if ( is_array($backtrace) && isset($backtrace[1]) ) {
+        if ( !empty( $backtrace[1]['file'] ) && !empty( $backtrace[1]['line'] ) ) {
+            $btrace = $btrace . "\n ====> " . $backtrace[1]['file'] . '#' . $backtrace[1]['line'];
+        }
+        if ( !empty( $backtrace[1]['class'] ) && !empty( $backtrace[1]['function'] ) ) {
+            $btrace = $btrace . "\n ====> " . $backtrace[1]['class'] . '::' . $backtrace[1]['function'];
+        } else if ( !empty( $backtrace[1]['function']) ) {
+            $btrace = $btrace . "\n ====> " . $backtrace[1]['function'];
+        }
+    }
     if ( is_null( $content ) ) {
         error_log( '<' . $title . '>' );
+        if ( !empty($btrace) ) {
+          error_log( '// backtrace :' . $btrace . '//' );
+        }
     } else {
         error_log( '<' . $title . '>' );
         error_log( print_r( $content, true ) );
+        if ( !empty($btrace) ) {
+          error_log( '// backtrace :' . $btrace . '//' );
+        }
         error_log( '</' . $title . '>' );
     }
+    
 }
 
 
@@ -2758,7 +3256,7 @@ function sek_strip_script_tags_when_customizing( $html = '' ) {
           return $html;
       }
       // June 2020 => added a notice for https://github.com/presscustomizr/nimble-builder/issues/710
-      $script_notice = sprintf('<div class="nimble-shortcode-notice-in-preview"><i class="fas fa-info-circle"></i>&nbsp;%1$s</div>',
+      $script_notice = sprintf('<div class="nimble-notice-in-preview"><i class="fas fa-info-circle"></i>&nbsp;%1$s</div>',
           __('Custom javascript code is not executed when customizing.', 'nimble-builder')
       );
       return preg_replace('#<script(.*?)>(.*?)</script>#is', $script_notice, $html);
@@ -2839,22 +3337,6 @@ function sek_get_pro_notice_for_czr_input( $features = '' ) {
 }
 
 
-// September 2020 : filter the collection of modules
-// Removes pro upsell modules if NIMBLE_PRO_UPSELL_ON is false
-// filter declared in inc/sektions/_front_dev_php/_constants_and_helper_functions/0_0_5_modules_helpers.php
-add_filter('sek_get_module_collection', function( $collection ) {
-    if ( defined('NIMBLE_PRO_UPSELL_ON') && NIMBLE_PRO_UPSELL_ON )
-      return $collection;
-
-    $filtered = [];
-    foreach ($collection as $mod => $mod_data) {
-        if ( array_key_exists('is_pro', $mod_data) && $mod_data['is_pro'] )
-          continue;
-        $filtered[] = $mod_data;
-    }
-    return $filtered;
-});
-
 // September 2020 : filter the collection of pre-built sections
 // Removes pro upsell modules if NIMBLE_PRO_UPSELL_ON is false
 // filter declared in _front_dev_php/_constants_and_helper_functions/0_5_2_sektions_local_sektion_data.php
@@ -2876,22 +3358,22 @@ add_filter('sek_get_raw_section_registration_params', function( $collection ) {
     return $filtered;
 });
 
+// inspired from https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string-for-use-in-a-secret-l
+// equivalent of js customizer method CZRSeksPrototype::guid()
+// introduced feb 2021 for https://github.com/presscustomizr/nimble-builder/issues/478
+// used when generating id server side for a site template
+function sek_generate_level_guid() {
+    return NIMBLE_PREFIX_FOR_SETTING_NOT_SAVED . substr( strval( md5( uniqid( rand(), true) ) ),0, 12 );//__nimble__4cdf8be5ce8f
+}
 ?><?php
 // /* ------------------------------------------------------------------------- *
 // *  NIMBLE API
 // /* ------------------------------------------------------------------------- */
 // if ( !defined( "NIMBLE_SECTIONS_LIBRARY_OPT_NAME" ) ) { define( "NIMBLE_SECTIONS_LIBRARY_OPT_NAME", 'nimble_api_prebuilt_sections_data' ); } <= DEPRECATED, Now uses local json
-if ( !defined( "NIMBLE_API_TMPL_LIB_OPT_NAME" ) ) { define( "NIMBLE_API_TMPL_LIB_OPT_NAME", 'nimble_api_tmpl_data' ); }
-if ( !defined( "NIMBLE_API_NEWS_OPT_NAME" ) ) { define( "NIMBLE_API_NEWS_OPT_NAME", 'nimble_api_news_data' ); }
-if ( !defined( "NIMBLE_DATA_API_URL_V2" ) ) { define( "NIMBLE_DATA_API_URL_V2",
-    ( defined('NIMBLE_FETCH_API_TMPL_LOCALLY') && NIMBLE_FETCH_API_TMPL_LOCALLY ) ? 'http://customizr-dev.test/wp-json/nimble/v2/cravan' : 'https://api.nimblebuilder.com/wp-json/nimble/v2/cravan'
-); }
-
 
 // Nimble api returns a set of value structured as follow
 // return array(
 //     'timestamp' => time(),
-//     'upgrade_notice' => array(),
 //     'library' => array(
 //         'sections' => array(
 //             'registration_params' => sek_get_sections_registration_params(),
@@ -2906,86 +3388,133 @@ if ( !defined( "NIMBLE_DATA_API_URL_V2" ) ) { define( "NIMBLE_DATA_API_URL_V2",
 // );
 // @return array|false Info data, or false.
 // api data is refreshed on plugin update and theme switch
-function sek_get_nimble_api_data( $force_update = false ) {
-    // July 2020 for https://github.com/presscustomizr/nimble-builder/issues/730
-    $bw_fixes_options = get_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES );
-    $bw_fixes_options = is_array( $bw_fixes_options ) ? $bw_fixes_options : array();
-    if ( !array_key_exists('api_data_transient_0720', $bw_fixes_options ) || 'done' != $bw_fixes_options['api_data_transient_0720'] ) {
-        sek_clean_transients_like( 'nimble_api_data');
-        $bw_fixes_options['api_data_transient_0720'] = 'done';
-        // flag as done
-        update_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES, $bw_fixes_options );
+// @$what param can be 'latest_posts_and_start_msg', 'templates'
+function sek_get_nimble_api_data( $params ) {
+    $params = is_array($params) ? $params : [];
+    $params = wp_parse_args( $params, [
+        'what' => '',
+        'tmpl_name' => '',
+        'force_update' => false
+    ]);
+    $what = $params['what'];
+    $tmpl_name = $params['tmpl_name'];
+    $force_update = $params['force_update'];
+    $wp_cache_key = 'nimble_api_data_'. $what . $tmpl_name;
+    
+    // We must have a "what"
+    if ( is_null($what) || !is_string($what) ) {
+        sek_error_log( __FUNCTION__ . ' => error => $what param not set');
+        return false;
     }
 
-    // July 2020 => new static transient name, not updated on each NB version
-    $api_data_transient_name = 'nimble_data_api';
-    $info_data = get_transient( $api_data_transient_name );
+    // If a single template is requested, a valid template name must be provided
+    if ( 'single_tmpl' === $what && ( empty($tmpl_name) || !is_string($tmpl_name) ) ) {
+        sek_error_log( __FUNCTION__ . ' => error => invalid $tmpl_name param');
+        return false;
+    }
+
+    $cached_api_data = wp_cache_get( $wp_cache_key  );
+
+    if ( $cached_api_data && is_array($cached_api_data) && !empty($cached_api_data) ) {
+        return $cached_api_data;
+    }
+
+    $transient_name = '';
+    $transient_duration = 24 * HOUR_IN_SECONDS;
+
+    switch ( $what ) {
+        case 'latest_posts_and_start_msg':
+            $transient_name = 'nimble_api_posts';
+            $transient_duration = 48 * HOUR_IN_SECONDS;
+        break;
+        case 'all_tmpl':
+            $transient_name = 'nimble_api_all_tmpl';
+            $transient_duration = 5 * DAY_IN_SECONDS;
+        break;
+        case 'single_tmpl':
+            $transient_name = 'nimble_api_tmpl_' . $tmpl_name;
+        break;
+        default:
+            sek_error_log( __FUNCTION__ . ' => error => invalid $what param => ' . $what );
+        break;
+    }
+
+    if ( empty( $transient_name ) ) {
+        return false;
+    }
+
     $theme_slug = sek_get_parent_theme_slug();
-    $pc_theme_name = sek_maybe_get_presscustomizr_theme_name( $theme_slug );
+    $version_transient_value = get_transient( 'nimble_version_check_for_api');
+    $expected_version_transient_value = NIMBLE_VERSION . '_' . $theme_slug;
+    $api_needs_update = $version_transient_value != $expected_version_transient_value;
+
+    $api_transient_data = maybe_unserialize( get_transient( $transient_name ) );
+
     // set this constant in wp_config.php
     $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
-    if ( true === $force_update && sek_is_dev_mode() ) {
-          sek_error_log('API is in force update mode');
+    if ( true === $force_update ) {
+          sek_error_log( __FUNCTION__ . ' API is in force update mode. API data requested => ' . $transient_name );
     }
 
-    // Refresh every 12 hours, unless force_update set to true
-    if ( $force_update || false === $info_data ) {
-        $timeout = ( $force_update ) ? 25 : 8;
-        $response = wp_remote_get( NIMBLE_DATA_API_URL_V2, array(
-          'timeout' => $timeout,
-          'body' => [
-            'api_version' => NIMBLE_VERSION,
-            'site_lang' => get_bloginfo( 'language' ),
-            'theme_name' => $pc_theme_name,
-            'start_ver' => sek_get_th_start_ver( $pc_theme_name )
-          ],
-        ) );
+    $api_data = $api_transient_data;
+    // Connect to remote NB api when :
+    // 1) api data transient is not set or has expired ( false === $api_transient_data )
+    // 2) force_update param is true
+    // 3) NB has been updated to a new version ( $api_needs_update case )
+    // 4) Theme has been changed ( $api_needs_update case )
+    if ( $force_update || false === $api_data || $api_needs_update ) {
+        $query_params = [
+            'timeout' => ( $force_update ) ? 25 : 8,
+            'body' => [
+                'api_version' => NIMBLE_VERSION,
+                'site_lang' => get_bloginfo( 'language' ),
+                'what' => $what,// 'single_tmpl', 'all_tmpl', 'latest_posts_and_start_msg'
+                'tmpl_name' => $tmpl_name
+            ]
+        ];
+
+        //sek_error_log('CALL TO REMOTE API NOW FOR DATA => ' . $transient_name . ' | ' . $force_update . ' | ' . $api_needs_update, $query_params );
+
+        $response = wp_remote_get( NIMBLE_DATA_API_URL_V2, $query_params );
 
         if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
-            // HOUR_IN_SECONDS is a default WP constant
-            set_transient( $api_data_transient_name, [], 2 * HOUR_IN_SECONDS );
-            return false;
+            // set the transient to '_api_error_', so that we don't hammer the api if not reachable. next call will be done after transient expiration
+            $api_data = '_api_error_';
+            sek_error_log( __FUNCTION__ . ' error with api response');
         }
 
-        $info_data = json_decode( wp_remote_retrieve_body( $response ), true );
+        $api_data = json_decode( wp_remote_retrieve_body( $response ), true );
 
-        if ( empty( $info_data ) || !is_array( $info_data ) ) {
-            set_transient( $api_data_transient_name, [], 2 * HOUR_IN_SECONDS );
-            return false;
+        if ( empty( $api_data ) || !is_array( $api_data ) ) {
+            // set the transient to '_api_error_', so that we don't hammer the api if not reachable. next call will be done after transient expiration
+            $api_data = '_api_error_';
+            sek_error_log( __FUNCTION__ . ' invalid api data after json decode');
         }
 
-        // on May 21st 2019 => back to the local data for preset sections
-        // after problem was reported when fetching data remotely : https://github.com/presscustomizr/nimble-builder/issues/445
-        // if ( !empty( $info_data['library'] ) ) {
-        //     if ( !empty( $info_data['library']['sections'] ) ) {
-        //         update_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME, $info_data['library']['sections'], 'no' );
-        //     }
-        //     unset( $info_data['library'] );
-        // }
-        
-        if ( !empty( $info_data['lib'] ) ) {
-            if ( !empty( $info_data['lib']['templates'] ) ) {
-                //sek_error_log('UPDATE TMPL API DATA ?', $info_data['lib']['templates'] );
-                update_option( NIMBLE_API_TMPL_LIB_OPT_NAME, maybe_serialize( $info_data['lib']['templates'] ), 'no' );
-            }
-            unset( $info_data['lib'] );
-        }
-
-        if ( isset( $info_data['latest_posts'] ) ) {
-            update_option( NIMBLE_API_NEWS_OPT_NAME, $info_data['latest_posts'], 'no' );
-            unset( $info_data['latest_posts'] );
-        }
-        //sek_error_log('API DATA ?', $info_data );
-        set_transient( $api_data_transient_name, $info_data, 12 * HOUR_IN_SECONDS );
-    }//if ( $force_update || false === $info_data ) {
+        // if the api could not be reached, let's retry in 30 minutes with a short transient duration
+        set_transient( $transient_name, $api_data, '_api_error_' === $api_data ? 30 * MINUTE_IN_SECONDS : $transient_duration );
+        // The api data will be refreshed on next plugin update, or next theme switch. Or if $transient_name has expired.
+        // $expected_version_transient_value = NIMBLE_VERSION . '_' . $theme_slug;
+        set_transient( 'nimble_version_check_for_api', $expected_version_transient_value, 100 * DAY_IN_SECONDS );
+    }//if ( $force_update || false === $api_data )
     
-    return $info_data;
+    // if api_error a new api call will be done when the relevant transient will expire
+    if ( '_api_error_' === $api_data ) {
+        sek_error_log( __FUNCTION__ . ' API data value is _api_error_ for transient data : ' . $transient_name );
+    }
+
+    $api_data = '_api_error_' === $api_data ? null : $api_data;
+    wp_cache_set( $wp_cache_key  , $api_data );
+
+    //sek_error_log('API DATA for ' . $transient_name, $api_data );
+
+    return $api_data;
 }
 
 
 //////////////////////////////////////////////////
 /// TEMPLATE DATA
-function sek_get_tmpl_api_data( $force_update = false ) {
+function sek_get_all_tmpl_api_data( $force_update = false ) {
     // set this constant in wp_config.php
     $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
 
@@ -2993,19 +3522,55 @@ function sek_get_tmpl_api_data( $force_update = false ) {
     // Let's use the data saved as options
     // Those data are updated on plugin install, plugin update( upgrader_process_complete ), theme switch
     // @see https://github.com/presscustomizr/nimble-builder/issues/441
-    $tmpl_data = maybe_unserialize( get_option( NIMBLE_API_TMPL_LIB_OPT_NAME ) );
-    if ( $force_update || empty( $tmpl_data ) || !is_array( $tmpl_data ) ) {
-        sek_get_nimble_api_data( true );//<= true for "force_update"
-        $tmpl_data = maybe_unserialize( get_option( NIMBLE_API_TMPL_LIB_OPT_NAME ) );
-    }
+    $api_data = sek_get_nimble_api_data([
+        'what' => 'all_tmpl',
+        'force_update' => $force_update
+    ]);
+
+    $api_data = is_array( $api_data ) ? $api_data : [];
+
     //sek_error_log('TMPL DATA ?', $tmpl_data);
-    if ( empty( $tmpl_data ) || !is_array( $tmpl_data ) ) {
+    if ( empty($api_data) || !array_key_exists('lib', $api_data) || !is_array($api_data['lib']) || empty($api_data['lib']['templates']) || !is_array($api_data['lib']['templates']) ) {
         sek_error_log( __FUNCTION__ . ' => error => no json_collection' );
         return array();
     }
    
     //return [];
-    return maybe_unserialize( $tmpl_data );
+    return maybe_unserialize( $api_data['lib']['templates'] );
+}
+
+
+function sek_get_single_tmpl_api_data( $tmpl_name, $force_update = false ) {
+    // set this constant in wp_config.php
+    $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
+
+    // To avoid a possible refresh, hence a reconnection to the api when opening the customizer
+    // Let's use the data saved as options
+    // Those data are updated on plugin install, plugin update( upgrader_process_complete ), theme switch
+    // @see https://github.com/presscustomizr/nimble-builder/issues/441
+    $api_data = sek_get_nimble_api_data([
+        'what' => 'single_tmpl',
+        'tmpl_name' => $tmpl_name,
+        'force_update' => $force_update
+    ]);
+
+    $api_data = is_array( $api_data ) ? $api_data : [];
+    $api_data = wp_parse_args( $api_data, [
+        'timestamp' => '',
+        'single_tmpl' => null
+    ]);
+    //sek_error_log('TMPL DATA ?', $tmpl_data);
+    if ( empty($api_data['single_tmpl']) ) {
+        sek_error_log( __FUNCTION__ . ' => error => empty template for ' . $tmpl_name );
+        return array();
+    }
+    
+    if ( !array_key_exists( 'data', $api_data['single_tmpl'] ) || !array_key_exists( 'metas',$api_data['single_tmpl'] ) ) {
+        sek_error_log( __FUNCTION__ . ' => error => invalid template data for ' . $tmpl_name );
+        return array();
+    }
+    //return [];
+    return maybe_unserialize( $api_data['single_tmpl'] );
 }
 
 
@@ -3015,27 +3580,42 @@ function sek_get_tmpl_api_data( $force_update = false ) {
 function sek_get_latest_posts_api_data( $force_update = false ) {
     // set this constant in wp_config.php
     $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
-
-    sek_get_nimble_api_data( $force_update );
-    $latest_posts = get_option( NIMBLE_API_NEWS_OPT_NAME );
-    if ( empty( $latest_posts ) ) {
+    $api_data = sek_get_nimble_api_data([
+        'what' => 'latest_posts_and_start_msg',
+        'force_update' => $force_update
+    ]);
+    $api_data = is_array( $api_data ) ? $api_data : [];
+    $api_data = wp_parse_args( $api_data, [
+        'timestamp' => '',
+        'latest_posts' => null
+    ]);
+    if ( !is_array( $api_data['latest_posts'] ) || empty( $api_data['latest_posts'] ) ) {
         sek_error_log( __FUNCTION__ . ' => error => no latest_posts' );
-        return array();
+        return [];
     }
-    return $latest_posts;
+    return $api_data['latest_posts'];
 }
 
 // @return html string
 function sek_start_msg_from_api( $theme_name, $force_update = false ) {
+    if ( !sek_is_presscustomizr_theme( $theme_name ) ) {
+        return '';
+    }
     // set this constant in wp_config.php
     $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
 
-    $info_data = sek_get_nimble_api_data( $force_update );
-    if ( !sek_is_presscustomizr_theme( $theme_name ) || !is_array( $info_data ) ) {
-        return '';
-    }
+    $api_data = sek_get_nimble_api_data( [
+        'what' => 'latest_posts_and_start_msg',
+        'force_update' => $force_update
+    ]);
+    $api_data = is_array( $api_data ) ? $api_data : [];
+    $api_data = wp_parse_args( $api_data, [
+        'timestamp' => '',
+        'start_msg' => null
+    ]);
+
     $msg = '';
-    $api_msg = isset( $info_data['start_msg'] ) ? $info_data['start_msg'] : null;
+    $api_msg = isset( $api_data['start_msg'] ) ? $api_data['start_msg'] : null;
 
     if ( !is_null($api_msg) && is_string($api_msg) ) {
         $msg = $api_msg;
@@ -3043,14 +3623,13 @@ function sek_start_msg_from_api( $theme_name, $force_update = false ) {
     return $msg;
 }
 
-// Refresh the api data on plugin update and theme switch
-add_action( 'after_switch_theme', '\Nimble\sek_refresh_nimble_api_data');
-add_action( 'upgrader_process_complete', '\Nimble\sek_refresh_nimble_api_data');
-function sek_refresh_nimble_api_data() {
-    // Refresh data on theme switch
-    // => so the posts and message are up to date
-    sek_get_nimble_api_data($force_update = true);
-}
+// Attempt to refresh the api template data => will store in a transient if not done yet, to make it faster to render in the customizer
+// add_action( 'wp_head', '\Nimble\sek_maybe_refresh_nimble_api_tmpl_data');
+// function sek_maybe_refresh_nimble_api_tmpl_data() {
+//     if ( skp_is_customizing() || false !== get_transient( 'nimble_api_all_tmpl' ) )
+//         return;
+//     sek_get_nimble_api_data(['what' => 'all_tmpl']);
+// }
 
 
 //////////////////////////////////////////////////
@@ -3314,6 +3893,7 @@ function sek_get_preset_section_collection_from_json( $force_update = false ) {
         update_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES, $bw_fixes_options );
     }
 
+    // Try to get the collection from an option
     $json_collection = get_option( NIMBLE_OPT_NAME_FOR_SECTION_JSON );
 
     // Refresh every 30 days, unless force_update set to true
@@ -3326,7 +3906,7 @@ function sek_get_preset_section_collection_from_json( $force_update = false ) {
 
         $json_collection = json_decode( $json_raw, true );
         // Save now as option for faster access next time
-        update_option( NIMBLE_OPT_NAME_FOR_SECTION_JSON, $json_collection );
+        update_option( NIMBLE_OPT_NAME_FOR_SECTION_JSON, $json_collection, 'no' );
     }
     // Filter used by NB Pro to add pro sections
     return apply_filters( 'nimble_preset_sections_collection', $json_collection, $force_update );
@@ -3480,6 +4060,91 @@ function sek_get_customize_url_for_post_id( $post_id, $return_url = '' ) {
 }
 
 ?><?php
+// introduced for #799
+function sek_maybe_optimize_options() {
+    $bw_fixes_options = get_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES );
+    $bw_fixes_options = is_array( $bw_fixes_options ) ? $bw_fixes_options : array();
+
+    // March 13th 2021 => removed previous option used to store api post news, now handled with a transient.
+    if ( !array_key_exists('optimize_opts_0321_2', $bw_fixes_options ) || 'done' != $bw_fixes_options['optimize_opts_0321_2'] ) {
+        delete_option( 'nimble_api_news_data' );
+
+        // flag as done
+        $bw_fixes_options['optimize_opts_0321_2'] = 'done';
+        update_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES, $bw_fixes_options );
+    }
+
+
+    if ( !array_key_exists('optimize_opts_0321', $bw_fixes_options ) || 'done' != $bw_fixes_options['optimize_opts_0321'] ) {
+        $current_global_opts = get_option('__nimble_options__');
+        if ( false !== $current_global_opts ) {
+            update_option( NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS, $current_global_opts, 'no' );
+            delete_option( '__nimble_options__' );
+        }
+        // delete previous option for prebuild section json
+        // => the option will be re-created with autoload set to "no" and renamed "nimble_prebuild_sections"
+        delete_option( 'nb_prebuild_section_json' );
+
+        // flag as done
+        $bw_fixes_options['optimize_opts_0321'] = 'done';
+        update_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES, $bw_fixes_options );
+    }
+
+
+
+    // If the move in post index has been done, let's update to autoload = false the previous post_id options LIKE nimble___skp__post_page_*****, nimble___skp__tax_product_cat_*****
+    // As of March 2021, event if those previous options are not used anymore, let's keep them in DB to cover potential retro-compat problems
+    // in a future release, if no regression was reported, we'll remove them forever.
+    if ( array_key_exists('move_in_post_index_0321', $bw_fixes_options ) && 'done' === $bw_fixes_options['move_in_post_index_0321'] ) {
+        if ( !array_key_exists('fix_skope_opt_autoload_0321', $bw_fixes_options ) || 'done' != $bw_fixes_options['fix_skope_opt_autoload_0321'] ) {
+            // MOVE ALL OPTIONS LIKE nimble___skp__post_page_*****, nimble___skp__tax_product_cat_***** in a new option ( NIMBLE_OPT_SEKTION_POST_INDEX ), not autoloaded
+            global $wpdb;
+            $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}options WHERE autoload = 'yes' and option_name like 'nimble___skp_%'", ARRAY_A );
+            if ( is_array( $results ) ) {
+                foreach( $results as $old_opt_data ) {
+                    if ( !is_array($old_opt_data) )
+                        continue;
+                    if ( empty($old_opt_data['option_name']) || empty($old_opt_data['option_value']) )
+                        continue;
+                    // update it with autoload set to "no"
+                    update_option( $old_opt_data['option_name'], (int)$old_opt_data['option_value'], 'no' );
+                }
+            }
+
+            // flag as done
+            $bw_fixes_options['fix_skope_opt_autoload_0321'] = 'done';
+            update_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES, $bw_fixes_options );
+        }
+    }
+
+
+    if ( !array_key_exists('move_in_post_index_0321', $bw_fixes_options ) || 'done' != $bw_fixes_options['move_in_post_index_0321'] ) {
+        // MOVE ALL OPTIONS LIKE nimble___skp__post_page_*****, nimble___skp__tax_product_cat_***** in a new option ( NIMBLE_OPT_SEKTION_POST_INDEX ), not autoloaded
+        global $wpdb;
+        $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}options WHERE autoload = 'yes' and option_name like 'nimble___skp_%'", ARRAY_A );
+        if ( is_array( $results ) ) {
+            // Populate the new option ( it should not exists at this point )
+            $nb_posts_index = get_option(NIMBLE_OPT_SEKTION_POST_INDEX);
+            $nb_posts_index = is_array($nb_posts_index) ? $nb_posts_index : [];
+            foreach( $results as $old_opt_data ) {
+                if ( !is_array($old_opt_data) )
+                    continue;
+                if ( empty($old_opt_data['option_name']) || empty($old_opt_data['option_value']) )
+                    continue;
+                
+                $nb_posts_index[ $old_opt_data['option_name'] ] = (int)$old_opt_data['option_value'];
+            }
+            // update it with autoload set to "no"
+            update_option( NIMBLE_OPT_SEKTION_POST_INDEX, $nb_posts_index, 'no');
+        }
+
+        // flag as done
+        $bw_fixes_options['move_in_post_index_0321'] = 'done';
+        update_option( NIMBLE_OPT_NAME_FOR_BACKWARD_FIXES, $bw_fixes_options );
+    }
+}
+
+
 // JULY 2020 => NOT FIRED ANYMORE ( because introduced in oct 2018 ) => DEACTIVATED IN nimble-builder.php
 // fired @wp_loaded
 // Note : if fired @plugins_loaded, invoking wp_update_post() generates php notices
@@ -3530,7 +4195,7 @@ function sek_do_compat_to_1_4_0() {
             $post_id_storing_home_page_sections = (int)get_option( $current_option_name );
             if ( $post_id_storing_home_page_sections > 0 ) {
                 $new_option_name = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . "skp__post_page_{$home_page_id}";
-                update_option( $new_option_name, $post_id_storing_home_page_sections );
+                update_option( $new_option_name, $post_id_storing_home_page_sections, 'no' );
             }
         }
     }
@@ -3546,7 +4211,7 @@ function sek_do_compat_1_0_4_to_1_1_0() {
     $sek_post_query_vars = array(
         'post_type'              => NIMBLE_CPT,
         'post_status'            => get_post_stati(),
-        //'name'                   => sanitize_title( NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id ),
+        //'name'                   => sanitize_title(),
         'posts_per_page'         => -1,
         'no_found_rows'          => true,
         'cache_results'          => true,
@@ -3799,9 +4464,55 @@ register_post_type( NIMBLE_CPT , array(
     )
 ));
 
+// Returns the id of the post in which the local collection is stored
+// This option NIMBLE_OPT_SEKTION_POST_INDEX is updated when publishing in the customizer and may also be updated when getting the collection in sek_get_seks_post()
+// introduced for #799
+function sek_get_nb_post_id_from_index( $skope_id ) {
+    $nb_posts_index = get_option(NIMBLE_OPT_SEKTION_POST_INDEX);
+    $option_name = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
+    $post_id = 0;
+    // Backward compat => march 2021, NB introduces a new option 'nimble_posts_index' dedicated to store the NB post_id associated to a skope_id.
+    // For previous user, a backward compatibility code is ran on each load at 'wp_loaded', to transfer all previous options to the new one.
+    // if the transfer went wrong, or if the option 'nimble_posts_index' was deleted, we can attempt to get the post_id from the previous option
+    if ( !is_array( $nb_posts_index ) ) {
+        $post_id = get_option( $option_name );
+    } else {
+        if ( array_key_exists( $option_name, $nb_posts_index ) ) {
+            $post_id = (int)$nb_posts_index[$option_name];
+        }
+    }
+    return $post_id;
+}
+
+// Associates a skope_id to a NB post id in the NB post index option
+// introduced for #799
+function sek_set_nb_post_id_in_index( $skope_id, $post_id ) {
+    $nb_posts_index = get_option(NIMBLE_OPT_SEKTION_POST_INDEX);
+    $nb_posts_index = is_array($nb_posts_index) ? $nb_posts_index : [];
+    $option_name = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
+    $nb_posts_index[$option_name] = (int)$post_id;
+    update_option( NIMBLE_OPT_SEKTION_POST_INDEX, $nb_posts_index, 'no');
+}
+
+// Associates a skope_id to a NB post id in the NB post index option
+// introduced for #799
+function sek_remove_nb_post_id_in_index( $skope_id ) {
+    $nb_posts_index = get_option(NIMBLE_OPT_SEKTION_POST_INDEX);
+    $nb_posts_index = is_array($nb_posts_index) ? $nb_posts_index : [];
+    $option_name = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
+    if ( array_key_exists( $option_name, $nb_posts_index ) ) {
+        unset( $nb_posts_index[$option_name] );
+    }
+    update_option( NIMBLE_OPT_SEKTION_POST_INDEX, $nb_posts_index, 'no');
+}
 
 
-
+// @return int
+function sek_get_index_for_api() {
+    $nb_posts_index = get_option(NIMBLE_OPT_SEKTION_POST_INDEX);
+    $nb_posts_index = is_array( $nb_posts_index ) ? $nb_posts_index : [];
+    return count( $nb_posts_index );
+}
 
 /**
  * Fetch the `nimble_post_type` post for a given {skope_id}
@@ -3812,7 +4523,6 @@ register_post_type( NIMBLE_CPT , array(
  * @return WP_Post|null The skope post or null if none exists.
  */
 function sek_get_seks_post( $skope_id = '', $skope_level = 'local' ) {
-    //sek_error_log('skope_id in sek_get_seks_post => ' . $skope_id );
     if ( empty( $skope_id ) ) {
         $skope_id = skp_get_skope_id( $skope_level );
     }
@@ -3830,7 +4540,7 @@ function sek_get_seks_post( $skope_id = '', $skope_level = 'local' ) {
 
     $sek_post_query_vars = array(
         'post_type'              => NIMBLE_CPT,
-        'post_status'            => get_post_stati(),
+        'post_status'            => get_post_stati(),//'publish'
         'name'                   => sanitize_title( NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id ),
         'posts_per_page'         => 1,
         'no_found_rows'          => true,
@@ -3842,26 +4552,31 @@ function sek_get_seks_post( $skope_id = '', $skope_level = 'local' ) {
 
     $post = null;
 
-    $option_name = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
+    // First attempt to query the post with its ID stored in the index
+    // If no results or post has been trashed, NB will try to get it with a query by name + update the index of skoped post ids
+    $post_id = sek_get_nb_post_id_from_index( $skope_id );
 
-    $post_id = (int)get_option( $option_name );
+    //sek_error_log( __FUNCTION__ . ' post id => ' . $post_id . ' | skope id =>' . $skope_id);
+
+    if ( !is_int( $post_id ) ) {
+        error_log( 'sek_get_seks_post => post_id !is_int() for options => ' . NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id );
+    }
     // if the options has not been set yet, it will return (int) 0
     // id #1 is already taken by the 'Hello World' post.
     if ( 1 > $post_id ) {
-        //error_log( 'sek_get_seks_post => post_id is not valid for options => ' . $option_name );
+        //error_log( 'sek_get_seks_post => post_id is not valid for options => ' . NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id );
         return;
     }
-
-    if ( !is_int( $post_id ) ) {
-        error_log( 'sek_get_seks_post => post_id !is_int() for options => ' . $option_name );
-    }
-
-    if ( is_int( $post_id ) && $post_id > 0 && get_post( $post_id ) ) {
+    
+    if ( is_int( $post_id ) && $post_id > 0 ) {
         $post = get_post( $post_id );
     }
 
+    $no_post_found = !$post && -1 !== $post_id;
+    $post_trashed = !empty($post) && is_object($post) && 'trash' === $post->post_status;
+
     // `-1` indicates no post exists; no query necessary.
-    if ( !$post && -1 !== $post_id ) {
+    if ( $no_post_found || $post_trashed ) {
         $query = new \WP_Query( $sek_post_query_vars );
         $post = $query->post;
         $post_id = $post ? $post->ID : -1;
@@ -3869,7 +4584,7 @@ function sek_get_seks_post( $skope_id = '', $skope_level = 'local' ) {
          * Cache the lookup. See sek_update_sek_post().
          * @todo This should get cleared if a skope post is added/removed.
          */
-        update_option( $option_name, (int)$post_id );
+        sek_set_nb_post_id_in_index( $skope_id, (int)$post_id );
     }
     if ( !skp_is_customizing() ) {
         $cached_seks_posts[$skope_id] = $post;
@@ -3879,6 +4594,25 @@ function sek_get_seks_post( $skope_id = '', $skope_level = 'local' ) {
         return $post;
     }
 }
+
+
+function sek_set_ids( $collection ) {
+    if ( is_array( $collection ) ) {
+        // if ( array_key_exists('level', $collection ) && in_array( $collection['level'], ['section', 'column', 'module'] ) && array_key_exists('id', $collection ) ) {
+        //     $collection['id'] = sek_generate_level_guid();
+        // }
+        foreach( $collection as $key => $data ) {
+            if ( '__rep__me__' === $data && 'id' === $key ) {
+                $collection[$key] = sek_generate_level_guid();
+            } else if ( is_array( $data ) ) {
+                $collection[$key] = sek_set_ids($data);
+            }
+        }
+    }
+    return $collection;
+}
+
+
 
 
 /**
@@ -3895,41 +4629,47 @@ function sek_get_skoped_seks( $skope_id = '', $location_id = '', $skope_level = 
     }
     $is_global_skope = NIMBLE_GLOBAL_SKOPE_ID === $skope_id;
     $is_cached = false;
+    $cache_key = 'nimble_get_skoped_seks_' . $skope_id;
+    $cached = wp_cache_get( $cache_key );
 
     // use the cached value when available ( after did_action('wp') )
     if ( did_action('wp') ) {
-        if ( !$is_global_skope && 'not_cached' != Nimble_Manager()->local_seks ) {
+        if ( is_array( $cached ) ) {
             $is_cached = true;
-            $seks_data = Nimble_Manager()->local_seks;
-        }
-        if ( $is_global_skope && 'not_cached' != Nimble_Manager()->global_seks ) {
-            $is_cached = true;
-            $seks_data = Nimble_Manager()->global_seks;
+            $seks_data = $cached;
         }
     }
 
+    // If not cached get the seks data from the skoped post
     if ( !$is_cached ) {
-        $seks_data = array();
-        $post = sek_get_seks_post( $skope_id, $is_global_skope ? 'global' : 'local' );
-        if ( $post ) {
-            $seks_data = maybe_unserialize( $post->post_content );
+        $default_collection = sek_get_default_location_model( $skope_id );
+        // Feb 2021 : filter skope id now
+        // if the current context has no local sektions set and a site template set, replace the skope id by the group skope id
+        // if ( !$is_global_skope ) {
+        //     $skope_id = apply_filters( 'nb_set_skope_id_before_caching_local_sektions', $skope_id );
+        //     //sek_error_log('alors local skope id for fetching local sections ?', $skope_id );
+        // }
+        $seks_data = sek_get_seks_without_group_inheritance( $skope_id );
+
+        // March 2021 : added for site templates #478
+        // Use site template if
+        // - ! global skope
+        // - no local skoped sections
+        // - a site template is defined for this "group" skope
+        if ( 'local' === $skope_level && !$is_global_skope ) {
+            $seks_data = sek_maybe_get_seks_for_group_site_template( $skope_id, $seks_data );
         }
-        $seks_data = is_array( $seks_data ) ? $seks_data : array();
 
         // normalizes
-        // [ 'collection' => [], 'local_options' => [] ];
-        $default_collection = sek_get_default_location_model( $skope_id );
+        // [ 'collection' => [], 'local_options' => [], "fonts": [], '__inherits_group_skope_tmpl_when_exists__' => true ];
         $seks_data = wp_parse_args( $seks_data, $default_collection );
+
         // Maybe add missing registered locations
         $seks_data = sek_maybe_add_incomplete_locations( $seks_data, $is_global_skope );
 
-        // cache now
-        if ( $is_global_skope ) {
-            Nimble_Manager()->global_seks = $seks_data;
-        } else {
-            Nimble_Manager()->local_seks = $seks_data;
-        }
-
+        // cache now 
+        wp_cache_set( $cache_key, $seks_data );
+        //sek_error_log('/////////////////////////// CACHED for skope ' . $skope_id);
     }//end if
 
     if ( skp_is_customizing() ) {
@@ -3940,6 +4680,18 @@ function sek_get_skoped_seks( $skope_id = '', $location_id = '', $skope_level = 
             $skope_id,
             $location_id
         );
+
+        if ( 'local' === $skope_level && !$is_global_skope ) {
+            $seks_data = is_array( $seks_data ) ? $seks_data : array();
+            if ( !array_key_exists( '__inherits_group_skope_tmpl_when_exists__', $seks_data ) ) {
+                // Retro-compat => make sure we set property '__inherits_group_skope_tmpl_when_exists__' to false if it's not set yet, because NB bases group inheritance on it
+                $seks_data['__inherits_group_skope_tmpl_when_exists__'] = false;
+            }
+            $seks_data = sek_maybe_get_seks_for_group_site_template( $skope_id, $seks_data );
+        }
+
+        $default_collection = sek_get_default_location_model( $skope_id );
+        $seks_data = wp_parse_args( $seks_data, $default_collection );
         // Maybe add missing registered locations when customizing
         // December 2020 => needed when importing an entire template
         $seks_data = sek_maybe_add_incomplete_locations( $seks_data, $is_global_skope );
@@ -3955,8 +4707,48 @@ function sek_get_skoped_seks( $skope_id = '', $location_id = '', $skope_level = 
         }
     }
 
+    //sek_error_log( __FUNCTION__ . ' THEERE !');
+
     return 'no_match' === $seks_data ? Nimble_Manager()->default_location_model : $seks_data;
 }
+
+// Return and cache the local or group skope seks data
+// Without inheritance because not filtered with the group site template content
+function sek_get_seks_without_group_inheritance( $skope_id ) {
+    if ( empty($skope_id) || !is_string($skope_id) ) {
+        sek_error_log( 'Error missing skope id');
+        return [];
+    }
+
+    $cache_key = 'nimble_seks_data_for_skope_' . $skope_id;
+    $cached = wp_cache_get( $cache_key );
+    if ( is_array($cached) ) {
+        return $cached;
+    }
+
+    $is_global_skope = NIMBLE_GLOBAL_SKOPE_ID === $skope_id;
+    $seks_data = array();
+    $post = sek_get_seks_post( $skope_id, $is_global_skope ? 'global' : 'local' );//Cached
+
+    if ( $post ) {
+        $seks_data = maybe_unserialize( $post->post_content );
+        $seks_data = is_array( $seks_data ) ? $seks_data : array();
+        if ( !$is_global_skope && !array_key_exists( '__inherits_group_skope_tmpl_when_exists__', $seks_data ) ) {
+            // Retro-compat => make sure we set property '__inherits_group_skope_tmpl_when_exists__' to false if it's not set yet, because NB bases group inheritance on it
+            $seks_data['__inherits_group_skope_tmpl_when_exists__'] = false;
+        }
+    }
+
+    // normalizes
+    // [ 'collection' => [], 'local_options' => [], "fonts": [], '__inherits_group_skope_tmpl_when_exists__' => true ];
+    $default_collection = sek_get_default_location_model( $skope_id );
+    $seks_data = wp_parse_args( $seks_data, $default_collection );
+    wp_cache_set( $cache_key, $seks_data );
+    return $seks_data;
+}
+
+
+
 
 // make sure the locations in the skoped locations tree match the registered locations for the context
 function sek_maybe_add_incomplete_locations( $seks_data, $is_global_skope ) {
@@ -3977,6 +4769,10 @@ function sek_maybe_add_incomplete_locations( $seks_data, $is_global_skope ) {
     }
     return $seks_data;
 }
+
+
+
+
 
 
 
@@ -4007,6 +4803,9 @@ function sek_update_sek_post( $seks_data, $args = array() ) {
 
     $post_title = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
 
+    //sek_error_log('IN UPDATE SEK_POST ?', $seks_data );
+
+
     $post_data = array(
         'post_title' => $post_title,
         'post_name' => sanitize_title( $post_title ),
@@ -4022,12 +4821,12 @@ function sek_update_sek_post( $seks_data, $args = array() ) {
         $post_data['ID'] = $post->ID;
         $r = wp_update_post( wp_slash( $post_data ), true );
     } else {
+        //sek_error_log('IINSERT NEW POST ', $post_title );
         $r = wp_insert_post( wp_slash( $post_data ), true );
         if ( !is_wp_error( $r ) ) {
-            $option_name = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
             $post_id = $r;//$r is the post ID
 
-            update_option( $option_name, (int)$post_id );
+            sek_set_nb_post_id_in_index( $skope_id, (int)$post_id ); 
 
             // Trigger creation of a revision. This should be removed once #30854 is resolved.
             if ( 0 === count( wp_get_post_revisions( $r ) ) ) {
@@ -4041,6 +4840,388 @@ function sek_update_sek_post( $seks_data, $args = array() ) {
     }
     return get_post( $r );
 }
+
+// Introduced March 2021 for #478
+// Removes the post id in the skope index + removes the post in DB + remove the stylesheet
+function sek_remove_seks_post( $skope_id = null ) {
+    if ( is_null( $skope_id ) || empty( $skope_id ) ) {
+        sek_error_log( __FUNCTION__  . ' => error => empty skope_id' );
+        return new \WP_Error( 'sek_update_sek_post => empty skope_id');
+    }
+
+    //$post_title = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
+    $tmpl_post_to_remove = sek_get_seks_post( $skope_id );
+
+    //sek_error_log( __FUNCTION__ . ' => so $tmpl_post_to_remove => ' . $skope_id, $tmpl_post_to_remove );
+    // Remove the associated post id in the skope index
+    sek_remove_nb_post_id_in_index( $skope_id );
+
+    // Remove the post in DB
+    if ( $tmpl_post_to_remove && is_object( $tmpl_post_to_remove ) ) {
+        // the CPT is permanently deleted instead of moved to Trash when using wp_trash_post()
+        $r = wp_delete_post( $tmpl_post_to_remove->ID );
+        if ( is_wp_error( $r ) ) {
+            sek_error_log( __FUNCTION__ . '=> _removal_error', $r );
+        }
+    } else {
+        // TMPL POST NOT FOUND
+        //sek_error_log( __FUNCTION__ . '=> _tmpl_post_not_found' );
+    }
+
+    // Remove the corresponding stylesheet
+    $css_handler_instance = new Sek_Dyn_CSS_Handler( array(
+        'id'             => $skope_id,
+        'skope_id'       => $skope_id,
+        'mode'           => 'delete'
+    ));
+    $css_handler_instance->sek_dyn_css_delete_file();
+}
+
+?><?php
+///////////////////////////////////////////////////////
+/// SITE TEMPLATES
+// Feb 2021 => experimental for https://github.com/presscustomizr/nimble-builder/issues/478
+
+
+/* ------------------------------------------------------------------------- *
+ *  SITE TEMPLATES OPTIONS HELPERS
+/* ------------------------------------------------------------------------- */
+// @return array of site template info for a given group skope
+function sek_get_site_tmpl_params_for_skope( $group_skope = null ) {
+    if ( is_null($group_skope) || !is_string($group_skope) || empty($group_skope) )
+        return;
+    $cache_key = 'nimble_site_tmpl_params_for_skope_'.$group_skope;
+    $cached = wp_cache_get( $cache_key );
+    if ( false !== $cached )
+        return $cached;
+
+    $default_params = [
+        'site_tmpl_id' => '_no_site_tmpl_',
+        'site_tmpl_source' => 'user_tmpl',
+        'site_tmpl_title' => ''
+    ];
+    $opts = sek_get_global_option_value( 'site_templates' );
+    $site_tmpl_params = $default_params;
+    if ( is_array( $opts) && !empty( $opts[$group_skope] ) && is_array($opts[$group_skope]) ) {
+        $site_tmpl_params = wp_parse_args( $opts[$group_skope], $site_tmpl_params );
+    }
+
+    // DO SOME CHECKS BEFORE RETURNING THE PARAMS
+    $site_tmpl_id = $site_tmpl_params['site_tmpl_id'];
+    $site_tmpl_source = $site_tmpl_params['site_tmpl_source'];
+    // Check that id is well formed
+    if ( is_null( $site_tmpl_id ) || !is_string( $site_tmpl_id ) ) {
+        sek_error_log( 'Error => invalid tmpl post id', $tmpl_params );
+        return $default_params;
+    }
+    //sek_error_log('site_templates params ?' . $group_skope, $opts );
+    // Check that tmpl source is OK
+    if ( !in_array($site_tmpl_source, ['user_tmpl', 'api_tmpl'] ) ) {
+        sek_error_log( 'Error => invalid tmpl source', $tmpl_params );
+        return $default_params;
+    }
+    wp_cache_set($cache_key, $site_tmpl_params);
+    return $site_tmpl_params;
+}
+
+/* ------------------------------------------------------------------------- *
+ *  SITE TEMPLATES SKOPE HELPER
+/* ------------------------------------------------------------------------- */
+// when registering site template global options the suffix '_for_site_tmpl' is added to 'no group skope' scopes : 'skp__search_for_site_tmpl', 'skp__404_for_site_tmpl', 'skp__date_for_site_tmpl'
+// see sek_get_module_params_for_sek_site_tmpl_pickers()
+function sek_get_group_skope_for_site_tmpl() {
+    $group_skope = skp_get_skope_id( 'group' );
+    if ( '_skope_not_set_' === $group_skope ) {
+        $skope_id = skp_get_skope_id();
+        if ( sek_is_no_group_skope( $skope_id ) ) {
+            $group_skope = $skope_id . '_for_site_tmpl';
+        } else {
+            if ( defined('NIMBLE_DEV') && NIMBLE_DEV ) {
+                //sek_error_log('group skope could not be set');
+            }
+        }
+    }
+    return $group_skope;
+}
+
+// @return bool
+// no group skope are array( 'home', 'search', '404', 'date' );
+function sek_is_no_group_skope( $skope_id = null ) {
+    if ( is_null( $skope_id ) ) {
+        $skope_id = skp_get_skope_id();
+    }
+    $skope_id_without_prefix = str_replace( 'skp__', '', $skope_id );
+    $skope_with_no_group = skp_get_no_group_skope_list();
+    return in_array( $skope_id_without_prefix, $skope_with_no_group );
+}
+
+//@return bool
+// Tells if the local NB skope has been customized
+function sek_local_skope_has_been_customized( $skope_id = '', $local_seks_data = null ) {
+    $skope_id = empty( $skope_id ) ? skp_get_skope_id() : $skope_id;
+
+    if ( NIMBLE_GLOBAL_SKOPE_ID === $skope_id ) {
+        sek_error_log( __FUNCTION__ . ' => error => function should not be used with global skope id' );
+        return false;
+    }
+
+    // When the collection is provided use it otherwise get it
+    if ( is_null($local_seks_data) || !is_array($local_seks_data) ) {
+        $local_seks_data = sek_get_skoped_seks( $skope_id );
+    }
+    // normally, we should get an array from the previous function
+    if ( !is_array( $local_seks_data ) )
+        return false;
+    // the local skoped data include property '__inherits_group_skope_tmpl_when_exists__' since site template implementation april 2021
+    // If not, it means that we may have a local customized skoped data
+    if ( is_array($local_seks_data) && !array_key_exists( '__inherits_group_skope_tmpl_when_exists__', $local_seks_data ) ) {
+        sek_error_log( __FUNCTION__ . ' => error => missing property __inherits_group_skope_tmpl_when_exists__' );
+        return true;
+    }
+    // When a page has not been locally customized, property __inherits_group_skope_tmpl_when_exists__ is true ( @see sek_get_default_location_model() )
+    // As soon as the main local setting id is modified, __inherits_group_skope_tmpl_when_exists__ is set to false ( see js control::updateAPISetting )
+    // After a reset case, NB sets __inherits_group_skope_tmpl_when_exists__ back to true ( see js control::resetCollectionSetting )
+    // Note : If this property is set to true => NB removes the local skope post in Nimble_Collection_Setting::update()
+    return is_array($local_seks_data) && array_key_exists( '__inherits_group_skope_tmpl_when_exists__', $local_seks_data ) && !$local_seks_data['__inherits_group_skope_tmpl_when_exists__'];
+}
+
+//@return bool
+function sek_is_static_front_page_on_front_and_when_customizing() {
+    if ( defined( 'DOING_AJAX' ) && DOING_AJAX && skp_is_customizing() ) {
+        $is_front_page = sek_get_posted_query_param_when_customizing( 'is_front_page' );
+    } else {
+        $is_front_page = is_front_page();
+    }
+    return $is_front_page && 'page' == get_option( 'show_on_front' );
+}
+
+
+/* ------------------------------------------------------------------------- *
+ *  SITE TEMPLATES CSS
+/* ------------------------------------------------------------------------- */
+// filter declared in inc\sektions\_front_dev_php\8_4_1_sektions_front_class_render_css.php
+//@hook 'nb_set_skope_id_before_generating_local_front_css'
+function sek_set_skope_id_before_generating_local_front_css($skope_id) {
+    if ( NIMBLE_GLOBAL_SKOPE_ID === $skope_id ) {
+        sek_error_log( __FUNCTION__ . ' => error => function should not be used with global skope id' );
+        return $skope_id;
+    }
+    // if is viewing front page, we don't want to inherit 'skp__all_page' scope
+    if ( sek_is_static_front_page_on_front_and_when_customizing() )
+        return $skope_id;
+
+    // When a page has not been locally customized, property __inherits_group_skope_tmpl_when_exists__ is true ( @see sek_get_default_location_model() )
+    // As soon as the main local setting id is modified, __inherits_group_skope_tmpl_when_exists__ is set to false ( see js control::updateAPISetting )
+    // After a reset case, NB sets __inherits_group_skope_tmpl_when_exists__ back to true ( see js control:: resetCollectionSetting )
+    // Note : If this property is set to true => NB removes the local skope post in Nimble_Collection_Setting::update()
+    if ( !sek_local_skope_has_been_customized( $skope_id ) ) {
+        $group_site_tmpl_data = sek_get_group_site_template_data();//<= is cached when called
+        $has_group_skope_template_data = !( !$group_site_tmpl_data || empty($group_site_tmpl_data) );
+        if ( $has_group_skope_template_data ) {
+            $group_skope = sek_get_group_skope_for_site_tmpl();
+            if ( !empty($group_skope) && '_skope_not_set_' !== $group_skope ) {
+                $skope_id = $group_skope;
+            }
+        }
+    }
+    return $skope_id;
+}
+add_filter( 'nb_set_skope_id_before_generating_local_front_css', '\Nimble\sek_set_skope_id_before_generating_local_front_css');
+
+
+
+/* ------------------------------------------------------------------------- *
+ *  SITE TEMPLATES CONTENT
+/* ------------------------------------------------------------------------- */
+// Called in sek_get_skoped_seks()
+function sek_maybe_get_seks_for_group_site_template( $skope_id, $local_seks_data ) {
+    // NB will only inherit group skope for local sektions
+    if ( NIMBLE_GLOBAL_SKOPE_ID === $skope_id ) {
+        sek_error_log( __FUNCTION__ . ' => error => function should not be used with global skope id' );
+        return $local_seks_data;
+    }
+    // if is viewing front page, we don't want to inherit 'skp__all_page' scope
+    if ( sek_is_static_front_page_on_front_and_when_customizing() )
+        return $local_seks_data;
+
+    // When a page has not been locally customized, property __inherits_group_skope_tmpl_when_exists__ is true ( @see sek_get_default_location_model() )
+    // As soon as the main local setting id is modified, __inherits_group_skope_tmpl_when_exists__ is set to false ( see js control::updateAPISetting )
+    // After a reset case, NB sets __inherits_group_skope_tmpl_when_exists__ back to true ( see js control:: resetCollectionSetting )
+    // Note : If this property is set to true => NB removes the local skope post in Nimble_Collection_Setting::update()
+    if ( sek_local_skope_has_been_customized($skope_id, $local_seks_data) )  {
+        return $local_seks_data;
+    }
+
+    $group_site_tmpl_data = sek_get_group_site_template_data();
+
+    if ( !$group_site_tmpl_data || empty($group_site_tmpl_data) )
+        return $local_seks_data;
+
+    return $group_site_tmpl_data;      
+}
+
+// @return null || array
+// get and cache the group site template data
+function sek_get_group_site_template_data() {
+    // When ajaxing while customizing, no need to get the group site template data
+    if ( skp_is_customizing() && defined( 'DOING_AJAX' ) && DOING_AJAX )
+        return;
+    $cached = wp_cache_get('nimble_group_site_template_data');
+    if ( false !== $cached )
+        return $cached;
+
+    $group_site_tmpl_data = [];
+    
+    $group_skope = sek_get_group_skope_for_site_tmpl();
+
+    // Site template params are structured as follow :
+    // [
+    //     'site_tmpl_id' : '_no_site_tmpl_',
+    //     'site_tmpl_source' : 'user_tmpl',
+    //     'site_tmpl_title' : ''
+    //];
+    $tmpl_params = sek_get_site_tmpl_params_for_skope( $group_skope );
+    if ( '_no_site_tmpl_' === $tmpl_params['site_tmpl_id'] )
+        return;
+
+    $site_tmpl_id = $tmpl_params['site_tmpl_id'];
+    $site_tmpl_source = $tmpl_params['site_tmpl_source'];
+
+    // Is this group template already saved ?
+    // For example, for pages, there should be a nimble CPT post named nimble___skp__all_page
+    $post = sek_get_seks_post( $group_skope );
+
+    // if not, let's insert it
+    if ( !$post ) {
+        $current_tmpl_post = null;
+        $current_tmpl_data = null;
+        switch ($site_tmpl_source) {
+            case 'user_tmpl':
+                $current_tmpl_post = sek_get_saved_tmpl_post( $site_tmpl_id );
+                if ( $current_tmpl_post ) {
+                    $raw_tmpl_data = maybe_unserialize( $current_tmpl_post->post_content );
+                    if ( is_array($raw_tmpl_data) && isset($raw_tmpl_data['data']) && is_array($raw_tmpl_data['data']) && !empty($raw_tmpl_data['data']) ) {
+                        $current_tmpl_data = $raw_tmpl_data['data'];
+                        $current_tmpl_data = sek_set_ids( $current_tmpl_data );
+                    }
+                }
+            break;
+
+            case 'api_tmpl':
+                $raw_tmpl_data = sek_get_single_tmpl_api_data( $site_tmpl_id );
+                if( !is_array( $raw_tmpl_data) || empty( $raw_tmpl_data ) ) {
+                    sek_error_log( ' problem when getting template : ' . $site_tmpl_id );
+                }
+                //sek_error_log( __FUNCTION__ . ' api template collection', $raw_tmpl_data );
+                if ( !isset($raw_tmpl_data['data'] ) || empty( $raw_tmpl_data['data'] ) ) {
+                    sek_error_log( __FUNCTION__ . ' problem => missing or invalid data property for template : ' .$site_tmpl_id, $raw_tmpl_data );
+                } else {
+                    // $tmpl_decoded = $raw_tmpl_data;
+                    $raw_tmpl_data['data'] = sek_maybe_import_imgs( $raw_tmpl_data['data'], $do_import_images = true );
+                    //$raw_tmpl_data['img_errors'] = !empty( Nimble_Manager()->img_import_errors ) ? implode(',', Nimble_Manager()->img_import_errors) : array();
+                    $current_tmpl_data = sek_set_ids( $raw_tmpl_data['data'] );
+                }
+            break;
+        }
+
+        if( !is_null($current_tmpl_data) ) {
+            //sek_error_log('SITE TEMPLATE => UPDATE OR INSERT GROUP SKOPE POST => ' .$group_skope );
+            $post = sek_update_sek_post( $current_tmpl_data, [ 'skope_id' => $group_skope ]);
+        }
+    }//if ( !$post ) {
+
+    if ( $post ) {
+        $group_site_tmpl_data = maybe_unserialize( $post->post_content );
+    }
+    wp_cache_set('nimble_group_site_template_data', $group_site_tmpl_data );
+    return $group_site_tmpl_data;
+}
+
+
+// @return bool
+function sek_has_group_site_template_data() {
+    $cached = wp_cache_get('nimble_has_group_site_template_data');
+    if (  'yes' === $cached || 'no' === $cached ) {
+        return 'yes' === $cached;
+    }
+    
+    $group_site_tmpl_data = sek_get_group_site_template_data();//<= is cached when called
+    $has_group_skope_template_data = !( !$group_site_tmpl_data || empty($group_site_tmpl_data) );
+    wp_cache_set('nimble_has_group_site_template_data', $has_group_skope_template_data  ? 'yes' : 'no' );
+    return $has_group_skope_template_data;
+}
+
+
+/* ------------------------------------------------------------------------- *
+ *  SITE TEMPLATES SAVE CUSTOMIZER ACTION
+/* ------------------------------------------------------------------------- */
+// Action declared in class Nimble_Options_Setting
+// When a site template is modified, the following action removes the skoped post + removes the corresponding CSS stylesheet
+// For example, when the page site template is changed, we need to remove the associated skoped post named 'nimble___skp__all_page'
+// This post has been inserted when running sek_maybe_get_seks_for_group_site_template(), fired from sek_get_skoped_seks()
+//@'nb_on_save_customizer_global_options'
+function sek_on_save_customizer_global_options( $opt_name, $value ) {
+    $current_site_tmpl_opts = sek_get_global_option_value( 'site_templates' );
+    if ( !is_array( $value ) || !is_array($current_site_tmpl_opts) )
+        return;
+    
+    // NB stores the site template id as a concatenation of template source + '___' + template name
+    // Ex : user_tmpl___landing-page-for-services
+    $updated_site_templates = isset($value['site_templates']) ? $value['site_templates'] : [];
+
+    foreach( $current_site_tmpl_opts as $group_skope => $current_tmpl_params ) {
+        if ( !is_array($current_tmpl_params) || !array_key_exists('site_tmpl_id', $current_tmpl_params ) )
+            continue;
+        $current_tmpl_id = $current_tmpl_params['site_tmpl_id'];
+        $updated_tmpl_params = [];
+        if ( array_key_exists( $group_skope, $updated_site_templates ) ) {
+            $updated_tmpl_params = $updated_site_templates[$group_skope];
+        } else {
+            //sek_error_log('GROUP SKOPE POST TO REMOVE BECAUSE NO MORE TEMPLATE SET => ' . $group_skope . ' | ' . $current_tmpl_id );
+            sek_remove_seks_post( $group_skope );//Removes the post id in the skope index + removes the post in DB + remove the stylesheet
+        }
+        if ( is_array($updated_tmpl_params) && array_key_exists('site_tmpl_id', $updated_tmpl_params ) && $updated_tmpl_params['site_tmpl_id'] != $current_tmpl_params['site_tmpl_id'] ) {
+            //sek_error_log('GROUP SKOPE POST TO REMOVE BECAUSE TEMPLATE UPDATED => ' . $group_skope . ' | ' . $updated_site_templates[$group_skope] );
+            sek_remove_seks_post( $group_skope );//Removes the post id in the skope index + removes the post in DB + remove the stylesheet
+        }
+    }
+}
+add_action('nb_on_save_customizer_global_options', '\Nimble\sek_on_save_customizer_global_options', 10, 2);
+
+
+
+/* ------------------------------------------------------------------------- *
+ *  SITE TEMPLATES : UPDATED TEMPLATE IN CUSTOMIZER
+/* ------------------------------------------------------------------------- */
+// Action fired during server ajax callback sek_update_user_tmpl_post
+// Solves the problem of template synchronization between the group skope post ( in which the chosen template is saved with permanent level ids ), and the current state of the template
+// Solution => each time a template is updated, NB checks if the template is being used by a group skope
+// if so, then the group skope post is removed ( along with the index and the css stylesheet )
+// 
+// When will the removed skope post be re-inserted ?
+// next time the group skope will be printed ( for example skp__all_page in a single page ), NB checks if a template is assigned to this group skope, and tries to get the skope post.
+// If the group skope post is not found, NB attempts to re-insert it
+//@hook 'nb_on_update_user_tmpl_post'
+function sek_on_update_or_remove_user_tmpl_post( $site_tmpl_id ) {
+    if ( is_null( $site_tmpl_id ) || !is_string( $site_tmpl_id ) )
+        return;
+
+    $site_tmpl_opts = sek_get_global_option_value( 'site_templates' );
+    if ( !is_array($site_tmpl_opts) )
+        return;
+
+    foreach( $site_tmpl_opts as $group_skope => $tmpl_params ) {
+        if ( !is_array($tmpl_params) || !array_key_exists('site_tmpl_id', $tmpl_params ) )
+            continue;
+
+        if ( $site_tmpl_id === $tmpl_params['site_tmpl_id'] ) {
+            //sek_error_log('UPDATED OR REMOVED TEMPLATE => REMOVE GROUP SKOPE POST ' . $group_skope . ' for template ' . $tmpl_name );
+            sek_remove_seks_post( $group_skope );//Removes the post id in the skope index + removes the post in DB + remove the stylesheet
+        }
+    }
+}
+add_action('nb_on_update_user_tmpl_post', '\Nimble\sek_on_update_or_remove_user_tmpl_post', 10, 1);
+add_action('nb_on_remove_saved_tmpl_post', '\Nimble\sek_on_update_or_remove_user_tmpl_post', 10, 1);
 
 ?><?php
 /* ------------------------------------------------------------------------- *
@@ -4147,7 +5328,7 @@ function sek_get_all_saved_sections() {
     $sek_post_query_vars = array(
         'post_type'              => NIMBLE_SECTION_CPT,
         'post_status'            => 'publish',
-        //'name'                   => sanitize_title( NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id ),
+        //'name'                   => sanitize_title(),
         'posts_per_page'         => -1,
         'no_found_rows'          => true,
         'cache_results'          => true,
@@ -4195,8 +5376,8 @@ function sek_get_all_saved_sections() {
 
         // When updating a section, we only need to return title and description
         $collection[$post_object->post_name] = array(
-            'title' => !empty($content['metas']['title']) ? $content['metas']['title'] : '',
-            'description' => !empty($content['metas']['description']) ? $content['metas']['description'] : '',
+            'title' => !empty($content['metas']['title']) ? sek_maybe_decode_richtext( $content['metas']['title'] ) : '',
+            'description' => !empty($content['metas']['description']) ? sek_maybe_decode_richtext( $content['metas']['description'] ) : '',
             'last_modified_date' => mysql2date( 'Y-m-d H:i:s', $post_object->post_modified )
         );
     }
@@ -4223,7 +5404,7 @@ function sek_get_all_saved_sections() {
   //     )
   // );
 // @return WP_Post|WP_Error Post on success, error on failure.
-function sek_update_saved_section_post( $section_data ) {
+function sek_update_saved_section_post( $section_data, $is_edit_metas_only_case = false ) {
     if ( !is_array( $section_data ) ) {
         sek_error_log( __FUNCTION__ . ' => $section_data is not an array' );
         return new \WP_Error( __FUNCTION__ . ' => $section_data is not an array');
@@ -4250,7 +5431,6 @@ function sek_update_saved_section_post( $section_data ) {
 
     // the section post name is provided only when updating
     $is_update_case = !is_null($section_data['section_post_name']);
-    $is_edit_metas_only_case = 'yes' === $section_data['edit_metas_only'];
 
     // $post_name_to_update will be used when user updates an existing section
     if ( !is_null($section_data['section_post_name']) ) {
@@ -4270,7 +5450,7 @@ function sek_update_saved_section_post( $section_data ) {
 
         // if this is an update case + editing metas only, then we use the current content
         if ( $is_edit_metas_only_case && isset($current_section_post->post_content) ) {
-            sek_error_log('IS EDIT METAS ONLY ?');
+            //sek_error_log('IS EDIT METAS ONLY ?');
             $current_section_data = maybe_unserialize( $current_section_post->post_content );
             if ( is_array($current_section_data) && isset($current_section_data['data']) && is_array($current_section_data['data']) && !empty($current_section_data['data']) ) {
                 $section_data['data'] = $current_section_data['data'];
@@ -4278,8 +5458,11 @@ function sek_update_saved_section_post( $section_data ) {
         }
     }
 
+    // March 2021 : make sure text input are sanitized like in #544 #792
+    $section_data = sek_sektion_collection_sanitize_cb( $section_data );
+
     $new_or_updated_post_data = array(
-        'post_title' => esc_attr( $section_data['metas']['title'] ),
+        'post_title' => $section_post_name,
         'post_name' => $section_post_name,
         'post_type' => NIMBLE_SECTION_CPT,
         'post_status' => 'publish',
@@ -4416,7 +5599,7 @@ function sek_get_all_saved_templates() {
     $sek_post_query_vars = array(
         'post_type'              => NIMBLE_TEMPLATE_CPT,
         'post_status'            => 'publish',
-        //'name'                   => sanitize_title( NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id ),
+        //'name'                   => sanitize_title(),
         'posts_per_page'         => -1,
         'no_found_rows'          => true,
         'cache_results'          => true,
@@ -4466,8 +5649,8 @@ function sek_get_all_saved_templates() {
 
         // When updating a template, we only need to return title and description
         $collection[$post_object->post_name] = array(
-            'title' => !empty($content['metas']['title']) ? $content['metas']['title'] : '',
-            'description' => !empty($content['metas']['description']) ? $content['metas']['description'] : '',
+            'title' => !empty($content['metas']['title']) ? sek_maybe_decode_richtext( $content['metas']['title'] ) : '',
+            'description' => !empty($content['metas']['description']) ? sek_maybe_decode_richtext( $content['metas']['description'] ) : '',
             'last_modified_date' => mysql2date( 'Y-m-d H:i:s', $post_object->post_modified )
         );
     }
@@ -4479,21 +5662,34 @@ function sek_get_all_saved_templates() {
 // invoked on 'wp_ajax_sek_get_all_api_tmpl'
 // @return an unserialized array of api templates
 function sek_get_all_api_templates() {
-    $raw_tmpl = sek_get_tmpl_api_data();
+    $raw_tmpl = sek_get_all_tmpl_api_data();
     $collection = [];
+
     if( !is_array( $raw_tmpl) )
         return $collection;
-    foreach ( $raw_tmpl as $tmpl_cpt_post_name => $tmpl_data ) {
-        $metas = !is_array( $tmpl_data['metas'] ) ? [] : $tmpl_data['metas'];
-        if ( empty($metas) )
+        
+    foreach ( $raw_tmpl as $tmpl_cpt_post_name => $metas) {
+        if ( !is_array( $metas ) || empty($metas) )
             continue;
 
+        $metas = wp_parse_args( $metas, [
+            'title' => '',
+            'description' => '',
+            'date' => '',
+            'thumb_url' => '',
+            'is_pro_tmpl' => false,
+            'demo_url' => false,
+            'is_site_tmpl' => false
+        ]);
+
         $collection[$tmpl_cpt_post_name] = [
-            'title' => $metas['title'],
-            'description' => $metas['description'],
+            'title' => sek_maybe_decode_richtext( $metas['title'] ),
+            'description' => sek_maybe_decode_richtext( $metas['description'] ),
             'last_modified_date' => mysql2date( 'Y-m-d', $metas['date'] ),
             'thumb_url' => !empty( $metas['thumb_url'] ) ? $metas['thumb_url'] : '',
-            'is_pro_tmpl' => !empty( $metas['is_pro_tmpl'] ) ? $metas['is_pro_tmpl'] : false
+            'is_pro_tmpl' => !empty( $metas['is_pro_tmpl'] ) ? $metas['is_pro_tmpl'] : false,
+            'demo_url' => !empty( $metas['demo_url'] ) ? $metas['demo_url'] : false,
+            'is_site_tmpl' => array_key_exists('is_site_tmpl', $metas ) && $metas['is_site_tmpl']
         ];
     }
     return $collection;
@@ -4517,7 +5713,7 @@ function sek_get_all_api_templates() {
   //     )
   // );
 // @return WP_Post|WP_Error Post on success, error on failure.
-function sek_update_saved_tmpl_post( $tmpl_data ) {
+function sek_update_user_tmpl_post( $tmpl_data, $is_edit_metas_only_case = false ) {
     if ( !is_array( $tmpl_data ) ) {
         sek_error_log( __FUNCTION__ . ' => $tmpl_data is not an array' );
         return new \WP_Error( __FUNCTION__ . ' => $tmpl_data is not an array');
@@ -4537,14 +5733,18 @@ function sek_update_saved_tmpl_post( $tmpl_data ) {
             'skope_id' => '',
             'version' => NIMBLE_VERSION,
             'tmpl_locations' => array(),
+            'tmpl_header_location' => '',
+            'tmpl_footer_location' => '',
             'date' => '',
-            'theme' => ''
+            'theme' => '',
+            // for api templates
+            'is_pro_tmpl' => false,
+            'thumb_url' => ''
         )
     ));
 
     // the template post name is provided only when updating
     $is_update_case = !is_null($tmpl_data['tmpl_post_name']);
-    $is_edit_metas_only_case = 'yes' === $tmpl_data['edit_metas_only'];
 
     // $post_name_to_update will be used when user updates an existing template
     if ( !is_null($tmpl_data['tmpl_post_name']) ) {
@@ -4574,8 +5774,11 @@ function sek_update_saved_tmpl_post( $tmpl_data ) {
         }
     }
 
+    // March 2021 : make sure text input are sanitized like in #544 #792
+    $tmpl_data = sek_sektion_collection_sanitize_cb( $tmpl_data );
+
     $new_or_updated_post_data = array(
-        'post_title' => esc_attr( $tmpl_data['metas']['title'] ),
+        'post_title' => $tmpl_post_name,
         'post_name' => $tmpl_post_name,
         'post_type' => NIMBLE_TEMPLATE_CPT,
         'post_status' => 'publish',
@@ -4599,6 +5802,9 @@ function sek_update_saved_tmpl_post( $tmpl_data ) {
             }
         }
     }
+
+    // Added March 2021 for stie templates #478
+    do_action('nb_on_update_user_tmpl_post', $tmpl_post_name );
 
     if ( is_wp_error( $r ) ) {
         return $r;
@@ -4696,7 +5902,7 @@ add_filter( 'wp_insert_post_data', function( $data, $postarr, $unsanitized_posta
             return new \WP_Error( 'db_insert_error', __('Could not insert NB template into the database : invalid JSON', 'nimble-builder'), json_last_error() );
         }
     }
-    return $data;
+    return wp_slash($data);
 }, 10 , 3);
 
 ?><?php
@@ -4717,8 +5923,7 @@ function sek_get_revision_history_from_posts( $skope_id = '', $skope_level = 'lo
     if ( defined('DOING_AJAX') && DOING_AJAX && '_skope_not_set_' === $skope_id ) {
           wp_send_json_error( __FUNCTION__ . ' => invalid skope id' );
     }
-    $option_name = NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id;
-    $post_id = (int)get_option( $option_name );
+    $post_id = sek_get_nb_post_id_from_index($skope_id);
     $raw_revision_history = array();
     if ( -1 !== $post_id ) {
         $args = array(
@@ -4756,5 +5961,122 @@ function sek_get_single_post_revision( $post_id = null ) {
     }
     return maybe_unserialize( $post->post_content );
 }
+
+?><?php
+/* ------------------------------------------------------------------------- *
+ *  SANIIZATION AND VALIDATION HELPERS
+ *  used before saving NB main settings in DB
+ *  used before saving user template in DB
+ *  added March 2021 for https://github.com/presscustomizr/nimble-builder/issues/792, after fixing formatting issues : #544 #791
+/* ------------------------------------------------------------------------- */
+// Uses the sanitize_callback function specified on module registration if any
+// Recursively loop on the local or global main NB collection and fire the sanitize callback
+// the $setting_instance param is passed when sanitizing the customizer settings. Not used when sanitizing a user template
+function sek_sektion_collection_sanitize_cb( $setting_data, $setting_instance = null ) {
+    if ( !is_array( $setting_data ) ) {
+        return $setting_data;
+    } else {
+        if ( !is_array( $setting_data ) ) {
+            return $setting_data;
+        } else {
+            if ( array_key_exists('module_type', $setting_data ) ) {
+                $san_callback = sek_get_registered_module_type_property( $setting_data['module_type'], 'sanitize_callback' );
+                if ( !empty( $san_callback ) && is_string( $san_callback ) && function_exists( $san_callback ) && array_key_exists('value', $setting_data ) ) {
+                    //sek_error_log('SANITIZE ??', $san_callback );
+                    $setting_data['value'] = $san_callback( $setting_data['value'] );
+                }
+            } else {
+                foreach( $setting_data as $k => $data ) {
+                    $setting_data[$k] = sek_sektion_collection_sanitize_cb( $data, $setting_instance );
+                }
+            }
+        }
+    }
+    //return new \WP_Error( 'required', __( 'Error in a sektion', 'text_doma' ), $setting_data );
+    return $setting_data;
+}
+
+// Uses the validate_callback function specified on module registration if any
+// @return validity object
+function sek_sektion_collection_validate_cb( $validity, $setting_data, $setting_instance = null ) {
+    $validated = true;
+    if ( !is_array( $setting_data ) ) {
+        return $setting_data;
+    } else {
+        if ( !is_array( $setting_data ) ) {
+            return $setting_data;
+        } else {
+            if ( array_key_exists('module_type', $setting_data ) ) {
+                $validation_callback = sek_get_registered_module_type_property( $setting_data['module_type'], 'validate_callback' );
+                if ( !empty( $validation_callback ) && is_string( $validation_callback ) && function_exists( $validation_callback ) && array_key_exists('value', $setting_data ) ) {
+                    $validated = $validation_callback( $setting_data );
+                }
+            } else {
+                foreach( $setting_data as $k => $data ) {
+                    $validated = sek_sektion_collection_validate_cb($validity, $data, $setting_instance);
+                }
+            }
+        }
+    }
+
+    //return new \WP_Error( 'required', __( 'Error in a sektion', 'text_doma' ), $setting_data );
+    if ( true !== $validated ) {
+        if ( is_wp_error( $validated ) ) {
+            $validation_msg = $validation_msg->get_error_message();
+            $validity->add(
+                is_null( $setting_instance ) ? 'nimble_validation_error' : 'nimble_validation_error_in_' . $setting_instance->id,
+                $validation_msg
+            );
+        }
+
+    }
+    return $validity;
+}
+
+
+
+
+// @return bool
+function sek_is_json( $string ){
+    if ( !is_string( $string ) )
+      return false;
+    json_decode($string);
+    return (json_last_error() == JSON_ERROR_NONE);
+}
+  
+// @return string
+function sek_maybe_decode_richtext( $string ){
+    if ( !is_string($string) )
+    return $string;
+
+    $json_decoded_candidate = json_decode($string, true);
+    if ( json_last_error() == JSON_ERROR_NONE ) {
+        // https://stackoverflow.com/questions/6465263/how-to-reverse-htmlentities
+        // added to fix regression https://github.com/presscustomizr/nimble-builder/issues/791
+        $json_decoded_candidate = html_entity_decode($json_decoded_candidate, ENT_QUOTES, get_bloginfo( 'charset' ) );
+        //sek_error_log('DECODED DECODED ?', $json_decoded_candidate );
+        return $json_decoded_candidate;
+    }
+    
+    return $string;
+}
+
+// @return string
+function sek_maybe_encode_richtext( $string ){
+    if ( !is_string($string) )
+    return $string;
+    // only encode if not already encoded
+    if ( !sek_is_json($string) ) {
+        // https://stackoverflow.com/questions/6465263/how-to-reverse-htmlentities
+        // added to fix regression https://github.com/presscustomizr/nimble-builder/issues/791
+        $string = htmlentities($string, ENT_COMPAT, get_bloginfo( 'charset' ) );//reversed with html_entity_decode
+        //$string = wp_encode_emoji( $string );
+        $string = wp_json_encode($string);
+        //sek_error_log('JSON ENCODED ?', $string );
+    }
+    return $string;
+}
+
+
 
 ?>

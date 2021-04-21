@@ -174,11 +174,17 @@ function sek_get_module_params_for_czr_simple_html_module() {
     );
 }
 
+/* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
 function sanitize_callback__czr_simple_html_module( $value ) {
-    if ( array_key_exists( 'html_content', $value ) ) {
+    if ( is_array($value) && array_key_exists( 'html_content', $value ) && is_string( $value[ 'html_content' ] ) ) {
         if ( !current_user_can( 'unfiltered_html' ) ) {
             $value[ 'html_content' ] = wp_kses_post( $value[ 'html_content' ] );
         }
+        // convert into a json to prevent emoji breaking global json data structure
+        // fix for https://github.com/presscustomizr/nimble-builder/issues/544
+        $value[ 'html_content' ] = sek_maybe_encode_richtext( $value[ 'html_content' ] );
     }
     return $value;
 }
@@ -203,7 +209,7 @@ function sek_get_module_params_for_czr_tiny_mce_editor_module() {
                 'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.'
             )
         ),
-        // 'sanitize_callback' => 'function_prefix_to_be_replaced_sanitize_callback__czr_social_module',
+        'sanitize_callback' => '\Nimble\sek_sanitize_czr_tiny_mce_editor_module',
         // 'validate_callback' => 'function_prefix_to_be_replaced_validate_callback__czr_social_module',
         'css_selectors' => array(
             // this list is limited to the most commonly used tags in the editor.
@@ -218,7 +224,19 @@ function sek_get_module_params_for_czr_tiny_mce_editor_module() {
     );
 }
 
-
+/* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
+// convert into a json to prevent emoji breaking global json data structure
+// fix for https://github.com/presscustomizr/nimble-builder/issues/544
+function sek_sanitize_czr_tiny_mce_editor_module( $content ) {
+    if ( is_array($content) && !empty($content['main_settings']) && is_array($content['main_settings']) ) {
+        $editor_content = !empty($content['main_settings']['content']) ? $content['main_settings']['content'] : '';
+        $content['main_settings']['content'] = sek_maybe_encode_richtext($editor_content);
+    }
+    //sek_error_log( 'ALORS MODULE CONTENT ?', $content );
+    return $content;
+}
 
 /* ------------------------------------------------------------------------- *
  *  TEXT EDITOR CONTENT CHILD
@@ -328,6 +346,15 @@ function sek_get_module_params_for_czr_image_main_settings_child() {
                     'title'       => __('Pick an image', 'nimble-builder'),
                     'default'     => ''
                 ),
+                'use-post-thumb' => array(
+                    'input_type'  => 'nimblecheck',
+                    'title'       => __('Use the current post thumbnail', 'nimble-builder'),
+                    'title_width' => 'width-80',
+                    'input_width' => 'width-20',
+                    'refresh_markup' => true,
+                    'default'     => 0,
+                    'notice_after' => __('When enabled and possible, Nimble will use the post thumbnail.', 'nimble-builder'),
+                ),
                 'img-size' => array(
                     'input_type'  => 'simpleselect',
                     'title'       => __('Select the image size', 'nimble-builder'),
@@ -415,7 +442,7 @@ function sek_get_module_params_for_czr_image_main_settings_child() {
                 ),
                 'use_custom_height' => array(
                     'input_type'  => 'nimblecheck',
-                    'title'       => __( 'Custom image height', 'nimble-builder' ),
+                    'title'       => __( 'Custom image max height', 'nimble-builder' ),
                     'default'     => 0,
                     'refresh_stylesheet' => true
                 ),
@@ -1118,13 +1145,12 @@ function sek_get_module_params_for_czr_heading_module() {
             )
         ),
         'css_selectors' => array( '.sek-module-inner > .sek-heading' ),
-        // 'sanitize_callback' => 'function_prefix_to_be_replaced_sanitize_callback__czr_social_module',
+        'sanitize_callback' => '\Nimble\sek_sanitize_czr_heading_module',
         // 'validate_callback' => 'function_prefix_to_be_replaced_validate_callback__czr_social_module',
         'render_tmpl_path' => "heading_module_tmpl.php",
         'placeholder_icon' => 'short_text'
     );
 }
-
 
 
 /* ------------------------------------------------------------------------- *
@@ -1209,6 +1235,29 @@ function sek_get_module_params_for_czr_heading_child() {
 
 
 /* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
+function sek_sanitize_czr_heading_module( $content ) {
+    if ( is_array($content) && is_array($content['main_settings']) ) {
+        // main heading text
+        if ( !empty($content['main_settings']['heading_text']) ) {
+            // https://wordpress.org/support/article/roles-and-capabilities/#unfiltered_html
+            if ( !current_user_can( 'unfiltered_html' ) ) {
+                $value['main_settings'][ 'heading_text' ] = wp_kses_post( $content['main_settings']['heading_text'] );
+            }
+            // convert into a json to prevent emoji breaking global json data structure
+            // fix for https://github.com/presscustomizr/nimble-builder/issues/544
+            $content['main_settings']['heading_text'] = sek_maybe_encode_richtext($content['main_settings']['heading_text']);
+        }
+        if ( !empty($content['main_settings']['heading_title']) ) {
+            $content['main_settings']['heading_title'] = sek_maybe_encode_richtext($content['main_settings']['heading_title']);
+        }
+    }
+    return $content;
+}
+
+
+/* ------------------------------------------------------------------------- *
  *  HEADING SPACING CHILD
 /* ------------------------------------------------------------------------- */
 //Fired in add_action( 'after_setup_theme', 'sek_register_modules', 50 );
@@ -1237,28 +1286,6 @@ function sek_get_module_params_for_czr_heading_spacing_child() {
         'render_tmpl_path' =>'',
     );
 }
-
-
-
-
-function sanitize_callback__czr_heading_module( $value ) {
-    if (  !current_user_can( 'unfiltered_html' ) && array_key_exists('main_settings', $value ) && is_array( $value['main_settings'] ) && array_key_exists('heading_text', $value['main_settings'] ) ) {
-        //sanitize heading_text
-        if ( function_exists( 'czr_heading_module_kses_text' ) ) {
-            $value['main_settings'][ 'heading_text' ] = czr_heading_module_kses_text( $value['main_settings'][ 'heading_text' ] );
-        }
-    }
-    return $value;
-    //return new \WP_Error('required' ,'heading did not pass sanitization');
-}
-
-// @see SEK_CZR_Dyn_Register::set_dyn_setting_args
-// Only the boolean true or a WP_error object will be valid returned value considered when validating
-function validate_callback__czr_heading_module( $value ) {
-    //return new \WP_Error('required' ,'heading did not pass ');
-    return true;
-}
-
 
 ?>
 <?php
@@ -1864,7 +1891,7 @@ function sek_get_module_params_for_czr_quote_quote_child() {
                 'quote_font_size_css'       => array(
                     'input_type'  => 'range_with_unit_picker_device_switcher',
                     'title'       => __( 'Font size', 'nimble-builder' ),
-                    'default'     => array( 'desktop' => '16px' ),
+                    'default'     => array( 'desktop' => '1.2em' ),
                     'min' => 0,
                     'max' => 100,
                     'width-100'         => true,
@@ -2209,7 +2236,7 @@ function sek_get_module_params_for_czr_quote_design_child() {
                     'input_type'  => 'wp_color_alpha',
                     'title'       => __( 'Border Color', 'nimble-builder' ),
                     'width-100'   => true,
-                    'default'     => '',
+                    'default'     => 'rgba(0,0,0,0.1)',
                     'refresh_markup' => false,
                     'refresh_stylesheet' => true,
                     'css_identifier' => 'border_color',
@@ -2251,17 +2278,32 @@ function sek_get_module_params_for_czr_quote_design_child() {
 
 
 
-
+/* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
+// convert into a json to prevent emoji breaking global json data structure
+// fix for https://github.com/presscustomizr/nimble-builder/issues/544
 function sanitize_callback__czr_quote_module( $value ) {
-    if ( !current_user_can( 'unfiltered_html' ) ) {
-        if ( array_key_exists( 'quote_text', $value ) ) {
-            //sanitize quote_text
-            $value[ 'quote_text' ] = wp_kses_post( $value[ 'quote_text' ] );
+    if ( !is_array( $value ) )
+        return $value;
+
+    if ( array_key_exists( 'quote_content', $value ) && is_array( $value['quote_content'] ) && !empty($value['quote_content']['quote_text']) ) {
+        //sanitize quote_text
+        if ( !current_user_can( 'unfiltered_html' ) ) {
+            $value['quote_content']['quote_text'] = wp_kses_post( $value['quote_content']['quote_text'] );
         }
-        if ( array_key_exists( 'cite_text', $value ) ) {
-            //sanitize cite_text
-            $value[ 'cite_text' ] = wp_kses_post( $value[ 'cite_text' ] );
+        // convert into a json to prevent emoji breaking global json data structure
+        // fix for https://github.com/presscustomizr/nimble-builder/issues/544
+        $value['quote_content']['quote_text'] = sek_maybe_encode_richtext($value['quote_content']['quote_text']);
+    }
+    if ( array_key_exists( 'cite_content', $value ) && is_array( $value['cite_content'] ) && !empty($value['cite_content']['cite_text']) ) {
+        //sanitize quote_text
+        if ( !current_user_can( 'unfiltered_html' ) ) {
+            $value['cite_content']['cite_text'] = wp_kses_post( $value['cite_content']['cite_text'] );
         }
+        // convert into a json to prevent emoji breaking global json data structure
+        // fix for https://github.com/presscustomizr/nimble-builder/issues/544
+        $value['cite_content']['cite_text'] = sek_maybe_encode_richtext($value['cite_content']['cite_text']);
     }
     return $value;
 }
@@ -2482,6 +2524,8 @@ function sek_get_module_params_for_czr_btn_design_child() {
                         'padding-bottom' => .5,
                         'padding-right'  => 1,
                         'padding-left'   => 1,
+                        'margin-top'    => .5,
+                        'margin-bottom' => .5,
                         'unit' => 'em'
                     ),
                     'width-100'   => true,
@@ -2575,10 +2619,17 @@ function sek_get_module_params_for_czr_btn_design_child() {
 
 
 
-
+/* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
+// convert into a json to prevent emoji breaking global json data structure
+// fix for https://github.com/presscustomizr/nimble-builder/issues/544
 function sanitize_callback__czr_button_module( $value ) {
-    if ( is_array( $value ) && is_array( $value['content'] ) && array_key_exists( 'button_text', $value['content'] ) ) {
-        $value['content'][ 'button_text' ] = sanitize_text_field( $value['content'][ 'button_text' ] );
+    if ( is_array( $value ) && !empty($value['content']) && is_array( $value['content'] ) && array_key_exists( 'button_text', $value['content'] ) ) {
+        //$value['content'][ 'button_text' ] = sanitize_text_field( $value['content'][ 'button_text' ] );
+        // convert into a json to prevent emoji breaking global json data structure
+        // fix for https://github.com/presscustomizr/nimble-builder/issues/544
+        $value['content']['button_text'] = sek_maybe_encode_richtext($value['content']['button_text']);
     }
     return $value;
 }
@@ -2722,7 +2773,7 @@ function sek_get_module_params_for_czr_simple_form_module() {
             'form_submission'    => 'czr_simple_form_submission_child'
         ),
         'name' => __( 'Simple Form', 'nimble-builder' ),
-        //'sanitize_callback' => '\Nimble\sanitize_callback__czr_simple_form_module',
+        'sanitize_callback' => '\Nimble\sanitize_callback__czr_simple_form_module',
         'starting_value' => array(
             'fields_design' => array(
                 'border' => array(
@@ -3591,10 +3642,27 @@ function sek_get_module_params_for_czr_simple_form_fonts_child() {
     );
 }
 
-// function sanitize_callback__czr_simple_form_module( $value ) {
-//     $value[ 'button_text' ] = sanitize_text_field( $value[ 'button_text' ] );
-//     return $value;
-// }
+function sanitize_callback__czr_simple_form_module( $value ) {
+    if ( !is_array( $value ) )
+        return $value;
+    // convert into a json to prevent emoji breaking global json data structure
+    // fix for https://github.com/presscustomizr/nimble-builder/issues/544
+    if ( array_key_exists( 'form_fields', $value ) && is_array( $value['form_fields'] ) ) {
+        if ( !empty($value['form_fields']['button_text']) ) {
+            $value['form_fields']['button_text'] = sanitize_text_field( $value['form_fields']['button_text'] );
+            $value['form_fields']['button_text'] = sek_maybe_encode_richtext($value['form_fields']['button_text']);
+        }
+        if ( !empty($value['form_fields']['privacy_field_label']) ) {
+            $value['form_fields']['privacy_field_label'] = sek_maybe_encode_richtext($value['form_fields']['privacy_field_label']);
+        }
+    }
+    if ( array_key_exists( 'form_submission', $value ) && is_array( $value['form_submission'] ) ) {
+        if ( !empty($value['form_submission']['email_footer']) ) {
+            $value['form_submission']['email_footer'] = sek_maybe_encode_richtext($value['form_submission']['email_footer']);
+        }
+    }
+    return $value;
+}
 
 
 
@@ -3835,6 +3903,31 @@ function sek_get_module_params_for_czr_post_grid_main_child() {
         'css_selectors' => array( '.sek-module-inner' ),
         'tmpl' => array(
             'item-inputs' => array(
+                'use_current_query' => array(
+                    'input_type'  => 'nimblecheck',
+                    'title'       => __('Use contextual WordPress post query', 'nimble-builder'),
+                    'default'     => false,
+                    'title_width' => 'width-80',
+                    'input_width' => 'width-20',
+                    'notice_after' => __('This option allows you to use the posts normally displayed by WordPress on this page.', 'nimble-builder')
+                    //'html_before' => '<hr>'
+                ),
+                'replace_query' => array(
+                    'input_type'  => 'nimblecheck',
+                    'title'       => __('Add custom parameters to the contextual WordPress post query', 'nimble-builder'),
+                    'default'     => false,
+                    'title_width' => 'width-80',
+                    'input_width' => 'width-20'
+                    //'html_before' => '<hr>'
+                ),
+                'display_pagination' => array(
+                    'input_type'  => 'nimblecheck',
+                    'title'       => __('Display pagination links', 'nimble-builder'),
+                    'default'     => false,
+                    'title_width' => 'width-80',
+                    'input_width' => 'width-20'
+                    //'html_before' => '<hr>'
+                ),
                 'post_number'  => array(
                     'input_type'  => 'range_simple',
                     'title'       => __( 'Number of posts', 'nimble-builder' ),
@@ -3854,9 +3947,20 @@ function sek_get_module_params_for_czr_post_grid_main_child() {
                     'width-100'   => true,
                     'title_width' => 'width-100'
                 ),//0,
-                'display_pagination' => array(
+                'order_by'  => array(
+                    'input_type'  => 'simpleselect',
+                    'title'       => __( 'Order posts by', 'nimble-builder' ),
+                    'default'     => 'date_desc',
+                    'choices'      => array(
+                        'date_desc' => __('Newest to oldest', 'nimble-builder'),
+                        'date_asc' => __('Oldest to newest', 'nimble-builder'),
+                        'title_asc' => __('A &rarr; Z', 'nimble-builder'),
+                        'title_desc' => __('Z &rarr; A', 'nimble-builder')
+                    )
+                ),//null,
+                'include_sticky' => array(
                     'input_type'  => 'nimblecheck',
-                    'title'       => __('Display pagination links', 'nimble-builder'),
+                    'title'       => __('Include "sticky" posts', 'nimble-builder'),
                     'default'     => false,
                     'title_width' => 'width-80',
                     'input_width' => 'width-20'
@@ -3879,17 +3983,6 @@ function sek_get_module_params_for_czr_post_grid_main_child() {
                     'input_width' => 'width-20'
                     //'html_before' => '<hr>'
                 ),
-                'order_by'  => array(
-                    'input_type'  => 'simpleselect',
-                    'title'       => __( 'Order posts by', 'nimble-builder' ),
-                    'default'     => 'date_desc',
-                    'choices'      => array(
-                        'date_desc' => __('Newest to oldest', 'nimble-builder'),
-                        'date_asc' => __('Oldest to newest', 'nimble-builder'),
-                        'title_asc' => __('A &rarr; Z', 'nimble-builder'),
-                        'title_desc' => __('Z &rarr; A', 'nimble-builder')
-                    )
-                ),//null,
                 'layout'  => array(
                     'input_type'  => 'grid_layout',
                     'title'       => __( 'Posts layout : list or grid', 'nimble-builder' ),
@@ -4147,7 +4240,7 @@ function sek_get_module_params_for_czr_post_grid_metas_child() {
     return array(
         'dynamic_registration' => true,
         'module_type' => 'czr_post_grid_metas_child',
-        'name' => __( 'Post metas : author, date, category, tags,...', 'nimble-builder' ),
+        'name' => __( 'Post metas : author, date, category, ...', 'nimble-builder' ),
         //'sanitize_callback' => '\Nimble\sanitize_callback__czr_simple_form_module',
         // 'starting_value' => array(
         //     'button_text' => __('Click me','text_doma'),
@@ -4242,7 +4335,7 @@ function sek_get_module_params_for_czr_post_grid_fonts_child() {
                             ),
                             'pt_font_size_css'       => array(
                                 'input_type'  => 'range_with_unit_picker_device_switcher',
-                                'default'     => array( 'desktop' => '28px' ),
+                                'default'     => array( 'desktop' => '28px', 'tablet' => '22px', 'mobile' => '20px' ),
                                 'title_width' => 'width-100',
                                 'title'       => __( 'Font size', 'nimble-builder' ),
                                 'min' => 0,
@@ -5106,7 +5199,7 @@ function sek_get_module_params_for_czr_menu_module() {
             //     'color_css'  => '#ffffff',
             // )
         ),
-        'css_selectors' => array( '.sek-menu-module li > a', '.nb-search-expand-inner input', '[data-sek-is-mobile-menu="yes"] .nb-mobile-search input' ),//<=@see tmpl/modules/menu_module_tmpl.php
+        'css_selectors' => array( '.sek-menu-module li > a', '.nb-search-expand-inner input', '[data-sek-is-mobile-vertical-menu="yes"] .nb-mobile-search input', '.nb-arrow-for-mobile-menu' ),//<=@see tmpl/modules/menu_module_tmpl.php
         'render_tmpl_path' => "menu_module_tmpl.php"
     );
 }
@@ -5139,14 +5232,16 @@ function sek_get_module_params_for_czr_menu_content_child() {
                         )
                     ),
                 ),
+                // alignment of items on desktops devices ( when items are horizontal ), is controled with selector .sek-nav-collapse
+                // janv 2021 : alignement of menu items in the vertical mobile mnenu with '[data-sek-is-mobile-vertical-menu="yes"] .sek-nav li a'
                 'h_alignment_css' => array(
                     'input_type'  => 'horizAlignmentWithDeviceSwitcher',
                     'title'       => __('Menu items alignment', 'nimble-builder'),
-                    'default'     => array( 'desktop' => 'center' ),
+                    'default'     => array( 'desktop' => 'right', 'tablet' => 'left' ),
                     'refresh_markup' => false,
                     'refresh_stylesheet' => true,
                     'css_identifier' => 'h_flex_alignment',
-                    'css_selectors' => array( '.sek-nav-collapse', '[data-sek-is-mobile-menu="yes"] .sek-nav li a' ),
+                    'css_selectors' => array( '.sek-nav-collapse', '[data-sek-is-mobile-vertical-menu="yes"] .sek-nav li a' ),
                     'title_width' => 'width-100',
                     'width-100'   => true,
                 ),
@@ -5410,7 +5505,7 @@ function sek_get_module_params_for_czr_img_slider_module() {
                 array( 'img' =>  NIMBLE_BASE_URL . '/assets/img/default-img.png' )
             )
         ),
-        // 'sanitize_callback' => 'function_prefix_to_be_replaced_sanitize_callback__czr_social_module',
+        'sanitize_callback' => '\Nimble\sanitize_cb__czr_img_slider_module',
         // 'validate_callback' => 'function_prefix_to_be_replaced_validate_callback__czr_social_module',
         'css_selectors' => array( '[data-sek-swiper-id]' ),//array( '.sek-icon i' ),
         'render_tmpl_path' => "img_slider_tmpl.php",
@@ -5423,6 +5518,25 @@ function sek_get_module_params_for_czr_img_slider_module() {
         //       )
         // )
     );
+}
+
+/* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
+// convert into a json to prevent emoji breaking global json data structure
+// fix for https://github.com/presscustomizr/nimble-builder/issues/544
+function sanitize_cb__czr_img_slider_module( $value ) {
+    if ( !is_array( $value ) )
+        return $value;
+
+    if ( !empty($value['img_collection']) && is_array( $value['img_collection'] ) ) {
+        foreach( $value['img_collection'] as $key => $data ) {
+            if ( array_key_exists( 'text_content', $data ) && is_string( $data['text_content'] ) ) {
+                $value['img_collection'][$key]['text_content'] = sek_maybe_encode_richtext( $data['text_content'] );
+            }
+        }
+    }
+    return $value;
 }
 
 
@@ -5723,6 +5837,17 @@ function sek_get_module_params_for_czr_img_slider_opts_child() {
                                 'input_width' => 'width-20',
                                 'notice_after' => __('Lazy loading images improves page load performances.', 'nimble-builder' ),
                             ),
+                            'bg_color_css' => array(
+                                'input_type'  => 'wp_color_alpha',
+                                'title'       => __( 'Background color', 'nimble-builder' ),
+                                'width-100'   => true,
+                                'title_width' => 'width-100',
+                                'default'    => '',
+                                'refresh_markup' => false,
+                                'refresh_stylesheet' => true,
+                                'css_identifier' => 'background_color',
+                                'css_selectors'=> '.swiper-slide'
+                            )
                         )//inputs
                     ),
                     array(
@@ -6024,7 +6149,7 @@ function sek_get_module_params_for_czr_accordion_module() {
                 array('text_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.')
             )
         ),
-        // 'sanitize_callback' => 'function_prefix_to_be_replaced_sanitize_callback__czr_social_module',
+        'sanitize_callback' => '\Nimble\sanitize_cb__czr_accordion_module',
         // 'validate_callback' => 'function_prefix_to_be_replaced_validate_callback__czr_social_module',
         'css_selectors' => array( '[data-sek-accordion-id]' ),//array( '.sek-icon i' ),
         'render_tmpl_path' => "accordion_tmpl.php",
@@ -6039,6 +6164,26 @@ function sek_get_module_params_for_czr_accordion_module() {
     );
 }
 
+/* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
+// convert into a json to prevent emoji breaking global json data structure
+// fix for https://github.com/presscustomizr/nimble-builder/issues/544
+function sanitize_cb__czr_accordion_module( $value ) {
+    if ( !is_array( $value ) )
+        return $value;
+    if ( !empty($value['accord_collec']) && is_array( $value['accord_collec'] ) ) {
+        foreach( $value['accord_collec'] as $key => $data ) {
+            if ( array_key_exists( 'text_content', $data ) && is_string( $data['text_content'] ) ) {
+                $value['accord_collec'][$key]['text_content'] = sek_maybe_encode_richtext( $data['text_content'] );
+            }
+            if ( array_key_exists( 'title_text', $data ) && is_string( $data['title_text'] ) ) {
+                $value['accord_collec'][$key]['title_text'] = sek_maybe_encode_richtext( $data['title_text'] );
+            }
+        }
+    }
+    return $value;
+}
 
 /* ------------------------------------------------------------------------- *
  *  MAIN SETTINGS
@@ -6528,7 +6673,7 @@ function sek_get_module_params_for_czr_shortcode_module() {
         'module_type' => 'czr_shortcode_module',
         'name' => __('Shortcode', 'nimble-builder'),
         'css_selectors' => array( '.sek-module-inner > *' ),
-        // 'sanitize_callback' => 'function_prefix_to_be_replaced_sanitize_callback__czr_social_module',
+        'sanitize_callback' => '\Nimble\sek_sanitize_czr_shortcode_module',
         // 'validate_callback' => 'function_prefix_to_be_replaced_validate_callback__czr_social_module',
         'tmpl' => array(
             'item-inputs' => array(
@@ -6586,5 +6731,17 @@ function sek_get_module_params_for_czr_shortcode_module() {
         ),
         'render_tmpl_path' => "shortcode_module_tmpl.php",
     );
+}
+
+/* ------------------------------------------------------------------------- *
+ *  SANITIZATION
+/* ------------------------------------------------------------------------- */
+// convert into a json to prevent emoji breaking global json data structure
+// fix for https://github.com/presscustomizr/nimble-builder/issues/544
+function sek_sanitize_czr_shortcode_module( $content ) {
+    if ( is_array($content) && !empty($content['text_content']) ) {
+        $content['text_content'] = sek_maybe_encode_richtext($content['text_content']);
+    }
+    return $content;
 }
 ?>

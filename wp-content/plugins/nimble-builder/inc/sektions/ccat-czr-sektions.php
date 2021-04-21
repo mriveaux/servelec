@@ -11,10 +11,9 @@ add_action('customize_save_after', '\Nimble\sek_update_most_used_gfonts');
 function sek_update_most_used_gfonts( $manager ) {
     if ( !sek_current_user_can_access_nb_ui() )
       return;
-    $skope_id = skp_get_skope_id();
-    $all_gfonts = sek_get_all_gfonts( $skope_id );
+    $all_gfonts = sek_get_all_gfonts();
     if ( is_array($all_gfonts) && !empty($all_gfonts) ) {
-        update_option( NIMBLE_OPT_NAME_FOR_MOST_USED_FONTS, $all_gfonts );
+        update_option( NIMBLE_OPT_NAME_FOR_MOST_USED_FONTS, $all_gfonts, 'no' );
     }
 }
 
@@ -50,7 +49,7 @@ function sek_get_all_gfonts() {
     $sek_post_query_vars = array(
         'post_type'              => NIMBLE_CPT,
         'post_status'            => get_post_stati(),
-        //'name'                   => sanitize_title( NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION . $skope_id ),
+        //'name'                   => sanitize_title(),
         'posts_per_page'         => -1,
         'no_found_rows'          => true,
         'cache_results'          => true,
@@ -135,9 +134,9 @@ function sek_enqueue_controls_js_css() {
 
                 'optPrefixForSektionSetting' => NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION,//'nimble___'
                 'optNameForGlobalOptions' => NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS,//'nimble___'
-                'optPrefixForSektionsNotSaved' => NIMBLE_OPT_PREFIX_FOR_LEVEL_UI,//"__nimble__"
+                'prefixForSettingsNotSaved' => NIMBLE_PREFIX_FOR_SETTING_NOT_SAVED,//"__nimble__"
 
-                'globalOptionDBValues' => get_option( NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS ),// '__nimble_options__'
+                'globalOptionDBValues' => get_option( NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS ),// 'nimble_global_opts'
 
                 'defaultLocationModel' => Nimble_Manager()->default_location_model,
                 'defaultLocalSektionSettingValue' => sek_get_default_location_model(),
@@ -208,12 +207,13 @@ function sek_enqueue_controls_js_css() {
                 //     '[gfont]Covered+By+Your+Grace:regular'
                 // ),
                 'alreadyUsedFonts' => get_option( NIMBLE_OPT_NAME_FOR_MOST_USED_FONTS ),
-                'isTemplateGalleryEnabled' => defined( 'NIMBLE_TEMPLATE_GALLERY_ENABLED' ) && NIMBLE_TEMPLATE_GALLERY_ENABLED, //<= APRIL 2020 : for https://github.com/presscustomizr/nimble-builder/issues/651
-                'isTemplateSaveEnabled' => defined( 'NIMBLE_TEMPLATE_SAVE_ENABLED' ) && NIMBLE_TEMPLATE_SAVE_ENABLED, //<= APRIL 2020 : for https://github.com/presscustomizr/nimble-builder/issues/655
-
+                'isTemplateGalleryEnabled' => true, //<= APRIL 2020 : for https://github.com/presscustomizr/nimble-builder/issues/651
+                'isTemplateSaveEnabled' => true, //<= APRIL 2020 : for https://github.com/presscustomizr/nimble-builder/issues/655
+                
+                'useAPItemplates' => true,// March 2021 deployed in v3.0.0
                 // Dec 2020
                 // When developing locally, allow a local template api request
-                'templateAPIUrl' => ( defined('NIMBLE_FETCH_API_TMPL_LOCALLY') && NIMBLE_FETCH_API_TMPL_LOCALLY ) ? 'http://customizr-dev.test/wp-json/nimble/v2/cravan' : 'https://api.nimblebuilder.com/wp-json/nimble/v2/cravan'
+                'templateAPIUrl' => NIMBLE_DATA_API_URL_V2
             )
         )
     );//wp_localize_script()
@@ -538,12 +538,12 @@ function nimble_add_i18n_localized_control_params( $params ) {
             // UI global and local options
             'Current page options' => __( 'Current page options', 'nimble-builder'),
             'Page template' => __( 'Page template', 'nimble-builder'),
-            'This page uses a custom template.' => __( 'This page uses a custom template.', 'nimble-builder'),
+            'This page uses Nimble Builder template.' => __( 'This page uses Nimble Builder template.', 'nimble-builder'),
             'Page header and footer' => __( 'Page header and footer', 'nimble-builder'),
             'Inner and outer widths' => __( 'Inner and outer widths', 'nimble-builder'),
             'Custom CSS' => __( 'Custom CSS', 'nimble-builder'),
-            'Reset the sections in this page' => __( 'Reset the sections in this page', 'nimble-builder'),
-            'Reset the sections displayed in global locations' => __( 'Reset the sections displayed in global locations', 'nimble-builder'),
+            'Remove all sections and options of this page' => __( 'Remove all sections and options of this page', 'nimble-builder'),
+            'Remove the sections displayed in global locations' => __( 'Remove the sections displayed in global locations', 'nimble-builder'),
             'Page speed optimizations' => __( 'Page speed optimizations', 'nimble-builder'),
 
             'Global text options for Nimble sections' => __('Global text options for Nimble sections', 'nimble-builder'),
@@ -558,10 +558,9 @@ function nimble_add_i18n_localized_control_params( $params ) {
             // DEPRECATED
             'Options for the sections of the current page' => __( 'Options for the sections of the current page', 'nimble-builder'),
             'General options applied for the sections site wide' => __( 'General options applied for the sections site wide', 'nimble-builder'),
-            //
 
             'Site wide options' => __( 'Site wide options', 'nimble-builder'),
-
+            'Site templates' => __('Site templates', 'nimble-builder'),
 
             // Levels
             'location' => __('location', 'nimble-builder'),
@@ -654,23 +653,46 @@ function nimble_add_i18n_localized_control_params( $params ) {
             'Template removed' => __('Template removed', 'nimble-builder'),
             'Error when processing templates' => __('Error when processing templates', 'nimble-builder'),
             'Last modified' => __('Last modified', 'nimble-builder'),
-            'You did not save any template yet.' => __('You did not save any template yet.', 'nimble-builder'),
+            'You did not save any templates yet.' => __('You did not save any templates yet.', 'nimble-builder'),
+            'Live demo' => __('Live demo', 'nimble-builder'),
+            '🍥 More templates coming...' => __('🍥 More templates coming...', 'nimble-builder'),
 
             // Section Save
-            'You did not save any section yet.' => __('You did not save any section yet.', 'nimble-builder')
+            'You did not save any section yet.' => __('You did not save any section yet.', 'nimble-builder'),
             //'Remove this element' => __('Remove this element', 'text_dom'),
             //'Remove this element' => __('Remove this element', 'text_dom'),
             //'Remove this element' => __('Remove this element', 'text_dom'),
 
+            'No template set.' => __('No template set.', 'nimble-builder'),
+            'Template not found : reset or pick another one.' => __('Template not found : reset or pick another one.', 'nimble-builder'),
+            'Active template : ' => __('Active template : ', 'nimble-builder'),
+            'This page is not customized with NB' => __('This page is not customized with NB', 'nimble-builder'),
+            'This page inherits a NB site template' => __('This page inherits a NB site template', 'nimble-builder'),
+            'This page is customized with NB' => __('This page is customized with NB', 'nimble-builder'),
+            'Refreshed to home page : site templates must be set when previewing home' => __('Refreshed to home page : site templates must be set when previewing home','nimble-builder'),
 
+            'Remove all sections and options of this page' => __('Remove all sections and options of this page', 'nimble-builder')
         )//array()
     )//array()
     );//array_merge
 }//'nimble_add_i18n_localized_control_params'
 
 
-
-
+// Feb 2021 added to fix regression https://github.com/presscustomizr/nimble-builder/issues/791
+function sek_prepare_seks_data_for_customizer( $seks_data ) {
+    if ( is_array( $seks_data ) ) {
+        foreach( $seks_data as $key => $data ) {
+            if ( is_array( $data ) ) {
+                $seks_data[$key] = sek_prepare_seks_data_for_customizer( $data );
+            } else {
+                if ( is_string($data) ) {
+                    $seks_data[$key] = sek_maybe_decode_richtext( $data );
+                }
+            }
+        }
+    }
+    return $seks_data;
+}
 
 
 
@@ -686,19 +708,30 @@ function add_sektion_values_to_skope_export( $skopes ) {
             sek_error_log( __FUNCTION__ . ' error => missing skope informations' );
             continue;
         }
+
         if ( 'group' == $skp_data['skope'] ) {
             $new_skopes[] = $skp_data;
             continue;
         }
+
+
         if ( !is_array( $skp_data ) ) {
             error_log( 'skp_json_export_ready_skopes filter => the skope data must be an array.' );
             continue;
         }
         $skope_id = 'global' === $skp_data['skope'] ? NIMBLE_GLOBAL_SKOPE_ID : skp_get_skope_id( $skp_data['skope'] );
+        $seks_data = sek_get_skoped_seks( $skope_id );
+
+        // Feb 2021 added to fix regression https://github.com/presscustomizr/nimble-builder/issues/791
+        $seks_data = sek_prepare_seks_data_for_customizer( $seks_data );
+
         $skp_data[ 'sektions' ] = array(
-            'db_values' => sek_get_skoped_seks( $skope_id ),
-            'setting_id' => sek_get_seks_setting_id( $skope_id )//nimble___loop_start[skp__post_page_home], nimble___custom_location_id[skp__global]
+            'db_values' => $seks_data,
+            'setting_id' => sek_get_seks_setting_id( $skope_id ),//nimble___loop_start[skp__post_page_home], nimble___custom_location_id[skp__global]
         );
+        if ( 'local' == $skp_data['skope'] ) {
+          $skp_data['has_local_nimble_customizations'] = sek_local_skope_has_been_customized($skope_id);//<= used when printing skope status on init. see control::printSektionsSkopeStatus()
+        }
         // foreach( [
         //     'loop_start',
         //     'loop_end',
@@ -804,28 +837,25 @@ function sek_print_nimble_customizer_tmpl() {
             <?php endif; ?>
           </div>
           <div class="sek-settings">
-            <button type="button" class="fas fa-sliders-h" title="<?php _e('Global settings', 'nimble-builder'); ?>" data-nimble-state="enabled">
-              <span class="screen-reader-text"><?php _e('Global settings', 'nimble-builder'); ?></span>
+            <button type="button" class="fas fa-sliders-h" title="<?php _e('Local and global settings', 'nimble-builder'); ?>" data-nimble-state="enabled">
+              <span class="screen-reader-text"><?php _e('Local and global settings', 'nimble-builder'); ?></span>
             </button>
           </div>
-          <?php // April 2020 => added for https://github.com/presscustomizr/nimble-builder/issues/655 ?>
-          <?php if ( defined( 'NIMBLE_TEMPLATE_SAVE_ENABLED' ) && NIMBLE_TEMPLATE_SAVE_ENABLED ) : ?>
           <div class="sek-tmpl-saving">
-            <button type="button" class="far fa-save" title="<?php _e('Save as a template', 'nimble-builder'); ?>" data-nimble-state="enabled">
-              <span class="screen-reader-text"><?php _e('Save as a template', 'nimble-builder'); ?></span>
+            <button type="button" class="far fa-save" title="<?php _e('Save as template', 'nimble-builder'); ?>" data-nimble-state="enabled">
+              <span class="screen-reader-text"><?php _e('Save as template', 'nimble-builder'); ?></span>
             </button>
           </div>
-          <?php endif; ?>
           <div class="sek-notifications">
             <?php if ( sek_is_debug_mode() ) : ?>
                 <span class="debug-mode-notif"><span class="fas fa-info-circle">&nbsp;<?php _e('Debug mode active ( WP admin > Settings > Nimble Builder options )', 'nimble-builder'); ?></span></span>
             <?php endif; ?>
           </div>
           <div class="sek-nimble-doc" data-doc-href="https://docs.presscustomizr.com/collection/334-nimble-builder/?utm_source=usersite&utm_medium=link&utm_campaign=nimble-customizer-topbar">
-            <div class="sek-nimble-icon"><img src="<?php echo NIMBLE_BASE_URL.'/assets/img/nimble/nimble_icon.svg?ver='.NIMBLE_VERSION; ?>" alt="<?php _e('Nimble Builder','nimble-builder'); ?>" title="<?php _e('Nimble online documentation', 'nimble-builder'); ?>"/></div>
-            <span class="sek-pointer" title="<?php _e('Nimble online documentation', 'nimble-builder'); ?>"><?php _e('Nimble online documentation', 'nimble-builder'); ?></span>
-            <button class="far fa-question-circle" type="button" title="<?php _e('Nimble online documentation', 'nimble-builder'); ?>" data-nimble-state="enabled">
-              <span class="screen-reader-text"><?php _e('Nimble online documentation', 'nimble-builder'); ?></span>
+            <div class="sek-nimble-icon"><img src="<?php echo NIMBLE_BASE_URL.'/assets/img/nimble/nimble_icon.svg?ver='.NIMBLE_VERSION; ?>" alt="<?php _e('Nimble Builder','nimble-builder'); ?>" title="<?php _e('Knowledge base', 'nimble-builder'); ?>"/></div>
+            <span class="sek-pointer" title="<?php _e('Knowledge base', 'nimble-builder'); ?>"><?php _e('Knowledge base', 'nimble-builder'); ?></span>
+            <button class="far fa-question-circle" type="button" title="<?php _e('Knowledge base', 'nimble-builder'); ?>" data-nimble-state="enabled">
+              <span class="screen-reader-text"><?php _e('Knowledge base', 'nimble-builder'); ?></span>
             </button>
           </div>
       </div>
@@ -970,29 +1000,26 @@ function sek_print_nimble_customizer_tmpl() {
           <div id="sek-tmpl-source-switcher">
             <div aria-label="" class="sek-ui-button-group" role="group">
                 <button type="button" aria-pressed="true" class="sek-ui-button is-selected" title="<?php _e('Nimble Builder templates', 'nimble-builder'); ?>" data-sek-tmpl-source="api_tmpl"><span><?php _e('Nimble Builder templates', 'nimble-builder'); ?></span></button>
-                <button type="button" aria-pressed="false" class="sek-ui-button" title="<?php _e('My templates', 'nimble-builder'); ?>" data-sek-tmpl-source="user_tmpl"><span><?php _e('My templates', 'nimble-builder'); ?></span></button>
+                <button type="button" aria-pressed="false" class="sek-ui-button" title="<?php _e('My templates', 'nimble-builder'); ?>" data-sek-tmpl-source="user_tmpl"><span><?php _e('My templates', 'nimble-builder'); ?>&nbsp;<span class="sek-new-label"><?php _e('New!', 'nimble-builder'); ?></span></span></button>
             </div>
           </div>
-          <input type="text" class="sek-filter-tmpl" placeholder="<?php _e('Filter templates', 'nimble-builder'); ?>">
-          <div class="sek-ui-button-group" role="group">
+          <div class="sek-tmpl-filter-wrapper">
+            <input type="text" class="sek-filter-tmpl" placeholder="<?php _e('Filter templates', 'nimble-builder'); ?>">
+          </div>
+          <div class="sek-close-button">
             <button class="sek-ui-button sek-close-dialog" type="button" title="<?php _e('Close', 'nimble-builder'); ?>">
                 <i class="far fa-times-circle"></i>&nbsp;<?php _e('Close', 'nimble-builder'); ?>
             </button>
           </div>
         </div>
         <div class="sek-tmpl-gallery-inner"></div>
-        <div class="sek-tmpl-gal-import-dialog">
-            <p>This page has NB sections already. Select an import options.</p>
+        <div class="sek-tmpl-gal-inject-dialog">
+            <p><strong><?php _e('This page already has Nimble Builder sections. What do you want to do ?', 'nimble-builder') ?></strong></p>
             <div class="sek-ui-button-group" role="group">
-              <button class="sek-ui-button sek-tmpl-import-replace" type="button" title="<?php _e('Replace existing sections', 'nimble-builder'); ?>" data-sek-tmpl-inject-mode="replace">
-                <?php _e('Replace existing sections', 'nimble-builder'); ?><span class="spinner"></span>
-              </button>
-              <button class="sek-ui-button sek-tmpl-import-before" type="button" title="<?php _e('Insert before existing sections', 'nimble-builder'); ?>" data-sek-tmpl-inject-mode="before">
-                <?php _e('Insert before existing sections', 'nimble-builder'); ?><span class="spinner"></span>
-              </button>
-              <button class="sek-ui-button sek-tmpl-import-after" type="button" title="<?php _e('Insert after existing sections', 'nimble-builder'); ?>" data-sek-tmpl-inject-mode="after">
-                <?php _e('Insert after existing sections', 'nimble-builder'); ?><span class="spinner"></span>
-              </button>
+              <button class="sek-ui-button" type="button" title="<?php _e('Replace existing sections', 'nimble-builder'); ?>" data-sek-tmpl-inject-mode="replace"><?php _e('Replace existing sections', 'nimble-builder'); ?></button>
+              <button class="sek-ui-button" type="button" title="<?php _e('Insert before existing sections', 'nimble-builder'); ?>" data-sek-tmpl-inject-mode="before"><?php _e('Insert before existing sections', 'nimble-builder'); ?></button>
+              <button class="sek-ui-button" type="button" title="<?php _e('Insert after existing sections', 'nimble-builder'); ?>" data-sek-tmpl-inject-mode="after"><?php _e('Insert after existing sections', 'nimble-builder'); ?></button>
+              <button class="sek-ui-button" type="button" title="<?php _e('Cancel', 'nimble-builder'); ?>" data-sek-tmpl-inject-mode="cancel"><?php _e('Cancel', 'nimble-builder'); ?></button>
             </div>
         </div>
       </div>
@@ -1644,9 +1671,7 @@ function sek_print_nimble_input_templates() {
             <div aria-label="<?php _e('Content type', 'nimble-builder'); ?>" class="sek-ui-button-group" role="group">
                 <button type="button" aria-pressed="false" class="sek-ui-button" title="<?php _e('Pick a section', 'nimble-builder'); ?>" data-sek-content-type="section"><?php _e('Pick a section', 'nimble-builder'); ?></button>
                 <button type="button" aria-pressed="false" class="sek-ui-button" title="<?php _e('Pick a module', 'nimble-builder'); ?>" data-sek-content-type="module"><?php _e('Pick a module', 'nimble-builder'); ?></button>
-                <?php if ( defined( 'NIMBLE_TEMPLATE_GALLERY_ENABLED' ) && NIMBLE_TEMPLATE_GALLERY_ENABLED ) : ?>
-                <button type="button" aria-pressed="false" class="sek-ui-button" title="<?php _e('Pick a template', 'nimble-builder'); ?>" data-sek-content-type="template"><?php _e('Pick a template', 'nimble-builder'); ?></button>
-                <?php endif; ?>
+                <button type="button" aria-pressed="false" class="sek-ui-button" title="<?php _e('Pick a template', 'nimble-builder'); ?>" data-sek-content-type="template"><?php _e('Pick a template', 'nimble-builder'); ?>&nbsp;<span class="sek-new-label"><?php _e('New!', 'nimble-builder'); ?></span></button>
             </div>
         </div>
       </script>
@@ -1946,13 +1971,13 @@ function sek_print_nimble_input_templates() {
 
       <?php
       /* ------------------------------------------------------------------------- *
-       *  RESET BUTTON
+       *  REMOVE BUTTON
       /* ------------------------------------------------------------------------- */
       ?>
       <script type="text/html" id="tmpl-nimble-input___reset_button">
         <div class="sek-button-choice-wrapper">
           <input data-czrtype="{{data.input_id}}" type="hidden"/>
-          <button type="button" aria-pressed="false" class="sek-ui-button sek-float-right" title="<?php _e('Reset', 'nimble-builder'); ?>" data-sek-reset-scope="{{data.input_data.scope}}"><?php _e('Reset', 'nimble-builder'); ?></button>
+          <button type="button" aria-pressed="false" class="sek-ui-button sek-float-right" title="<?php _e('Remove now', 'nimble-builder'); ?>" data-sek-reset-scope="{{data.input_data.scope}}"><?php _e('Remove now', 'nimble-builder'); ?></button>
         </div>
       </script>
 
@@ -2029,6 +2054,22 @@ function sek_print_nimble_input_templates() {
         <input data-czrtype="{{data.input_id}}" type="hidden"/>
       </script>
       <?php
+
+      /* ------------------------------------------------------------------------- *
+       *  SITE TMPL PICKER
+      /* ------------------------------------------------------------------------- */
+      ?>
+      <script type="text/html" id="tmpl-nimble-input___site_tmpl_picker">
+        <div class="sek-button-choice-wrapper">
+          <input data-czrtype="{{data.input_id}}" type="hidden"/>
+          <div class="sek-ui-button-group" role="group">
+            <button type="button" aria-pressed="false" class="sek-ui-button sek-remove-site-tmpl" title="<?php _e('Reset to default', 'nimble-builder'); ?>"><?php _e('Reset to default', 'nimble-builder'); ?></button>
+            <button type="button" aria-pressed="false" class="sek-ui-button sek-pick-site-tmpl" title="<?php _e('Pick a template', 'nimble-builder'); ?>" data-sek-group-scope="{{data.input_id}}"><?php _e('Pick a template', 'nimble-builder'); ?></button>
+          </div>
+        </div>
+      </script>
+
+      <?php
 }//sek_print_nimble_input_templates() @hook 'customize_controls_print_footer_scripts'
 
 
@@ -2064,24 +2105,29 @@ if ( !class_exists( 'SEK_CZR_Dyn_Register' ) ) :
 
         //@filter 'customize_dynamic_setting_args'
         function set_dyn_setting_args( $setting_args, $setting_id ) {
-            // shall start with "nimble___" or "__nimble_options__"
+            // shall start with "nimble___" or "nimble_global_opts"
+            // those are the setting that will actually be saved in DB : 
+            // - sektion collections ( local and global skope )
+            // - global options
+            // - site template options
             if ( 0 === strpos( $setting_id, NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION ) || 0 === strpos( $setting_id, NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS ) ) {
                 //sek_error_log( 'DYNAMICALLY REGISTERING SEK SETTING => ' . $setting_id,  $setting_args);
                 return array(
                     'transport' => 'refresh',
                     'type' => 'option',
                     'default' => array(),
-                    //'sanitize_callback'    => array( $this, 'sanitize_callback' )
-                    //'validate_callback'    => array( $this, 'validate_callback' )
+                    // Only the section collections are sanitized on save
+                    'sanitize_callback' => 0 === strpos( $setting_id, NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION ) ? '\Nimble\sek_sektion_collection_sanitize_cb' : null
+                    //'validate_callback'    => '\Nimble\sek_sektion_collection_validate_cb'
                 );
-            } else if ( 0 === strpos( $setting_id, NIMBLE_OPT_PREFIX_FOR_LEVEL_UI ) ) {
+            } else if ( 0 === strpos( $setting_id, NIMBLE_PREFIX_FOR_SETTING_NOT_SAVED ) ) {
                 //sek_error_log( 'DYNAMICALLY REGISTERING SEK SETTING => ' . $setting_id,  $setting_args);
                 return array(
                     'transport' => 'refresh',
-                    'type' => '_nimble_ui_',//won't be saved as is,
+                        'type' => '_nimble_ui_',//won't be saved as is,
                     'default' => array(),
-                    'sanitize_callback' => array( $this, 'sanitize_callback' ),
-                    'validate_callback' => array( $this, 'validate_callback' )
+                    //'sanitize_callback' => array( $this, 'sanitize_callback' ),
+                    //'validate_callback'    => '\Nimble\sek_sektion_collection_validate_cb'
                 );
             }
             return $setting_args;
@@ -2090,69 +2136,20 @@ if ( !class_exists( 'SEK_CZR_Dyn_Register' ) ) :
 
 
         //@filter 'customize_dynamic_setting_class'
+        // We use a custom setting class only for the section collections ( local and global ), not for global options and site template options
         function set_dyn_setting_class( $class, $setting_id, $args ) {
-            // shall start with 'nimble___'
-            if ( 0 !== strpos( $setting_id, NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION ) )
-              return $class;
             //sek_error_log( 'REGISTERING CLASS DYNAMICALLY for setting =>' . $setting_id );
-            return '\Nimble\Nimble_Customizer_Setting';
-        }
-
-
-        // Uses the sanitize_callback function specified on module registration if any
-        function sanitize_callback( $setting_data, $setting_instance ) {
-            if ( isset( $_POST['location_skope_id'] ) ) {
-                $sektionSettingValue = sek_get_skoped_seks( $_POST['location_skope_id'] );
-                if ( is_array( $sektionSettingValue ) ) {
-                    $sektion_collection = array_key_exists('collection', $sektionSettingValue) ? $sektionSettingValue['collection'] : array();
-                    if ( is_array( $sektion_collection ) ) {
-                        $model = sek_get_level_model( $setting_instance->id, $sektion_collection );
-                        if ( is_array( $model ) && !empty( $model['module_type'] ) ) {
-                            $sanitize_callback = sek_get_registered_module_type_property( $model['module_type'], 'sanitize_callback' );
-                            if ( !empty( $sanitize_callback ) && is_string( $sanitize_callback ) && function_exists( $sanitize_callback ) ) {
-                                $setting_data = $sanitize_callback( $setting_data );
-                            }
-                        }
-                    }
-                }
+            // Setting class for NB global options and Site Template options
+            if ( 0 === strpos( $setting_id, NIMBLE_OPT_NAME_FOR_GLOBAL_OPTIONS ) ) {
+                return '\Nimble\Nimble_Options_Setting';
             }
-            //return new \WP_Error( 'required', __( 'Error in a sektion', 'text_doma' ), $setting_data );
-            return $setting_data;
-        }
-
-        // Uses the validate_callback function specified on module registration if any
-        // @return validity object
-        function validate_callback( $validity, $setting_data, $setting_instance ) {
-            $validated = true;
-            if ( isset( $_POST['location_skope_id'] ) ) {
-                $sektionSettingValue = sek_get_skoped_seks( $_POST['location_skope_id'] );
-                if ( is_array( $sektionSettingValue ) ) {
-                    $sektion_collection = array_key_exists('collection', $sektionSettingValue) ? $sektionSettingValue['collection'] : array();
-                    if ( is_array( $sektion_collection ) ) {
-                        $model = sek_get_level_model( $setting_instance->id, $sektion_collection );
-                        if ( is_array( $model ) && !empty( $model['module_type'] ) ) {
-                            $validate_callback = sek_get_registered_module_type_property( $model['module_type'], 'validate_callback' );
-                            if ( !empty( $validate_callback ) && is_string( $validate_callback ) && function_exists( $validate_callback ) ) {
-                                $validated = $validate_callback( $setting_data );
-                            }
-                        }
-                    }
-                }
+            
+            // Setting class for NB sektion collections => shall start with 'nimble___'
+            if ( 0 === strpos( $setting_id, NIMBLE_OPT_PREFIX_FOR_SEKTION_COLLECTION ) ) {
+                return '\Nimble\Nimble_Collection_Setting';
             }
-            //return new \WP_Error( 'required', __( 'Error in a sektion', 'text_doma' ), $setting_data );
-            if ( true !== $validated ) {
-                if ( is_wp_error( $validated ) ) {
-                    $validation_msg = $validation_msg->get_error_message();
-                    $validity->add(
-                        'nimble_validation_error_in_' . $setting_instance->id ,
-                        $validation_msg
-                    );
-                }
-
-            }
-            return $validity;
+            return $class;
         }
-
 
  }//class
 endif;
@@ -4344,6 +4341,10 @@ function sek_maybe_export() {
     // replace image id by the absolute url
     // clean level ids and replace them with a placeholder string
     $seks_data = apply_filters( 'nimble_pre_export', $seks_data );
+
+    // March 2021 : make sure text input are sanitized like in #544 #792
+    //$seks_data = sek_sektion_collection_sanitize_cb( $seks_data );
+
     $theme_name = sanitize_title_with_dashes( get_stylesheet() );
 
     //sek_error_log('EXPORT AFTER FILTER ?', $seks_data );
@@ -4551,6 +4552,10 @@ function sek_ajax_get_manually_imported_file_content() {
         $maybe_import_images = false;
     }
 
+    // Make sure NB decodes encoded rich text before sending to the customizer
+    // see #544 and #791
+    $raw_unserialized_data['data'] = sek_prepare_seks_data_for_customizer( $raw_unserialized_data['data'] );
+
     $imported_content = array(
         //'data' => apply_filters( 'nimble_pre_import', $raw_unserialized_data['data'], $do_import_images ),
         'data' => sek_maybe_import_imgs( $raw_unserialized_data['data'], $maybe_import_images ),
@@ -4567,55 +4572,6 @@ function sek_ajax_get_manually_imported_file_content() {
     // Send
     wp_send_json_success( $imported_content );
 }
-
-
-
-// IMPORT IMG HELPER
-// recursive
-//add_filter( 'nimble_pre_import', '\Nimble\sek_maybe_import_imgs' );
-function sek_maybe_import_imgs( $seks_data, $do_import_images = true ) {
-    $new_seks_data = array();
-    // Reset img_import_errors
-    Nimble_Manager()->img_import_errors = [];
-    foreach ( $seks_data as $key => $value ) {
-        if ( is_array($value) ) {
-            $new_seks_data[$key] = sek_maybe_import_imgs( $value, $do_import_images );
-        } else {
-            if ( is_string( $value ) && false !== strpos( $value, '__img_url__' ) && sek_is_img_url( $value ) ) {
-                $url = str_replace( '__img_url__', '', $value );
-                // april 2020 : new option to skip importing images
-                // introduced for https://github.com/presscustomizr/nimble-builder/issues/663
-                if ( !$do_import_images ) {
-                    $value = $url;
-                } else {
-                    //sek_error_log( __FUNCTION__ . ' URL?', $url );
-                    $id = sek_sideload_img_and_return_attachment_id( $url );
-                    if ( is_wp_error( $id ) ) {
-                        $value = null;
-                        $img_errors = Nimble_Manager()->img_import_errors;
-                        $img_errors[] = $url;
-                        Nimble_Manager()->img_import_errors = $img_errors;
-                    } else {
-                        $value = $id;
-                    }
-                }
-            }
-            $new_seks_data[$key] = $value;
-        }
-    }
-    return $new_seks_data;
-}
-
-// @return bool
-function sek_is_img_url( $url = '' ) {
-    if ( is_string( $url ) ) {
-      if ( preg_match( '/\.(jpg|jpeg|png|gif)/i', $url ) ) {
-        return true;
-      }
-    }
-    return false;
-}
-
 ?><?php
 ////////////////////////////////////////////////////////////////
 // Fetches the user saved templates
@@ -4674,6 +4630,7 @@ function sek_ajax_sek_get_user_tmpl_json() {
     $tmpl_post = sek_get_saved_tmpl_post( $_POST['tmpl_post_name'] );
     if ( !is_wp_error( $tmpl_post ) && $tmpl_post && is_object( $tmpl_post ) ) {
         $tmpl_decoded = maybe_unserialize( $tmpl_post->post_content );
+
         // Structure of $content :
         // array(
         //     'data' => $_POST['tmpl_data'],//<= json stringified
@@ -4689,14 +4646,25 @@ function sek_ajax_sek_get_user_tmpl_json() {
         //         'theme' => sanitize_title_with_dashes( get_stylesheet() )
         //     )
         // );
-        if ( is_array( $tmpl_decoded ) && !empty( $tmpl_decoded['data'] ) && is_string( $tmpl_decoded['data'] ) ) {
-            $tmpl_decoded['data'] = json_decode( wp_unslash( $tmpl_decoded['data'], true ) );
+        if ( is_array( $tmpl_decoded ) && !empty( $tmpl_decoded['data'] ) && is_array( $tmpl_decoded['data'] ) ) {
+            //$tmpl_decoded['data'] = json_decode( wp_unslash( $tmpl_decoded['data'], true ) );
             $tmpl_decoded['data'] = sek_maybe_import_imgs( $tmpl_decoded['data'], $do_import_images = true );
             // the image import errors won't block the import
             // they are used when notifying user in the customizer
             $tmpl_decoded['img_errors'] = !empty( Nimble_Manager()->img_import_errors ) ? implode(',', Nimble_Manager()->img_import_errors) : array();
+            // Make sure we decode encoded rich text before sending to the customizer
+            // see #544 and #791
+            $tmpl_decoded['data'] = sek_prepare_seks_data_for_customizer( $tmpl_decoded['data'] );
+
+            // added March 2021 for site templates #478
+            // If property '__inherits_group_skope_tmpl_when_exists__' has been saved by mistake in the template, make sure it's unset now
+            if ( array_key_exists('__inherits_group_skope_tmpl_when_exists__', $tmpl_decoded['data'] ) ) {
+                unset( $tmpl_decoded['data']['__inherits_group_skope_tmpl_when_exists__'] );
+            }
+            wp_send_json_success( $tmpl_decoded );
+        } else {
+            wp_send_json_error( __FUNCTION__ . '_invalid_tmpl_post_data' );
         }
-        wp_send_json_success( $tmpl_decoded );
     } else {
         wp_send_json_error( __FUNCTION__ . '_tmpl_post_not_found' );
     }
@@ -4714,27 +4682,31 @@ function sek_ajax_sek_get_api_tmpl_json() {
         wp_send_json_error( __FUNCTION__ . '_missing_tmpl_post_name' );
     }
     $tmpl_name = $_POST['api_tmpl_name'];
-    $raw_tmpl = sek_get_tmpl_api_data();// <= returns an unserialized array, in which the template['data'] is NOT a JSON, unlike for user saved templates
-    if( !is_array( $raw_tmpl) || empty( $raw_tmpl ) ) {
-        sek_error_log( __FUNCTION__ . ' problem => no api template collection available when getting template : ' . $tmpl_name );
-        wp_send_json_error( __FUNCTION__ . '_empty_api_template_collection' );
+    $raw_tmpl_data = sek_get_single_tmpl_api_data( $tmpl_name );// <= returns an unserialized array, in which the template['data'] is NOT a JSON, unlike for user saved templates
+    if( !is_array( $raw_tmpl_data) || empty( $raw_tmpl_data ) ) {
+        sek_error_log( __FUNCTION__ . ' problem when getting template : ' . $tmpl_name );
+        wp_send_json_error( __FUNCTION__ . '_invalid_template_'. $tmpl_name );
     }
-    //sek_error_log( __FUNCTION__ . ' api template collection', $raw_tmpl[$tmpl_name] );
-    if ( empty( $raw_tmpl[$tmpl_name] ) ) {
-        sek_error_log( __FUNCTION__ . ' problem => template not found in api template collection : ' . $tmpl_name );
-        wp_send_json_error( __FUNCTION__ . '_api_template_not_found' );
-    // Note that $raw_tmpl[$tmpl_name]['data'] is saved as a json
-    } else if ( !isset($raw_tmpl[$tmpl_name]['data'] ) || empty( $raw_tmpl[$tmpl_name]['data'] ) ) {
-        sek_error_log( __FUNCTION__ . ' problem => missing or invalid data property for template : ' . $tmpl_name, $raw_tmpl[$tmpl_name] );
-        wp_send_json_error( __FUNCTION__ . '_missing_data_property' );
+    //sek_error_log( __FUNCTION__ . ' api template collection', $raw_tmpl_data );
+    if ( !isset($raw_tmpl_data['data'] ) || empty( $raw_tmpl_data['data'] ) ) {
+        sek_error_log( __FUNCTION__ . ' problem => missing or invalid data property for template : ' . $tmpl_name, $raw_tmpl_data );
+        wp_send_json_error( __FUNCTION__ . '_missing_data_property_for_template_' . $tmpl_name );
     } else {
-        // $tmpl_decoded = $raw_tmpl[$tmpl_name];
-        $tmpl_as_array = $raw_tmpl[$tmpl_name];
-        $raw_tmpl[$tmpl_name]['data'] = sek_maybe_import_imgs( $raw_tmpl[$tmpl_name]['data'], $do_import_images = true );
-        $raw_tmpl[$tmpl_name]['img_errors'] = !empty( Nimble_Manager()->img_import_errors ) ? implode(',', Nimble_Manager()->img_import_errors) : array();
-        wp_send_json_success( $raw_tmpl[$tmpl_name] );
+        // $tmpl_decoded = $raw_tmpl_data;
+        $raw_tmpl_data['data'] = sek_maybe_import_imgs( $raw_tmpl_data['data'], $do_import_images = true );
+        $raw_tmpl_data['img_errors'] = !empty( Nimble_Manager()->img_import_errors ) ? implode(',', Nimble_Manager()->img_import_errors) : array();
+        // Make sure we decode encoded rich text before sending to the customizer
+        // see #544 and #791
+        $raw_tmpl_data['data'] = sek_prepare_seks_data_for_customizer( $raw_tmpl_data['data'] );
+        
+        // added March 2021 for site templates #478
+        // If property '__inherits_group_skope_tmpl_when_exists__' has been saved by mistake in the template, make sure it's unset now
+        if ( array_key_exists('__inherits_group_skope_tmpl_when_exists__', $raw_tmpl_data['data'] ) ) {
+            unset( $raw_tmpl_data['data']['__inherits_group_skope_tmpl_when_exists__'] );
+        }
+        wp_send_json_success( $raw_tmpl_data );
     }
-    return [];
+    //return [];
 }
 
 
@@ -4742,13 +4714,10 @@ function sek_ajax_sek_get_api_tmpl_json() {
 ////////////////////////////////////////////////////////////////
 // TEMPLATE SAVE
 // introduced in april 2020 for https://github.com/presscustomizr/nimble-builder/issues/655
-// ENABLED WHEN CONSTANT NIMBLE_TEMPLATE_SAVE_ENABLED === true
 add_action( 'wp_ajax_sek_save_user_template', '\Nimble\sek_ajax_save_user_template' );
 /////////////////////////////////////////////////////////////////
 // hook : wp_ajax_sek_save_user_template
 function sek_ajax_save_user_template() {
-    //sek_error_log( __FUNCTION__ . ' ALORS ??', $_POST );
-
     sek_do_ajax_pre_checks( array( 'check_nonce' => true ) );
     $is_edit_metas_only_case = isset( $_POST['edit_metas_only'] ) && 'yes' === $_POST['edit_metas_only'];
 
@@ -4781,14 +4750,17 @@ function sek_ajax_save_user_template() {
         // clean level ids and replace them with a placeholder string
         $tmpl_data = json_decode( wp_unslash( $_POST['tmpl_data'] ), true );
         $tmpl_data = sek_template_save_clean_id( $tmpl_data );
+        
+        // added March 2021 for site templates #478
+        // If property '__inherits_group_skope_tmpl_when_exists__' has been set to the template, make sure it's unset now
+        if ( array_key_exists('__inherits_group_skope_tmpl_when_exists__', $tmpl_data ) ) {
+            unset( $tmpl_data['__inherits_group_skope_tmpl_when_exists__'] );
+        }
     }
     
     // make sure description and title are clean before DB
-    $tmpl_title = wp_strip_all_tags( $_POST['tmpl_title'] );
-    $tmpl_description = wp_strip_all_tags( $_POST['tmpl_description'] );
-
-    //sek_error_log(__FUNCTION__ .  '$_POST?', $_POST );
-
+    $tmpl_title = sek_maybe_encode_richtext( $_POST['tmpl_title'] );
+    $tmpl_description = sek_maybe_encode_richtext( $_POST['tmpl_description'] );
     // sek_error_log('json decode ?', json_decode( wp_unslash( $_POST['sek_data'] ), true ) );
     $template_to_save = array(
         'data' => $tmpl_data,//<= array
@@ -4803,14 +4775,16 @@ function sek_ajax_save_user_template() {
             'tmpl_header_location' => isset( $_POST['tmpl_header_location'] ) ? $_POST['tmpl_header_location'] : '',
             'tmpl_footer_location' => isset( $_POST['tmpl_footer_location'] ) ? $_POST['tmpl_footer_location'] : '',
             'date' => date("Y-m-d"),
-            'theme' => sanitize_title_with_dashes( get_stylesheet() )
-        ),
-        'edit_metas_only' => $is_edit_metas_only_case ? 'yes' : 'no'
+            'theme' => sanitize_title_with_dashes( get_stylesheet() ),
+            // for api templates
+            'is_pro_tmpl' => false,
+            'thumb_url' => ''
+        )
     );
 
-    $saved_template_post = sek_update_saved_tmpl_post( $template_to_save );
+    $saved_template_post = sek_update_user_tmpl_post( $template_to_save, $is_edit_metas_only_case );
     if ( is_wp_error( $saved_template_post ) || is_null($saved_template_post) || empty($saved_template_post) ) {
-        wp_send_json_error( __FUNCTION__ . ' => error when invoking sek_update_saved_tmpl_post()' );
+        wp_send_json_error( __FUNCTION__ . ' => error when invoking sek_update_user_tmpl_post()' );
     } else {
         // sek_error_log( 'ALORS CE POST?', $saved_template_post );
         wp_send_json_success( [ 'tmpl_post_id' => $saved_template_post->ID ] );
@@ -4854,7 +4828,6 @@ function sek_template_save_clean_id( $tmpl_data = array() ) {
 ////////////////////////////////////////////////////////////////
 // TEMPLATE REMOVE
 // introduced in may 2020 for https://github.com/presscustomizr/nimble-builder/issues/655
-// ENABLED WHEN CONSTANT NIMBLE_TEMPLATE_SAVE_ENABLED === true
 add_action( 'wp_ajax_sek_remove_user_template', '\Nimble\sek_ajax_remove_user_template' );
 /////////////////////////////////////////////////////////////////
 // hook : wp_ajax_sek_remove_user_template
@@ -4867,10 +4840,11 @@ function sek_ajax_remove_user_template() {
     if ( empty( $_POST['tmpl_post_name']) || !is_string( $_POST['tmpl_post_name'] ) ) {
         wp_send_json_error( __FUNCTION__ . '_missing_tmpl_post_name' );
     }
+    $tmpl_post_name = $_POST['tmpl_post_name'];
     // if ( !isset( $_POST['skope_id'] ) || empty( $_POST['skope_id'] ) ) {
     //     wp_send_json_error( __FUNCTION__ . '_missing_skope_id' );
     // }
-    $tmpl_post_to_remove = sek_get_saved_tmpl_post( $_POST['tmpl_post_name'] );
+    $tmpl_post_to_remove = sek_get_saved_tmpl_post( $tmpl_post_name );
 
     //sek_error_log( __FUNCTION__ . ' => so $tmpl_post_to_remove ' . $_POST['tmpl_post_name'], $tmpl_post_to_remove );
 
@@ -4880,6 +4854,9 @@ function sek_ajax_remove_user_template() {
         if ( is_wp_error( $r ) ) {
             wp_send_json_error( __FUNCTION__ . '_removal_error' );
         }
+
+        // Added April 2021 for stie templates #478
+        do_action('nb_on_remove_saved_tmpl_post', $tmpl_post_name );
     } else {
         wp_send_json_error( __FUNCTION__ . '_tmpl_post_not_found' );
     }
@@ -4888,7 +4865,7 @@ function sek_ajax_remove_user_template() {
         wp_send_json_error( __FUNCTION__ . '_removal_error' );
     } else {
         // sek_error_log( 'ALORS CE POST?', $saved_template_post );
-        wp_send_json_success( [ 'tmpl_post_removed' => $_POST['tmpl_post_name'] ] );
+        wp_send_json_success( [ 'tmpl_post_removed' => $tmpl_post_name ] );
     }
     //sek_error_log( __FUNCTION__ . '$_POST' ,  $_POST);
 }
@@ -4952,7 +4929,9 @@ function sek_ajax_sek_get_user_section_json() {
         if ( is_array( $section_decoded ) && !empty( $section_decoded['data'] ) && is_string( $section_decoded['data'] ) ) {
             $section_decoded['data'] = json_decode( wp_unslash( $section_decoded['data'], true ) );
         }
-
+        // Make sure we decode encoded rich text before sending to the customizer
+        // see #544 and #791
+        $section_decoded['data'] = sek_prepare_seks_data_for_customizer( $section_decoded['data'] );
         wp_send_json_success( $section_decoded );
     } else {
         wp_send_json_error( __FUNCTION__ . '_section_post_not_found' );
@@ -5006,8 +4985,8 @@ function sek_ajax_save_user_section() {
     }
 
     // make sure description and title are clean before DB
-    $sec_title = wp_strip_all_tags( $_POST['section_title'] );
-    $sec_description = wp_strip_all_tags( $_POST['section_description'] );
+    $sec_title = sek_maybe_encode_richtext( $_POST['section_title'] );
+    $sec_description = sek_maybe_encode_richtext( $_POST['section_description'] );
 
     $section_to_save = array(
         'data' => $seks_data,//<= json stringified
@@ -5022,11 +5001,10 @@ function sek_ajax_save_user_section() {
             //'active_locations' => is_array( $_POST['active_locations'] ) ? $_POST['active_locations'] : array(),
             'date' => date("Y-m-d"),
             'theme' => sanitize_title_with_dashes( get_stylesheet() )
-        ),
-        'edit_metas_only' => $is_edit_metas_only_case ? 'yes' : 'no'
+        )
     );
 
-    $saved_section_post = sek_update_saved_section_post( $section_to_save );
+    $saved_section_post = sek_update_saved_section_post( $section_to_save, $is_edit_metas_only_case );
     if ( is_wp_error( $saved_section_post ) || is_null($saved_section_post) || empty($saved_section_post) ) {
         wp_send_json_error( __FUNCTION__ . ' => error when invoking sek_update_saved_section_post()' );
     } else {
