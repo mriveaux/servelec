@@ -13,12 +13,15 @@ External resources linked to the theme.
 Resources packed within the theme.
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
+* Images on screenshot is from https://pxhere.com/ link. License: Creative Commons Zero (CC0)
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * JQuery Advanced News Ticker 1.0.11 by Valentin Ledrapier(risq) | GPL Licensed
 * Stickyjs by Anthony Garand | MIT Licensed
 * Magnific-Popup by Dmitry Semenov | MIT Licensed
 * FitVids by Chris Coyier and Paravel | WTFPL Licensed
 * Bxslider by Steven Wanderski released under the MIT license
+* wp-color-picker-alpha by Sergio | GPLv2 Licensed
+* SelectWoo by WooCommerce | MIT Licensed
 * TGM-Plugin-Activation by Thomas Griffin, Gary Jones, Juliette Reinders Folmer | GPL v2 Licensed
 * Other custom js files are our own creation and is licensed under the same license as this theme.
 
@@ -49,6 +52,41 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - 2.0.4 -2020-12-16 =
+* Tweak - Update footer credit link with `rel="nofollow"` attributes.
+* Fix   - jQuery deprecated message in some of the theme custom JS files
+
+= Version - 2.0.3 -2020-10-21 =
+* Enhancement - Customizer design.
+
+= Version - 2.0.2 -2020-09-28 =
+* Fix - Search form result display for specific language when using Polylang plugin.
+* Fix - Alpha color selector design issue on custom customize controls.
+
+= Version - 2.0.1 -2020-09-16 =
+* Tweak - Updated `Tested up to` to 5.5
+* Fix - Link in slider not working on certain devices in Chrome
+
+= Version - 2.0.0.3 -2020-08-19 =
+* Fix - Primary color issue for read more button
+* Fix - Primary color issue for header style 3 menu border
+
+= Version - 2.0.0.2 -2020-08-18 =
+* Fix - Primary color issue
+
+= Version - 2.0.0.1 -2020-08-18 =
+* Fix - PHP syntax error
+
+= Version - 2.0.0 -2020-08-18 =
+* Refactor  - Customize controls.
+* Refactor  - Customizer sections and options.
+* Remove    - TGMPA library to recommend plugins
+* Deprecate - Demo config via theme.
+
+= Version - 1.5.1 -2020-08-08 =
+* Enhancement - Links CSS transition.
+* Remove      - Unused codes.
+
 = Version - 1.5.0 -2020-07-20 =
 * Fix - Mobile sub toggle icon color and bg color conflict while opening two submenu at once.
 * Enhance - Post `Read more` CTA UI.

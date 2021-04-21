@@ -89,39 +89,39 @@ jQuery('#footer-core.option18 #footer-col5.widget-area').addClass("one_fourth");
 });
 
 
-// ----------------------------------------------------------------------------------
-//	FORMAT MAIN HEADER MENU
-//----------------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------------
+	FORMAT MAIN HEADER MENU
+---------------------------------------------------------------------------------- */
 
 function mainmenu(){
 
 	// Add menu-hover class
 	jQuery("header .header-links ul.menu > li").hover(function(){
-		jQuery(this).find('ul.sub-menu:first').css({visibility: "visible",display: "none"}).parent().addClass('menu-hover');
+		jQuery(this).find('ul.sub-menu:first').parent().addClass('menu-hover');
 	},function(){
-		jQuery(this).find('ul.sub-menu:first').css({visibility: "hidden",display: "none"}).parent().removeClass('menu-hover');
+		jQuery(this).find('ul.sub-menu:first').parent().removeClass('menu-hover');
 	});
 
 	// Add menu-parent class
 	jQuery("header .header-links ul.menu > li").each(function(){
-		jQuery(this).find('ul.sub-menu').css({visibility: "visible",display: "none"}).parent().addClass('menu-parent');
+		jQuery(this).find('ul.sub-menu').parent().addClass('menu-parent');
 	});
 
-	// Add smooth dropdown effect - #Pre Header
-	jQuery("#pre-header .header-links li").hover(function(){
-		parentWidth = jQuery(this).width();
-		jQuery(this).find('ul:first').css({visibility: "visible",display: "none","min-width": parentWidth}).fadeToggle(300);
-	},function(){
-		jQuery(this).find('ul:first').css({visibility: "hidden"});
-	});
-
-	// Add smooth dropdown effect - #Header
-	jQuery("#header .header-links li").hover(function(){
-		parentWidth = jQuery(this).width();
-		jQuery(this).find('ul:first').css({visibility: "visible",display: "none","min-width": parentWidth}).fadeToggle(300);
-	},function(){
-		jQuery(this).find('ul:first').css({visibility: "hidden"});
-	});
+	// Correct menu for below header when navigating down page.
+	if( jQuery( 'body' ).hasClass( 'header-below' ) ) {
+		jQuery('#header').waypoint(function(direction) {
+			if (direction === 'down') {
+				jQuery( 'body' ).addClass( 'header-below2' );
+				jQuery( 'body' ).removeClass( 'header-below1' );
+			}
+			else {
+				jQuery( 'body' ).removeClass( 'header-below2' );
+				jQuery( 'body' ).addClass( 'header-below1' );
+			}
+		}, {
+			offset: '50%'
+		});
+	}
 }
 jQuery(document).ready(function(){
 	mainmenu();
@@ -129,14 +129,14 @@ jQuery(document).ready(function(){
 
 
 /* ----------------------------------------------------------------------------------
-	RESPONSIVE MENU - TOGGLE SUB MENUS
+	RESPONSIVE MENU - TOGGLE SUB MENUS & ACCESSIBILITY
 ---------------------------------------------------------------------------------- */
 
 jQuery(document).ready(function (){
 
-	jQuery( '#header-responsive .menu-item-has-children > a' ).after( '<span class="sub-menu-toggle"></span>' );
+	jQuery( '#header-responsive .menu-item-has-children > a' ).after( '<span class="sub-menu-toggle" tabindex="0"></span>' );
 
-	jQuery( '#header-responsive .menu-item-has-children .sub-menu-toggle' ).click(function(e){ 
+	jQuery( '#header-responsive .menu-item-has-children .sub-menu-toggle' ).click(function(e){
 
 		var parentmenu = jQuery( this ).closest('.menu-item-has-children');
 
@@ -146,6 +146,27 @@ jQuery(document).ready(function (){
 			jQuery( parentmenu ).addClass('sub-menu-show');
 		}
 
+	});
+
+	// Open navigation menu on enter when focused
+	jQuery( '#header-nav .btn-navbar, #header-responsive .menu-item-has-children .sub-menu-toggle' ).keyup(function(e){
+
+		// "Enter" button on keyboard has been pressed
+		if( e.keyCode == 13 ) {
+
+			// Trigger click event
+			jQuery( this ).trigger( 'click' );
+
+			// Add aria-expanded attribute
+			var valueAriaExpanded = jQuery( this ).attr( 'aria-expanded' );
+
+			// Toggle aria-expanded attribute value
+			if( ! valueAriaExpanded || valueAriaExpanded == 'false' ) {
+				jQuery( this ).attr( 'aria-expanded', 'true' )
+			} else {
+				jQuery( this ).attr( 'aria-expanded', 'false' )
+			}
+		}
 	});
 });
 

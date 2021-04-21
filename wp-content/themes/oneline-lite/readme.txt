@@ -2,8 +2,9 @@
 Contributors: ThemeHunk
 Tags: right-sidebar, custom-menu, translation-ready
 Requires at least: 4.5
-Tested up to: 5.4.1
-Stable tag: 1.4.5
+Tested up to: 5.5.1
+Stable tag: 1.4.9
+Requires PHP: 5.6
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -25,6 +26,19 @@ Yes, we have created our theme in such a way that it can support almost all plug
 Yes, all our theme works on multisite.
 
 == Changelog ==
+= 1.4.9 =
+* Menu Collapse issue resolved.
+
+= 1.4.8 =
+* ThemeHunk Megamenu add in Recommended Plugins.
+
+= 1.4.7 =
+* Style Issue Fixed.
+
+= 1.4.6 =
+* Oneline Lite Dark Demo Add.
+* Add WP Popup Builder in Recommend Plugin.
+
 = 1.4.5 =
 * Post Single page title issue resolved.
 
@@ -158,8 +172,8 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.4.5 =
-* Post Single page title issue resolved.
+= 1.4.9 =
+* Menu Collapse issue resolved.
 
 == Resources ==
  

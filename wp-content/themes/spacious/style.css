@@ -4,8 +4,8 @@ Theme URI: https://themegrill.com/themes/spacious
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 2 page templates, 4 blog display types, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in https://themegrill.com/support-forum/ and check the demo at https://demo.themegrill.com/spacious/.
-Version: 1.7.4
-Tested up to: 5.4
+Version: 1.9.0
+Tested up to: 5.5
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -187,7 +187,7 @@ hr,
 .wp-block-separator {
 	background-color: #eaeaea;
 	border: 0;
-	height: 1;
+	height: 1px;
 	margin: 30px 0;
 }
 
@@ -308,7 +308,6 @@ blockquote,
 	font-weight: normal;
 	padding: 20px;
 	border: 1px solid #EAEAEA;
-	border-right: 3px solid #0FBE7C;
 	margin-bottom: 20px;
 }
 
@@ -337,7 +336,7 @@ blockquote cite,
 /* =FORMS
 ----------------------------------------------- */
 input, textarea {
-	-webkit-border-radius: 0px;
+	-webkit-border-radius: 0;
 }
 
 input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
@@ -407,7 +406,7 @@ input.s:focus {
 	appearance: none !important;
 	cursor: pointer;
 	background-color: #0FBE7C;
-	border: 0px;
+	border: 0;
 	border-radius: 3px;
 	font-size: 16px;
 }
@@ -422,7 +421,7 @@ input[type="reset"], input[type="button"], input[type="submit"] {
 	appearance: none !important;
 	cursor: pointer;
 	background-color: #0FBE7C;
-	border: 0px;
+	border: 0;
 	border-radius: 3px;
 	font-size: 16px;
 }
@@ -437,7 +436,7 @@ button {
 	appearance: none !important;
 	cursor: pointer;
 	background-color: #0FBE7C;
-	border: 0px;
+	border: 0;
 	border-radius: 3px;
 	font-size: 16px;
 }
@@ -479,6 +478,8 @@ input[type="reset"]:active, input[type="button"]:active, input[type="submit"]:ac
 a {
 	color: #0FBE7C;
 	text-decoration: none;
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
 }
 
 a:focus, a:active, a:hover {
@@ -739,18 +740,16 @@ body {
 #featured-slider .entry-description-container {
 	background-color: #555555;
 	background-color: rgba(0, 0, 0, 0.3);
-	padding: 10px 15px;
 	padding: 1rem 1.5rem;
 }
 
 #featured-slider img {
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 #featured-slider .slider-title-head {
 	display: inline-block;
 	left: 0;
-	margin-bottom: 5px;
 	margin-bottom: 0.5rem;
 }
 
@@ -771,7 +770,6 @@ body {
 
 #featured-slider .entry-content {
 	color: #FFFFFF;
-	padding-top: 5px;
 	padding-top: 0.5rem;
 }
 
@@ -785,7 +783,6 @@ body {
 	color: #FFFFFF;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
-	padding: 10px 15px;
 	padding: 1rem 1.5rem;
 	float: left;
 	margin-top: 15px;
@@ -928,7 +925,7 @@ body {
 	float: left;
 	width: 28.407225%;
 	margin: 0 2.46305419%;
-	padding: 0px 0px 30px;
+	padding: 0 0 30px;
 }
 
 #colophon .tg-one-third {
@@ -946,23 +943,23 @@ body {
 	float: left;
 	width: 23.1527094%;
 	margin: 0 2.46305419% 0 0;
-	padding: 0px 0px 30px;
+	padding: 0 0 30px;
 }
 
 .tg-one-fourth-last {
-	margin: 0px;
+	margin: 0;
 }
 
 .tg-one-half {
 	float: left;
 	width: 48.7684729%;
 	margin: 0 2.46305419% 0 0;
-	padding: 0px 0px 30px;
+	padding: 0 0 30px;
 }
 
 .tg-one-half-last {
 	float: right;
-	margin: 0px;
+	margin: 0;
 }
 
 .widget_recent_work {
@@ -970,7 +967,7 @@ body {
 }
 
 .widget_recent_work img {
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 .widget_recent_work .tg-one-half .widget-title,
@@ -1009,7 +1006,7 @@ body {
 
 .widget_featured_single_post .service-image {
 	text-align: left;
-	padding-bottom: 0px;
+	padding-bottom: 0;
 }
 
 .widget_featured_post {
@@ -1076,7 +1073,7 @@ body {
 .meta li:last-child {
 	float: right;
 	border-left: 0 none;
-	padding-right: 0px !important;
+	padding-right: 0 !important;
 }
 
 .main-title {
@@ -1171,7 +1168,7 @@ body {
 }
 
 .widget_testimonial .testimonial-post p {
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 .widget_testimonial .testimonial-author {
@@ -1504,7 +1501,6 @@ ul.wp-block-gallery img {
 .comment-list {
 	list-style-type: none;
 	padding: 0;
-	margin-bottom: 34px;
 	margin-bottom: 3.4rem;
 }
 
@@ -1539,7 +1535,6 @@ ul.wp-block-gallery img {
 	clip-path: none;
 	color: #21759b;
 	display: block;
-	font-size: 0.875rem;
 	font-size: 14px;
 	font-weight: bold;
 	height: auto;
@@ -1583,15 +1578,12 @@ ul.wp-block-gallery img {
 }
 
 #respond h3#reply-title #cancel-comment-reply-link {
-	margin-left: 10px;
 	margin-left: 1rem;
 	font-weight: normal;
-	font-size: 16px;
 	font-size: 1.6rem;
 }
 
 #respond form {
-	margin: 24px 0;
 	margin: 2.4rem 0;
 }
 
@@ -1604,12 +1596,10 @@ ul.wp-block-gallery img {
 }
 
 #respond form p {
-	margin: 11px 0;
 	margin: 1.1rem 0;
 }
 
 #respond form p.logged-in-as {
-	margin-bottom: 16px;
 	margin-bottom: 1.6rem;
 }
 
@@ -1630,7 +1620,6 @@ ul.wp-block-gallery img {
 
 #respond form p.form-allowed-tags {
 	margin: 0;
-	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.5;
 	color: #5e5e5e;
@@ -2105,7 +2094,7 @@ iframe#wp-custom-header-video {
 	margin: auto;
 	width: 62px;
 	height: 50px;
-	font: 0px/0 a;
+	font: 0/0 a;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
@@ -2409,7 +2398,6 @@ li.default-menu {
 .main-navigation ul li.current-menu-ancestor a,
 .main-navigation ul li.current_page_item a,
 .main-navigation ul li.current-menu-ancestor > .sub-toggle,
-.main-navigation ul li.current-menu-item > .sub-toggle,
 .main-navigation ul li:hover > a,
 .main-navigation ul li:hover > .sub-toggle {
 	color: #0FBE7C;
@@ -2443,10 +2431,6 @@ li.default-menu {
 .main-navigation ul li > ul .sub-toggle {
 	margin: 0;
 	right: 10px;
-}
-
-.main-navigation ul li > ul.spacious-menu--left {
-	left: -100%;
 }
 
 .main-navigation ul ul {
@@ -2789,6 +2773,10 @@ li.default-menu {
 	background: #0FBE7C;
 }
 
+.main-small-navigation .menu-primary-container > ul > li .sub-menu li.menu-item-has-children .sub-menu.spacious-menu--left {
+	left: -100%;
+}
+
 /* =SECONDARY MENUS
 ----------------------------------------------- */
 .small-menu {
@@ -2813,7 +2801,6 @@ li.default-menu {
 	color: #666666;
 	display: block;
 	float: left;
-	font-size: 10px;
 	height: 21px;
 	padding: 5px 0 0 16px;
 	font-size: 12px;
@@ -2913,41 +2900,6 @@ li.default-menu {
 	outline: none;
 }
 
-/* =SECONDARY MENUS
------------------------------------------------ */
-.small-menu {
-	float: right;
-}
-
-.small-menu li {
-	float: left;
-	position: relative;
-	font-family: 'Lato', sans-serif;
-}
-
-.small-menu li.default-menu {
-	display: none;
-}
-
-li.default-menu {
-	display: none;
-}
-
-.small-menu a {
-	color: #666666;
-	display: block;
-	padding: 5px 0 0 16px;
-	font-size: 12px;
-}
-
-.small-menu a:hover {
-	color: #0FBE7C;
-}
-
-.small-menu ul li.current-menu-item a, .small-menu ul li.current_page_ancestor a, .small-menu ul li.current-menu-ancestor a, .small-menu ul li.current_page_item a, .small-menu ul li:hover > a {
-	color: #0FBE7C;
-}
-
 /* =FOOTER WIDGET AREA
 ----------------------------------------------- */
 .footer-widgets-wrapper {
@@ -2967,6 +2919,7 @@ li.default-menu {
 
 .footer-widgets-area h3.widget-title {
 	color: #D5D5D5;
+	text-align: left;
 }
 
 .footer-widgets-area .tg-one-half p,
@@ -3003,60 +2956,10 @@ li.default-menu {
 	line-height: 18px;
 }
 
-/* =FOOTER WIDGET AREA
------------------------------------------------ */
-.footer-widgets-wrapper {
-	background-color: #333333;
-	border-top: 1px solid #EAEAEA;
-}
-
-.footer-widgets-area {
-	padding-top: 30px;
-	padding-bottom: 10px;
-	color: #999999;
-}
-
-.footer-widgets-area h3.widget-title {
-	color: #d5d5d5;
-	text-align: left;
-}
-
-.footer-widgets-area .tg-one-fourth p {
-	text-align: left;
-	color: #999999;
-}
-
-.footer-widgets-area a {
-	color: #D5D5D5;
-}
-
-.footer-widgets-area a:hover {
-	color: #0FBE7C;
-}
-
-#colophon {
-	font-size: 14px;
-	line-height: 18px;
-}
-
-#colophon .widget {
-	padding-bottom: 25px;
-}
-
-#colophon .widget-title {
-	font-size: 22px;
-	line-height: 32px;
-}
-
-#colophon p {
-	font-size: 14px;
-	line-height: 18px;
-}
-
 /* =FOOTER SOCKET AREA
 ----------------------------------------------- */
 .footer-socket-wrapper {
-	padding: 10px 0px;
+	padding: 10px 0;
 	background-color: #F8F8F8;
 	border-top: 1px solid #EAEAEA;
 }
@@ -3246,7 +3149,7 @@ li.default-menu {
 	#header-left-section {
 		float: none;
 		max-width: 100%;
-		margin-right: 0px;
+		margin-right: 0;
 	}
 	#header-logo-image {
 		float: none;
@@ -3301,7 +3204,6 @@ li.default-menu {
 		max-width: 70%;
 	}
 	#featured-slider .entry-description-container {
-		padding: 5px 10px;
 		padding: 0.5rem 1rem;
 	}
 	#featured-slider .slider-title-head {
@@ -3317,7 +3219,6 @@ li.default-menu {
 	}
 	#featured-slider .slider-read-more-button {
 		font-size: 14px;
-		padding: 5px 10px;
 		padding: 0.5rem 1rem;
 	}
 	.woocommerce .related ul.products li.first,
@@ -3429,7 +3330,7 @@ li.default-menu {
 	.better-responsive-menu .site-header .menu-toggle {
 		background: #3a3a3a none repeat scroll 0 0;
 		color: #fff;
-		font: 0px/0 a;
+		font: 0/0 a;
 		height: 36px;
 		margin: 0;
 		padding: 0;
@@ -3576,7 +3477,6 @@ li.default-menu {
 		padding-top: 8px;
 	}
 	#featured-slider .entry-description-container {
-		padding: 3px 6px;
 		padding: 0.3rem 0.6rem;
 	}
 	#featured-slider .entry-title span {
@@ -3588,7 +3488,6 @@ li.default-menu {
 	#featured-slider .slider-read-more-button {
 		margin-top: 5px;
 		font-size: 10px;
-		padding: 3px 6px;
 		padding: 0.3rem 0.6rem;
 	}
 	#controllers {

@@ -1,9 +1,9 @@
 === Alante eBusiness ===
 Contributors: thinkupthemes
-Requires at least: 4.6
-Tested up to: 5.2.3
-Requires PHP: 5.2.4
-Version: 1.0.5
+Requires at least: 4.7
+Tested up to: 5.4.2
+Requires PHP: 5.6.0
+Version: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, portfolio, rtl-language-support
@@ -47,6 +47,10 @@ Alante eBusiness is a child theme or Alante and as such uses the same opensource
 
 
 == Changelog ==
+
+= 1.0.6
+- New:     "Tested up to" header field added to style.css.
+- New:     "Requires PHP" header field added to style.css. 
 
 = 1.0.5
 - Updated: Copyright date updated to be 2020 within readme.txt.

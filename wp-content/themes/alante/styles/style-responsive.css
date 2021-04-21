@@ -99,8 +99,12 @@
 	background: none;
 	}
 	.nav-collapse {
+		visibility: hidden;
 		overflow: hidden;
 		height: 0;
+	}
+	.nav-collapse.in {
+		visibility: visible;
 	}
 	.btn-navbar {
 		width: 20px;
@@ -131,15 +135,6 @@
 		position: relative;
 		overflow: hidden;
 		height: 0;
-	}
-
-	/* Responsive dropdown keyboard accessible */
-	#header-responsive-inner:focus-within {
-		height: auto !important;
-	}
-	#header-responsive-inner .sub-menu:focus,
-	#header-responsive-inner .sub-menu:focus-within {
-		height: auto !important;
 	}
 
 	/* Featured Slider */
@@ -256,6 +251,9 @@
 	}
 	#header-responsive .sub-menu-toggle {
 		z-index: 3;
+	}
+	#header-responsive .sub-menu-toggle:focus {
+		outline: thin dotted;
 	}
 	#header-responsive .menu-item-has-children > a:after {
 		font-family: fontawesome;

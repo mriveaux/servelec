@@ -53,5 +53,3 @@ function alante_thinkup_updateoption_child_settings() {
 }
 add_action( 'init', 'alante_thinkup_updateoption_child_settings', 999 );
 
-add_filter('pre_option_link_manager_enabled', '__return_true'); //habilitar enlaces
-

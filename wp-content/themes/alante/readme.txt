@@ -1,9 +1,9 @@
 === Alante ===
 Contributors: thinkupthemes
-Requires at least: 4.6
-Tested up to: 5.2.3
-Requires PHP: 5.2.4
-Version: 1.1.11
+Requires at least: 4.7
+Tested up to: 5.4.2
+Requires PHP: 5.6.0
+Version: 1.1.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -92,17 +92,33 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence URL: These items have been produced by Think Up Themes. Released under CC0.
 
     [1.11] Item:        image shown in mobile device on screenshot.png.
-           Item URL:    https://unsplash.com/photos/p-rN-n6Miag
+           Item URL:    https://pxhere.com/en/photo/101039
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
     [1.12] Item:        image shown in background.
-           Item URL:    https://unsplash.com/photos/3MNzGlQM7qs
+           Item URL:    https://pxhere.com/en/photo/3031
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 == Changelog ==
+
+= 1.1.14
+- Fixed:   Improved focus styling on buttons for accessible users.
+
+= 1.1.13
+- Fixed:   Logo changes now reflected in customizer preview.
+- Fixed:   Accessibility links in header now appear correctly. Issue where header cut of link is now fixed.
+- Updated: Improved accessibility styling of buttons when focused.
+- Removed: Custom hook thinkup_hook_bodyhtml() removed given inclusion of wp_body_open().
+
+= 1.1.12
+- New:     "Tested up to" header field added to style.css.
+- New:     "Requires PHP" header field added to style.css. 
+- New:     wp_body_open() add after body tag in header.php.
+- Fixed:   Screenshot image license updated.
+- Fixed:   wp_nav_menu in 01.general-settings.php passes array directly instead of $args variable.
 
 = 1.1.11
 - Updated: Responsive dropdown menu fully accessible with keyboard navigation.

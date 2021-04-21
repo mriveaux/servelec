@@ -16,6 +16,7 @@
       <?php wp_head(); ?>
     </head>
     <body <?php body_class('index');?>  >
+      <?php wp_body_open();?> 
       <div class="overlayloader">
         <div class="loader">&nbsp;</div>
       </div>

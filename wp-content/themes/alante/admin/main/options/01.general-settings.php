@@ -21,7 +21,7 @@ function alante_thinkup_custom_logo() {
 			$output = get_custom_logo();
 		}
 	} else {
-		$output .= '<a rel="home" href="' . esc_url( home_url( '/' ) ) . '">';
+		$output .= '<a rel="home" href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link">';
 		$output .= '<h1 rel="home" class="site-title" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 		$output .= '<h2 class="site-description" title="' . esc_attr( get_bloginfo( 'description', 'display' ) ) . '">' . esc_html( get_bloginfo( 'description' ) ) . '</h2>';
 		$output .= '</a>';
@@ -310,18 +310,18 @@ $thinkup_general_fixedlayoutswitch = alante_thinkup_var ( 'thinkup_general_fixed
 
 	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
 
-		$args =  array(
-			'container_class' => 'responsive-links nav-collapse collapse', 
-			'container_id'    => 'header-responsive-inner', 
-			'menu_class'      => '', 
-			'theme_location'  => 'header_menu', 
-			'walker'          => new alante_thinkup_nav_menu_responsive(), 
-			'fallback_cb'     => 'alante_thinkup_input_responsivefall',
-		);
-
 		echo '<div id="header-responsive">',
-		     wp_nav_menu( $args ),
-		     '</div>';
+			wp_nav_menu( 
+				array(
+					'container_class' => 'responsive-links nav-collapse collapse', 
+					'container_id'    => 'header-responsive-inner', 
+					'menu_class'      => '', 
+					'theme_location'  => 'header_menu', 
+					'walker'          => new alante_thinkup_nav_menu_responsive(), 
+					'fallback_cb'     => 'alante_thinkup_input_responsivefall',
+				)
+			),
+		 '</div>';
 	}
 }
 

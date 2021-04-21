@@ -19,6 +19,10 @@
         ) );
       }
 
+      czr_fn_render_template( 'header/parts/nav_session', array(
+          'model_id'   => 'desktop_session_button',
+      ));
+
       if ( czr_fn_is_registered_or_possible( 'desktop_primary_wc_cart' ) ) :
 
           czr_fn_render_template( 'header/parts/woocommerce_cart', array(

@@ -90,10 +90,14 @@ add_editor_style( 'css/custom-editor-style.css' );
                 'name' => esc_html__( 'Woocommerce', 'oneline-lite' ),
                 'active_filename' => 'woocommerce/woocommerce.php',
             ),
-            'business-popup' => array(
-                'name' => esc_html__( 'Business Popup', 'oneline-lite' ),
-                'active_filename' => 'business-popup/business-popup.php',
-            )
+             'wp-popup-builder' => array(
+                'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'oneline-lite' ),
+                'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
+            ),
+             'themehunk-megamenu-plus' => array(
+                'name' => esc_html__( 'Megamenu plugin from Themehunk.', 'oneline-lite' ),
+                'active_filename' => 'themehunk-megamenu-plus/themehunk-megamenu.php',
+            ),
         ) );
 
 }
@@ -173,7 +177,7 @@ function oneline_lite_social_links(){
 <?php } 
 add_action( 'admin_enqueue_scripts', 'oneline_lite_admin_script' );
 function oneline_lite_admin_script(){
-wp_enqueue_script( 'oneline_lite-admin-settings', get_template_directory_uri()  . '/js/oneclick-demo-import.js', array( 'jquery', 'wp-util', 'updates' ), '');
+wp_enqueue_script( 'oneline_lite-admin-settings', get_template_directory_uri()  . '/js/oneclick-demo-import.js', array( 'jquery', 'wp-util', 'updates' ), '',true);
 
       $localize = array(
         'ajaxUrl'             => admin_url( 'admin-ajax.php' ),
@@ -182,4 +186,14 @@ wp_enqueue_script( 'oneline_lite-admin-settings', get_template_directory_uri()  
         'onelineliteSitesLinkTitle' => __( 'See Library', 'oneline-lite' ),
       );
       wp_localize_script( 'oneline_lite-admin-settings', 'oneline', apply_filters( 'oneline_theme_js_localize', $localize ) );
+}
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+  /**
+   * Shim for wp_body_open, ensuring backward compatibility with versions of WordPress older than 5.2.
+   */
+  function wp_body_open() {
+    do_action( 'wp_body_open' );
+  }
 }

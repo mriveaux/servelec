@@ -31,6 +31,10 @@ if ( !class_exists( 'CZR_BASE' ) ) :
         //print comments template once : plugins compatibility
         public static $comments_rendered = false;
 
+        // Jan 2021 for #1872
+        public static $cached_queries = array();
+        public static $cached_thumbnail_models = array();
+
         function __construct( $_args = array()) {
             //init properties
             add_action( 'after_setup_theme'       , array( $this , 'czr_fn_init_properties') );
@@ -847,7 +851,7 @@ if ( !class_exists( 'CZR_BASE' ) ) :
         function czr_fn_set_user_defined_settings() {
             $_options = get_option('tc_theme_options');
 
-            if ( isset ( $_options['tc_slider_change_default_img_size'] ) && 0 != esc_attr( $_options['tc_slider_change_default_img_size'] ) && isset ( $_options['tc_slider_default_height'] ) && 500 != esc_attr( $_options['tc_slider_default_height'] ) ) {
+            if ( isset ( $_options['tc_slider_change_default_img_size'] ) && czr_fn_booleanize_checkbox_val( $_options['tc_slider_change_default_img_size'] ) && isset( $_options['tc_slider_default_height'] ) && 500 != esc_attr( $_options['tc_slider_default_height'] ) ) {
                 add_filter( 'tc_slider_full_size'          , array($this,  'czr_fn_set_slider_img_height') );
                 add_filter( 'tc_slider_size'               , array($this,  'czr_fn_set_slider_img_height') );
 

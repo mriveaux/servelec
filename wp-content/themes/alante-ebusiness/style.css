@@ -1,15 +1,18 @@
 /*
 Theme Name: Alante eBusiness
-Theme URI: https://www.thinkupthemes.com/free/alante/
+Text Domain: alante-ebusiness
+Template: alante
+Version: 1.0.6
+Requires at least: 4.7
+Tested up to: 5.4.2
+Requires PHP: 5.6.0
+Description: Alante eBusiness is the free version of the multi-purpose professional theme (Alante Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout. Compatible with WooCommerce, WPML, Polylang, Flat Parallax Slider, Photo Gallery and Travel Map, Elementor, Page Builder, Beaver Builder, Visual Composer, SiteOrigin, Divi, etc. It's a perfect theme for small businesses (restaurants, wedding planners, sport/medical shops), startups, corporate businesses, online agencies and firms, portfolios, ecommerce (WooCommerce), and freelancers.
+Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, portfolio, rtl-language-support
 Author: Think Up Themes
 Author URI: https://www.thinkupthemes.com
-Description: Alante eBusiness is the free version of the multi-purpose professional theme (Alante Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout. Compatible with WooCommerce, WPML, Polylang, Flat Parallax Slider, Photo Gallery and Travel Map, Elementor, Page Builder, Beaver Builder, Visual Composer, SiteOrigin, Divi, etc. It's a perfect theme for small businesses (restaurants, wedding planners, sport/medical shops), startups, corporate businesses, online agencies and firms, portfolios, ecommerce (WooCommerce), and freelancers.
-Template: alante
-Version: 1.0.5
+Theme URI: https://www.thinkupthemes.com/free/alante/
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, portfolio, rtl-language-support
-Text Domain: alante-ebusiness
 */
 
 #site-header {
@@ -29,7 +32,7 @@ Text Domain: alante-ebusiness
 }
 #pre-header .header-links .menu-hover > a,
 #pre-header .header-links > ul > li > a:hover {
-	color: #00609d;
+	color: #d33d33;
 }
 #pre-header-search .search {
 	background-color: transparent;
@@ -59,7 +62,7 @@ Text Domain: alante-ebusiness
 	font-weight: 400;
 }
 #header .menu > li.current_page_item > a {
-	background-color: #00609d;
+	background-color: #d33d33;
 }
 #header .menu > li.current_page_item > a span:first-child {
 	color: #fff;
@@ -111,7 +114,7 @@ Text Domain: alante-ebusiness
 	font-size: 22px;
 	font-weight: 500;
 	letter-spacing: 0.5px;
-	border-top: 3px solid #00609d;
+	border-top: 3px solid #d33d33;
 	display: inline-block;
 }
 #introaction-core p {
@@ -134,7 +137,7 @@ Text Domain: alante-ebusiness
 /* Featured Style */
 .services-builder.style1 .iconimage {
 	margin: 0;
-	border-bottom: 3px solid #00609d;
+	border-bottom: 3px solid #d33d33;
 }
 .services-builder.style1 .iconmain {
 	background: #fff;
@@ -149,7 +152,7 @@ Text Domain: alante-ebusiness
 }
 .services-builder.style1 .iconmain .iconurl a {
 	color: #fff;
-	background-color: #00609d;
+	background-color: #d33d33;
 	padding: 4px 15px;
 	font-size: 13px;
 	margin-bottom: 10px;
@@ -162,7 +165,7 @@ Text Domain: alante-ebusiness
 
 /* Footer Style */ 
 #footer {
-	border-top: 4px solid #00609d;
+	border-top: 4px solid #d33d33;
 }
 #footer-core h3 {
 	font-size: 16px;
@@ -202,7 +205,7 @@ Text Domain: alante-ebusiness
 	display: block;
 }
 #footer .widget li a:hover {
-	color: #00609d;
+	color: #d33d33;
 }
 #footer .widget_archive li a::before {
 	content: '\f105';
@@ -217,12 +220,12 @@ Text Domain: alante-ebusiness
 #footer input[type=text] {
 	width: 100%;
 	outline: none;
-	border: 1px solid #00609d;
+	border: 1px solid #d33d33;
 }
 #footer input[type=email] {
 	width: 100%;
 	outline: none;
-	border: 1px solid #00609d;
+	border: 1px solid #d33d33;
 }
 #footer input[type="submit"] {
 	font-size: 13px;
@@ -254,15 +257,15 @@ Text Domain: alante-ebusiness
 	font-size: 28px;
 	text-transform: uppercase;
 	font-weight: 700;
-	border-top: 3px solid #00609d;
-	border-bottom: 3px solid #00609d;
+	border-top: 3px solid #d33d33;
+	border-bottom: 3px solid #d33d33;
 	display: inline-block;
 }
 /* Blog Posts Style */
 .blog-article .blog-thumb {
 	padding: 0px;
 	margin: 0px;
-	border-bottom: 3px solid #00609d;
+	border-bottom: 3px solid #d33d33;
 }
 .blog-title a {
 	font-size: 18px;
@@ -282,10 +285,10 @@ Text Domain: alante-ebusiness
 	color: #7a7a7a;
 }
 .entry-meta i {
-	color: #00609d;
+	color: #d33d33;
 }
 .blog-article .comment a:before {
-	color: #00609d;
+	color: #d33d33;
 }
 .blog-article p {
 	margin-top: 20px;
@@ -295,7 +298,7 @@ Text Domain: alante-ebusiness
 }
 .blog-article .more-link span {
 	padding: 0px 15px;
-	background-color: #00609d;
+	background-color: #d33d33;
 	color: #fff;
 	font-size: 13px;
 	text-transform: uppercase;
@@ -379,7 +382,7 @@ Text Domain: alante-ebusiness
 	left: 0;
 }
 #sidebar h3.widget-title:after {
-	border-bottom: 3px solid #00609d;
+	border-bottom: 3px solid #d33d33;
 }
 .widget ul {
 	border: none;
@@ -392,7 +395,7 @@ Text Domain: alante-ebusiness
 	padding: 5px 0px 5px 0px;
 }
 .widget li a:hover {
-	color: #00609d;
+	color: #d33d33;
 }
 #sidebar .widget_archive li a::before{
 	content: '\f105';
@@ -425,7 +428,7 @@ Text Domain: alante-ebusiness
 	margin: 0 20px 20px;
 }
 .single .format-image .post-thumb img {
-	border-bottom: 3px solid #00609d;
+	border-bottom: 3px solid #d33d33;
 }
 .single .entry-meta {
 	border-bottom: 1px solid #eee;
@@ -452,7 +455,7 @@ Text Domain: alante-ebusiness
 }
 .nav-previous a:hover,
 .nav-next a:hover {
-	background-color: #00609d;
+	background-color: #d33d33;
 }
 #comments-title,
 #reply-title {
@@ -473,7 +476,7 @@ Text Domain: alante-ebusiness
 #reply-title::after {
 	width: 45px;
 	height: 3px;
-	background-color: #00609d;
+	background-color: #d33d33;
 	display: inline-block;
 	position: absolute;
 	content: '';
@@ -485,7 +488,7 @@ Text Domain: alante-ebusiness
 }
 .comment .reply  {
 	text-transform: uppercase;
-	color: #00609d;
+	color: #d33d33;
 	font-size: 11px;
 }
 .comment .reply:hover {

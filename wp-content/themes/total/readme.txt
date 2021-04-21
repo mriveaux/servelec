@@ -23,6 +23,15 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 1.2.50 - Dec 16, 2020 =
+* New year Banner added in setting page
+
+= 1.2.49 - Nov 27, 2020 =
+* Black Friday Banner added in setting page
+
+= 1.2.48 - Nov 24, 2020 =
+* Black Friday offer Added
+
 = 1.2.47 - Sep 24, 2020 =
 * Select All option not working in WordPress pages fixed
 

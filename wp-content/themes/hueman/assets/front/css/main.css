@@ -108,6 +108,11 @@ transition: opacity 0.2s ease; }
 article .entry a, .comment-body a, .widget_text a {
   text-decoration:underline;
 }
+/* Gutenberg compat */
+article .entry a.wp-block-button__link {
+  text-decoration: none;
+}
+
 .hu-links-not-underlined article .entry a, .hu-links-not-underlined .comment-body a, .hu-links-not-underlined .widget_text a {
   text-decoration:none;
 }
@@ -1813,7 +1818,7 @@ z-index:2;
 .post-title a { color: #444; }
 .post-title a:hover { color: #16cfc1; }
 
-.entry.excerpt { font-size: 1em; color: #aaa; }
+.entry.excerpt { font-size: 1em; color: #767676; }
 .entry.excerpt p { margin-bottom: 0; }
 
 /*  post : standard loop
@@ -2195,16 +2200,19 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,0.25); }
 /* ------------------------------------ */
 .widget > ul li:before,
 .widget > ul li a:before,
-.widget > div > ul li a:before,
+.widget div > ul li a:before,
 .widget_calendar caption:before {font-family: 'Font Awesome 5 Free'; font-weight: 900; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-style: normal;	font-variant: normal; text-rendering: auto;	font-size: 12px; margin-right: 6px;	color: #ccc; display: inline-block!important; width: 1em; text-align: center;}
+
 .widget > ul li a:hover:before { color: #999; }
+
 .widget_calendar caption:before,
-.widget_archive > ul > li a:before { content: "\f073"; position:relative; top:-.1em; }
-.widget_categories > ul > li a:before { content: "\f07c"; }
-.widget_links > ul > li a:before { content: "\f35d"; }
-.widget_meta > ul > li a:before { content: "\f0da"; }
-.widget_recent_comments > ul > li:before { content: "\f075"; }
-.widget_recent_entries > ul > li a:before { content: "\f017"; }
+.widget_archive ul > li a:before { content: "\f073"; position:relative; top:-.1em; }
+.widget_categories ul > li a:before { content: "\f07c"; }
+.widget_links ul > li a:before { content: "\f35d"; }
+.widget_meta ul > li a:before { content: "\f0da"; }
+.widget_recent_comments ul > li:before { content: "\f075"; }
+.widget_recent_entries ul > li a:before { content: "\f017"; }
+
 .widget_pages ul li a:before,
 .widget_nav_menu ul li a:before { content: "\f068"; }
 

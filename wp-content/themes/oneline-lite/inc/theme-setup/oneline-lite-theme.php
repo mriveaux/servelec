@@ -191,7 +191,7 @@ endif;
 add_action( 'admin_enqueue_scripts', 'oneline_lite_admin_scripts' );
 
 function online_lite_count_active_plugins() {
-   $i = 3;
+   $i = 4;
        if ( shortcode_exists( 'themehunk-customizer-oneline-lite' ) ):
            $i--;
        endif;
@@ -199,6 +199,12 @@ function online_lite_count_active_plugins() {
            $i--;
        endif;
        if ( shortcode_exists( 'lead-form' ) ):
+           $i--;
+       endif;
+       if ( shortcode_exists( 'wppb' ) ):
+           $i--;
+       endif;
+       if (class_exists( 'themehunk-megamenu-menu' ) ):
            $i--;
        endif;
 
@@ -234,7 +240,7 @@ add_action('admin_menu', 'oneline_lite_tab');
 
 function oneline_lite_pro_theme(){ ?>
 <div class="freeevspro-img">
-<img src="<?php echo get_template_directory_uri(); ?>/images/freevspro.png" alt="free vs pro" />
+<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/freevspro.png" alt="free vs pro" />
 <p>
  <a href="https://www.themehunk.com/product/oneline-single-page-wordpress-theme/" target="_blank" class="button button-primary">Check Pro version for more features</a>
                            </p></div>
@@ -462,7 +468,11 @@ Go to your dashboard. Create a new page and select “Home Page Layout” from p
             
 
             $status = is_dir( WP_PLUGIN_DIR . '/' . $plugin_slug );
-            $active_file_name = $plugin_slug . '/' . $plugin_slug . '.php';
+           if($plugin_slug=='themehunk-megamenu-plus'){
+                $active_file_name = $plugin_slug . '/themehunk-megamenu.php';
+            }else{
+              $active_file_name = $plugin_slug . '/' . $plugin_slug . '.php';
+            }
             $button_class = 'install-now button';
 
             if ( ! is_plugin_active( $active_file_name ) ) {
@@ -516,7 +526,11 @@ Go to your dashboard. Create a new page and select “Home Page Layout” from p
 
 } elseif($plugin_slug=='woocommerce'){
 $detail='';
-} elseif($plugin_slug=='business-popup'){
+} elseif($plugin_slug=='wp-popup-builder'){
+$detail= '';
+
+}
+elseif($plugin_slug=='themehunk-megamenu-plus'){
 $detail= '';
 
 }
@@ -558,7 +572,8 @@ function oneline_lite_get_actions_required( ) {
             ) );
             if ( $plugin_info['active_filename'] ) {
                 $active_file_name = $plugin_info['active_filename'] ;
-            } else {
+
+            }else {
                 $active_file_name = $plugin_slug . '/' . $plugin_slug . '.php';
             }
             if ( ! is_plugin_active( $active_file_name ) ) {

@@ -99,12 +99,24 @@ if (!class_exists('WpGesicu')) {
             add_filter( 'big_image_size_threshold', '__return_false' );
             add_filter( 'wp_image_editors', [$this, 'gesicu_use_gd_editor'] );
             add_filter('pre_option_link_manager_enabled', '__return_true'); //habilitar enlaces
+            add_filter('gettext', [$this, 'gesicu_translate_markers']);
 
         }
 
         function init_cpt(){
 //            require_once( 'cpt/Solicitud.php' );
 //            new Solicitud();
+        }
+
+        function gesicu_translate_markers ($translated)
+        {
+//            if (pll_current_language() == 'es') {
+                $translated = str_ireplace('Marcadores', 'Enlaces de interés', $translated);
+//            } else {
+//                $translated = str_ireplace('Links', 'Enlaces de interés', $translated);
+//            }
+
+            return $translated;
         }
 
         function gesicu_use_gd_editor($array) {
@@ -378,6 +390,7 @@ if (!class_exists('WpGesicu')) {
         {
             wp_deregister_script('jquery');
             wp_enqueue_script('jquery', plugin_dir_url(__FILE__) . '/js/jquery-3.4.1.min.js', [], '3.4.1', false);
+            wp_enqueue_script('jquery-comun', plugin_dir_url(__FILE__) . '/js/jquery-comun.js', [], '1.0.0', true);
         }
 
         function gesicu_wp_myphpinformation_scripts()
@@ -386,8 +399,8 @@ if (!class_exists('WpGesicu')) {
                 wp_deregister_script('jquery');
                 wp_register_script('jquery', plugin_dir_url(__FILE__) . '/js/jquery-3.4.1.min.js', '3.4.1', false);
                 wp_enqueue_script('jquery');
-                wp_register_style('tailwindcss', plugin_dir_url(__FILE__) . '/css/style_tailwindcss.css');
-                wp_enqueue_style('tailwindcss');
+//                wp_register_style('tailwindcss', plugin_dir_url(__FILE__) . '/css/style_tailwindcss.css');
+//                wp_enqueue_style('tailwindcss');
             }
         }
 

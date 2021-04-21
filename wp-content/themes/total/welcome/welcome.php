@@ -52,13 +52,7 @@ if (!class_exists('Total_Welcome')) :
                     'slug' => 'simple-floating-menu',
                     'filename' => 'simple-floating-menu',
                     'thumb_path' => 'https://ps.w.org/simple-floating-menu/assets/icon-256x256.png'
-                ),
-                'getwid' => array(
-                    'name' => 'Getwid – Gutenberg Blocks',
-                    'slug' => 'getwid',
-                    'filename' => 'getwid',
-                    'thumb_path' => 'https://ps.w.org/getwid/assets/icon-256x256.png'
-                ),
+                )
             );
 
             /* Create a Welcome Page */

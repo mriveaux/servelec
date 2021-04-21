@@ -111,7 +111,7 @@ if ( ! class_exists( 'alante_thinkup_toolbox_about_page' ) ) {
 			$this->theme_slug    = $theme->get_template();
 			$this->menu_name     = isset( $this->config['menu_name'] ) ? $this->config['menu_name'] : 'About ' . $this->theme_name;
 			$this->page_name     = isset( $this->config['page_name'] ) ? $this->config['page_name'] : 'About ' . $this->theme_name;
-//			$this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( 'Welcome! Thank you for choosing %1$s! To get started please make sure you visit our %2$s<strong>welcome page</strong>%3$s.', $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '" class="button button-primary" style="text-decoration: none;">' . sprintf( 'Get started with %s', $this->theme_name ) . '</a></p>' );
+			$this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( 'Welcome! Thank you for choosing %1$s! To get started please make sure you visit our %2$s<strong>welcome page</strong>%3$s.', $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '" class="button button-primary" style="text-decoration: none;">' . sprintf( 'Get started with %s', $this->theme_name ) . '</a></p>' );
 			$this->tabs          = isset( $this->config['tabs'] ) ? $this->config['tabs'] : array();
 
 		}

@@ -476,11 +476,6 @@ function total_register_required_plugins() {
      */
     $plugins = array(
         array(
-            'name' => 'Getwid – Gutenberg Blocks',
-            'slug' => 'getwid',
-            'required' => false,
-        ),
-        array(
             'name' => 'HashThemes Demo Importer',
             'slug' => 'hashthemes-demo-importer',
             'required' => false,

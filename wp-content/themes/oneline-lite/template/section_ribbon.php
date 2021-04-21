@@ -16,7 +16,7 @@ $prlx_top_bottom ='';
 }  
 ?>
 <div class="ribbon-wrapper <?php echo $prlx_class;?>">
-<section id="ribbon" data-center="<?php echo $prlx_data_center;?>" data-top-bottom="<?php echo $prlx_top_bottom;?>" style="background: url('<?php echo get_theme_mod('ribbon_bg_image'); ?>')" >
+<section id="ribbon" data-center="<?php echo esc_attr($prlx_data_center);?>" data-top-bottom="<?php echo esc_attr($prlx_top_bottom);?>" style="background: url('<?php echo esc_attr(get_theme_mod('ribbon_bg_image')); ?>')" >
             <div class="container">
                 <div class="ribon-box ">
                     <div class="ribbon-content wow thunk-fadeInLeft" data-wow-delay="0s">

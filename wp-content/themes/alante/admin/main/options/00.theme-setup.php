@@ -5,6 +5,18 @@
  * @package ThinkUpThemes
  */
 
+
+/* ----------------------------------------------------------------------------------
+	BACKWARD COMPATIBILITY FOR WORDPRESS CORE FUNCTIONS
+---------------------------------------------------------------------------------- */
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+
+
 /* ----------------------------------------------------------------------------------
 	ADD CUSTOM HOOKS
 ---------------------------------------------------------------------------------- */
@@ -12,11 +24,6 @@
 /* Used at top of header.php */
 function alante_thinkup_hook_header() { 
 	do_action('alante_thinkup_hook_header');
-}
-
-/* Used after <body> tag in header.php */
-function alante_thinkup_hook_bodyhtml() { 
-	do_action('alante_thinkup_hook_bodyhtml');
 }
 
 

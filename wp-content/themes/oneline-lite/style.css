@@ -4,7 +4,10 @@ Author: ThemeHunk
 Theme URI: https://www.themehunk.com/product/oneline-lite-theme/
 Author URI: https://www.themehunk.com 
 Description:  Oneline Lite is a versatile one page responsive theme for creating beautiful websites. This theme comes with powerful features which will help you in designing a wonderful website for any type of niche (Cross SVG, Onepage, Business, Landing page, E-commerce, Local business, Personal website). Theme comes with live customizer, You can change section and element styling and check changes instantly. Theme supports drag & drop widget for section content, WooCommerce section to feature your product at home page and use your site as an online store. Contact section with lead generation functionality. These all sections are supported by our plugin ThemeHunk customizer. This responsive theme is compatible with drag and drop SiteOrigin page builder, bbPress, WooCommerce, Lead form builder and many more. Theme contain SiteOrigin and blank page templates which makes builder compatibility more stronger.
-Version: 1.4.5
+Version: 1.4.9
+Requires at least: 4.5
+Tested up to: 5.5.1
+Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: license.txt 
 Tags: right-sidebar, custom-menu, custom-logo, editor-style, featured-images, translation-ready, flexible-header, sticky-post, theme-options, portfolio, education
@@ -3613,8 +3616,10 @@ text-align: center;
   overflow: hidden;
   text-align: center;
 }
- .post-social-meta .post-social-social-fb,.post-social-meta .post-social-social-tw,
- .post-social-meta .post-social-social-gm,.post-social-meta .post-social-social-ln {
+ .post-social-meta .post-social-social-fb,
+ .post-social-meta .post-social-social-tw,
+ .post-social-meta .post-social-social-wt,
+ .post-social-meta .post-social-social-ln {
     display: inline-block;
     color:#FFF;
     padding:6px;
@@ -3649,11 +3654,11 @@ background-color:#55ACEE;
 -webkit-transition: all 0.25s ease-in-out;
 transition: all 0.25s ease-in-out;
 }
-.post-social-meta .post-social-social-gm a{
+.post-social-meta .post-social-social-wt a{
 color:#fff;
-border:1px solid #DB402C;
+border:1px solid #25d366;
 text-decoration: none;
-background-color:#DB402C;
+background-color:#25d366;
 -webkit-transition: all 0.25s ease-in-out;
 transition: all 0.25s ease-in-out;
 }
@@ -3665,7 +3670,10 @@ background-color:#0177B5;
 -webkit-transition: all 0.25s ease-in-out;
 transition: all 0.25s ease-in-out;
 }
-.post-social-meta .post-social-social-fb a:hover,.post-social-meta .post-social-social-gm a:hover,.post-social-meta .post-social-social-ln a:hover,.post-social-meta .post-social-social-tw a:hover{
+.post-social-meta .post-social-social-fb a:hover,
+.post-social-meta .post-social-social-wt a:hover,
+.post-social-meta .post-social-social-ln a:hover,
+.post-social-meta .post-social-social-tw a:hover{
 border:1px solid #fff;
 -webkit-transition: all 0.25s ease-in-out;
 transition: all 0.25s ease-in-out;
@@ -3686,8 +3694,8 @@ transition: all 0.25s ease-in-out;
     width: 12px;
     line-height: 12px;
  }
-.post-social-social-gm a:before{
-   content: "\f0d5";
+.post-social-social-wt a:before{
+   content: "\f232";
    font-family: FontAwesome; 
    height: 12px;
     width: 12px;

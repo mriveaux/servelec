@@ -58,6 +58,10 @@
                 'model_id'   => 'mobile_menu_button',
             ));
           }
+
+          czr_fn_render_template( 'header/parts/nav_session', array(
+              'model_id'   => 'mobile_session_button',
+          ));
       ?>
     </ul>
   </div>

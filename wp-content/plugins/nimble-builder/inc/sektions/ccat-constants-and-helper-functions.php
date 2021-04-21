@@ -2880,13 +2880,12 @@ add_filter('sek_get_raw_section_registration_params', function( $collection ) {
 // /* ------------------------------------------------------------------------- *
 // *  NIMBLE API
 // /* ------------------------------------------------------------------------- */
-if ( !defined( "NIMBLE_SECTIONS_LIBRARY_OPT_NAME" ) ) { define( "NIMBLE_SECTIONS_LIBRARY_OPT_NAME", 'nimble_api_prebuilt_sections_data' ); }
-if ( !defined( "NIMBLE_NEWS_OPT_NAME" ) ) { define( "NIMBLE_NEWS_OPT_NAME", 'nimble_api_news_data' ); }
-// NIMBLE_DATA_API_URL_V2 SINCE MAY 21ST 2019
-// after problem was reported when fetching data remotely : https://github.com/presscustomizr/nimble-builder/issues/445
-// DOES NOT RETURN THE DATA FOR PRESET SECTIONS
-// if ( !defined( "NIMBLE_DATA_API_URL" ) ) { define( "NIMBLE_DATA_API_URL", 'https://api.nimblebuilder.com/wp-json/nimble/v1/cravan' ); }
-if ( !defined( "NIMBLE_DATA_API_URL_V2" ) ) { define( "NIMBLE_DATA_API_URL_V2", 'https://api.nimblebuilder.com/wp-json/nimble/v2/cravan' ); }
+// if ( !defined( "NIMBLE_SECTIONS_LIBRARY_OPT_NAME" ) ) { define( "NIMBLE_SECTIONS_LIBRARY_OPT_NAME", 'nimble_api_prebuilt_sections_data' ); } <= DEPRECATED, Now uses local json
+if ( !defined( "NIMBLE_API_TMPL_LIB_OPT_NAME" ) ) { define( "NIMBLE_API_TMPL_LIB_OPT_NAME", 'nimble_api_tmpl_data' ); }
+if ( !defined( "NIMBLE_API_NEWS_OPT_NAME" ) ) { define( "NIMBLE_API_NEWS_OPT_NAME", 'nimble_api_news_data' ); }
+if ( !defined( "NIMBLE_DATA_API_URL_V2" ) ) { define( "NIMBLE_DATA_API_URL_V2",
+    ( defined('NIMBLE_FETCH_API_TMPL_LOCALLY') && NIMBLE_FETCH_API_TMPL_LOCALLY ) ? 'http://customizr-dev.test/wp-json/nimble/v2/cravan' : 'https://api.nimblebuilder.com/wp-json/nimble/v2/cravan'
+); }
 
 
 // Nimble api returns a set of value structured as follow
@@ -2963,55 +2962,50 @@ function sek_get_nimble_api_data( $force_update = false ) {
         //     }
         //     unset( $info_data['library'] );
         // }
-
-        if ( isset( $info_data['latest_posts'] ) ) {
-            update_option( NIMBLE_NEWS_OPT_NAME, $info_data['latest_posts'], 'no' );
-            unset( $info_data['latest_posts'] );
+        
+        if ( !empty( $info_data['lib'] ) ) {
+            if ( !empty( $info_data['lib']['templates'] ) ) {
+                //sek_error_log('UPDATE TMPL API DATA ?', $info_data['lib']['templates'] );
+                update_option( NIMBLE_API_TMPL_LIB_OPT_NAME, maybe_serialize( $info_data['lib']['templates'] ), 'no' );
+            }
+            unset( $info_data['lib'] );
         }
 
+        if ( isset( $info_data['latest_posts'] ) ) {
+            update_option( NIMBLE_API_NEWS_OPT_NAME, $info_data['latest_posts'], 'no' );
+            unset( $info_data['latest_posts'] );
+        }
+        //sek_error_log('API DATA ?', $info_data );
         set_transient( $api_data_transient_name, $info_data, 12 * HOUR_IN_SECONDS );
     }//if ( $force_update || false === $info_data ) {
-
+    
     return $info_data;
 }
 
 
 //////////////////////////////////////////////////
-/// SECTIONS DATA
-function sek_get_sections_registration_params_api_data( $force_update = false ) {
-    // To avoid a possible refresh, hence a reconnection to the api when opening the customizer
-    // Let's use the data saved as options
-    // Those data are updated on plugin install, plugin update, theme switch
-    // @see https://github.com/presscustomizr/nimble-builder/issues/441
-    $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
-    if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['registration_params'] ) ) {
-        sek_get_nimble_api_data( true );//<= true for "force_update"
-        $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
-    }
+/// TEMPLATE DATA
+function sek_get_tmpl_api_data( $force_update = false ) {
+    // set this constant in wp_config.php
+    $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
 
-    if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['registration_params'] ) ) {
-        sek_error_log( __FUNCTION__ . ' => error => no section registration params' );
-        return array();
-    }
-    return $sections_data['registration_params'];
-}
-
-function sek_get_preset_sections_api_data( $force_update = false ) {
     // To avoid a possible refresh, hence a reconnection to the api when opening the customizer
     // Let's use the data saved as options
     // Those data are updated on plugin install, plugin update( upgrader_process_complete ), theme switch
     // @see https://github.com/presscustomizr/nimble-builder/issues/441
-    $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
-    if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['json_collection'] ) ) {
+    $tmpl_data = maybe_unserialize( get_option( NIMBLE_API_TMPL_LIB_OPT_NAME ) );
+    if ( $force_update || empty( $tmpl_data ) || !is_array( $tmpl_data ) ) {
         sek_get_nimble_api_data( true );//<= true for "force_update"
-        $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
+        $tmpl_data = maybe_unserialize( get_option( NIMBLE_API_TMPL_LIB_OPT_NAME ) );
     }
-
-    if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['json_collection'] ) ) {
+    //sek_error_log('TMPL DATA ?', $tmpl_data);
+    if ( empty( $tmpl_data ) || !is_array( $tmpl_data ) ) {
         sek_error_log( __FUNCTION__ . ' => error => no json_collection' );
         return array();
     }
-    return $sections_data['json_collection'];
+   
+    //return [];
+    return maybe_unserialize( $tmpl_data );
 }
 
 
@@ -3019,8 +3013,11 @@ function sek_get_preset_sections_api_data( $force_update = false ) {
 /// LATESTS POSTS
 // @return array of posts
 function sek_get_latest_posts_api_data( $force_update = false ) {
+    // set this constant in wp_config.php
+    $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
+
     sek_get_nimble_api_data( $force_update );
-    $latest_posts = get_option( NIMBLE_NEWS_OPT_NAME );
+    $latest_posts = get_option( NIMBLE_API_NEWS_OPT_NAME );
     if ( empty( $latest_posts ) ) {
         sek_error_log( __FUNCTION__ . ' => error => no latest_posts' );
         return array();
@@ -3030,6 +3027,9 @@ function sek_get_latest_posts_api_data( $force_update = false ) {
 
 // @return html string
 function sek_start_msg_from_api( $theme_name, $force_update = false ) {
+    // set this constant in wp_config.php
+    $force_update = ( defined( 'NIMBLE_FORCE_UPDATE_API_DATA') && NIMBLE_FORCE_UPDATE_API_DATA ) ? true : $force_update;
+
     $info_data = sek_get_nimble_api_data( $force_update );
     if ( !sek_is_presscustomizr_theme( $theme_name ) || !is_array( $info_data ) ) {
         return '';
@@ -3049,8 +3049,50 @@ add_action( 'upgrader_process_complete', '\Nimble\sek_refresh_nimble_api_data');
 function sek_refresh_nimble_api_data() {
     // Refresh data on theme switch
     // => so the posts and message are up to date
-    sek_get_nimble_api_data(true);
+    sek_get_nimble_api_data($force_update = true);
 }
+
+
+//////////////////////////////////////////////////
+/// SECTIONS DATA
+/// DEPRECATED, NOW USING LOCAL DATA AND JSON
+// function sek_get_sections_registration_params_api_data( $force_update = false ) {
+//     // To avoid a possible refresh, hence a reconnection to the api when opening the customizer
+//     // Let's use the data saved as options
+//     // Those data are updated on plugin install, plugin update, theme switch
+//     // @see https://github.com/presscustomizr/nimble-builder/issues/441
+//     $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
+//     if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['registration_params'] ) ) {
+//         sek_get_nimble_api_data( true );//<= true for "force_update"
+//         $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
+//     }
+
+//     if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['registration_params'] ) ) {
+//         sek_error_log( __FUNCTION__ . ' => error => no section registration params' );
+//         return array();
+//     }
+//     return $sections_data['registration_params'];
+// }
+
+// function sek_get_preset_sections_api_data( $force_update = false ) {
+//     // To avoid a possible refresh, hence a reconnection to the api when opening the customizer
+//     // Let's use the data saved as options
+//     // Those data are updated on plugin install, plugin update( upgrader_process_complete ), theme switch
+//     // @see https://github.com/presscustomizr/nimble-builder/issues/441
+//     $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
+//     if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['json_collection'] ) ) {
+//         sek_get_nimble_api_data( true );//<= true for "force_update"
+//         $sections_data = get_option( NIMBLE_SECTIONS_LIBRARY_OPT_NAME );
+//     }
+
+//     if ( empty( $sections_data ) || !is_array( $sections_data ) || empty( $sections_data['json_collection'] ) ) {
+//         sek_error_log( __FUNCTION__ . ' => error => no json_collection' );
+//         return array();
+//     }
+//     return $sections_data['json_collection'];
+// }
+
+
 
 ?><?php
 // This file has been introduced on May 21st 2019 => back to the local data
@@ -4208,6 +4250,7 @@ function sek_update_saved_section_post( $section_data ) {
 
     // the section post name is provided only when updating
     $is_update_case = !is_null($section_data['section_post_name']);
+    $is_edit_metas_only_case = 'yes' === $section_data['edit_metas_only'];
 
     // $post_name_to_update will be used when user updates an existing section
     if ( !is_null($section_data['section_post_name']) ) {
@@ -4219,7 +4262,23 @@ function sek_update_saved_section_post( $section_data ) {
     // Update the post name now
     $section_data['section_post_name'] = $section_post_name;
 
-    $post_data = array(
+    // Update post if it already exists, otherwise create a new one.
+    $current_section_post = null;
+    if ( $is_update_case ) {
+        // When this is an update case, we fetch the existing tmpl_post in order to later get its id
+        $current_section_post = sek_get_saved_section_post( $section_post_name );
+
+        // if this is an update case + editing metas only, then we use the current content
+        if ( $is_edit_metas_only_case && isset($current_section_post->post_content) ) {
+            sek_error_log('IS EDIT METAS ONLY ?');
+            $current_section_data = maybe_unserialize( $current_section_post->post_content );
+            if ( is_array($current_section_data) && isset($current_section_data['data']) && is_array($current_section_data['data']) && !empty($current_section_data['data']) ) {
+                $section_data['data'] = $current_section_data['data'];
+            }
+        }
+    }
+
+    $new_or_updated_post_data = array(
         'post_title' => esc_attr( $section_data['metas']['title'] ),
         'post_name' => $section_post_name,
         'post_type' => NIMBLE_SECTION_CPT,
@@ -4227,17 +4286,13 @@ function sek_update_saved_section_post( $section_data ) {
         'post_content' => maybe_serialize( $section_data )
     );
 
-    // Update post if it already exists, otherwise create a new one.
-    $section_post = null;
-    if ( $is_update_case ) {
-        $section_post = sek_get_saved_section_post( $section_post_name );
-    }
+    
 
-    if ( $section_post && is_object($section_post) ) {
-        $post_data['ID'] = $section_post->ID;
-        $r = wp_update_post( wp_slash( $post_data ), true );
+    if ( $current_section_post && is_object($current_section_post) ) {
+        $new_or_updated_post_data['ID'] = $current_section_post->ID;
+        $r = wp_update_post( wp_slash( $new_or_updated_post_data ), true );
     } else {
-        $r = wp_insert_post( wp_slash( $post_data ), true );
+        $r = wp_insert_post( wp_slash( $new_or_updated_post_data ), true );
         if ( !is_wp_error( $r ) ) {
             $post_id = $r;//$r is the post ID
             // Trigger creation of a revision. This should be removed once #30854 is resolved.
@@ -4421,6 +4476,29 @@ function sek_get_all_saved_templates() {
 }
 
 
+// invoked on 'wp_ajax_sek_get_all_api_tmpl'
+// @return an unserialized array of api templates
+function sek_get_all_api_templates() {
+    $raw_tmpl = sek_get_tmpl_api_data();
+    $collection = [];
+    if( !is_array( $raw_tmpl) )
+        return $collection;
+    foreach ( $raw_tmpl as $tmpl_cpt_post_name => $tmpl_data ) {
+        $metas = !is_array( $tmpl_data['metas'] ) ? [] : $tmpl_data['metas'];
+        if ( empty($metas) )
+            continue;
+
+        $collection[$tmpl_cpt_post_name] = [
+            'title' => $metas['title'],
+            'description' => $metas['description'],
+            'last_modified_date' => mysql2date( 'Y-m-d', $metas['date'] ),
+            'thumb_url' => !empty( $metas['thumb_url'] ) ? $metas['thumb_url'] : '',
+            'is_pro_tmpl' => !empty( $metas['is_pro_tmpl'] ) ? $metas['is_pro_tmpl'] : false
+        ];
+    }
+    return $collection;
+}
+
 
  // Update the 'nimble_template' post
  // Inserts a 'nimble_template' post when one doesn't yet exist.
@@ -4466,6 +4544,7 @@ function sek_update_saved_tmpl_post( $tmpl_data ) {
 
     // the template post name is provided only when updating
     $is_update_case = !is_null($tmpl_data['tmpl_post_name']);
+    $is_edit_metas_only_case = 'yes' === $tmpl_data['edit_metas_only'];
 
     // $post_name_to_update will be used when user updates an existing template
     if ( !is_null($tmpl_data['tmpl_post_name']) ) {
@@ -4479,7 +4558,23 @@ function sek_update_saved_tmpl_post( $tmpl_data ) {
     // Update the post name now
     $tmpl_data['tmpl_post_name'] = $tmpl_post_name;
 
-    $post_data = array(
+    //sek_error_log('serialized $tmpl_data??', maybe_serialize( $tmpl_data ) );
+    // Update post if it already exists, otherwise create a new one.
+    $current_tmpl_post = null;
+    if ( $is_update_case ) {
+        // When this is an update case, we fetch the existing tmpl_post in order to later get its id
+        $current_tmpl_post = sek_get_saved_tmpl_post( $tmpl_post_name );
+
+        // if this is an update case + editing metas only, then we use the current content
+        if ( $is_edit_metas_only_case && isset($current_tmpl_post->post_content) ) {
+            $current_tmpl_data = maybe_unserialize( $current_tmpl_post->post_content );
+            if ( is_array($current_tmpl_data) && isset($current_tmpl_data['data']) && is_array($current_tmpl_data['data']) && !empty($current_tmpl_data['data']) ) {
+                $tmpl_data['data'] = $current_tmpl_data['data'];
+            }
+        }
+    }
+
+    $new_or_updated_post_data = array(
         'post_title' => esc_attr( $tmpl_data['metas']['title'] ),
         'post_name' => $tmpl_post_name,
         'post_type' => NIMBLE_TEMPLATE_CPT,
@@ -4487,20 +4582,15 @@ function sek_update_saved_tmpl_post( $tmpl_data ) {
         'post_content' => maybe_serialize( $tmpl_data )
     );
 
-    //sek_error_log('serialized $tmpl_data??', maybe_serialize( $tmpl_data ) );
-    // Update post if it already exists, otherwise create a new one.
-    $tmpl_post = null;
-    if ( $is_update_case ) {
-        $tmpl_post = sek_get_saved_tmpl_post( $tmpl_post_name );
-    }
+    // sek_error_log( __FUNCTION__ . ' => so $is_edit_metas_only_case ' . $is_edit_metas_only_case );
+    // sek_error_log( __FUNCTION__ . ' => so $tmpl_data for skope ' . $tmpl_post_name, $current_tmpl_data['data'] );
+    $r = '';
 
-    //sek_error_log( __FUNCTION__ . ' => so $tmpl_data for skope ' . $tmpl_post_name, $tmpl_data );
-
-    if ( $tmpl_post && is_object($tmpl_post) ) {
-        $post_data['ID'] = $tmpl_post->ID;
-        $r = wp_update_post( wp_slash( $post_data ), true );
+    if ( $current_tmpl_post && is_object($current_tmpl_post) ) {
+        $new_or_updated_post_data['ID'] = $current_tmpl_post->ID;
+        $r = wp_update_post( wp_slash( $new_or_updated_post_data ), true );
     } else {
-        $r = wp_insert_post( wp_slash( $post_data ), true );
+        $r = wp_insert_post( wp_slash( $new_or_updated_post_data ), true );
         if ( !is_wp_error( $r ) ) {
             $post_id = $r;//$r is the post ID
             // Trigger creation of a revision. This should be removed once #30854 is resolved.

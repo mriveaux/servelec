@@ -12,6 +12,17 @@ function alante_thinkup_customizer_theme_options( $wp_customize ) {
 	$prefix_name = $alante_thinkup_prefix;
 
 	// ==========================================================================================
+	// 0. SELECTIVE / PARTIAL REFRESH
+	// ==========================================================================================
+
+  	$wp_customize->selective_refresh->add_partial(
+		'custom_logo',
+		array(
+			'selector' => '#logo .custom-logo-link',
+		)
+	);
+
+	// ==========================================================================================
 	// 1. ADD PANELS / SECTIONS
 	// ==========================================================================================
 

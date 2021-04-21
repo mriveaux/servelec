@@ -81,3 +81,19 @@ require_once( get_template_directory() . '/core/init-base.php' );
 * More informations about how to create a child theme with Customizr : http://docs.presscustomizr.com/article/24-creating-a-child-theme-for-customizr/
 * A good starting point to customize the Customizr theme : http://docs.presscustomizr.com/article/35-how-to-customize-the-customizr-wordpress-theme/
 */
+
+function theme_enqueue_scripts() {
+    wp_enqueue_style( 'Font_Awesome_5.6', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css' );
+    wp_enqueue_style( 'Bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css' );
+    wp_enqueue_style( 'MDB', get_template_directory_uri() . '/css/mdb.min.css' );
+    wp_enqueue_style( 'Style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_script( 'jQuery_3', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.3.1', true );
+    wp_enqueue_script( 'Tether', get_template_directory_uri() . '/js/popper.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'Bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'MDB', get_template_directory_uri() . '/js/mdb.min.js', array(), '1.0.0', true );
+
+    wp_enqueue_style( 'pageScrollIndicator_css', get_template_directory_uri() . '/addons/pageScrollIndicator/pageScrollIndicator.css' );
+    wp_enqueue_script( 'pageScrollIndicator_js', get_template_directory_uri() . '/addons/pageScrollIndicator/pageScrollIndicator.js' );
+
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );

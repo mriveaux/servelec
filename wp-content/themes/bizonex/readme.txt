@@ -2,10 +2,10 @@
 
 Contributors: themehunk
 Tags: right-sidebar, custom-menu, custom-logo, editor-style, featured-images, translation-ready, flexible-header, sticky-post, theme-options, portfolio
-Requires at least: 4.0.5
-Tested up to: 5.1.1
+Requires at least: 4.5
+Tested up to: 5.5.1
 Requires PHP: 5.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -22,6 +22,9 @@ Yes, we provide support to free user. Just mail us at "info@themehunk.com"
 Yes sure, theme comes with GPL license you are free to modify theme as per your need.
 
 == Changelog ==
+== 1.0.2 ==
+* Style Issue Fixed.
+
 == 1.0.1 ==
 * compatible with latest wordpress.
 

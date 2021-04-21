@@ -6,7 +6,9 @@
  * @package total
  */
 if (!defined('TOTAL_VERSION')) {
-    define('TOTAL_VERSION', '1.2.47');
+    $total_get_theme = wp_get_theme();
+    $total_version = $total_get_theme->Version;
+    define('TOTAL_VERSION', $total_version);
 }
 
 if (!function_exists('total_setup')) :

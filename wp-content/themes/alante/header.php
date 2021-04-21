@@ -20,7 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php /* Body hook */ alante_thinkup_hook_bodyhtml(); ?>
+<?php wp_body_open(); ?>
 <div id="body-core" class="hfeed site">
 
 	<header>

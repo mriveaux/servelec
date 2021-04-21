@@ -111,6 +111,13 @@
     line-height: 1.8em;
 }
 
+.welcome-promo-offer span{
+    font-size: 40px;
+    display: block;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
 /** Nav **/
 .welcome-nav-wrapper{
     display: flex;
