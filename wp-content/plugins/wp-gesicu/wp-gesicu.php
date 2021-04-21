@@ -99,13 +99,22 @@ if (!class_exists('WpGesicu')) {
             add_filter( 'big_image_size_threshold', '__return_false' );
             add_filter( 'wp_image_editors', [$this, 'gesicu_use_gd_editor'] );
             add_filter('pre_option_link_manager_enabled', '__return_true'); //habilitar enlaces
+            add_filter( 'auto_update_theme', '__return_false' );
             add_filter('gettext', [$this, 'gesicu_translate_markers']);
+            add_filter( 'site_transient_update_themes', [$this, 'gesicu_remove_update_themes'] );
 
         }
 
         function init_cpt(){
 //            require_once( 'cpt/Solicitud.php' );
 //            new Solicitud();
+        }
+
+        function gesicu_remove_update_themes( $value ) {
+            if ( isset( $value ) && is_object( $value ) ) {
+                unset( $value->response['customizr'] );
+            }
+            return $value;
         }
 
         function gesicu_translate_markers ($translated)
@@ -122,7 +131,6 @@ if (!class_exists('WpGesicu')) {
         function gesicu_use_gd_editor($array) {
             return array( 'WP_Image_Editor_GD', );
         }
-
 
         function gesicu_create_admin_menu_servelec ()
         {
