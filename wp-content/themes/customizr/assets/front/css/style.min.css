@@ -4057,6 +4057,15 @@ embed, iframe, object, video {
   position: relative;
 }
 
+.utils_links, .ham-toggler-menu, .woocart.cart-contents, .session-toggle_btn {
+  padding: 1.25em 15px;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: block;
+  height: auto;
+  position: relative;
+}
+
 @media (max-width: 767px) {
   .mobile-navbar__wrapper .utils_links, .mobile-navbar__wrapper .ham-toggler-menu, .mobile-navbar__wrapper .woocart.cart-contents, .mobile-navbar__wrapper .search-toggle_btn {
     padding: 1.25em 10px;

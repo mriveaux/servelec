@@ -6,7 +6,7 @@ if (is_user_logged_in()) {
     }
     ?>
     <li id="desktop_primary_logout">
-        <a class="search-toggle_btn czr-overlay-toggle_btn" title="<?php echo __('Salir de la sesión') ?>"
+        <a class="session-toggle_btn czr-overlay-toggle_btn" title="<?php echo __('Salir de la sesión') ?>"
            href="<?php echo wp_logout_url(); ?>">
             <i class="fas fa-fw fa-1x fa-sign-out-alt"> <?php //echo $name; ?></i></a>
     </li>
@@ -14,7 +14,7 @@ if (is_user_logged_in()) {
 } else {
     ?>
     <li id="desktop_primary_login">
-        <a class="search-toggle_btn czr-overlay-toggle_btn" title="<?php echo __('Iniciar la sesión') ?>"
+        <a class="session-toggle_btn czr-overlay-toggle_btn" title="<?php echo __('Iniciar la sesión') ?>"
            href="<?php echo wp_login_url(); ?>">
             <i class="fas fa-fw fa-1x fa-user"></i></a>
     </li>
