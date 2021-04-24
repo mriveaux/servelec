@@ -11,9 +11,3 @@ label.error {
     font-size: 13px;
 }
 p.comment-form-cookies-consent { display: none; }
-
-@import "~tailwindcss/base.css";
-
-@import "~tailwindcss/components.css";
-
-@import "~tailwindcss/utilities.css";

@@ -325,20 +325,29 @@ if (!class_exists('WpGesicu')) {
 
         function gesicu_wp_add_headers_security()
         {
-            header( 'Set-Cookie: name=value;HttpOnly;Secure;SameSite=strict' );//Header always edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=strict
-            header( 'X-Frame-Options: SAMEORIGIN' );
-            header( 'X-Content-Type-Options: nosniff' );
-            header( 'X-XSS-Protection: 1; mode=block' );
-            header( 'Expect-CT: max-age=86400, enforce' );
-            header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains' );
+            @header( 'Set-Cookie: name=value;HttpOnly;Secure;SameSite=strict' );//Header always edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=strict
+            @header( 'X-Frame-Options: SAMEORIGIN' );
+            @header( 'X-Content-Type-Options: nosniff' );
+            @header( 'X-XSS-Protection: 1; mode=block' );
+            @header( 'Expect-CT: max-age=86400, enforce' );
+            @header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains' );
+//            @header( "X-Content-Security-Policy: default-src 'self' *.github.com *.wordpress.org secure.gravatar.com w.org s.w.org;\ font-src 'self' 'unsafe-inline' data: *.googleapis.com fonts.gstatic.com;\ style-src 'self' 'unsafe-inline' data: *.googleapis.com assets-cdn.github.com;\ media-src 'self' *.youtube-nocookie.com;\ frame-src 'self' *.youtube-nocookie.com;'");
+//            @header( "Content-Security-Policy: default-src 'self' *.github.com *.wordpress.org secure.gravatar.com w.org s.w.org;\ font-src 'self' 'unsafe-inline' data: *.googleapis.com fonts.gstatic.com;\ style-src 'self' 'unsafe-inline' data: *.googleapis.com assets-cdn.github.com;\ media-src 'self' *.youtube-nocookie.com;\ frame-src 'self' *.youtube-nocookie.com;'");
+            @header( 'unset X-Powered-By' );
+            @header( 'unset ETag' );
+            @header("Cache-Control: private, no-cache,  no-store, must-revalidate, proxy-revalidate, no-transform"); //HTTP 1.1
+            @header("Pragma: no-cache"); //HTTP 1.0
+            @header( 'Referrer-Policy: no-referrer-when-downgrade' );
+
         }
 
         function gesicu_wp_add_headers_cors()
         {
             add_filter( 'rest_pre_serve_request', function( $value ) {
-                header('Access-Control-Allow-Headers: Authorization, Content-Type, X-WP-Wpml-Language, X-WP-Nonce, X-Requested-With, X-Token-Auth', true);
-                header( 'Access-Control-Allow-Methods: POST, GET, PUT, DELETE' );
-                header( 'Access-Control-Allow-Credentials: true' );
+                @header('Access-Control-Allow-Headers: Authorization, Content-Type, X-WP-Wpml-Language, X-WP-Nonce, X-Requested-With, X-Token-Auth', true);
+                @header( 'Access-Control-Allow-Methods: POST, GET, PUT, DELETE' );
+                @header( 'Access-Control-Allow-Credentials: true' );
+//                @header( 'Access-Control-Allow-Origin: null' );
                 return $value;
             } );
         }
